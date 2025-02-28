@@ -1,0 +1,111 @@
+[gd_scene load_steps=23 format=3 uid="uid://78hn2ffybk65"]
+
+[ext_resource type="Script" path="res://scenes/battle/battle.gd" id="1_t264f"]
+[ext_resource type="Texture2D" uid="uid://d3qjqhhdhvoth" path="res://art/bottom_scene/scene.jpg" id="1_whyga"]
+[ext_resource type="Script" path="res://scripts/hand.gd" id="2_8g6ym"]
+[ext_resource type="Curve" uid="uid://cq3p6sqcj8et7" path="res://spread.tres" id="3_uk2ei"]
+[ext_resource type="Curve" uid="uid://ygjcb50jo74b" path="res://rotation.tres" id="4_pqhqs"]
+[ext_resource type="PackedScene" uid="uid://bqkrwbju4mck8" path="res://scenes/monster/monster.tscn" id="4_xxlhy"]
+[ext_resource type="PackedScene" uid="uid://nadc0oxb8jid" path="res://scenes/card_target_selector/card_target_selector.tscn" id="5_386xa"]
+[ext_resource type="Curve" uid="uid://c6xrn43siyrmh" path="res://height.tres" id="5_d1vqs"]
+[ext_resource type="PackedScene" uid="uid://dcjodj7wgvjld" path="res://scenes/player/player.tscn" id="5_ljh07"]
+[ext_resource type="Texture2D" uid="uid://k7fh5heq6t5w" path="res://art/bottom_scene/scene2.png" id="6_1yhl2"]
+[ext_resource type="Script" path="res://scenes/battle_ui.gd" id="6_55xhc"]
+[ext_resource type="Texture2D" uid="uid://comw0gr5jrbxf" path="res://art/bottom_scene/scene.png" id="7_feuil"]
+[ext_resource type="PackedScene" uid="uid://bgdh50jyx0702" path="res://scenes/card_ui/card_ui.tscn" id="10_vx6xx"]
+[ext_resource type="Resource" uid="uid://btjxur1kw6hvn" path="res://cards/red/defend_red.tres" id="11_bs5hy"]
+[ext_resource type="Resource" uid="uid://c56ju606ec2mc" path="res://enemies/crab/test_monster.tres" id="13_cjwsn"]
+[ext_resource type="PackedScene" uid="uid://bf0p0w25ki8ff" path="res://scenes/card_ui/energy_ui.tscn" id="14_ds04n"]
+[ext_resource type="Resource" uid="uid://4qo5n75hbldo" path="res://characters/Ironclad.tres" id="15_it20t"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_x0wpt"]
+atlas = ExtResource("1_whyga")
+region = Rect2(0, 0, 1922, 1139)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ucuyn"]
+atlas = ExtResource("6_1yhl2")
+region = Rect2(1495, 529, 403, 445)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5rgpt"]
+atlas = ExtResource("7_feuil")
+region = Rect2(2, 500, 1920, 771)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5l17u"]
+atlas = ExtResource("6_1yhl2")
+region = Rect2(1900, 727, 130, 247)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_txd0m"]
+size = Vector2(256, 108)
+
+[node name="Battle" type="Node2D"]
+script = ExtResource("1_t264f")
+metadata/_edit_lock_ = true
+
+[node name="Background" type="Node2D" parent="."]
+texture_filter = 2
+metadata/_edit_lock_ = true
+
+[node name="Background" type="Sprite2D" parent="Background"]
+scale = Vector2(0.133301, 0.126465)
+texture = SubResource("AtlasTexture_x0wpt")
+centered = false
+metadata/_edit_lock_ = true
+
+[node name="Background2" type="Sprite2D" parent="Background"]
+position = Vector2(144.75, 62.45)
+scale = Vector2(0.134413, 0.134413)
+texture = SubResource("AtlasTexture_ucuyn")
+metadata/_edit_lock_ = true
+
+[node name="Background3" type="Sprite2D" parent="Background"]
+position = Vector2(128, 51.5)
+scale = Vector2(0.133333, 0.133593)
+texture = SubResource("AtlasTexture_5rgpt")
+metadata/_edit_lock_ = true
+
+[node name="Background4" type="Sprite2D" parent="Background"]
+position = Vector2(23.5, 31)
+scale = Vector2(0.123988, 0.123988)
+texture = SubResource("AtlasTexture_5l17u")
+metadata/_edit_lock_ = true
+
+[node name="Player" parent="." instance=ExtResource("5_ljh07")]
+position = Vector2(57, 84)
+
+[node name="CardDropArea" type="Area2D" parent="."]
+collision_layer = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CardDropArea"]
+position = Vector2(128, 54)
+shape = SubResource("RectangleShape2D_txd0m")
+debug_color = Color(0, 0.6, 0.701961, 0.133333)
+
+[node name="CardTargetSelector" parent="." instance=ExtResource("5_386xa")]
+
+[node name="BattleUI" type="CanvasLayer" parent="." groups=["ui_layer"]]
+script = ExtResource("6_55xhc")
+
+[node name="Hand" type="Node2D" parent="BattleUI"]
+position = Vector2(128, 136)
+script = ExtResource("2_8g6ym")
+spread_curve = ExtResource("3_uk2ei")
+rotation_curve = ExtResource("4_pqhqs")
+height_curve = ExtResource("5_d1vqs")
+
+[node name="CardUI" parent="BattleUI/Hand" instance=ExtResource("10_vx6xx")]
+char_stats = ExtResource("15_it20t")
+
+[node name="CardUI2" parent="BattleUI/Hand" instance=ExtResource("10_vx6xx")]
+card = ExtResource("11_bs5hy")
+char_stats = ExtResource("15_it20t")
+
+[node name="CardUI3" parent="BattleUI/Hand" instance=ExtResource("10_vx6xx")]
+char_stats = ExtResource("15_it20t")
+
+[node name="EnergyUI" parent="BattleUI" instance=ExtResource("14_ds04n")]
+offset_top = -30.0
+offset_right = 30.0
+
+[node name="LouseNormal" parent="." instance=ExtResource("4_xxlhy")]
+position = Vector2(206, 102)
+stats = ExtResource("13_cjwsn")

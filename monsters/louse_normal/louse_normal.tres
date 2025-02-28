@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="MonsterStats" load_steps=4 format=3 uid="uid://c56ju606ec2mc"]
+
+[ext_resource type="Texture2D" uid="uid://cy3oc4r52pbo5" path="res://art/louse_normal.png" id="1_crtmn"]
+[ext_resource type="PackedScene" uid="uid://bdpgyjnvtg8hv" path="res://monsters/louse_normal/louse_normal_ai.tscn" id="1_mqwp0"]
+[ext_resource type="Script" path="res://custom_resources/monster_stats.gd" id="3_i56v5"]
+
+[resource]
+script = ExtResource("3_i56v5")
+ai = ExtResource("1_mqwp0")
+min_hp = 11
+max_hp = 17
+art = ExtResource("1_crtmn")

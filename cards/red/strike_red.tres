@@ -1,0 +1,13 @@
+[gd_resource type="Resource" load_steps=3 format=3 uid="uid://5nh4yv103t33"]
+
+[ext_resource type="Texture2D" uid="uid://ck1t4hdip6xrl" path="res://art/tile_0119.png" id="1_afu68"]
+[ext_resource type="Script" path="res://cards/red/stike_red.gd" id="2_w7axl"]
+
+[resource]
+script = ExtResource("2_w7axl")
+id = "Strike_R"
+type = 0
+target = 0
+cost = 1
+icon = ExtResource("1_afu68")
+description = "Deal [color=red]6[/color] damage."

@@ -1,0 +1,50 @@
+[gd_scene load_steps=7 format=3 uid="uid://bqkrwbju4mck8"]
+
+[ext_resource type="Texture2D" uid="uid://cea6dkq0jvw04" path="res://art/louse_defensive.png" id="1_btel6"]
+[ext_resource type="Script" path="res://scenes/monster/monster.gd" id="1_nrynt"]
+[ext_resource type="Texture2D" uid="uid://bgonh0uqkbitg" path="res://art/selected_indicator.png" id="3_08duy"]
+[ext_resource type="PackedScene" uid="uid://cpgpjk5ayx78o" path="res://scenes/ui/stats_ui.tscn" id="4_c36ax"]
+[ext_resource type="PackedScene" uid="uid://beepbuhvpju07" path="res://scenes/ui/intent_ui.tscn" id="5_ohe7i"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8tsu6"]
+
+[node name="Monster" type="Area2D" groups=["monster"]]
+collision_layer = 4
+script = ExtResource("1_nrynt")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_btel6")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_8tsu6")
+
+[node name="StatsUI" parent="." instance=ExtResource("4_c36ax")]
+offset_top = 8.0
+offset_bottom = 16.0
+
+[node name="SelectedIndicator" type="NinePatchRect" parent="."]
+visible = false
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -10.0
+offset_top = -10.0
+offset_right = 10.0
+offset_bottom = 10.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(10, 10)
+texture = ExtResource("3_08duy")
+patch_margin_left = 2
+patch_margin_top = 2
+patch_margin_right = 2
+patch_margin_bottom = 2
+
+[node name="IntentUI" parent="." instance=ExtResource("5_ohe7i")]
+offset_top = -23.0
+offset_bottom = -10.0
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]
+[connection signal="area_exited" from="." to="." method="_on_area_exited"]

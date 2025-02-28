@@ -1,0 +1,49 @@
+[gd_scene load_steps=8 format=3 uid="uid://d17kov2bi17aw"]
+
+[ext_resource type="Texture2D" uid="uid://d3qjqhhdhvoth" path="res://art/bottom_scene/scene.jpg" id="1_ou12n"]
+[ext_resource type="Texture2D" uid="uid://k7fh5heq6t5w" path="res://art/bottom_scene/scene2.png" id="2_tqp8w"]
+[ext_resource type="Texture2D" uid="uid://comw0gr5jrbxf" path="res://art/bottom_scene/scene.png" id="3_guld3"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_x0wpt"]
+atlas = ExtResource("1_ou12n")
+region = Rect2(0, 0, 1922, 1139)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ucuyn"]
+atlas = ExtResource("2_tqp8w")
+region = Rect2(1495, 529, 403, 445)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5rgpt"]
+atlas = ExtResource("3_guld3")
+region = Rect2(2, 500, 1920, 771)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5l17u"]
+atlas = ExtResource("2_tqp8w")
+region = Rect2(1900, 727, 130, 247)
+
+[node name="Background" type="Node2D"]
+texture_filter = 2
+metadata/_edit_lock_ = true
+
+[node name="Background" type="Sprite2D" parent="."]
+scale = Vector2(0.133301, 0.126465)
+texture = SubResource("AtlasTexture_x0wpt")
+centered = false
+metadata/_edit_lock_ = true
+
+[node name="Background2" type="Sprite2D" parent="."]
+position = Vector2(144.75, 62.45)
+scale = Vector2(0.134413, 0.134413)
+texture = SubResource("AtlasTexture_ucuyn")
+metadata/_edit_lock_ = true
+
+[node name="Background3" type="Sprite2D" parent="."]
+position = Vector2(128, 51.5)
+scale = Vector2(0.133333, 0.133593)
+texture = SubResource("AtlasTexture_5rgpt")
+metadata/_edit_lock_ = true
+
+[node name="Background4" type="Sprite2D" parent="."]
+position = Vector2(23.5, 31)
+scale = Vector2(0.123988, 0.123988)
+texture = SubResource("AtlasTexture_5l17u")
+metadata/_edit_lock_ = true

@@ -1,0 +1,121 @@
+[gd_scene load_steps=13 format=3 uid="uid://bgdh50jyx0702"]
+
+[ext_resource type="Theme" uid="uid://2tytydfeg3gl" path="res://main_theme.tres" id="1_6jvbn"]
+[ext_resource type="Script" path="res://scenes/card_ui/card_ui.gd" id="2_1k3vl"]
+[ext_resource type="Resource" uid="uid://5nh4yv103t33" path="res://cards/red/strike_red.tres" id="2_uwe1l"]
+[ext_resource type="Script" path="res://scenes/card_ui/card_state_machine.gd" id="3_f6yj3"]
+[ext_resource type="StyleBox" uid="uid://bijoefntbq3be" path="res://scenes/card_ui/base_stylebox.tres" id="4_658bt"]
+[ext_resource type="Script" path="res://scenes/card_ui/card_state/base_state.gd" id="4_rywma"]
+[ext_resource type="Texture2D" uid="uid://c6rme2o6dyaoj" path="res://art/tile_0104.png" id="5_4c85n"]
+[ext_resource type="Script" path="res://scenes/card_ui/card_state/clicked_state.gd" id="5_ncta0"]
+[ext_resource type="Script" path="res://scenes/card_ui/card_state/dragging_state.gd" id="6_rbta7"]
+[ext_resource type="Script" path="res://scenes/card_ui/card_state/released_state.gd" id="7_18uak"]
+[ext_resource type="Script" path="res://scenes/card_ui/card_state/aiming_state.gd" id="8_2duud"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wpyeo"]
+size = Vector2(30, 40)
+
+[node name="CardUI" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_left = -15.0
+offset_top = -20.0
+offset_right = 15.0
+offset_bottom = 20.0
+pivot_offset = Vector2(15, 20)
+theme = ExtResource("1_6jvbn")
+script = ExtResource("2_1k3vl")
+card = ExtResource("2_uwe1l")
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+theme_override_styles/panel = ExtResource("4_658bt")
+
+[node name="Cost" type="Label" parent="."]
+layout_mode = 0
+offset_left = 3.0
+offset_right = 8.0
+offset_bottom = 12.0
+scale = Vector2(0.960002, 1)
+text = "2"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Icon" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -5.0
+offset_top = 10.0
+offset_right = 5.0
+offset_bottom = 20.0
+grow_horizontal = 2
+mouse_filter = 2
+texture = ExtResource("5_4c85n")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Description" type="RichTextLabel" parent="."]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 2.0
+offset_top = -20.0
+offset_right = -2.0
+offset_bottom = -1.0
+grow_horizontal = 2
+grow_vertical = 0
+mouse_filter = 2
+theme = ExtResource("1_6jvbn")
+theme_override_font_sizes/mono_font_size = 4
+theme_override_font_sizes/normal_font_size = 4
+bbcode_enabled = true
+text = "description"
+scroll_active = false
+
+[node name="DropPointDetector" type="Area2D" parent="."]
+visible = false
+collision_mask = 2
+monitorable = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DropPointDetector"]
+position = Vector2(15, 20)
+shape = SubResource("RectangleShape2D_wpyeo")
+
+[node name="CardStateMachine" type="Node" parent="." node_paths=PackedStringArray("initial_state")]
+script = ExtResource("3_f6yj3")
+initial_state = NodePath("BaseState")
+
+[node name="BaseState" type="Node" parent="CardStateMachine"]
+script = ExtResource("4_rywma")
+
+[node name="ClickedState" type="Node" parent="CardStateMachine"]
+script = ExtResource("5_ncta0")
+state = 1
+
+[node name="DraggingState" type="Node" parent="CardStateMachine"]
+script = ExtResource("6_rbta7")
+state = 2
+
+[node name="ReleasedState" type="Node" parent="CardStateMachine"]
+script = ExtResource("7_18uak")
+state = 4
+
+[node name="AimingState" type="Node" parent="CardStateMachine"]
+script = ExtResource("8_2duud")
+state = 3
+
+[connection signal="gui_input" from="." to="." method="_on_gui_input"]
+[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]
+[connection signal="area_entered" from="DropPointDetector" to="." method="_on_drop_point_detector_area_entered"]
+[connection signal="area_exited" from="DropPointDetector" to="." method="_on_drop_point_detector_area_exited"]
