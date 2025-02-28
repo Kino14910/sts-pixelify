@@ -1,7 +1,7 @@
 extends Control
 
 
-const CHAR_SELECT_MENU = preload('res://scenes/ui/char_select_menu.tscn')
+const CHAR_SELECT_MENU = preload('res://scenes/ui/char_selector.tscn')
 #const RUN_SCENE = preload("res://scenes/run/run.tscn")
 
 @onready var continue_btn: Button = $VBoxContainer/Continue

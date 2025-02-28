@@ -16,6 +16,7 @@
 size = Vector2(30, 40)
 
 [node name="CardUI" type="Control"]
+custom_minimum_size = Vector2(30, 40)
 layout_mode = 3
 anchors_preset = 0
 offset_left = -15.0

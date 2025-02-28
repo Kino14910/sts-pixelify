@@ -14,12 +14,13 @@ func _ready() -> void:
 	var new_stats: CharacterStats = char_stats.instantiate()
 	battle_ui.char_stats = new_stats
 	player.stats = new_stats
-	start_battle(new_stats)	
 	Events.monster_turn_ended.connect(_on_monster_turn_ended)
 	
 	Events.player_turn_ended.connect(player_handler.end_turn)
 	Events.player_hand_discarded.connect(monster_handler.start_turn)
 	Events.player_died.connect(_on_player_died)
+	start_battle(new_stats)	
+	battle_ui.initialize_card_pile_ui()
 
 
 func start_battle(stats: CharacterStats) -> void:

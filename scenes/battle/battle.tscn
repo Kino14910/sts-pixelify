@@ -1,4 +1,4 @@
-[gd_scene load_steps=30 format=3 uid="uid://78hn2ffybk65"]
+[gd_scene load_steps=33 format=3 uid="uid://78hn2ffybk65"]
 
 [ext_resource type="Script" path="res://scenes/battle/battle.gd" id="1_t264f"]
 [ext_resource type="Texture2D" uid="uid://d3qjqhhdhvoth" path="res://art/bottom_scene/scene.jpg" id="1_whyga"]
@@ -22,6 +22,9 @@
 [ext_resource type="Theme" uid="uid://2tytydfeg3gl" path="res://main_theme.tres" id="15_w7ux2"]
 [ext_resource type="Script" path="res://scenes/ui/red_flash.gd" id="19_jh8rp"]
 [ext_resource type="PackedScene" uid="uid://bfp68paujyrvi" path="res://scenes/ui/battle_over_panel.tscn" id="21_auwcm"]
+[ext_resource type="PackedScene" uid="uid://ct8ogayx0nuii" path="res://scenes/ui/card_pile_opener.tscn" id="21_emcc8"]
+[ext_resource type="Texture2D" uid="uid://c7c8cgkuro8b3" path="res://art/discard.png" id="22_xixgu"]
+[ext_resource type="PackedScene" uid="uid://dn7kxpuwcukg3" path="res://scenes/ui/card_pile_view.tscn" id="25_xtb34"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_x0wpt"]
 atlas = ExtResource("1_whyga")
@@ -148,6 +151,59 @@ offset_top = -32.0
 offset_right = 35.0
 offset_bottom = -15.0
 
+[node name="DrawPile" parent="BattleUI" node_paths=PackedStringArray("counter") instance=ExtResource("21_emcc8")]
+unique_name_in_owner = true
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 2.0
+offset_top = -18.0
+offset_right = 18.0
+offset_bottom = -2.0
+grow_vertical = 0
+counter = NodePath("Label")
+
+[node name="Label" type="Label" parent="BattleUI/DrawPile"]
+layout_mode = 0
+offset_left = 12.0
+offset_top = 10.0
+offset_right = 19.0
+offset_bottom = 18.0
+text = "12"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="DiscardPile" parent="BattleUI" node_paths=PackedStringArray("counter") instance=ExtResource("21_emcc8")]
+unique_name_in_owner = true
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -18.0
+offset_top = -18.0
+offset_right = -2.0
+offset_bottom = -2.0
+grow_horizontal = 0
+grow_vertical = 0
+texture_normal = ExtResource("22_xixgu")
+counter = NodePath("Label")
+
+[node name="Label" type="Label" parent="BattleUI/DiscardPile"]
+layout_mode = 0
+offset_left = -1.0
+offset_top = 10.0
+offset_right = 6.0
+offset_bottom = 18.0
+text = "21"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="BattleOverLayer" type="CanvasLayer" parent="."]
+
+[node name="BattleOverPanel" parent="BattleOverLayer" instance=ExtResource("21_auwcm")]
+visible = false
+
 [node name="RedFlash" type="CanvasLayer" parent="."]
 layer = 2
 script = ExtResource("19_jh8rp")
@@ -164,9 +220,15 @@ color = Color(1, 0.46, 0.46, 0)
 [node name="Timer" type="Timer" parent="RedFlash"]
 wait_time = 0.2
 
-[node name="BattleOverLayer" type="CanvasLayer" parent="."]
+[node name="CardPileView" type="CanvasLayer" parent="."]
+layer = 3
 
-[node name="BattleOverPanel" parent="BattleOverLayer" instance=ExtResource("21_auwcm")]
+[node name="DrawPileView" parent="CardPileView" instance=ExtResource("25_xtb34")]
+unique_name_in_owner = true
+visible = false
+
+[node name="DiscardPileView" parent="CardPileView" instance=ExtResource("25_xtb34")]
+unique_name_in_owner = true
 visible = false
 
 [connection signal="child_order_changed" from="MonsterHandler" to="." method="_on_monsters_child_order_changed"]

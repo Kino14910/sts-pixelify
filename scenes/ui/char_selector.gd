@@ -1,10 +1,10 @@
 extends Control
 
-#const RUN_SCENE = preload("res://scenes/run/run.tscn")
+const RUN_SCENE = preload("res://scenes/run/run.tscn")
 const IRONCLAD = preload('res://characters/Ironclad.tres')
 const SILENCE_HUNTER = preload('res://characters/SilenceHunter.tres')
 const WIZARD = preload('res://characters/Wizard.tres')
-#@export var run_startup: RunStartup
+@export var run_startup: RunStartup
 
 @onready var title: Label = %Name
 @onready var description: Label = %Description
@@ -29,9 +29,9 @@ func set_current_character(new_character: CharacterStats) -> void:
 
 func _on_start_button_pressed() -> void:
 	print("Start new Run with %s" % current_character.character_name)
-	#run_startup.type = RunStartup.Type.NEW_RUN
-	#run_startup.picked_character = current_character
-	#get_tree().change_scene_to_packed(RUN_SCENE)
+	run_startup.type = RunStartup.Type.NEW_RUN
+	run_startup.picked_character = current_character
+	get_tree().change_scene_to_packed(RUN_SCENE)
 
 
 
