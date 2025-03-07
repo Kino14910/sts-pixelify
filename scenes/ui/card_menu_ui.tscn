@@ -1,118 +1,52 @@
-[gd_scene load_steps=6 format=3 uid="uid://2maccgqd0vm6"]
+[gd_scene load_steps=4 format=3 uid="uid://2maccgqd0vm6"]
 
 [ext_resource type="Script" path="res://cards/red/stike_red.gd" id="1_d0u44"]
-[ext_resource type="Theme" uid="uid://2tytydfeg3gl" path="res://main_theme.tres" id="1_eppw0"]
-[ext_resource type="StyleBox" uid="uid://bijoefntbq3be" path="res://scenes/card_ui/base_stylebox.tres" id="4_oelr7"]
-[ext_resource type="Texture2D" uid="uid://c6rme2o6dyaoj" path="res://art/tile_0104.png" id="5_6nqog"]
+[ext_resource type="PackedScene" uid="uid://b2n0s8gh53k8p" path="res://scenes/ui/card_visuals.tscn" id="2_g5h2p"]
 
 [sub_resource type="GDScript" id="GDScript_a4gi8"]
 script/source = "class_name CardMenuUI
 extends CenterContainer
 
-#signal tooltip_requested(card: Card)
+signal select_card(card: Card)
 
 const BASE_STYLEBOX := preload(\"res://scenes/card_ui/base_stylebox.tres\")
 const HOVER_STYLEBOX := preload(\"res://scenes/card_ui/hover_stylebox.tres\")
 
-@export var card: Card : set = set_card
+@export var card: Card :
+	set(value):
+			
+		if not is_node_ready():
+			await ready
 
-@onready var panel: Panel = $Visuals/Panel
-@onready var cost: Label = $Visuals/Cost
-@onready var icon: TextureRect = $Visuals/Icon
-@onready var description: RichTextLabel = $Visuals/Description
+		card = value
+		visuals.card = card
+		
+@onready var visuals: CardVisuals = $Visuals
 
-
-#
-#func _on_visuals_gui_input(event: InputEvent) -> void:
-	#if event.is_action_pressed(\"left_mouse\"):
-		#tooltip_requested.emit(card)
+func _on_visuals_gui_input(event: InputEvent) -> void:
+	if event.is_action_pressed(\"left_mouse\"):
+		select_card.emit(card)
 
 
 func _on_visuals_mouse_entered() -> void:
-	panel.set(\"theme_override_styles/panel\", HOVER_STYLEBOX)
+	visuals.panel.set(\"theme_override_styles/panel\", HOVER_STYLEBOX)
 
 
 func _on_visuals_mouse_exited() -> void:
-	panel.set(\"theme_override_styles/panel\", BASE_STYLEBOX)
-
-
-func set_card(value: Card) -> void:
-	if not is_node_ready():
-		await ready
-
-	card = value
-	cost.text = str(card.cost)
-	icon.texture = card.icon
-	description.text = card.description
+	visuals.panel.set(\"theme_override_styles/panel\", BASE_STYLEBOX)
 "
 
 [node name="CardMenuUI" type="CenterContainer"]
-offset_right = 30.0
-offset_bottom = 40.0
+custom_minimum_size = Vector2(34, 44)
+offset_right = 34.0
+offset_bottom = 44.0
 size_flags_horizontal = 3
 script = SubResource("GDScript_a4gi8")
 card = ExtResource("1_d0u44")
 
-[node name="Visuals" type="Control" parent="."]
-custom_minimum_size = Vector2(30, 40)
+[node name="Visuals" parent="." instance=ExtResource("2_g5h2p")]
 layout_mode = 2
-theme = ExtResource("1_eppw0")
 
-[node name="Panel" type="Panel" parent="Visuals"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-mouse_filter = 1
-theme_override_styles/panel = ExtResource("4_oelr7")
-
-[node name="Cost" type="Label" parent="Visuals"]
-layout_mode = 0
-offset_left = 3.0
-offset_right = 8.0
-offset_bottom = 12.0
-scale = Vector2(0.960002, 1)
-text = "2"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="Icon" type="TextureRect" parent="Visuals"]
-layout_mode = 1
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -5.0
-offset_top = 10.0
-offset_right = 5.0
-offset_bottom = 20.0
-grow_horizontal = 2
-mouse_filter = 2
-texture = ExtResource("5_6nqog")
-expand_mode = 1
-stretch_mode = 5
-
-[node name="Description" type="RichTextLabel" parent="Visuals"]
-layout_mode = 1
-anchors_preset = 12
-anchor_top = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = 2.0
-offset_top = -20.0
-offset_right = -2.0
-offset_bottom = -1.0
-grow_horizontal = 2
-grow_vertical = 0
-mouse_filter = 2
-theme = ExtResource("1_eppw0")
-theme_override_font_sizes/mono_font_size = 4
-theme_override_font_sizes/normal_font_size = 4
-bbcode_enabled = true
-text = "description"
-scroll_active = false
-
-[connection signal="gui_input" from="Visuals" to="." method="_on_visual_gui_input"]
-[connection signal="mouse_entered" from="Visuals" to="." method="_on_visual_mouse_entered"]
-[connection signal="mouse_exited" from="Visuals" to="." method="_on_visual_mouse_exited"]
+[connection signal="gui_input" from="Visuals" to="." method="_on_visuals_gui_input"]
+[connection signal="mouse_entered" from="Visuals" to="." method="_on_visuals_mouse_entered"]
+[connection signal="mouse_exited" from="Visuals" to="." method="_on_visuals_mouse_exited"]

@@ -12,14 +12,13 @@ func perform_action() -> void:
 	var end := monster.global_position + Vector2.LEFT * 8
 	var damage_action := DamageAction.new()
 	var target_array: Array[Node] = [target]
-	damage_action.amount = damage
 	
 	tween.tween_property(monster, "global_position", end, 0.1)
-	tween.tween_callback(damage_action.execute.bind(target_array))
+	tween.tween_callback(damage_action.execute.bind(target_array, damage))
 	tween.tween_interval(0.2)
-	tween.tween_callback(damage_action.execute.bind(target_array))
+	tween.tween_callback(damage_action.execute.bind(target_array, damage))
 	tween.tween_interval(0.2)
-	tween.tween_callback(damage_action.execute.bind(target_array))
+	tween.tween_callback(damage_action.execute.bind(target_array, damage))
 	tween.tween_property(monster, "global_position", start, 0.1)
 	
 	tween.finished.connect(

@@ -47,7 +47,7 @@ func setup_ai() -> void:
 	if monster_action_picker:
 		monster_action_picker.queue_free()
 	
-	var new_action_picker := stats.ai.instantiate() as MonsterActionPicker
+	var new_action_picker = stats.ai.instantiate() as MonsterActionPicker
 	add_child(new_action_picker)
 	monster_action_picker = new_action_picker
 	monster_action_picker.monster = self

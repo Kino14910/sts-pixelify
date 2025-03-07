@@ -33,8 +33,7 @@ signal battle_won
 #signal status_description_requested(statuses: Array[Status])
 
 ## Map-related events
-#signal map_exited(room: Room)
-signal map_exited
+signal map_exited(room: Room)
 
 ## Shop-related events
 #signal shop_entered(shop: Shop)

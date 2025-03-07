@@ -3,7 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://b685x37oj0smj" path="res://art/ironclad.png" id="1_3e5qs"]
 [ext_resource type="Script" path="res://scenes/player/player.gd" id="1_t70mi"]
 [ext_resource type="PackedScene" uid="uid://cpgpjk5ayx78o" path="res://scenes/ui/stats_ui.tscn" id="2_7oyrp"]
-[ext_resource type="Resource" uid="uid://4qo5n75hbldo" path="res://characters/Ironclad.tres" id="2_ukinn"]
+[ext_resource type="Resource" uid="uid://4qo5n75hbldo" path="res://characters/Ironclad/Ironclad.tres" id="2_ukinn"]
 [ext_resource type="Texture2D" uid="uid://bgonh0uqkbitg" path="res://art/selected_indicator.png" id="5_kwpum"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xcxr0"]

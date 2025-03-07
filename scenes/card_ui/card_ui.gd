@@ -15,9 +15,7 @@ const ANIM_SPEED = 10
 		if not is_node_ready():
 			await ready
 		card = value
-		cost.text = str(card.cost)
-		icon.texture = card.icon
-		description.text = card.description
+		card_visuals.card = card
 		
 @export var char_stats: CharacterStats: 
 	set(value):
@@ -26,13 +24,10 @@ const ANIM_SPEED = 10
 		#_on_char_stats_changed()
 
 
-@onready var panel: Panel = $Panel
-@onready var cost: Label = $Cost
-@onready var icon: TextureRect = $Icon
+@onready var card_visuals: CardVisuals = $CardVisuals
 @onready var drop_point_detector: Area2D = $DropPointDetector
 @onready var card_state_machine: CardStateMachine = $CardStateMachine
 @onready var targets: Array[Node] = []
-@onready var description: RichTextLabel = $Description
 
 var parent: Control
 var tween: Tween
@@ -44,11 +39,11 @@ var playable := true:
 	set(value):
 		playable = value
 		if not playable:
-			cost.add_theme_color_override("font_color", Color.RED)
-			icon.modulate = Color(1, 1, 1, 0.5)
+			card_visuals.cost.add_theme_color_override("font_color", Color.RED)
+			card_visuals.icon.modulate = Color(1, 1, 1, 0.5)
 		else:
-			cost.remove_theme_color_override("font_color")
-			icon.modulate = Color(1, 1, 1, 1)
+			card_visuals.cost.remove_theme_color_override("font_color")
+			card_visuals.icon.modulate = Color(1, 1, 1, 1)
 var disabled := false
 
 func _ready() -> void:
@@ -102,14 +97,14 @@ func _on_drop_point_detector_area_entered(area: Area2D) -> void:
 		Events.card_aim_self_started.emit()
 	
 	
-	panel.set("theme_override_styles/panel", USE_STYLE)
+	card_visuals.panel.set("theme_override_styles/panel", USE_STYLE)
 
 	
 func _on_drop_point_detector_area_exited(area: Area2D) -> void:
 	targets.erase(area)
 	
 	Events.card_aim_self_ended.emit()
-	panel.set("theme_override_styles/panel", DRAG_STYLE)
+	card_visuals.panel.set("theme_override_styles/panel", DRAG_STYLE)
 
 
 func _on_card_drag_or_aiming_started(used_card: CardUI) -> void:

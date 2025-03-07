@@ -8,7 +8,7 @@ extends Stats
 
 @export_group("Gameplay Data")
 @export var starting_deck: CardPile
-@export var draftable_cards: CardPile
+@export var cardpool: CardPile
 @export var cards_per_turn: int
 @export var max_energy: int
 @export var char_max_hp: int

@@ -1,4 +1,4 @@
-[gd_scene load_steps=33 format=3 uid="uid://78hn2ffybk65"]
+[gd_scene load_steps=34 format=3 uid="uid://78hn2ffybk65"]
 
 [ext_resource type="Script" path="res://scenes/battle/battle.gd" id="1_t264f"]
 [ext_resource type="Texture2D" uid="uid://d3qjqhhdhvoth" path="res://art/bottom_scene/scene.jpg" id="1_whyga"]
@@ -18,12 +18,13 @@
 [ext_resource type="Resource" uid="uid://ccyjlmjbxsd1j" path="res://monsters/louse_defensive/louse_defensive.tres" id="10_1qio4"]
 [ext_resource type="Resource" uid="uid://c56ju606ec2mc" path="res://monsters/louse_normal/louse_normal.tres" id="13_cjwsn"]
 [ext_resource type="PackedScene" uid="uid://bf0p0w25ki8ff" path="res://scenes/card_ui/energy_ui.tscn" id="14_ds04n"]
-[ext_resource type="Resource" uid="uid://4qo5n75hbldo" path="res://characters/Ironclad.tres" id="15_it20t"]
+[ext_resource type="Resource" uid="uid://4qo5n75hbldo" path="res://characters/Ironclad/Ironclad.tres" id="15_it20t"]
 [ext_resource type="Theme" uid="uid://2tytydfeg3gl" path="res://main_theme.tres" id="15_w7ux2"]
 [ext_resource type="Script" path="res://scenes/ui/red_flash.gd" id="19_jh8rp"]
 [ext_resource type="PackedScene" uid="uid://bfp68paujyrvi" path="res://scenes/ui/battle_over_panel.tscn" id="21_auwcm"]
 [ext_resource type="PackedScene" uid="uid://ct8ogayx0nuii" path="res://scenes/ui/card_pile_opener.tscn" id="21_emcc8"]
-[ext_resource type="Texture2D" uid="uid://c7c8cgkuro8b3" path="res://art/discard.png" id="22_xixgu"]
+[ext_resource type="FontFile" uid="uid://dskmdk146n4rq" path="res://art/pixel_rpg.ttf" id="22_sy6vr"]
+[ext_resource type="Texture2D" uid="uid://2gpsnrxk7whj" path="res://art/discard_pile.png" id="23_tr7vp"]
 [ext_resource type="PackedScene" uid="uid://dn7kxpuwcukg3" path="res://scenes/ui/card_pile_view.tscn" id="25_xtb34"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_x0wpt"]
@@ -169,6 +170,7 @@ offset_left = 12.0
 offset_top = 10.0
 offset_right = 19.0
 offset_bottom = 18.0
+theme_override_fonts/font = ExtResource("22_sy6vr")
 text = "12"
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -186,7 +188,7 @@ offset_right = -2.0
 offset_bottom = -2.0
 grow_horizontal = 0
 grow_vertical = 0
-texture_normal = ExtResource("22_xixgu")
+texture_normal = ExtResource("23_tr7vp")
 counter = NodePath("Label")
 
 [node name="Label" type="Label" parent="BattleUI/DiscardPile"]
@@ -195,6 +197,7 @@ offset_left = -1.0
 offset_top = 10.0
 offset_right = 6.0
 offset_bottom = 18.0
+theme_override_fonts/font = ExtResource("22_sy6vr")
 text = "21"
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -221,7 +224,7 @@ color = Color(1, 0.46, 0.46, 0)
 wait_time = 0.2
 
 [node name="CardPileView" type="CanvasLayer" parent="."]
-layer = 3
+layer = 4
 
 [node name="DrawPileView" parent="CardPileView" instance=ExtResource("25_xtb34")]
 unique_name_in_owner = true

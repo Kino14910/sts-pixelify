@@ -43,17 +43,27 @@ enum CardTarget {
 	ALL
 }
 
+const RARITY_COLORS := {
+	CardRarity.BASIC: Color.GRAY,
+	CardRarity.SPECIAL: Color.GRAY,
+	CardRarity.COMMON: Color.GRAY,
+	CardRarity.UNCOMMON: Color.CORNFLOWER_BLUE,
+	CardRarity.RARE: Color.GOLD,
+	CardRarity.CURSE: Color.DIM_GRAY,
+}
+
 @export_group("Card Attributes")
 @export var id: String
 @export var type: CardType
 @export var target: CardTarget
 @export var cost: int
-# @export var damage: int
-# @export var block: int
-# @export var magic: int
-# @export var rarity: CardRarity
-# @export var tags: Array
-# @export var color: CardColor
+@export var card_name: String
+@export var damage: int
+@export var block: int
+@export var magic: int
+@export var rarity: CardRarity
+#@export var tags: Array
+#@export var color: CardColor
 
 @export_group("Card Visuals")
 @export var icon: Texture
@@ -87,12 +97,12 @@ func play(targets: Array[Node], char_stats: CharacterStats) -> void:
 	char_stats.energy -= cost
 	
 	if is_single_target():
-		apply_action(targets)
+		apply_actions(targets)
 	else:
-		apply_action(_get_targets(targets))
+		apply_actions(_get_targets(targets))
 
 
-func apply_action(targets: Array[Node]) -> void:
+func apply_actions(targets: Array[Node]) -> void:
 	pass
 
 func get_default_description() -> String:

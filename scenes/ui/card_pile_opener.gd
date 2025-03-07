@@ -10,7 +10,6 @@ func set_card_pile(new_value: CardPile) -> void:
 	
 	if not card_pile.card_pile_size_changed.is_connected(_on_card_pile_size_changed):
 		card_pile.card_pile_size_changed.connect(_on_card_pile_size_changed)
-		print(card_pile.cards.size())
 		_on_card_pile_size_changed(card_pile.cards.size())
 
 

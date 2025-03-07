@@ -7,7 +7,7 @@ func enter() -> void:
 	# if ui_layer:
 	# 	reparent(ui_layer)
 	
-	card_ui.panel.set("theme_override_styles/panel", card_ui.DRAG_STYLE)
+	card_ui.card_visuals.panel.set("theme_override_styles/panel", card_ui.DRAG_STYLE)
 	Events.card_drag_started.emit(card_ui)
 	# 通过创建一个计时器来检测拖拽的最小时间，防止同时触发点击和释放
 	min_drag_time_elapsed = false

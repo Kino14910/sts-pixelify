@@ -3,7 +3,7 @@ extends RefCounted
 
 #@export var sound: AudioStream
 
-func execute(targets: Array[Node]) -> void:
+func execute(targets: Array[Node], amount: int) -> void:
 	pass
 
 const DEFAULT_DURATION = 0.5

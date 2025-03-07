@@ -9,5 +9,10 @@ id = "Strike_R"
 type = 0
 target = 0
 cost = 1
+card_name = "打击"
+damage = 6
+block = 0
+magic = 0
+rarity = 2
 icon = ExtResource("1_afu68")
-description = "Deal [color=red]6[/color] damage."
+description = "造成[color=red]6[/color]点伤害。"

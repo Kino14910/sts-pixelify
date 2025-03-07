@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="RunInitData" load_steps=3 format=3 uid="uid://c4oldpr3q3uq4"]
 
-[ext_resource type="Resource" uid="uid://4qo5n75hbldo" path="res://characters/Ironclad.tres" id="1_o6v0l"]
+[ext_resource type="Resource" uid="uid://4qo5n75hbldo" path="res://characters/Ironclad/Ironclad.tres" id="1_o6v0l"]
 [ext_resource type="Script" path="res://custom_resources/run_init_data.gd" id="1_wgxu0"]
 
 [resource]
