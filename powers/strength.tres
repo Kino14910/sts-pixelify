@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="StrengthPower" load_steps=3 format=3 uid="uid://dfmuquglr01qk"]
+
+[ext_resource type="Texture2D" uid="uid://sdlx7km5ddaa" path="res://art/strength.png" id="1_648xr"]
+[ext_resource type="Script" path="res://powers/strength.gd" id="1_jmpem"]
+
+[resource]
+script = ExtResource("1_jmpem")
+id = "strength"
+type = 2
+stack_type = 1
+can_expire = false
+duration = 0
+stacks = 1
+icon = ExtResource("1_648xr")
+tooltip = "Decreases attack damage by %s"

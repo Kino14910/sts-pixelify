@@ -1,14 +1,14 @@
 [gd_scene load_steps=6 format=3 uid="uid://ehdtvybuhmga"]
 
 [ext_resource type="Script" path="res://scenes/monster/monster_action_picker.gd" id="1_xa4bx"]
-[ext_resource type="Script" path="res://monsters/louse_defensive/louse_defensive_attack_action.gd" id="2_o5qa1"]
-[ext_resource type="Texture2D" uid="uid://bfvi02kojsa00" path="res://art/tile_0103.png" id="3_4h4de"]
+[ext_resource type="Script" path="res://monsters/louse_defensive/louse_defensive_attack.gd" id="2_o5qa1"]
+[ext_resource type="Texture2D" uid="uid://d2u747hso4crg" path="res://art/attack.png" id="3_u6h7t"]
 [ext_resource type="Script" path="res://custom_resources/intent.gd" id="4_ndja1"]
 
 [sub_resource type="Resource" id="Resource_bkrjr"]
 script = ExtResource("4_ndja1")
 base_text = "2x3"
-icon = ExtResource("3_4h4de")
+icon = ExtResource("3_u6h7t")
 
 [node name="LouseDefensiveAI" type="Node"]
 script = ExtResource("1_xa4bx")

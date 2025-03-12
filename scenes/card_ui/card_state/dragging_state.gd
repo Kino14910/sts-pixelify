@@ -3,7 +3,7 @@ extends CardState
 var min_drag_time_elapsed: bool
 
 func enter() -> void:
-	# var ui_layer := get_tree().get_first_node_in_group('ui_layer')
+	# var ui_layer = get_tree().get_first_node_in_group('ui_layer')
 	# if ui_layer:
 	# 	reparent(ui_layer)
 	

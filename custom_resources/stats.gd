@@ -3,12 +3,24 @@ extends Resource
 
 signal stats_changed
 
-var max_health :int = 1 : set = set_max_health
+
 @export var art: Texture
 
 func _ready() -> void:
 	print('ready')
 
+var max_health :int = 1: 
+	set(value):
+		var diff = value - max_health
+		max_health = value
+		
+		if diff > 0:
+			health += diff
+		elif health > max_health:
+			health = max_health
+		
+		stats_changed.emit()
+		
 var health: int: 
 	set(value):
 		health = clampi(value, 0, max_health)
@@ -18,18 +30,6 @@ var block: int:
 	set(value):
 		block = clampi(value, 0, 999)
 		stats_changed.emit()
-
-func set_max_health(value : int) -> void:
-	var diff := value - max_health
-	max_health = value
-	
-	if diff > 0:
-		health += diff
-	elif health > max_health:
-		health = max_health
-	
-	stats_changed.emit()
-
 
 func take_damage(damage : int) -> void:
 	if damage <= 0:

@@ -17,7 +17,7 @@ grow_vertical = 0
 texture = ExtResource("2_t7mot")
 expand_mode = 1
 script = ExtResource("3_blxfb")
-char_stats = ExtResource("4_6aake")
+character_stats = ExtResource("4_6aake")
 
 [node name="EnergyLabel" type="Label" parent="."]
 layout_mode = 1

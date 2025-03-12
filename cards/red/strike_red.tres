@@ -1,6 +1,6 @@
 [gd_resource type="Resource" load_steps=3 format=3 uid="uid://5nh4yv103t33"]
 
-[ext_resource type="Texture2D" uid="uid://ck1t4hdip6xrl" path="res://art/tile_0119.png" id="1_afu68"]
+[ext_resource type="Texture2D" uid="uid://bq4im540nk025" path="res://art/tile_0106.png" id="1_04hg3"]
 [ext_resource type="Script" path="res://cards/red/stike_red.gd" id="2_w7axl"]
 
 [resource]
@@ -12,7 +12,7 @@ cost = 1
 card_name = "打击"
 damage = 6
 block = 0
-magic = 0
-rarity = 2
-icon = ExtResource("1_afu68")
+magicNumber = 0
+rarity = 0
+icon = ExtResource("1_04hg3")
 description = "造成[color=red]6[/color]点伤害。"

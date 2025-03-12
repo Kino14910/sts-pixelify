@@ -14,8 +14,8 @@ cost = 2
 card_name = "痛击"
 damage = 8
 block = 0
-magic = 0
-rarity = 4
+magicNumber = 2
+rarity = 0
 icon = ExtResource("1_tu4an")
 description = "造成[color=red]8[/color]点伤害。
 给予[color=red]2[/color]层[color=gold]易伤[/color]。"

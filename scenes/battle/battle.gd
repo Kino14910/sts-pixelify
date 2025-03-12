@@ -1,7 +1,8 @@
 class_name Battle
 extends Node2D
 
-@export var char_stats: CharacterStats
+@export var battle_stats: BattleStats
+@export var character_stats: CharacterStats
 @export var music: AudioStream
 
 @onready var battle_ui: BattleUI = $BattleUI
@@ -11,23 +12,26 @@ extends Node2D
 
 
 func _ready() -> void:
-	var new_stats: CharacterStats = char_stats.instantiate()
-	battle_ui.char_stats = new_stats
-	player.stats = new_stats
+	
 	Events.monster_turn_ended.connect(_on_monster_turn_ended)
 	
 	Events.player_turn_ended.connect(player_handler.end_turn)
 	Events.player_hand_discarded.connect(monster_handler.start_turn)
 	Events.player_died.connect(_on_player_died)
-	start_battle(new_stats)	
-	battle_ui.initialize_card_pile_ui()
 
 
-func start_battle(stats: CharacterStats) -> void:
+func start_battle() -> void:
 	get_tree().paused = false
 	MusicPlayer.play(music, true)
+	
+	battle_ui.character_stats = character_stats
+	player.stats = character_stats
+	#player_handler.relics = relics
+	monster_handler.setup_monsters(battle_stats)
 	monster_handler.reset_monster_actions()
-	player_handler.start_battle(stats)
+	
+	player_handler.start_battle(character_stats)
+	battle_ui.initialize_card_pile_ui()
 
 func _on_monster_turn_ended() -> void:
 	player_handler.start_turn()

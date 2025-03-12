@@ -2,7 +2,7 @@
 ## meta-description: Create a Relic which can be acquired by the player.
 #extends Relic
 #
-#var member_var := 0
+#var member_var = 0
 #
 #
 #func initialize_relic(_owner: RelicUI) -> void:

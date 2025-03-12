@@ -17,11 +17,11 @@ const ANIM_SPEED = 10
 		card = value
 		card_visuals.card = card
 		
-@export var char_stats: CharacterStats: 
+@export var character_stats: CharacterStats: 
 	set(value):
-		char_stats = value
-		char_stats.stats_changed.connect(_on_char_stats_changed)
-		#_on_char_stats_changed()
+		character_stats = value
+		character_stats.stats_changed.connect(_on_character_stats_changed)
+		#_on_character_stats_changed()
 
 
 @onready var card_visuals: CardVisuals = $CardVisuals
@@ -35,7 +35,7 @@ var tween: Tween
 var target_rotation = rotation
 var target_position = position
 
-var playable := true: 
+var playable = true: 
 	set(value):
 		playable = value
 		if not playable:
@@ -44,7 +44,7 @@ var playable := true:
 		else:
 			card_visuals.cost.remove_theme_color_override("font_color")
 			card_visuals.icon.modulate = Color(1, 1, 1, 1)
-var disabled := false
+var disabled = false
 
 func _ready() -> void:
 	Events.card_drag_started.connect(_on_card_drag_or_aiming_started)
@@ -73,7 +73,7 @@ func play() -> void:
 	if not card:
 		return
 	
-	card.play(targets, char_stats)
+	card.play(targets, character_stats)
 	queue_free()
 	
 
@@ -116,8 +116,8 @@ func _on_card_drag_or_aiming_started(used_card: CardUI) -> void:
 
 func _on_card_drag_or_aim_ended(_card: CardUI) -> void:
 	disabled = false
-	playable = char_stats.can_play_card(card)
+	playable = character_stats.can_play_card(card)
 
 
-func _on_char_stats_changed() -> void:
-	playable = char_stats.can_play_card(card)
+func _on_character_stats_changed() -> void:
+	playable = character_stats.can_play_card(card)

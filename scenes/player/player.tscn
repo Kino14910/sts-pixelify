@@ -1,10 +1,11 @@
-[gd_scene load_steps=7 format=3 uid="uid://dcjodj7wgvjld"]
+[gd_scene load_steps=8 format=3 uid="uid://dcjodj7wgvjld"]
 
 [ext_resource type="Texture2D" uid="uid://b685x37oj0smj" path="res://art/ironclad.png" id="1_3e5qs"]
 [ext_resource type="Script" path="res://scenes/player/player.gd" id="1_t70mi"]
 [ext_resource type="PackedScene" uid="uid://cpgpjk5ayx78o" path="res://scenes/ui/stats_ui.tscn" id="2_7oyrp"]
 [ext_resource type="Resource" uid="uid://4qo5n75hbldo" path="res://characters/Ironclad/Ironclad.tres" id="2_ukinn"]
 [ext_resource type="Texture2D" uid="uid://bgonh0uqkbitg" path="res://art/selected_indicator.png" id="5_kwpum"]
+[ext_resource type="PackedScene" uid="uid://bwet1kdg2v1di" path="res://scenes/power_handler/power_handler.tscn" id="6_e2m7p"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xcxr0"]
 size = Vector2(46, 34)
@@ -44,3 +45,10 @@ patch_margin_left = 2
 patch_margin_top = 2
 patch_margin_right = 2
 patch_margin_bottom = 2
+
+[node name="PowerHandler" parent="." node_paths=PackedStringArray("power_owner") instance=ExtResource("6_e2m7p")]
+offset_left = -27.0
+offset_top = 27.0
+offset_right = -15.0
+offset_bottom = 39.0
+power_owner = NodePath("..")

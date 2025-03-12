@@ -3,9 +3,9 @@
 class_name MyAwesomeAction
 extends Action
 
-var member_var := 0
+var member_var = 0
 
 
-func execute(targets: Array[Node]) -> void:
+func execute(targets: Array[Node], amount: int) -> void:
 	print("My action targets them: %s" % targets)
 	print("It does %s something" % member_var)

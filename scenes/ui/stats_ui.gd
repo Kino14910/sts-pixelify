@@ -17,4 +17,5 @@ func update(stats: Stats) -> void:
 	
 	health_label.text = str(stats.health) + "/" + str(stats.max_health)
 	block.visible = stats.block > 0
+	block.position.x = health.position.x - block.size.x / 2
 	block_label.text = str(stats.block)

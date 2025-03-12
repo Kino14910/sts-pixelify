@@ -1,0 +1,22 @@
+[gd_scene load_steps=7 format=3 uid="uid://ci2h7jed6kvql"]
+
+[ext_resource type="Script" path="res://scenes/monster/monster_action_picker.gd" id="1_joe8k"]
+[ext_resource type="Script" path="res://monsters/gremlin_fat/gremlin_fat_attack_action.gd" id="1_vj0u5"]
+[ext_resource type="Texture2D" uid="uid://d2u747hso4crg" path="res://art/attack.png" id="2_2lx2l"]
+[ext_resource type="Script" path="res://custom_resources/intent.gd" id="3_2htt5"]
+[ext_resource type="AudioStream" uid="uid://de2ryat1pxq6" path="res://art/enemy_attack.ogg" id="4_ln30r"]
+
+[sub_resource type="Resource" id="Resource_cfgbi"]
+script = ExtResource("3_2htt5")
+base_text = "4"
+icon = ExtResource("2_2lx2l")
+
+[node name="GremlinFatAI" type="Node"]
+script = ExtResource("1_joe8k")
+
+[node name="Attack" type="Node" parent="."]
+script = ExtResource("1_vj0u5")
+intent = SubResource("Resource_cfgbi")
+sound = ExtResource("4_ln30r")
+type = 1
+chance_weight = 1.0

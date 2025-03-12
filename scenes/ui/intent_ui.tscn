@@ -1,8 +1,8 @@
 [gd_scene load_steps=4 format=3 uid="uid://beepbuhvpju07"]
 
 [ext_resource type="Script" path="res://scenes/ui/intent_ui.gd" id="1_c1ufv"]
-[ext_resource type="Texture2D" uid="uid://bq4im540nk025" path="res://art/tile_0106.png" id="1_ysqry"]
 [ext_resource type="FontFile" uid="uid://dskmdk146n4rq" path="res://art/pixel_rpg.ttf" id="2_nrmjk"]
+[ext_resource type="Texture2D" uid="uid://d2u747hso4crg" path="res://art/attack.png" id="2_pypkr"]
 
 [node name="IntentUI" type="HBoxContainer"]
 anchors_preset = 5
@@ -10,23 +10,25 @@ anchor_left = 0.5
 anchor_right = 0.5
 offset_left = -20.0
 offset_right = 20.0
-offset_bottom = 13.0
+offset_bottom = 12.0
 grow_horizontal = 2
+pivot_offset = Vector2(20, 0)
 theme_override_constants/separation = 0
 alignment = 1
 script = ExtResource("1_c1ufv")
 
 [node name="Icon" type="TextureRect" parent="."]
 layout_mode = 2
-texture = ExtResource("1_ysqry")
+texture = ExtResource("2_pypkr")
 expand_mode = 2
 stretch_mode = 5
 
 [node name="Label" type="Label" parent="."]
 layout_mode = 2
+size_flags_horizontal = 4
 size_flags_vertical = 1
 theme_override_fonts/font = ExtResource("2_nrmjk")
-theme_override_font_sizes/font_size = 8
+theme_override_font_sizes/font_size = 6
 text = "7
 "
 horizontal_alignment = 1

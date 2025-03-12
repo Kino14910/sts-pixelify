@@ -2,12 +2,12 @@ class_name Run
 extends Node
 
 
-const BATTLE_SCENE := preload("res://scenes/battle/battle.tscn")
-const BATTLE_REWARD_SCENE := preload("res://scenes/battle_reward/battle_reward.tscn")
-const CAMPFIRE_SCENE := preload("res://scenes/campfire/campfire.tscn")
-const SHOP_SCENE := preload("res://scenes/shop/shop.tscn")
+const BATTLE_SCENE = preload("res://scenes/battle/battle.tscn")
+const BATTLE_REWARD_SCENE = preload("res://scenes/battle_reward/battle_reward.tscn")
+const CAMPFIRE_SCENE = preload("res://scenes/campfire/campfire.tscn")
+const SHOP_SCENE = preload("res://scenes/shop/shop.tscn")
 const TREASURE_SCENE = preload("res://scenes/treasure/treasure.tscn")
-const MAIN_MENU_PATH := "res://scenes/ui/main_menu.tscn"
+const MAIN_MENU_PATH = "res://scenes/ui/main_menu.tscn"
 
 @export var run_startup: RunStartup
 
@@ -15,6 +15,7 @@ const MAIN_MENU_PATH := "res://scenes/ui/main_menu.tscn"
 @onready var map: Map = $Map
 @onready var current_view: Node = $CurrentView
 @onready var gold_ui: GoldUI = %GoldUI
+@onready var health_ui: HealthUI = %HealthUI
 @onready var deck_button: CardPileOpener = %DeckButton
 @onready var deck_view: CardPileView = %DeckView
 
@@ -66,7 +67,7 @@ func _change_view(scene: PackedScene) -> Node:
 		current_view.get_child(0).queue_free()
 	
 	get_tree().paused = false
-	var new_view := scene.instantiate()
+	var new_view = scene.instantiate()
 	current_view.add_child(new_view)
 	map.hide_map()
 	
@@ -105,15 +106,15 @@ func _setup_event_connections() -> void:
 func _on_map_exited(room: Room) -> void:
 	match room.type:
 		Room.Type.MONSTER:
-			_change_view(BATTLE_SCENE)
+			_on_battle_room_entered(room)
 		Room.Type.TREASURE:
 			_change_view(TREASURE_SCENE)
 		Room.Type.CAMPFIRE:
-			_change_view(CAMPFIRE_SCENE)
+			_on_campfire_entered()
 		Room.Type.SHOP:
 			_change_view(SHOP_SCENE)
 		Room.Type.BOSS:
-			_change_view(BATTLE_SCENE)
+			_on_battle_room_entered(room)
 		#Room.Type.EVENT:
 			#_on_event_room_entered(room)
 
@@ -123,7 +124,7 @@ func _on_map_exited(room: Room) -> void:
 	#save_data.rng_seed = RNG.instance.seed
 	#save_data.rng_state = RNG.instance.state
 	#save_data.run_stats = stats
-	#save_data.char_stats = character
+	#save_data.character_stats = character
 	#save_data.current_deck = character.deck
 	#save_data.current_health = character.health
 	#save_data.relics = relic_handler.get_all_relics()
@@ -140,7 +141,7 @@ func _on_map_exited(room: Room) -> void:
 	#
 	#RNG.set_from_save_data(save_data.rng_seed, save_data.rng_state)
 	#stats = save_data.run_stats
-	#character = save_data.char_stats
+	#character = save_data.character_stats
 	#character.deck = save_data.current_deck
 	#character.health = save_data.current_health
 	#relic_handler.add_relics(save_data.relics)
@@ -172,8 +173,8 @@ func _on_map_exited(room: Room) -> void:
 
 
 func _setup_top_bar():
-	#character.stats_changed.connect(health_ui.update_stats.bind(character))
-	#health_ui.update_stats(character)
+	character.stats_changed.connect(health_ui._update_health.bind(character))
+	health_ui._update_health(character)
 	gold_ui.run_stats = stats
 	#
 	#relic_handler.add_relic(character.starting_relic)
@@ -185,46 +186,47 @@ func _setup_top_bar():
 
 
 #func _show_regular_battle_rewards() -> void:
-	#var reward_scene := _change_view(BATTLE_REWARD_SCENE) as BattleReward
+	#var reward_scene = _change_view(BATTLE_REWARD_SCENE) as BattleReward
 	#reward_scene.run_stats = stats
 	#reward_scene.character_stats = character
 #
 	#reward_scene.add_gold_reward(map.last_room.battle_stats.roll_gold_reward())
 	#reward_scene.add_card_reward()
 #
-#
-#func _on_battle_room_entered(room: Room) -> void:
-	#var battle_scene: Battle = _change_view(BATTLE_SCENE) as Battle
-	#battle_scene.char_stats = character
-	#battle_scene.battle_stats = room.battle_stats
+
+func _on_battle_room_entered(room: Room) -> void:
+	var battle_scene: Battle = _change_view(BATTLE_SCENE) as Battle
+	battle_scene.character_stats = character
+	#battle_scene.battle_stats = preload('res://dungeons/exordium/weak/jaw_worm.tres')
+	battle_scene.battle_stats = room.battle_stats
 	#battle_scene.relics = relic_handler
-	#battle_scene.start_battle()
-#
+	battle_scene.start_battle()
+
 #
 #func _on_treasure_room_entered() -> void:
-	#var treasure_scene := _change_view(TREASURE_SCENE) as Treasure
+	#var treasure_scene = _change_view(TREASURE_SCENE) as Treasure
 	#treasure_scene.relic_handler = relic_handler
-	#treasure_scene.char_stats = character
+	#treasure_scene.character_stats = character
 	#treasure_scene.generate_relic()
 #
 #
 #func _on_treasure_room_exited(relic: Relic) -> void:
-	#var reward_scene := _change_view(BATTLE_REWARD_SCENE) as BattleReward
+	#var reward_scene = _change_view(BATTLE_REWARD_SCENE) as BattleReward
 	#reward_scene.run_stats = stats
 	#reward_scene.character_stats = character
 	#reward_scene.relic_handler = relic_handler
 	#
 	#reward_scene.add_relic_reward(relic)
 #
-#
-#func _on_campfire_entered() -> void:
-	#var campfire := _change_view(CAMPFIRE_SCENE) as Campfire
-	#campfire.char_stats = character
-#
+
+func _on_campfire_entered() -> void:
+	var campfire = _change_view(CAMPFIRE_SCENE) as Campfire
+	campfire.character_stats = character
+
 #
 #func _on_shop_entered() -> void:
-	#var shop := _change_view(SHOP_SCENE) as Shop
-	#shop.char_stats = character
+	#var shop = _change_view(SHOP_SCENE) as Shop
+	#shop.character_stats = character
 	#shop.run_stats = stats
 	#shop.relic_handler = relic_handler
 	#Events.shop_entered.emit(shop)
@@ -232,7 +234,7 @@ func _setup_top_bar():
 #
 #
 #func _on_event_room_entered(room: Room) -> void:
-	#var event_room := _change_view(room.event_scene) as EventRoom
+	#var event_room = _change_view(room.event_scene) as EventRoom
 	#event_room.character_stats = character
 	#event_room.run_stats = stats
 	#event_room.setup()
@@ -240,7 +242,7 @@ func _setup_top_bar():
 #
 #func _on_battle_won() -> void:
 	#if map.floors_climbed == MapGenerator.FLOORS:
-		#var win_screen := _change_view(WIN_SCREEN_SCENE) as WinScreen
+		#var win_screen = _change_view(WIN_SCREEN_SCENE) as WinScreen
 		#win_screen.character = character
 		#SaveGame.delete_data()
 	#else:
@@ -250,7 +252,7 @@ func _on_battle_won() -> void:
 	var reward_scene = _change_view(BATTLE_REWARD_SCENE) as BattleReward
 	reward_scene.run_stats = stats
 	reward_scene.character_stats = character
-	reward_scene.add_gold_reward(77)
+	reward_scene.add_gold_reward(map.last_room.battle_stats.roll_gold_reward())
 	reward_scene.add_card_reward()
 
 #

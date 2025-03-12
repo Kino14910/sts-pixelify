@@ -17,7 +17,7 @@ extends Node
 			action.target = target
 
 
-@onready var total_weight := 0.0
+@onready var total_weight = 0.0
 
 
 func _ready() -> void:
@@ -26,7 +26,7 @@ func _ready() -> void:
 
 
 func get_action() -> MonsterAction:
-	var action := get_first_conditional_action()
+	var action = get_first_conditional_action()
 	if action:
 		return action
 		
@@ -45,7 +45,7 @@ func get_first_conditional_action() -> MonsterAction:
 
 
 func get_chance_based_action() -> MonsterAction:
-	var roll := randf_range(0.0, total_weight)
+	var roll = randf_range(0.0, total_weight)
 	
 	for action: MonsterAction in get_children():
 		if not action or action.type != MonsterAction.Type.CHANCE_BASED:

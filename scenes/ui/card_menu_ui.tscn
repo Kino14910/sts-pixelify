@@ -9,8 +9,8 @@ extends CenterContainer
 
 signal select_card(card: Card)
 
-const BASE_STYLEBOX := preload(\"res://scenes/card_ui/base_stylebox.tres\")
-const HOVER_STYLEBOX := preload(\"res://scenes/card_ui/hover_stylebox.tres\")
+const BASE_STYLEBOX = preload(\"res://scenes/card_ui/base_stylebox.tres\")
+const HOVER_STYLEBOX = preload(\"res://scenes/card_ui/hover_stylebox.tres\")
 
 @export var card: Card :
 	set(value):

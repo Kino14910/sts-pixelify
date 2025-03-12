@@ -89,14 +89,14 @@ rotation_curve = ExtResource("4_pqhqs")
 height_curve = ExtResource("5_d1vqs")
 
 [node name="CardUI" parent="BattleUI/Hand" instance=ExtResource("10_vx6xx")]
-char_stats = ExtResource("15_it20t")
+character_stats = ExtResource("15_it20t")
 
 [node name="CardUI2" parent="BattleUI/Hand" instance=ExtResource("10_vx6xx")]
 card = ExtResource("11_bs5hy")
-char_stats = ExtResource("15_it20t")
+character_stats = ExtResource("15_it20t")
 
 [node name="CardUI3" parent="BattleUI/Hand" instance=ExtResource("10_vx6xx")]
-char_stats = ExtResource("15_it20t")
+character_stats = ExtResource("15_it20t")
 
 [node name="LouseNormal" parent="." instance=ExtResource("4_xxlhy")]
 position = Vector2(206, 102)

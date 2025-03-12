@@ -43,7 +43,7 @@ enum CardTarget {
 	ALL
 }
 
-const RARITY_COLORS := {
+const RARITY_COLORS = {
 	CardRarity.BASIC: Color.GRAY,
 	CardRarity.SPECIAL: Color.GRAY,
 	CardRarity.COMMON: Color.GRAY,
@@ -60,7 +60,7 @@ const RARITY_COLORS := {
 @export var card_name: String
 @export var damage: int
 @export var block: int
-@export var magic: int
+@export var magicNumber: int
 @export var rarity: CardRarity
 #@export var tags: Array
 #@export var color: CardColor
@@ -78,23 +78,23 @@ func _get_targets(targets: Array[Node]) -> Array[Node]:
 	if not targets:
 		return []
 		
-	var tree := targets[0].get_tree()
+	var tree = targets[0].get_tree()
 	
 	match target:
 		CardTarget.SELF:
 			return tree.get_nodes_in_group("player")
 		CardTarget.ALL_ENEMIES:
-			return tree.get_nodes_in_group("monsters")
+			return tree.get_nodes_in_group("monster")
 		CardTarget.ALL:
-			return tree.get_nodes_in_group("player") + tree.get_nodes_in_group("monsters")
+			return tree.get_nodes_in_group("player") + tree.get_nodes_in_group("monster")
 		_:
 			return []
 
 
-func play(targets: Array[Node], char_stats: CharacterStats) -> void:
+func play(targets: Array[Node], character_stats: CharacterStats) -> void:
 	Events.card_played.emit(self)
 	
-	char_stats.energy -= cost
+	character_stats.energy -= cost
 	
 	if is_single_target():
 		apply_actions(targets)

@@ -47,7 +47,7 @@ func duplicate_cards() -> Array[Card]:
 # reported here: 
 # https://github.com/godotengine/godot/issues/74918
 func custom_duplicate() -> CardPile:
-	var new_card_pile := CardPile.new()
+	var new_card_pile = CardPile.new()
 	new_card_pile.cards = duplicate_cards()
 	
 	return new_card_pile

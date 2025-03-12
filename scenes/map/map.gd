@@ -1,7 +1,7 @@
 class_name Map
 extends Node2D
 
-const SCROLL_SPEED := 15
+const SCROLL_SPEED = 15
 const MAP_ROOM = preload("res://scenes/map/map_room.tscn")
 const MAP_LINE = preload("res://scenes/map/map_line.tscn")
 
@@ -57,10 +57,10 @@ func create_map() -> void:
 				_spawn_room(room)
 	
 	# Boss room has no next room but we need to spawn it
-	var middle := floori(MapGenerator.MAP_WIDTH * 0.5)
+	var middle = floori(MapGenerator.MAP_WIDTH * 0.5)
 	_spawn_room(map_data[MapGenerator.FLOORS-1][middle])
 
-	var map_width_pixels := MapGenerator.X_DIST * (MapGenerator.MAP_WIDTH - 1)
+	var map_width_pixels = MapGenerator.X_DIST * (MapGenerator.MAP_WIDTH - 1)
 	visuals.position.x = (get_viewport_rect().size.x - map_width_pixels) / 2
 	visuals.position.y = get_viewport_rect().size.y / 2
 
@@ -88,7 +88,7 @@ func hide_map() -> void:
 
 
 func _spawn_room(room: Room) -> void:
-	var new_map_room := MAP_ROOM.instantiate() as MapRoom
+	var new_map_room = MAP_ROOM.instantiate() as MapRoom
 	rooms.add_child(new_map_room)
 	new_map_room.room = room
 	new_map_room.clicked.connect(_on_map_room_clicked)
@@ -104,7 +104,7 @@ func _connect_lines(room: Room) -> void:
 		return
 		
 	for next: Room in room.next_rooms:
-		var new_map_line := MAP_LINE.instantiate() as Line2D
+		var new_map_line = MAP_LINE.instantiate() as Line2D
 		new_map_line.add_point(room.position)
 		new_map_line.add_point(next.position)
 		lines.add_child(new_map_line)

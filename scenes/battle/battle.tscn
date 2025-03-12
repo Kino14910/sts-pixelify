@@ -56,7 +56,7 @@ events = [SubResource("InputEventKey_g8rmm")]
 
 [node name="Battle" type="Node2D"]
 script = ExtResource("1_t264f")
-char_stats = ExtResource("15_it20t")
+character_stats = ExtResource("15_it20t")
 music = ExtResource("3_qitkg")
 metadata/_edit_lock_ = true
 
@@ -123,7 +123,7 @@ script = ExtResource("6_55xhc")
 [node name="Hand" type="Node2D" parent="BattleUI"]
 position = Vector2(116, 138)
 script = ExtResource("2_8g6ym")
-char_stats = ExtResource("15_it20t")
+character_stats = ExtResource("15_it20t")
 spread_curve = ExtResource("3_uk2ei")
 rotation_curve = ExtResource("4_pqhqs")
 height_curve = ExtResource("5_d1vqs")

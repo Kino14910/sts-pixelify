@@ -1,7 +1,7 @@
 class_name Player
 extends Node2D
 
-const WHITE_SPRITE_MATERIAL := preload("res://art/white_sprite_material.tres")
+const WHITE_SPRITE_MATERIAL = preload("res://art/white_sprite_material.tres")
 
 @export var stats: CharacterStats:
 	set(value):
@@ -17,7 +17,7 @@ const WHITE_SPRITE_MATERIAL := preload("res://art/white_sprite_material.tres")
 @onready var stats_ui: StatsUI = $StatsUI
 @onready var selected_indicator: NinePatchRect = $SelectedIndicator
 
-# @onready var status_handler: StatusHandler = $StatusHandler
+@onready var power_handler: PowerHandler = $PowerHandler
 # @onready var modifier_handler: ModifierHandler = $ModifierHandler
 
 
@@ -25,7 +25,7 @@ const WHITE_SPRITE_MATERIAL := preload("res://art/white_sprite_material.tres")
 func _ready() -> void:
 	Events.card_aim_self_started.connect(_on_card_target_self_started)
 	Events.card_aim_self_ended.connect(_on_card_target_self_ended)
-# 	status_handler.status_owner = self
+	power_handler.power_owner = self
 
 
 func update_player() -> void:
@@ -46,7 +46,7 @@ func take_damage(damage: int) -> void:
 	if stats.health <= 0: 
 		return
 	
-	var tween := create_tween()
+	var tween = create_tween()
 	tween.tween_callback(Shaker.shake.bind(self, 16, 0.15))
 	tween.tween_callback(stats.take_damage.bind(damage))
 	tween.tween_interval(0.17)

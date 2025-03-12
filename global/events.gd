@@ -7,8 +7,7 @@ signal card_aim_started(card_ui: CardUI)
 signal card_aim_ended(card_ui: CardUI)
 signal card_aim_self_started()
 signal card_aim_self_ended()
-signal card_played()
-signal hand_display()
+signal card_played(card: Card)
 
 
 # Card-related events
@@ -30,7 +29,7 @@ signal monster_died(monster: Monster)
 # Battle-related events
 signal battle_over_screen_requested(text: String, type: BattleOverPanel.Type)
 signal battle_won
-#signal status_description_requested(statuses: Array[Status])
+#signal power_description_requested(poweres: Array[Power])
 
 ## Map-related events
 signal map_exited(room: Room)

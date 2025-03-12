@@ -1,7 +1,7 @@
 class_name CardPileView
 extends Control
 
-const CARD_MENU_UI_SCENE := preload("res://scenes/ui/card_menu_ui.tscn")
+const CARD_MENU_UI_SCENE = preload("res://scenes/ui/card_menu_ui.tscn")
 
 @export var card_pile: CardPile
 
@@ -35,12 +35,12 @@ func _update_view(randomized: bool) -> void:
 	if not card_pile:
 		return
 	
-	var all_cards := card_pile.cards.duplicate()
+	var all_cards = card_pile.cards.duplicate()
 	if randomized:
 		all_cards.shuffle()
 	
 	for card: Card in all_cards:
-		var new_card := CARD_MENU_UI_SCENE.instantiate()
+		var new_card = CARD_MENU_UI_SCENE.instantiate()
 		cards.add_child(new_card)
 		new_card.card = card
 		

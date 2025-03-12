@@ -4,7 +4,7 @@ extends Area2D
 signal clicked(room: Room)
 signal selected(room: Room)
 
-const ICONS := {
+const ICONS = {
 	Room.Type.NOT_ASSIGNED: [null, Vector2.ONE],
 	Room.Type.MONSTER: [preload("res://art/tile_0103.png"), Vector2.ONE],
 	Room.Type.TREASURE: [preload("res://art/tile_0089.png"), Vector2.ONE],
@@ -18,7 +18,7 @@ const ICONS := {
 @onready var line_2d: Line2D = $Visuals/Line2D
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
 
-var available := false: 
+var available = false: 
 	set(value):
 		available = value
 		
