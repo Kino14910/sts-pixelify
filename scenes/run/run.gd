@@ -14,10 +14,15 @@ const MAIN_MENU_PATH = "res://scenes/ui/main_menu.tscn"
 
 @onready var map: Map = $Map
 @onready var current_view: Node = $CurrentView
+
 @onready var gold_ui: GoldUI = %GoldUI
 @onready var health_ui: HealthUI = %HealthUI
+@onready var floor_ui: FloorUI = %FloorUI
 @onready var deck_button: CardPileOpener = %DeckButton
 @onready var deck_view: CardPileView = %DeckView
+
+@onready var relic_handler: RelicHandler = %RelicHandler
+@onready var relic_tooltip: RelicTooltip = %RelicTooltip
 
 @onready var battle_button: Button = %BattleButton
 @onready var campfire_button: Button = %CampfireButton
@@ -71,6 +76,8 @@ func _change_view(scene: PackedScene) -> Node:
 	current_view.add_child(new_view)
 	map.hide_map()
 	
+	stats.floor += 1
+	
 	return new_view
 
 
@@ -112,7 +119,7 @@ func _on_map_exited(room: Room) -> void:
 		Room.Type.CAMPFIRE:
 			_on_campfire_entered()
 		Room.Type.SHOP:
-			_change_view(SHOP_SCENE)
+			_on_shop_entered()
 		Room.Type.BOSS:
 			_on_battle_room_entered(room)
 		#Room.Type.EVENT:
@@ -176,14 +183,16 @@ func _setup_top_bar():
 	character.stats_changed.connect(health_ui._update_health.bind(character))
 	health_ui._update_health(character)
 	gold_ui.run_stats = stats
-	#
-	#relic_handler.add_relic(character.starting_relic)
-	#Events.relic_tooltip_requested.connect(relic_tooltip.show_tooltip)
-	#
+	floor_ui.run_stats = stats
 	deck_button.card_pile = character.deck
 	deck_view.card_pile = character.deck
 	deck_button.pressed.connect(deck_view.show_current_view.bind("Deck"))
 
+	relic_handler.add_relic(character.starting_relic)
+	Events.relic_tooltip_requested.connect(relic_tooltip.show_tooltip)
+	Events.relic_tooltip_hide.connect(relic_tooltip.hide_tooltip)
+
+	
 
 #func _show_regular_battle_rewards() -> void:
 	#var reward_scene = _change_view(BATTLE_REWARD_SCENE) as BattleReward
@@ -197,9 +206,8 @@ func _setup_top_bar():
 func _on_battle_room_entered(room: Room) -> void:
 	var battle_scene: Battle = _change_view(BATTLE_SCENE) as Battle
 	battle_scene.character_stats = character
-	#battle_scene.battle_stats = preload('res://dungeons/exordium/weak/jaw_worm.tres')
 	battle_scene.battle_stats = room.battle_stats
-	#battle_scene.relics = relic_handler
+	battle_scene.relics = relic_handler
 	battle_scene.start_battle()
 
 #
@@ -223,15 +231,15 @@ func _on_campfire_entered() -> void:
 	var campfire = _change_view(CAMPFIRE_SCENE) as Campfire
 	campfire.character_stats = character
 
-#
-#func _on_shop_entered() -> void:
-	#var shop = _change_view(SHOP_SCENE) as Shop
-	#shop.character_stats = character
-	#shop.run_stats = stats
-	#shop.relic_handler = relic_handler
-	#Events.shop_entered.emit(shop)
-	#shop.populate_shop()
-#
+
+func _on_shop_entered() -> void:
+	var shop = _change_view(SHOP_SCENE) as Shop
+	shop.character_stats = character
+	shop.run_stats = stats
+	shop.relic_handler = relic_handler
+	Events.shop_entered.emit(shop)
+	shop.populate_shop()
+
 #
 #func _on_event_room_entered(room: Room) -> void:
 	#var event_room = _change_view(room.event_scene) as EventRoom

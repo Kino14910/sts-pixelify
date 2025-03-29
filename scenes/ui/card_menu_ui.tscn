@@ -1,48 +1,14 @@
-[gd_scene load_steps=4 format=3 uid="uid://2maccgqd0vm6"]
+[gd_scene load_steps=3 format=3 uid="uid://2maccgqd0vm6"]
 
-[ext_resource type="Script" path="res://cards/red/stike_red.gd" id="1_d0u44"]
+[ext_resource type="Script" path="res://scenes/ui/card_menu_ui.gd" id="1_ifd8b"]
 [ext_resource type="PackedScene" uid="uid://b2n0s8gh53k8p" path="res://scenes/ui/card_visuals.tscn" id="2_g5h2p"]
-
-[sub_resource type="GDScript" id="GDScript_a4gi8"]
-script/source = "class_name CardMenuUI
-extends CenterContainer
-
-signal select_card(card: Card)
-
-const BASE_STYLEBOX = preload(\"res://scenes/card_ui/base_stylebox.tres\")
-const HOVER_STYLEBOX = preload(\"res://scenes/card_ui/hover_stylebox.tres\")
-
-@export var card: Card :
-	set(value):
-			
-		if not is_node_ready():
-			await ready
-
-		card = value
-		visuals.card = card
-		
-@onready var visuals: CardVisuals = $Visuals
-
-func _on_visuals_gui_input(event: InputEvent) -> void:
-	if event.is_action_pressed(\"left_mouse\"):
-		select_card.emit(card)
-
-
-func _on_visuals_mouse_entered() -> void:
-	visuals.panel.set(\"theme_override_styles/panel\", HOVER_STYLEBOX)
-
-
-func _on_visuals_mouse_exited() -> void:
-	visuals.panel.set(\"theme_override_styles/panel\", BASE_STYLEBOX)
-"
 
 [node name="CardMenuUI" type="CenterContainer"]
 custom_minimum_size = Vector2(34, 44)
 offset_right = 34.0
 offset_bottom = 44.0
 size_flags_horizontal = 3
-script = SubResource("GDScript_a4gi8")
-card = ExtResource("1_d0u44")
+script = ExtResource("1_ifd8b")
 
 [node name="Visuals" parent="." instance=ExtResource("2_g5h2p")]
 layout_mode = 2

@@ -31,7 +31,7 @@ func clear() -> void:
 	card_pile_size_changed.emit(cards.size())
 
 
-# We need this method because of a Godot issue
+# Godot issue
 # reported here: 
 # https://github.com/godotengine/godot/issues/74918
 func duplicate_cards() -> Array[Card]:

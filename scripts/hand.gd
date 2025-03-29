@@ -3,7 +3,7 @@ extends Node2D
 
 const card_scene = preload('res://scenes/card_ui/card_ui.tscn')
 
-#@export var player: Player
+@export var player: Player
 @export var character_stats: CharacterStats
 #@onready var hand: Node2D = $Hand
 @export var spread_curve: Curve
@@ -11,7 +11,6 @@ const card_scene = preload('res://scenes/card_ui/card_ui.tscn')
 @export var height_curve: Curve
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	Events.card_played.connect(displayCards)
 	displayCards()
 
 
@@ -20,7 +19,9 @@ func add_card(card: Card) -> void:
 	add_child(new_card_ui)
 	new_card_ui.card = card
 	new_card_ui.character_stats = character_stats
-	#new_card_ui.player_modifiers = player.modifier_handler
+	new_card_ui.player_modifiers = player.modifier_handler
+	if not character_stats.can_play_card(card):
+		new_card_ui.disable_card(card)
 
 
 func displayCards():
@@ -55,3 +56,7 @@ func enable_hand() -> void:
 func disable_hand() -> void:
 	for card: CardUI in get_children():
 		card.disabled = true
+
+
+func _on_child_order_changed() -> void:
+	displayCards()

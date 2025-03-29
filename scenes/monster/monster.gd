@@ -17,11 +17,11 @@ const WHITE_SPRITE_MATERIAL = preload("res://art/white_sprite_material.tres")
 @onready var sprite_2d: Sprite2D = $Sprite2D
 @onready var selected_indicator: NinePatchRect = $SelectedIndicator
 @onready var stats_ui: StatsUI = $StatsUI
-@onready var collision_shape_2d: CollisionShape2D = $CollisionShape2D
+@onready var hitbox: CollisionShape2D = $Hitbox
 
 @onready var intent_ui: IntentUI = $IntentUI
 @onready var power_handler: PowerHandler = $PowerHandler
-#@onready var modifier_handler: ModifierHandler = $ModifierHandler
+@onready var modifier_handler: ModifierHandler = $ModifierHandler
 
 var monster_action_picker: MonsterActionPicker
 var current_action: MonsterAction:
@@ -32,7 +32,6 @@ var current_action: MonsterAction:
 
 func _ready() -> void:
 	power_handler.power_owner = self
-
 
 
 func setup_ai() -> void:
@@ -74,15 +73,17 @@ func update_monster() -> void:
 		size_scale = 1.1
 	
 	sprite_2d.texture = stats.art
-	collision_shape_2d.shape.size.x = sprite_2d.texture.get_width() * size_scale
-	collision_shape_2d.shape.size.y = sprite_2d.texture.get_height() * size_scale
-	selected_indicator.size = collision_shape_2d.shape.size
+	hitbox.shape.size.x = sprite_2d.texture.get_width() * size_scale
+	hitbox.shape.size.y = sprite_2d.texture.get_height() * size_scale
+	selected_indicator.size = hitbox.shape.size
 	selected_indicator.position = selected_indicator.size / -2
 	intent_ui.position.y = selected_indicator.position.y - intent_ui.size.y
 	stats_ui.position.y = selected_indicator.position.y + selected_indicator.size.y
+	stats_ui.pos_init()
+	power_handler.global_position = stats_ui.global_position + Vector2(stats_ui.block.size.x / 2, stats_ui.health.size.y)
 	setup_ai()
 	update_stats()
-
+	
 
 func update_intent() -> void:
 	if current_action:
@@ -97,15 +98,17 @@ func do_turn() -> void:
 
 	current_action.perform_action()
 
-func take_damage(damage: int) -> void:
+func take_damage(damage: int, modifier_type: Modifier.Type) -> void:
 	if stats.health <= 0:
 		return
 	
+	var modified_damage = modifier_handler.get_modified_value(damage, modifier_type)
+	
 	var tween = create_tween()
 	tween.tween_callback(Shaker.shake.bind(self, 16, 0.15))
-	tween.tween_callback(stats.take_damage.bind(damage))
+	tween.tween_callback(stats.take_damage.bind(modified_damage))
 	tween.tween_interval(0.17)
-
+	
 	tween.finished.connect(
 		func():
 		sprite_2d.material = null

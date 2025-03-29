@@ -12,4 +12,4 @@ can_expire = false
 duration = 0
 stacks = 1
 icon = ExtResource("1_648xr")
-tooltip = "Decreases attack damage by %s"
+tooltip = "攻击伤害提升%s。"

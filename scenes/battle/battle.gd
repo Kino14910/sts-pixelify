@@ -4,6 +4,7 @@ extends Node2D
 @export var battle_stats: BattleStats
 @export var character_stats: CharacterStats
 @export var music: AudioStream
+@export var relics: RelicHandler
 
 @onready var battle_ui: BattleUI = $BattleUI
 @onready var monster_handler: MonsterHandler = $MonsterHandler
@@ -26,20 +27,29 @@ func start_battle() -> void:
 	
 	battle_ui.character_stats = character_stats
 	player.stats = character_stats
-	#player_handler.relics = relics
+	player_handler.relics = relics
 	monster_handler.setup_monsters(battle_stats)
 	monster_handler.reset_monster_actions()
 	
-	player_handler.start_battle(character_stats)
-	battle_ui.initialize_card_pile_ui()
+	relics.relics_activated.connect(_on_relics_activated)
+	relics.activate_relics_by_type(Relic.Type.START_OF_COMBAT)
+
+
+func _on_player_died() -> void:
+	Events.battle_over_screen_requested.emit('Game over!', BattleOverPanel.Type.LOSE)
 
 func _on_monster_turn_ended() -> void:
 	player_handler.start_turn()
 	monster_handler.reset_monster_actions()
 
-func _on_player_died() -> void:
-	Events.battle_over_screen_requested.emit('Game over!', BattleOverPanel.Type.LOSE)
-
 func _on_monsters_child_order_changed() -> void:
-	if monster_handler.get_child_count() == 0:
-		Events.battle_over_screen_requested.emit('Victory!', BattleOverPanel.Type.WIN)
+	if monster_handler.get_child_count() == 0 and is_instance_valid(relics):
+		relics.activate_relics_by_type(Relic.Type.END_OF_COMBAT)
+		
+func _on_relics_activated(type: Relic.Type) -> void:
+	match type:
+		Relic.Type.START_OF_COMBAT:
+			player_handler.start_battle(character_stats)
+			battle_ui.initialize_card_pile_ui()
+		Relic.Type.END_OF_COMBAT:
+			Events.battle_over_screen_requested.emit("Victorious!", BattleOverPanel.Type.WIN)

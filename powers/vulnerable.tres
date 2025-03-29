@@ -12,4 +12,4 @@ can_expire = true
 duration = 1
 stacks = 0
 icon = ExtResource("1_puesa")
-tooltip = "Exposed: takes 50%% more damage for %s turns."
+tooltip = "从[color=gold]攻击[/color]受到的伤害增加%s%% 。持续时间%s回合。"

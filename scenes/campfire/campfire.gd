@@ -4,7 +4,7 @@ extends Control
 @export var character_stats: CharacterStats
 
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
-@onready var rest_button: Button = $UILayer/UI/RestButton
+@onready var rest_button: Button = %RestButton
 
 
 func _on_rest_button_pressed() -> void:

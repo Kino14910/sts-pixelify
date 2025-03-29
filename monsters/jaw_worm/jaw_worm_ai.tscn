@@ -7,7 +7,7 @@
 
 [sub_resource type="Resource" id="Resource_qw8dp"]
 script = ExtResource("4_a5q1c")
-base_text = "11"
+base_text = "%s"
 icon = ExtResource("3_6g40o")
 
 [node name="JawWormAI" type="Node"]

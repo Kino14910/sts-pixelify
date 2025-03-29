@@ -1,11 +1,15 @@
-[gd_resource type="Resource" script_class="CardPile" load_steps=6 format=3 uid="uid://boeh0bq8w7kbr"]
+[gd_resource type="Resource" script_class="CardPile" load_steps=10 format=3 uid="uid://boeh0bq8w7kbr"]
 
 [ext_resource type="Script" path="res://custom_resources/card.gd" id="1_t3wnt"]
 [ext_resource type="Script" path="res://custom_resources/card_pile.gd" id="2_8g476"]
 [ext_resource type="Resource" uid="uid://5nh4yv103t33" path="res://cards/red/strike_red.tres" id="2_pw7b2"]
 [ext_resource type="Resource" uid="uid://btjxur1kw6hvn" path="res://cards/red/defend_red.tres" id="3_l132a"]
 [ext_resource type="Resource" uid="uid://sqhn7c8gt344" path="res://cards/red/bash.tres" id="4_evdik"]
+[ext_resource type="Resource" uid="uid://se3ainr3brk5" path="res://cards/red/demon_form.tres" id="5_qmp5b"]
+[ext_resource type="Resource" uid="uid://bwf84fx3v87yu" path="res://cards/red/in_flame.tres" id="6_l61xp"]
+[ext_resource type="Resource" uid="uid://db6mvuv2ga204" path="res://cards/red/shrug_it_off.tres" id="7_wmy0j"]
+[ext_resource type="Resource" uid="uid://cvaiu06ftsqgm" path="res://cards/red/pummel.tres" id="8_q8wm4"]
 
 [resource]
 script = ExtResource("2_8g476")
-cards = Array[ExtResource("1_t3wnt")]([ExtResource("2_pw7b2"), ExtResource("2_pw7b2"), ExtResource("2_pw7b2"), ExtResource("2_pw7b2"), ExtResource("2_pw7b2"), ExtResource("3_l132a"), ExtResource("3_l132a"), ExtResource("3_l132a"), ExtResource("3_l132a"), ExtResource("4_evdik")])
+cards = Array[ExtResource("1_t3wnt")]([ExtResource("2_pw7b2"), ExtResource("2_pw7b2"), ExtResource("2_pw7b2"), ExtResource("2_pw7b2"), ExtResource("2_pw7b2"), ExtResource("3_l132a"), ExtResource("3_l132a"), ExtResource("3_l132a"), ExtResource("3_l132a"), ExtResource("4_evdik"), ExtResource("5_qmp5b"), ExtResource("6_l61xp"), ExtResource("7_wmy0j"), ExtResource("8_q8wm4")])

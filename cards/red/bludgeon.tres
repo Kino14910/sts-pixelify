@@ -14,5 +14,6 @@ damage = 32
 block = 0
 magicNumber = 0
 rarity = 4
+exhaust = false
 icon = ExtResource("1_4frox")
-description = "造成 [color=red]32[/color]点伤害。"
+description = "造成%s点伤害。"

@@ -1,0 +1,18 @@
+[gd_resource type="Resource" load_steps=2 format=3 uid="uid://db6mvuv2ga204"]
+
+[ext_resource type="Script" path="res://cards/red/shrug_it_off.gd" id="1_ok6rp"]
+
+[resource]
+script = ExtResource("1_ok6rp")
+id = "ShrugItOff"
+type = 1
+target = 2
+cost = 1
+card_name = "耸肩无视"
+damage = 0
+block = 8
+magicNumber = 1
+rarity = 2
+exhaust = false
+description = "获得%s点[color=gold]格挡[/color]。
+抽%s张牌。"

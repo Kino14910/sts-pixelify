@@ -16,6 +16,7 @@ damage = 8
 block = 0
 magicNumber = 2
 rarity = 0
+exhaust = false
 icon = ExtResource("1_tu4an")
-description = "造成[color=red]8[/color]点伤害。
-给予[color=red]2[/color]层[color=gold]易伤[/color]。"
+description = "造成%s点伤害。
+给予[color=red]%s[/color]层[color=gold]易伤[/color]。"

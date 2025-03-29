@@ -7,7 +7,7 @@
 
 [sub_resource type="Resource" id="Resource_bkrjr"]
 script = ExtResource("4_ndja1")
-base_text = "2x3"
+base_text = "%sx3"
 icon = ExtResource("3_u6h7t")
 
 [node name="LouseDefensiveAI" type="Node"]

@@ -62,6 +62,7 @@ const RARITY_COLORS = {
 @export var block: int
 @export var magicNumber: int
 @export var rarity: CardRarity
+@export var exhaust: bool = false
 #@export var tags: Array
 #@export var color: CardColor
 
@@ -91,19 +92,22 @@ func _get_targets(targets: Array[Node]) -> Array[Node]:
 			return []
 
 
-func play(targets: Array[Node], character_stats: CharacterStats) -> void:
+func play(targets: Array[Node], character_stats: CharacterStats, modifiers: ModifierHandler) -> void:
 	Events.card_played.emit(self)
 	
 	character_stats.energy -= cost
 	
 	if is_single_target():
-		apply_actions(targets)
+		apply_actions(targets, modifiers)
 	else:
-		apply_actions(_get_targets(targets))
+		apply_actions(_get_targets(targets), modifiers)
 
 
-func apply_actions(targets: Array[Node]) -> void:
+func apply_actions(targets: Array[Node], _modifiers: ModifierHandler) -> void:
 	pass
 
 func get_default_description() -> String:
 	return description
+	
+func get_updated_description(_player_modifiers: ModifierHandler, _enemy_modifiers: ModifierHandler) -> String:
+	return get_default_description()

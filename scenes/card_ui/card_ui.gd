@@ -24,6 +24,8 @@ const ANIM_SPEED = 10
 		#_on_character_stats_changed()
 
 
+@export var player_modifiers: ModifierHandler
+
 @onready var card_visuals: CardVisuals = $CardVisuals
 @onready var drop_point_detector: Area2D = $DropPointDetector
 @onready var card_state_machine: CardStateMachine = $CardStateMachine
@@ -73,9 +75,20 @@ func play() -> void:
 	if not card:
 		return
 	
-	card.play(targets, character_stats)
+	card.play(targets, character_stats, player_modifiers)
 	queue_free()
 	
+
+func get_active_monster_modifiers() -> ModifierHandler:
+	if targets.is_empty() or targets.size() > 1 or not targets[0] is Monster:
+		return null
+	
+	return targets[0].modifier_handler
+
+func request_description() -> void:
+	var monster_modifiers = get_active_monster_modifiers()
+	var updated_description = card.get_updated_description(player_modifiers, monster_modifiers)
+	card_visuals.description.text = updated_description
 
 
 	
@@ -117,7 +130,10 @@ func _on_card_drag_or_aiming_started(used_card: CardUI) -> void:
 func _on_card_drag_or_aim_ended(_card: CardUI) -> void:
 	disabled = false
 	playable = character_stats.can_play_card(card)
-
-
+	
+func disable_card(card: Card):
+	disabled = true
+	playable = character_stats.can_play_card(card)
+	
 func _on_character_stats_changed() -> void:
 	playable = character_stats.can_play_card(card)

@@ -87,3 +87,11 @@ func _on_power_applied(power: Power) -> void:
 func _on_gui_input(event: InputEvent) -> void:
 	if event.is_action_pressed("left_mouse"):
 		Events.power_tooltip_requested.emit(_get_all_powers())
+
+
+func _on_mouse_entered() -> void:
+	Events.power_tooltips_requested.emit(_get_all_powers(), power_owner)
+
+
+func _on_mouse_exited() -> void:
+	Events.power_tooltips_requested.emit(_get_all_powers(), power_owner)

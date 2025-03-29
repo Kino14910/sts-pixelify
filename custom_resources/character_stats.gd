@@ -12,7 +12,7 @@ extends Stats
 @export var cards_per_turn: int
 @export var max_energy: int
 @export var char_max_hp: int
-# @export var starting_relic: Relic
+@export var starting_relic: Relic
 
 var energy: int: 
 	set(value):
@@ -22,6 +22,7 @@ var energy: int:
 var deck: CardPile
 var discard: CardPile
 var draw_pile: CardPile
+var exhaust_pile: CardPile
 
 func reset_energy() -> void:
 	energy = max_energy
@@ -44,4 +45,5 @@ func instantiate() -> Resource:
 	instance.deck = instance.starting_deck.duplicate()
 	instance.draw_pile = CardPile.new()
 	instance.discard = CardPile.new()
+	instance.exhaust_pile = CardPile.new()
 	return instance

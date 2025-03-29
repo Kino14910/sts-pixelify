@@ -2,9 +2,9 @@ extends Card
 
 const STRENGTH = preload('res://powers/strength.tres')
 
-func apply_actions(targets: Array[Node]) -> void:
-	var power_action = PowerAction.new()
-	var strength = STRENGTH.duplicate()
-	strength.duration = magicNumber
-	power_action.power = strength
-	power_action.execute(targets, magicNumber)
+func apply_actions(targets: Array[Node], _modifiers: ModifierHandler) -> void:
+	PowerAction.new(targets, STRENGTH.new(), magicNumber)
+
+func get_default_description() -> String:
+	return description % magicNumber
+	

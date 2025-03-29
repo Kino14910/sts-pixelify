@@ -6,9 +6,6 @@ signal stats_changed
 
 @export var art: Texture
 
-func _ready() -> void:
-	print('ready')
-
 var max_health :int = 1: 
 	set(value):
 		var diff = value - max_health

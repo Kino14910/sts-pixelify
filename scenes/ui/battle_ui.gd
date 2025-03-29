@@ -12,15 +12,19 @@ extends CanvasLayer
 @onready var end_turn_button: Button = %EndTurnButton
 @onready var draw_pile_button: CardPileOpener = %DrawPile
 @onready var discard_pile_button: CardPileOpener = %DiscardPile
+@onready var exhaust_pile_button: CardPileOpener = %ExhaustPile
+
 @onready var draw_pile_view: CardPileView = %DrawPileView
 @onready var discard_pile_view: CardPileView = %DiscardPileView
+@onready var exhaust_pile_view: CardPileView = %ExhaustPileView
 
 
 func _ready() -> void:
 	Events.player_hand_drawn.connect(_on_player_hand_drawn)
 	end_turn_button.pressed.connect(_on_end_turn_button_pressed)
-	draw_pile_button.pressed.connect(draw_pile_view.show_current_view.bind("Draw Pile", true))
-	discard_pile_button.pressed.connect(discard_pile_view.show_current_view.bind("Discard Pile"))
+	draw_pile_button.pressed.connect(draw_pile_view.show_current_view.bind('Draw Pile', true))
+	discard_pile_button.pressed.connect(discard_pile_view.show_current_view.bind('Discard Pile'))
+	exhaust_pile_button.pressed.connect(exhaust_pile_view.show_current_view.bind('Exhaust Pile'))
 
 
 func initialize_card_pile_ui() -> void:
@@ -28,6 +32,8 @@ func initialize_card_pile_ui() -> void:
 	draw_pile_view.card_pile = character_stats.draw_pile
 	discard_pile_button.card_pile = character_stats.discard
 	discard_pile_view.card_pile = character_stats.discard
+	exhaust_pile_button.card_pile = character_stats.exhaust_pile
+	exhaust_pile_view.card_pile = character_stats.exhaust_pile
 
 
 func _on_player_hand_drawn() -> void:

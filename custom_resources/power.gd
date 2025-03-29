@@ -40,3 +40,6 @@ func set_duration(new_duration: int) -> void:
 func set_stacks(new_stacks: int) -> void:
 	stacks = new_stacks
 	power_changed.emit()
+
+func new() -> Resource:
+	return duplicate()

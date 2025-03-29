@@ -14,3 +14,4 @@ func on_input(event: InputEvent) -> void:
 	if played:
 		return
 	transition_requested.emit(self, CardState.State.BASE)
+	

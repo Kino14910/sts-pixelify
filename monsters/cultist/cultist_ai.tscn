@@ -8,7 +8,7 @@
 
 [sub_resource type="Resource" id="Resource_3fjyv"]
 script = ExtResource("4_q83du")
-base_text = "5"
+base_text = "%s"
 icon = ExtResource("3_gcepl")
 
 [node name="CultistAI" type="Node"]

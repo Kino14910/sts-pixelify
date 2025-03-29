@@ -2,6 +2,7 @@
 # meta-description: An action which can be performed by an monster during its turn.
 extends MonsterAction
 
+@export var damage = randi_range(5, 7)
 
 func perform_action() -> void:
 	if not monster or not target:
@@ -12,7 +13,7 @@ func perform_action() -> void:
 	var end = target.global_position + Vector2.RIGHT * 32
 	
 	SFXPlayer.play(sound)
-
+	
 	Events.monster_action_completed.emit(monster)
 
 
@@ -23,6 +24,5 @@ func update_intent_text() -> void:
 	if not player:
 		return
 	
-	#var modified_dmg = player.modifier_handler.get_modified_value(6, Modifier.Type.DMG_TAKEN)
-	#intent.current_text = intent.base_text % modified_dmg
-	intent.current_text = intent.base_text
+	var modified_dmg = player.modifier_handler.get_modified_value(damage, Modifier.Type.DMG_TAKEN)
+	intent.current_text = intent.base_text % modified_dmg

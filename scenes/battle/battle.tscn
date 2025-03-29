@@ -1,4 +1,4 @@
-[gd_scene load_steps=34 format=3 uid="uid://78hn2ffybk65"]
+[gd_scene load_steps=36 format=3 uid="uid://78hn2ffybk65"]
 
 [ext_resource type="Script" path="res://scenes/battle/battle.gd" id="1_t264f"]
 [ext_resource type="Texture2D" uid="uid://d3qjqhhdhvoth" path="res://art/bottom_scene/scene.jpg" id="1_whyga"]
@@ -25,6 +25,8 @@
 [ext_resource type="PackedScene" uid="uid://ct8ogayx0nuii" path="res://scenes/ui/card_pile_opener.tscn" id="21_emcc8"]
 [ext_resource type="FontFile" uid="uid://dskmdk146n4rq" path="res://art/pixel_rpg.ttf" id="22_sy6vr"]
 [ext_resource type="Texture2D" uid="uid://2gpsnrxk7whj" path="res://art/discard_pile.png" id="23_tr7vp"]
+[ext_resource type="Texture2D" uid="uid://cq4u4p23kpcqo" path="res://art/exhausted_pile.png" id="24_y3ckv"]
+[ext_resource type="PackedScene" uid="uid://dxycg4oxuubob" path="res://scenes/ui/power_tooltips_view.tscn" id="25_nlv0y"]
 [ext_resource type="PackedScene" uid="uid://dn7kxpuwcukg3" path="res://scenes/ui/card_pile_view.tscn" id="25_xtb34"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_x0wpt"]
@@ -120,9 +122,10 @@ hand = NodePath("../BattleUI/Hand")
 [node name="BattleUI" type="CanvasLayer" parent="." groups=["ui_layer"]]
 script = ExtResource("6_55xhc")
 
-[node name="Hand" type="Node2D" parent="BattleUI"]
+[node name="Hand" type="Node2D" parent="BattleUI" node_paths=PackedStringArray("player")]
 position = Vector2(116, 138)
 script = ExtResource("2_8g6ym")
+player = NodePath("../../Player")
 character_stats = ExtResource("15_it20t")
 spread_curve = ExtResource("3_uk2ei")
 rotation_curve = ExtResource("4_pqhqs")
@@ -202,6 +205,46 @@ text = "21"
 horizontal_alignment = 1
 vertical_alignment = 1
 
+[node name="ExhaustPile" parent="BattleUI" node_paths=PackedStringArray("counter") instance=ExtResource("21_emcc8")]
+unique_name_in_owner = true
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -14.0
+offset_top = -33.0
+offset_right = -2.0
+offset_bottom = -21.0
+grow_horizontal = 0
+grow_vertical = 0
+texture_normal = ExtResource("24_y3ckv")
+counter = NodePath("Label")
+
+[node name="Label" type="Label" parent="BattleUI/ExhaustPile"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -4.0
+offset_top = -2.0
+offset_right = 5.0
+offset_bottom = 4.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("22_sy6vr")
+text = "8"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="PowerTooltipsView" parent="BattleUI" instance=ExtResource("25_nlv0y")]
+offset_left = 80.0
+offset_top = -127.0
+offset_right = 130.0
+offset_bottom = -36.0
+
 [node name="BattleOverLayer" type="CanvasLayer" parent="."]
 
 [node name="BattleOverPanel" parent="BattleOverLayer" instance=ExtResource("21_auwcm")]
@@ -218,7 +261,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
-color = Color(1, 0.46, 0.46, 0)
+color = Color(1, 0.458824, 0.458824, 0)
 
 [node name="Timer" type="Timer" parent="RedFlash"]
 wait_time = 0.2
@@ -234,4 +277,9 @@ visible = false
 unique_name_in_owner = true
 visible = false
 
+[node name="ExhaustPileView" parent="CardPileView" instance=ExtResource("25_xtb34")]
+unique_name_in_owner = true
+visible = false
+
 [connection signal="child_order_changed" from="MonsterHandler" to="." method="_on_monsters_child_order_changed"]
+[connection signal="child_order_changed" from="BattleUI/Hand" to="BattleUI/Hand" method="_on_child_order_changed"]

@@ -7,8 +7,7 @@ func perform_action() -> void:
 	if not monster or not target:
 		return
 	
-	var block_action = GainBlockAction.new()
-	block_action.execute([monster], block)
+	GainBlockAction.new([monster], block)
 	
 	get_tree().create_timer(0.6, false).timeout.connect(
 		func():

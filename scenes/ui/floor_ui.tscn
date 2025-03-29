@@ -1,0 +1,27 @@
+[gd_scene load_steps=4 format=3 uid="uid://b5p22qeu5tbtr"]
+
+[ext_resource type="Script" path="res://scenes/ui/floor_ui.gd" id="1_k0ahd"]
+[ext_resource type="Texture2D" uid="uid://d0g1204jlka8w" path="res://art/floor.png" id="2_1on7d"]
+[ext_resource type="FontFile" uid="uid://dskmdk146n4rq" path="res://art/pixel_rpg.ttf" id="3_dqku5"]
+
+[node name="FloorUI" type="HBoxContainer"]
+offset_right = 32.0
+offset_bottom = 8.0
+size_flags_vertical = 4
+theme_override_constants/separation = 2
+script = ExtResource("1_k0ahd")
+
+[node name="Icon" type="TextureRect" parent="."]
+custom_minimum_size = Vector2(8, 8)
+layout_mode = 2
+texture = ExtResource("2_1on7d")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 2
+size_flags_vertical = 1
+theme_override_fonts/font = ExtResource("3_dqku5")
+theme_override_font_sizes/font_size = 6
+text = "99"
+vertical_alignment = 2

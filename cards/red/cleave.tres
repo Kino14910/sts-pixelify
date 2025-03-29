@@ -14,5 +14,6 @@ damage = 8
 block = 0
 magicNumber = 0
 rarity = 2
+exhaust = false
 icon = ExtResource("1_p0ps5")
-description = "对所有敌人造成 [color=red]8[/color]点伤害。"
+description = "对所有敌人造成%s点伤害。"

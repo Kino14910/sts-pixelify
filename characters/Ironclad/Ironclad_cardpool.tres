@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="CardPile" load_steps=9 format=3 uid="uid://bps0lp0brkvou"]
+[gd_resource type="Resource" script_class="CardPile" load_steps=10 format=3 uid="uid://bps0lp0brkvou"]
 
 [ext_resource type="Script" path="res://custom_resources/card.gd" id="1_8apjb"]
 [ext_resource type="Resource" uid="uid://5nh4yv103t33" path="res://cards/red/strike_red.tres" id="2_83pmk"]
@@ -8,7 +8,8 @@
 [ext_resource type="Resource" uid="uid://ttw5wslekxbr" path="res://cards/red/cleave.tres" id="5_t54he"]
 [ext_resource type="Resource" uid="uid://bwf84fx3v87yu" path="res://cards/red/in_flame.tres" id="6_ci4op"]
 [ext_resource type="Resource" uid="uid://c4ltkyh8pq0rc" path="res://cards/red/bludgeon.tres" id="7_g5wj5"]
+[ext_resource type="Resource" uid="uid://se3ainr3brk5" path="res://cards/red/demon_form.tres" id="8_fqth6"]
 
 [resource]
 script = ExtResource("5_5mmi3")
-cards = Array[ExtResource("1_8apjb")]([ExtResource("2_83pmk"), ExtResource("3_8x4xd"), ExtResource("4_gy0dr"), ExtResource("5_t54he"), ExtResource("5_t54he"), ExtResource("5_t54he"), ExtResource("6_ci4op"), ExtResource("6_ci4op"), ExtResource("6_ci4op"), ExtResource("7_g5wj5"), ExtResource("7_g5wj5"), ExtResource("7_g5wj5")])
+cards = Array[ExtResource("1_8apjb")]([ExtResource("2_83pmk"), ExtResource("3_8x4xd"), ExtResource("4_gy0dr"), ExtResource("5_t54he"), ExtResource("5_t54he"), ExtResource("5_t54he"), ExtResource("6_ci4op"), ExtResource("6_ci4op"), ExtResource("6_ci4op"), ExtResource("7_g5wj5"), ExtResource("7_g5wj5"), ExtResource("7_g5wj5"), ExtResource("8_fqth6")])

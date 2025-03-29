@@ -1,5 +1,7 @@
 extends CardState
 
+var mouse_over_card = false
+
 func enter() -> void:
 	if !card_ui.is_node_ready():
 		await card_ui.ready
@@ -17,16 +19,20 @@ func on_gui_input(event: InputEvent) -> void:
 	#if (event is InputEventMouseButton 
 		#and event.button_index == MOUSE_BUTTON_LEFT 
 		#and event.pressed):
-	if event.is_action_pressed('left_mouse'):
+	if mouse_over_card and  event.is_action_pressed('left_mouse'):
 		transition_requested.emit(self, CardState.State.CLICKED)
 
 func on_mouse_entered() -> void:
+	mouse_over_card = true
+	
 	if not card_ui.playable or card_ui.disabled:
 		return
 
 	card_ui.card_visuals.panel.set("theme_override_styles/panel", card_ui.HOVER_STYLE)
-
+	card_ui.request_description()
 func on_mouse_exited() -> void:
+	mouse_over_card = false
+	
 	if not card_ui.playable or card_ui.disabled:
 		return
 

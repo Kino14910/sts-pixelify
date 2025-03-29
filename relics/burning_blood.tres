@@ -1,0 +1,15 @@
+[gd_resource type="Resource" load_steps=3 format=3 uid="uid://c5q3aakgenikm"]
+
+[ext_resource type="Texture2D" uid="uid://qttogjujasak" path="res://art/burning_blood.png" id="1_ik8bq"]
+[ext_resource type="Script" path="res://relics/burning_blood.gd" id="2_ebvif"]
+
+[resource]
+script = ExtResource("2_ebvif")
+heal_amount = 6
+relic_name = "燃烧之血"
+id = "BurningBlood"
+type = 3
+character_type = 2
+starter_relic = true
+icon = ExtResource("1_ik8bq")
+tooltip = "在战斗结束时，回复6点生命。"

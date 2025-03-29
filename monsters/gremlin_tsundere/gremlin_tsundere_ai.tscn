@@ -8,7 +8,7 @@
 
 [sub_resource type="Resource" id="Resource_frqy2"]
 script = ExtResource("4_30dfp")
-base_text = "4"
+base_text = "%s"
 icon = ExtResource("3_us0b8")
 
 [node name="GremlinTsundereAI" type="Node"]

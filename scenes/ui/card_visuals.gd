@@ -18,5 +18,5 @@ extends Control
 		cost.text = str(card.cost)
 		icon.texture = card.icon
 		card_name.text = card.card_name
-		description.text = card.description
+		description.text = card.get_default_description()
 		banner.color = Card.RARITY_COLORS[card.rarity]

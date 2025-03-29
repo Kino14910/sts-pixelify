@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://bqkrwbju4mck8"]
+[gd_scene load_steps=10 format=3 uid="uid://bqkrwbju4mck8"]
 
 [ext_resource type="Texture2D" uid="uid://cea6dkq0jvw04" path="res://art/louse_defensive.png" id="1_btel6"]
 [ext_resource type="Script" path="res://scenes/monster/monster.gd" id="1_nrynt"]
@@ -6,6 +6,8 @@
 [ext_resource type="PackedScene" uid="uid://cpgpjk5ayx78o" path="res://scenes/ui/stats_ui.tscn" id="4_c36ax"]
 [ext_resource type="PackedScene" uid="uid://beepbuhvpju07" path="res://scenes/ui/intent_ui.tscn" id="5_ohe7i"]
 [ext_resource type="PackedScene" uid="uid://bwet1kdg2v1di" path="res://scenes/power_handler/power_handler.tscn" id="6_bxf44"]
+[ext_resource type="PackedScene" uid="uid://ctvxie3ni1ik4" path="res://scenes/modifier_handler/modifier_handler.tscn" id="7_hodqg"]
+[ext_resource type="PackedScene" uid="uid://bqefj5q31b84i" path="res://scenes/modifier_handler/modifier.tscn" id="8_wly6l"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8tsu6"]
 
@@ -16,7 +18,7 @@ script = ExtResource("1_nrynt")
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("1_btel6")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="Hitbox" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_8tsu6")
 
 [node name="StatsUI" parent="." instance=ExtResource("4_c36ax")]
@@ -53,6 +55,13 @@ offset_top = 20.0
 offset_right = -20.0
 offset_bottom = 20.0
 power_owner = NodePath("..")
+
+[node name="ModifierHandler" parent="." instance=ExtResource("7_hodqg")]
+
+[node name="DamagDealtModifier" parent="ModifierHandler" instance=ExtResource("8_wly6l")]
+
+[node name="DamagTakenModifier" parent="ModifierHandler" instance=ExtResource("8_wly6l")]
+type = 1
 
 [connection signal="area_entered" from="." to="." method="_on_area_entered"]
 [connection signal="area_exited" from="." to="." method="_on_area_exited"]

@@ -14,5 +14,6 @@ damage = 0
 block = 0
 magicNumber = 2
 rarity = 3
+exhaust = false
 icon = ExtResource("1_lief8")
-description = "获得 [color=green]2[/color]点 力量 。"
+description = "获得%s点[color=gold]力量[/color]。"

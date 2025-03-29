@@ -10,9 +10,10 @@ type = 0
 target = 0
 cost = 1
 card_name = "打击"
-damage = 6
+damage = 90
 block = 0
 magicNumber = 0
 rarity = 0
+exhaust = false
 icon = ExtResource("1_04hg3")
-description = "造成[color=red]6[/color]点伤害。"
+description = "造成%s点伤害。"
