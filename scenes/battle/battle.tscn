@@ -1,4 +1,4 @@
-[gd_scene load_steps=36 format=3 uid="uid://78hn2ffybk65"]
+[gd_scene load_steps=35 format=3 uid="uid://78hn2ffybk65"]
 
 [ext_resource type="Script" path="res://scenes/battle/battle.gd" id="1_t264f"]
 [ext_resource type="Texture2D" uid="uid://d3qjqhhdhvoth" path="res://art/bottom_scene/scene.jpg" id="1_whyga"]
@@ -18,7 +18,6 @@
 [ext_resource type="Resource" uid="uid://ccyjlmjbxsd1j" path="res://monsters/louse_defensive/louse_defensive.tres" id="10_1qio4"]
 [ext_resource type="Resource" uid="uid://c56ju606ec2mc" path="res://monsters/louse_normal/louse_normal.tres" id="13_cjwsn"]
 [ext_resource type="PackedScene" uid="uid://bf0p0w25ki8ff" path="res://scenes/card_ui/energy_ui.tscn" id="14_ds04n"]
-[ext_resource type="Resource" uid="uid://4qo5n75hbldo" path="res://characters/Ironclad/Ironclad.tres" id="15_it20t"]
 [ext_resource type="Theme" uid="uid://2tytydfeg3gl" path="res://main_theme.tres" id="15_w7ux2"]
 [ext_resource type="Script" path="res://scenes/ui/red_flash.gd" id="19_jh8rp"]
 [ext_resource type="PackedScene" uid="uid://bfp68paujyrvi" path="res://scenes/ui/battle_over_panel.tscn" id="21_auwcm"]
@@ -58,7 +57,6 @@ events = [SubResource("InputEventKey_g8rmm")]
 
 [node name="Battle" type="Node2D"]
 script = ExtResource("1_t264f")
-character_stats = ExtResource("15_it20t")
 music = ExtResource("3_qitkg")
 metadata/_edit_lock_ = true
 
@@ -126,7 +124,6 @@ script = ExtResource("6_55xhc")
 position = Vector2(116, 138)
 script = ExtResource("2_8g6ym")
 player = NodePath("../../Player")
-character_stats = ExtResource("15_it20t")
 spread_curve = ExtResource("3_uk2ei")
 rotation_curve = ExtResource("4_pqhqs")
 height_curve = ExtResource("5_d1vqs")

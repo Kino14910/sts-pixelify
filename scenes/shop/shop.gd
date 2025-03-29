@@ -48,9 +48,9 @@ func _blink_timer_setup() -> void:
 
 func _generate_shop_cards() -> void:
 	var shop_card_array: Array[Card] = []
-	var available_cards: Array[Card] = char_stats.draftable_cards.duplicate_cards()
+	var available_cards: Array[Card] = char_stats.cardpool.duplicate_cards()
 	available_cards.shuffle()
-	shop_card_array = available_cards.slice(0, 3)
+	shop_card_array = available_cards.slice(0, 5)
 	
 	for card: Card in shop_card_array:
 		var shop_card = SHOP_CARD.instantiate() as ShopCard

@@ -92,10 +92,10 @@ func _get_targets(targets: Array[Node]) -> Array[Node]:
 			return []
 
 
-func play(targets: Array[Node], character_stats: CharacterStats, modifiers: ModifierHandler) -> void:
+func play(targets: Array[Node], char_stats: CharacterStats, modifiers: ModifierHandler) -> void:
 	Events.card_played.emit(self)
 	
-	character_stats.energy -= cost
+	char_stats.energy -= cost
 	
 	if is_single_target():
 		apply_actions(targets, modifiers)

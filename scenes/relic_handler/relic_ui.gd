@@ -13,6 +13,15 @@ extends Control
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
 
 
+var affordable = true: 
+	set(value):
+		affordable = value
+		if not affordable:
+			icon.modulate = Color(1, 1, 1, 0.5)
+		else:
+			icon.modulate = Color(1, 1, 1, 1)
+			
+
 func flash() -> void:
 	animation_player.play("flash")
 

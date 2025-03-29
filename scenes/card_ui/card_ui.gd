@@ -17,11 +17,11 @@ const ANIM_SPEED = 10
 		card = value
 		card_visuals.card = card
 		
-@export var character_stats: CharacterStats: 
+@export var char_stats: CharacterStats: 
 	set(value):
-		character_stats = value
-		character_stats.stats_changed.connect(_on_character_stats_changed)
-		#_on_character_stats_changed()
+		char_stats = value
+		char_stats.stats_changed.connect(_on_char_stats_changed)
+		#_on_char_stats_changed()
 
 
 @export var player_modifiers: ModifierHandler
@@ -75,7 +75,7 @@ func play() -> void:
 	if not card:
 		return
 	
-	card.play(targets, character_stats, player_modifiers)
+	card.play(targets, char_stats, player_modifiers)
 	queue_free()
 	
 
@@ -129,11 +129,11 @@ func _on_card_drag_or_aiming_started(used_card: CardUI) -> void:
 
 func _on_card_drag_or_aim_ended(_card: CardUI) -> void:
 	disabled = false
-	playable = character_stats.can_play_card(card)
+	playable = char_stats.can_play_card(card)
 	
 func disable_card(card: Card):
 	disabled = true
-	playable = character_stats.can_play_card(card)
+	playable = char_stats.can_play_card(card)
 	
-func _on_character_stats_changed() -> void:
-	playable = character_stats.can_play_card(card)
+func _on_char_stats_changed() -> void:
+	playable = char_stats.can_play_card(card)

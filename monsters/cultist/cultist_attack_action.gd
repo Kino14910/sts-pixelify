@@ -10,12 +10,9 @@ func perform_action() -> void:
 	var tween = create_tween().set_trans(Tween.TRANS_QUINT)
 	var start = monster.global_position
 	var end = monster.global_position + Vector2.LEFT * 8
+
 	
-	var target_array: Array[Node] = [target]
-	
-	tween.tween_property(monster, "global_position", end, 0.1)
-	tween.tween_callback(DamageAction.new().execute.bind(target_array, damage))
-	tween.tween_property(monster, "global_position", start, 0.1)
+	tween.tween_callback(DamageAction.new().execute.bind([target], damage))
 	
 	tween.finished.connect(
 		func():

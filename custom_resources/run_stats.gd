@@ -4,13 +4,13 @@ extends Resource
 signal gold_changed
 signal floor_changed
 
-const STARTING_GOLD = 70
+const STARTING_GOLD = 700
 const BASE_CARD_REWARDS = 3
 const BASE_COMMON_WEIGHT = 60
 const BASE_UNCOMMON_WEIGHT = 37
 const BASE_RARE_WEIGHT = 3
 
-@export var character_stats: CharacterStats
+@export var char_stats: CharacterStats
 @export var gold = STARTING_GOLD: 
 	set(value):
 		gold = value
@@ -31,8 +31,8 @@ const BASE_RARE_WEIGHT = 3
 
 
 func _ready() -> void:
-	health = character_stats.health
-	max_health = character_stats.max_health
+	health = char_stats.health
+	max_health = char_stats.max_health
 
 func reset_weights() -> void:
 	common_weight = BASE_COMMON_WEIGHT

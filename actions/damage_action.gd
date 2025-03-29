@@ -25,3 +25,4 @@ func execute(targets: Array[Node], amount: int, damagetype:DamageType = DamageTy
 			if damagetype == DamageType.THORNS:
 				target.take_damage(amount, Modifier.Type.NO_MODIFIER)
 			SFXPlayer.play(sound if sound else attack_sound)
+			target.create_tween().set_trans(Tween.TRANS_QUINT).tween_interval(0.5)

@@ -17,6 +17,14 @@ const HOVER_STYLEBOX = preload("res://scenes/card_ui/hover_stylebox.tres")
 		
 @onready var visuals: CardVisuals = $Visuals
 
+var affordable = true: 
+	set(value):
+		affordable = value
+		if not affordable:
+			visuals.icon.modulate = Color(1, 1, 1, 0.5)
+		else:
+			visuals.icon.modulate = Color(1, 1, 1, 1)
+			
 func _on_visuals_gui_input(event: InputEvent) -> void:
 	if event.is_action_pressed("left_mouse"):
 		select_card.emit(card)

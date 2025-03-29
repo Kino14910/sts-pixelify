@@ -1,11 +1,11 @@
 class_name BattleUI
 extends CanvasLayer
 
-@export var character_stats: CharacterStats: 
+@export var char_stats: CharacterStats: 
 	set(value):
-		character_stats = value
-		energy_ui.character_stats = character_stats
-		hand.character_stats = character_stats
+		char_stats = value
+		energy_ui.char_stats = char_stats
+		hand.char_stats = char_stats
 
 @onready var hand: Hand = $Hand
 @onready var energy_ui: EnergyUI = $EnergyUI
@@ -28,12 +28,12 @@ func _ready() -> void:
 
 
 func initialize_card_pile_ui() -> void:
-	draw_pile_button.card_pile = character_stats.draw_pile
-	draw_pile_view.card_pile = character_stats.draw_pile
-	discard_pile_button.card_pile = character_stats.discard
-	discard_pile_view.card_pile = character_stats.discard
-	exhaust_pile_button.card_pile = character_stats.exhaust_pile
-	exhaust_pile_view.card_pile = character_stats.exhaust_pile
+	draw_pile_button.card_pile = char_stats.draw_pile
+	draw_pile_view.card_pile = char_stats.draw_pile
+	discard_pile_button.card_pile = char_stats.discard
+	discard_pile_view.card_pile = char_stats.discard
+	exhaust_pile_button.card_pile = char_stats.exhaust_pile
+	exhaust_pile_view.card_pile = char_stats.exhaust_pile
 
 
 func _on_player_hand_drawn() -> void:

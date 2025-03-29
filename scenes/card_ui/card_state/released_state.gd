@@ -3,15 +3,9 @@ extends CardState
 var played: bool
 
 func enter() -> void:
-
-	played = false 
 	if not card_ui.targets.is_empty():
-		played = true
 		card_ui.play()
 
 
-func on_input(event: InputEvent) -> void:
-	if played:
-		return
+func post_enter() -> void:
 	transition_requested.emit(self, CardState.State.BASE)
-	

@@ -1,7 +1,7 @@
 class_name Campfire
 extends Control
 
-@export var character_stats: CharacterStats
+@export var char_stats: CharacterStats
 
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
 @onready var rest_button: Button = %RestButton
@@ -9,7 +9,7 @@ extends Control
 
 func _on_rest_button_pressed() -> void:
 	rest_button.disabled = true
-	character_stats.heal(floori(character_stats.max_health * 0.3))
+	char_stats.heal(floori(char_stats.max_health * 0.3))
 	animation_player.play("fade_out")
 
 

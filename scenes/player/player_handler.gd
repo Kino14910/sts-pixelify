@@ -22,8 +22,8 @@ func _ready() -> void:
 	Events.card_played.connect(_on_card_played)
 	Events.draw_cards.connect(draw_cards)
 	
-func start_battle(character_stats: CharacterStats) -> void:
-	character = character_stats
+func start_battle(char_stats: CharacterStats) -> void:
+	character = char_stats
 	character.draw_pile = character.deck.custom_duplicate()
 	character.draw_pile.shuffle()
 	character.discard = CardPile.new()

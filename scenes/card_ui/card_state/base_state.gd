@@ -19,7 +19,7 @@ func on_gui_input(event: InputEvent) -> void:
 	#if (event is InputEventMouseButton 
 		#and event.button_index == MOUSE_BUTTON_LEFT 
 		#and event.pressed):
-	if mouse_over_card and  event.is_action_pressed('left_mouse'):
+	if mouse_over_card and event.is_action_pressed('left_mouse'):
 		transition_requested.emit(self, CardState.State.CLICKED)
 
 func on_mouse_entered() -> void:

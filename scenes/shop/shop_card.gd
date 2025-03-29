@@ -15,6 +15,7 @@ const CARD_MENU_UI = preload("res://scenes/ui/card_menu_ui.tscn")
 			card_menu_ui.queue_free()
 		
 		var new_card_menu_ui = CARD_MENU_UI.instantiate() as CardMenuUI
+		new_card_menu_ui.gui_input.connect(_on_card_gui_input)
 		card_container.add_child(new_card_menu_ui)
 		new_card_menu_ui.card = card
 		current_card_ui = new_card_menu_ui
@@ -22,27 +23,28 @@ const CARD_MENU_UI = preload("res://scenes/ui/card_menu_ui.tscn")
 @onready var card_container: CenterContainer = %CardContainer
 @onready var price: HBoxContainer = %Price
 @onready var price_label: Label = %PriceLabel
-@onready var buy_button: Button = %BuyButton
 @onready var gold_cost = randi_range(100, 300)
 
 var current_card_ui: CardMenuUI
 
 func update(run_stats: RunStats) -> void:
-	if not card_container or not price or not buy_button:
+	if not card_container or not price:
 		return
 
 	price_label.text = str(gold_cost)
 	
 	if run_stats.gold >= gold_cost:
 		price_label.remove_theme_color_override("font_color")
-		buy_button.disabled = false
+		current_card_ui.affordable = true
 	else:
 		price_label.add_theme_color_override("font_color", Color.RED)
-		buy_button.disabled = true
+		current_card_ui.affordable = false
 
 
-func _on_buy_button_pressed() -> void:
-	Events.shop_card_bought.emit(card, gold_cost)
-	card_container.queue_free()
-	price.queue_free()
-	buy_button.queue_free()
+func _on_card_gui_input(event: InputEvent) -> void:
+	if event.is_action_pressed('left_mouse') and current_card_ui.affordable:
+		Events.shop_card_bought.emit(card, gold_cost)
+		#if current_card_ui.is_connected('gui_input', _on_card_gui_input):
+			#current_card_ui.disconnect('gui_input', _on_card_gui_input)
+		card_container.queue_free()
+		price.queue_free()

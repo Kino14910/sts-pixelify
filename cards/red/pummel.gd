@@ -4,10 +4,8 @@ extends Card
 
 
 func apply_actions(targets: Array[Node], modifiers: ModifierHandler) -> void:
-	var tween = targets[0].create_tween().set_trans(Tween.TRANS_QUINT)
-	for i in magicNumber:
-		tween.tween_callback(DamageAction.new.bind(targets, modifiers.get_modified_value(damage, Modifier.Type.DMG_DEALT)))
-		tween.tween_interval(0.2)
+	DamageAction.new(targets, modifiers.get_modified_value(damage, Modifier.Type.DMG_DEALT))
+
 	
 func get_default_description() -> String:
 	return description % [damage, magicNumber]

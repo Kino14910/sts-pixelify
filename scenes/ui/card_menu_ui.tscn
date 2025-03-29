@@ -12,6 +12,7 @@ script = ExtResource("1_ifd8b")
 
 [node name="Visuals" parent="." instance=ExtResource("2_g5h2p")]
 layout_mode = 2
+mouse_filter = 1
 
 [connection signal="gui_input" from="Visuals" to="." method="_on_visuals_gui_input"]
 [connection signal="mouse_entered" from="Visuals" to="." method="_on_visuals_mouse_entered"]

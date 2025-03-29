@@ -2,7 +2,7 @@ class_name Battle
 extends Node2D
 
 @export var battle_stats: BattleStats
-@export var character_stats: CharacterStats
+@export var char_stats: CharacterStats
 @export var music: AudioStream
 @export var relics: RelicHandler
 
@@ -25,8 +25,8 @@ func start_battle() -> void:
 	get_tree().paused = false
 	MusicPlayer.play(music, true)
 	
-	battle_ui.character_stats = character_stats
-	player.stats = character_stats
+	battle_ui.char_stats = char_stats
+	player.stats = char_stats
 	player_handler.relics = relics
 	monster_handler.setup_monsters(battle_stats)
 	monster_handler.reset_monster_actions()
@@ -49,7 +49,7 @@ func _on_monsters_child_order_changed() -> void:
 func _on_relics_activated(type: Relic.Type) -> void:
 	match type:
 		Relic.Type.START_OF_COMBAT:
-			player_handler.start_battle(character_stats)
+			player_handler.start_battle(char_stats)
 			battle_ui.initialize_card_pile_ui()
 		Relic.Type.END_OF_COMBAT:
 			Events.battle_over_screen_requested.emit("Victorious!", BattleOverPanel.Type.WIN)

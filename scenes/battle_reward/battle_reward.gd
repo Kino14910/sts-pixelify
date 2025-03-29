@@ -9,8 +9,8 @@ const CARD_ICON = preload("res://art/rarity.png")
 const CARD_TEXT = "Add New Card"
 
 @export var run_stats: RunStats
-@export var character_stats: CharacterStats
-#@export var relic_handler: RelicHandler
+@export var char_stats: CharacterStats
+@export var relic_handler: RelicHandler
 
 @onready var rewards: VBoxContainer = %Rewards
 
@@ -42,19 +42,19 @@ func add_card_reward() -> void:
 	rewards.add_child.call_deferred(card_reward)
 
 
-#func add_relic_reward(relic: Relic) -> void:
-	#if not relic:
-		#return
-#
-	#var relic_reward = REWARD_BUTTON.instantiate()
-	#relic_reward.reward_icon = relic.icon
-	#relic_reward.reward_text = relic.relic_name
-	#relic_reward.pressed.connect(_on_relic_reward_taken.bind(relic))
-	#rewards.add_child.call_deferred(relic_reward)
-#
+func add_relic_reward(relic: Relic) -> void:
+	if not relic:
+		return
+
+	var relic_reward = REWARD_BUTTON.instantiate()
+	relic_reward.reward_icon = relic.icon
+	relic_reward.reward_text = relic.relic_name
+	relic_reward.pressed.connect(_on_relic_reward_taken.bind(relic))
+	rewards.add_child.call_deferred(relic_reward)
+
 
 func _show_card_rewards() -> void:
-	if not run_stats or not character_stats:
+	if not run_stats or not char_stats:
 		return
 	
 	var card_rewards = CARD_REWARDS.instantiate() as CardRewards
@@ -62,7 +62,7 @@ func _show_card_rewards() -> void:
 	card_rewards.card_reward_selected.connect(_on_card_reward_taken)
 	
 	var card_reward_array: Array[Card] = []
-	var available_cards: Array[Card] = character_stats.cardpool.duplicate_cards()
+	var available_cards: Array[Card] = char_stats.cardpool.duplicate_cards()
 	
 	for i in run_stats.card_rewards:
 		_setup_card_chances()
@@ -112,16 +112,16 @@ func _on_gold_reward_taken(amount: int) -> void:
 
 
 func _on_card_reward_taken(card: Card) -> void:
-	if not character_stats or not card:
+	if not char_stats or not card:
 		return
-	character_stats.deck.add_card(card)
+	char_stats.deck.add_card(card)
 
 
-#func _on_relic_reward_taken(relic: Relic) -> void:
-	#if not relic or not relic_handler:
-		#return
-		#
-	#relic_handler.add_relic(relic)
+func _on_relic_reward_taken(relic: Relic) -> void:
+	if not relic or not relic_handler:
+		return
+		
+	relic_handler.add_relic(relic)
 
 
 func _on_back_button_pressed() -> void: 

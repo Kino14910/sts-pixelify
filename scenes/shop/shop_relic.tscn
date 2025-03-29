@@ -6,10 +6,10 @@
 [ext_resource type="Texture2D" uid="uid://dhmtctwb5ymhc" path="res://art/gold.png" id="4_0iw0f"]
 
 [node name="ShopRelic" type="VBoxContainer"]
-custom_minimum_size = Vector2(40, 42)
-offset_right = 40.0
-offset_bottom = 42.0
-theme_override_constants/separation = 2
+custom_minimum_size = Vector2(20, 16)
+offset_right = 20.0
+offset_bottom = 20.0
+theme_override_constants/separation = 0
 script = ExtResource("1_b84y1")
 relic = ExtResource("2_uujtg")
 
@@ -23,7 +23,7 @@ layout_mode = 2
 [node name="Price" type="HBoxContainer" parent="."]
 unique_name_in_owner = true
 layout_mode = 2
-theme_override_constants/separation = 2
+theme_override_constants/separation = 0
 alignment = 1
 
 [node name="PriceLabel" type="Label" parent="Price"]
@@ -32,16 +32,8 @@ layout_mode = 2
 text = "999"
 
 [node name="GoldIcon" type="TextureRect" parent="Price"]
-custom_minimum_size = Vector2(10, 10)
+custom_minimum_size = Vector2(8, 8)
 layout_mode = 2
 texture = ExtResource("4_0iw0f")
 expand_mode = 1
 stretch_mode = 5
-
-[node name="BuyButton" type="Button" parent="."]
-unique_name_in_owner = true
-custom_minimum_size = Vector2(0, 12)
-layout_mode = 2
-text = "Buy"
-
-[connection signal="pressed" from="BuyButton" to="." method="_on_buy_button_pressed"]

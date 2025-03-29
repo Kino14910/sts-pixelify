@@ -7,10 +7,10 @@
 [ext_resource type="Resource" uid="uid://sqhn7c8gt344" path="res://cards/red/bash.tres" id="4_wei1c"]
 
 [node name="ShopCard" type="VBoxContainer"]
-custom_minimum_size = Vector2(40, 56)
+custom_minimum_size = Vector2(40, 52)
 offset_right = 40.0
-offset_bottom = 40.0
-theme_override_constants/separation = 2
+offset_bottom = 52.0
+theme_override_constants/separation = 0
 script = ExtResource("1_ojxkp")
 card = ExtResource("2_k75is")
 
@@ -20,6 +20,7 @@ layout_mode = 2
 
 [node name="CardMenuUI" parent="CardContainer" instance=ExtResource("1_3uc0x")]
 layout_mode = 2
+mouse_filter = 0
 card = ExtResource("4_wei1c")
 
 [node name="Price" type="HBoxContainer" parent="."]
@@ -34,16 +35,8 @@ layout_mode = 2
 text = "999"
 
 [node name="GoldIcon" type="TextureRect" parent="Price"]
-custom_minimum_size = Vector2(10, 10)
+custom_minimum_size = Vector2(8, 8)
 layout_mode = 2
 texture = ExtResource("2_s11cf")
 expand_mode = 1
 stretch_mode = 5
-
-[node name="BuyButton" type="Button" parent="."]
-unique_name_in_owner = true
-custom_minimum_size = Vector2(0, 12)
-layout_mode = 2
-text = "Buy"
-
-[connection signal="pressed" from="BuyButton" to="." method="_on_buy_button_pressed"]
