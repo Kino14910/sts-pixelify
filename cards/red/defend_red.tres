@@ -5,7 +5,7 @@
 
 [resource]
 script = ExtResource("2_gkh3f")
-id = "Defend_R"
+id = "defend_R"
 type = 1
 target = 2
 cost = 1

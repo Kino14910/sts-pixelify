@@ -2,7 +2,7 @@ class_name WinScreen
 extends Control
 
 const MAIN_MENU_PATH = "res://scenes/ui/main_menu.tscn"
-const MESSAGE := "The %s\nis victorious!"
+const MESSAGE = "The %s\nis victorious!"
 
 @export var character: CharacterStats : set = set_character
 

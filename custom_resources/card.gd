@@ -69,7 +69,7 @@ const RARITY_COLORS = {
 @export_group("Card Visuals")
 @export var icon: Texture
 @export_multiline var description: String
-#@export_multiline var description_text: String
+#@export_multiline var updated_description: String
 
 func is_single_target() -> bool:
 	return target == CardTarget.ENEMY

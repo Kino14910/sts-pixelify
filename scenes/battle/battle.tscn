@@ -112,7 +112,7 @@ position = Vector2(57, 84)
 
 [node name="CardTargetSelector" parent="." instance=ExtResource("5_386xa")]
 
-[node name="PlayerHandler" type="Node" parent="." node_paths=PackedStringArray("player", "hand")]
+[node name="PlayerHandler" type="Node" parent="." node_paths=PackedStringArray("player", "hand") groups=["player_handler"]]
 script = ExtResource("8_dmgm4")
 player = NodePath("../Player")
 hand = NodePath("../BattleUI/Hand")

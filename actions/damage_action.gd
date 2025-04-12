@@ -4,6 +4,8 @@ extends Action
 const attack_sound = preload('res://art/SOTE_SFX_FastAtk_v2.ogg')
 
 var receiver_modifier_type = Modifier.Type.DMG_TAKEN
+var damagetype: DamageType = DamageType.NORMAL
+var sound: AudioStream = attack_sound
 
 enum DamageType {
    NORMAL,
@@ -11,11 +13,14 @@ enum DamageType {
    HP_LOSS
 }
 
+
 func _init(targets: Array[Node] = [], amount: int = 0, damagetype:DamageType = DamageType.NORMAL, sound:AudioStream = attack_sound) -> void:
-	execute(targets, amount, damagetype, sound)
+	self.damagetype = damagetype
+	self.sound = sound
+	execute(targets, amount)
 
 
-func execute(targets: Array[Node], amount: int, damagetype:DamageType = DamageType.NORMAL, sound:AudioStream = attack_sound) -> void:
+func execute(targets: Array[Node], amount: int) -> void:
 	for target in targets:
 		if not target:
 			continue

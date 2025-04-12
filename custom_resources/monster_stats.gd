@@ -8,7 +8,7 @@ extends Stats
 
 func instantiate() -> Resource:
 	var instance: Stats = self.duplicate()
-	instance.max_health = randi_range(min_hp, max_hp)
+	instance.max_health = RNG.instance.randi_range(min_hp, max_hp)
 	instance.health = instance.max_health
 	instance.block = 0
 	return instance

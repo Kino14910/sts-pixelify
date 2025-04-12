@@ -9,6 +9,7 @@ signal card_aim_self_started()
 signal card_aim_self_ended()
 signal card_played(card: Card)
 signal card_discarded()
+signal card_exhausted()
 
 
 # Card-related events

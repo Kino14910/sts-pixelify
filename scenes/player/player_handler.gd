@@ -67,7 +67,7 @@ func draw_cards(amount: int, is_start_of_turn_draw: bool = true) -> void:
 
 
 func discard_cards() -> void:
-	if hand.get_child_count() == 0:
+	if hand.is_empty():
 		Events.player_hand_discarded.emit()
 		return
 

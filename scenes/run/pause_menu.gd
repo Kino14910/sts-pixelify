@@ -12,14 +12,12 @@ func _ready() -> void:
 	save_and_quit_button.pressed.connect(_on_save_and_quit_button_pressed)
 
 
-func _input(event: InputEvent) -> void:
+func _shortcut_input(event: InputEvent) -> void:
 	if event.is_action_pressed("pause"):
 		if visible:
 			_unpause()
 		else:
 			_pause()
-			
-		get_viewport().set_input_as_handled()
 
 
 func _pause() -> void:

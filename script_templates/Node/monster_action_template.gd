@@ -17,8 +17,8 @@ func perform_action() -> void:
 	Events.monster_action_completed.emit(monster)
 
 
-# If the monster has dynamic intent text you can override the base behaviour here
-# e.g. for attack actions, the Player's DMG TAKEN modifier modifies the resulting damage number.
+# override 来实现动态意图
+# e.g. attack actions.
 func update_intent_text() -> void:
 	var player = target as Player
 	if not player:

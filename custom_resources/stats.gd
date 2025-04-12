@@ -6,7 +6,7 @@ signal stats_changed
 
 @export var art: Texture
 
-var max_health :int = 1: 
+@export var max_health :int = 1: 
 	set(value):
 		var diff = value - max_health
 		max_health = value

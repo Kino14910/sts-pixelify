@@ -60,3 +60,7 @@ func disable_hand() -> void:
 
 func _on_child_order_changed() -> void:
 	displayCards()
+
+
+func is_empty() -> bool:
+	return get_child_count() == 0

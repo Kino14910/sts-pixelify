@@ -4,7 +4,7 @@
 
 [resource]
 script = ExtResource("1_ok6rp")
-id = "ShrugItOff"
+id = "shrug_it_off"
 type = 1
 target = 2
 cost = 1
@@ -16,3 +16,4 @@ rarity = 2
 exhaust = false
 description = "获得%s点[color=gold]格挡[/color]。
 抽%s张牌。"
+updated_description = ""

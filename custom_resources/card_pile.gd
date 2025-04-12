@@ -22,8 +22,7 @@ func add_card(card: Card) -> void:
 
 
 func shuffle() -> void:
-	cards.shuffle()
-	# RNG.array_shuffle(cards)
+	RNG.array_shuffle(cards)
 
 
 func clear() -> void:
@@ -31,8 +30,7 @@ func clear() -> void:
 	card_pile_size_changed.emit(cards.size())
 
 
-# Godot issue
-# reported here: 
+# Godot issue: 
 # https://github.com/godotengine/godot/issues/74918
 func duplicate_cards() -> Array[Card]:
 	var new_array: Array[Card] = []
@@ -43,8 +41,7 @@ func duplicate_cards() -> Array[Card]:
 	return new_array
 
 
-# We need this method because of a Godot issue
-# reported here: 
+# Godot issue: 
 # https://github.com/godotengine/godot/issues/74918
 func custom_duplicate() -> CardPile:
 	var new_card_pile = CardPile.new()

@@ -32,7 +32,6 @@ func apply_powers_by_type(type: Power.Type) -> void:
 func add_power(power: Power) -> void:
 	var stackable = power.stack_type != Power.StackType.NONE
 	
-	# Add it if it's new
 	if not _has_power(power.id):
 		var new_power_ui = POWER_UI.instantiate() as PowerUI
 		add_child(new_power_ui)
@@ -41,16 +40,13 @@ func add_power(power: Power) -> void:
 		new_power_ui.power.initialize_power(power_owner)
 		return
 
-	# If it's unique and we already have it, we can return
 	if not power.can_expire and not stackable:
 		return
 	
-	# If it's duration-stackable, expand it
 	if power.can_expire and power.stack_type == Power.StackType.DURATION:
 		_get_power(power.id).duration += power.duration
 		return
 	
-	# If it's stackable, stack it
 	if power.stack_type == Power.StackType.INTENSITY:
 		_get_power(power.id).stacks += power.stacks
 	

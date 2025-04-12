@@ -1,0 +1,18 @@
+[gd_resource type="Resource" load_steps=2 format=3 uid="uid://d010ellw1c77b"]
+
+[ext_resource type="Script" path="res://cards/red/true_grit.gd" id="1_mgf0l"]
+
+[resource]
+script = ExtResource("1_mgf0l")
+id = "true_grit"
+type = 1
+target = 2
+cost = 1
+card_name = "坚毅"
+damage = 0
+block = 8
+magicNumber = 1
+rarity = 3
+exhaust = true
+description = "获得%s点[color=gold]格挡[/color] 。 [color=gold]消耗[/color]一张随机手牌。
+[color=gold]消耗[/color]"

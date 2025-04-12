@@ -18,3 +18,4 @@ max_energy = 3
 char_max_hp = 80
 starting_relic = ExtResource("5_vln5c")
 art = ExtResource("1_wie4u")
+max_health = 1

@@ -5,7 +5,7 @@
 
 [resource]
 script = ExtResource("1_rotii")
-id = "Bludgeon"
+id = "bludgeon"
 type = 0
 target = 0
 cost = 3

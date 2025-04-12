@@ -37,6 +37,7 @@ func start_battle() -> void:
 
 func _on_player_died() -> void:
 	Events.battle_over_screen_requested.emit('Game over!', BattleOverPanel.Type.LOSE)
+	SaveGame.delete_data()
 
 func _on_monster_turn_ended() -> void:
 	player_handler.start_turn()

@@ -1,6 +1,6 @@
 extends MonsterAction
 
-@export var block := 10
+@export var block = 10
 
 
 func perform_action() -> void:

@@ -1,8 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://dh4rpv5nxuuvp"]
+[gd_scene load_steps=7 format=3 uid="uid://dh4rpv5nxuuvp"]
 
 [ext_resource type="Script" path="res://scenes/map/map.gd" id="1_x620o"]
 [ext_resource type="Script" path="res://scenes/map/map_generator.gd" id="2_23e7m"]
 [ext_resource type="Resource" uid="uid://d0s1g4ixq18kc" path="res://dungeons/battle_stats_pool.tres" id="3_3g051"]
+[ext_resource type="Resource" uid="uid://bncylsfojpqyu" path="res://scenes/event_rooms/event_room_pool.tres" id="4_5m7di"]
 
 [sub_resource type="Gradient" id="Gradient_1gu5h"]
 colors = PackedColorArray(0.215686, 0.215686, 0.215686, 1, 0.4, 0.219608, 0.203922, 1)
@@ -28,6 +29,7 @@ offset = Vector2(128, 72)
 [node name="MapGenerator" type="Node" parent="."]
 script = ExtResource("2_23e7m")
 battle_stats_pool = ExtResource("3_3g051")
+event_room_pool = ExtResource("4_5m7di")
 
 [node name="MapBackground" type="CanvasLayer" parent="."]
 layer = -1

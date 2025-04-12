@@ -5,7 +5,7 @@
 
 [resource]
 script = ExtResource("2_w7axl")
-id = "Strike_R"
+id = "strike_R"
 type = 0
 target = 0
 cost = 1

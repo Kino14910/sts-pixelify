@@ -12,7 +12,7 @@ enum Type {NOT_ASSIGNED, MONSTER, TREASURE, CAMPFIRE, SHOP, BOSS, EVENT}
 # MONSTER 和 BOSS 特有属性
 @export var battle_stats: BattleStats
 # EVENT 特有属性
-#@export var event_scene: PackedScene
+@export var event_scene: PackedScene
 
 
 func _to_string() -> String:

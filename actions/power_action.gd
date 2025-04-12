@@ -1,12 +1,10 @@
-# meta-name: Power
-# meta-description: Create a Power which can be applied to a target.
 class_name PowerAction
 extends Action
 
 var power: Power
 
-func _init(targets:Array[Node], _power: Power, amount: int = 1) -> void:
-	self.power = _power
+func _init(targets:Array[Node], power: Power, amount: int = 1) -> void:
+	self.power = power
 	execute(targets, amount)
 
 func execute(targets: Array[Node], amount: int) -> void:

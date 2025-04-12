@@ -26,7 +26,7 @@ func _ready() -> void:
 	
 	Events.shop_card_bought.connect(_on_shop_card_bought)
 	Events.shop_relic_bought.connect(_on_shop_relic_bought)
-
+	
 	_blink_timer_setup()
 	blink_timer.timeout.connect(_on_blink_timer_timeout)
 
@@ -49,7 +49,7 @@ func _blink_timer_setup() -> void:
 func _generate_shop_cards() -> void:
 	var shop_card_array: Array[Card] = []
 	var available_cards: Array[Card] = char_stats.cardpool.duplicate_cards()
-	available_cards.shuffle()
+	RNG.array_shuffle(available_cards)
 	shop_card_array = available_cards.slice(0, 5)
 	
 	for card: Card in shop_card_array:
@@ -69,7 +69,7 @@ func _generate_shop_relics() -> void:
 			return can_appear and not already_had_it
 	)
 	
-	available_relics.shuffle()
+	RNG.array_shuffle(available_relics)
 	shop_relics_array = available_relics.slice(0, 3)
 	
 	for relic: Relic in shop_relics_array:
@@ -83,7 +83,7 @@ func _generate_shop_relics() -> void:
 func _update_items() -> void:
 	for shop_card: ShopCard in cards.get_children():
 		shop_card.update(run_stats)
-
+		
 	for shop_relic: ShopRelic in relics.get_children():
 		shop_relic.update(run_stats)
 
@@ -92,7 +92,7 @@ func _update_item_costs() -> void:
 	for shop_card: ShopCard in cards.get_children():
 		shop_card.gold_cost = _get_updated_shop_cost(shop_card.gold_cost)
 		shop_card.update(run_stats)
-
+		
 	for shop_relic: ShopRelic in relics.get_children():
 		shop_relic.gold_cost = _get_updated_shop_cost(shop_relic.gold_cost)
 		shop_relic.update(run_stats)
@@ -115,7 +115,7 @@ func _on_shop_card_bought(card: Card, gold_cost: int) -> void:
 func _on_shop_relic_bought(relic: Relic, gold_cost: int) -> void:
 	relic_handler.add_relic(relic)
 	run_stats.gold -= gold_cost
-
+	
 	if relic is MembershipCard:
 		var membership_card = relic as MembershipCard
 		membership_card.add_shop_modifier(self)

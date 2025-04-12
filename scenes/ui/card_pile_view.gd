@@ -20,7 +20,9 @@ func _ready() -> void:
 
 func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("ui_cancel"):
-		hide()
+		if visible:
+			hide()
+			get_viewport().set_input_as_handled()
 
 
 func show_current_view(new_title: String, randomized: bool = false) -> void:
@@ -38,6 +40,7 @@ func _update_view(randomized: bool) -> void:
 	var all_cards = card_pile.cards.duplicate()
 	if randomized:
 		all_cards.shuffle()
+		#RNG.array_shuffle(all_cards)
 	
 	for card: Card in all_cards:
 		var new_card = CARD_MENU_UI_SCENE.instantiate()
