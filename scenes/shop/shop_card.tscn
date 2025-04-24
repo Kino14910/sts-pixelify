@@ -3,7 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://2maccgqd0vm6" path="res://scenes/ui/card_menu_ui.tscn" id="1_3uc0x"]
 [ext_resource type="Script" path="res://scenes/shop/shop_card.gd" id="1_ojxkp"]
 [ext_resource type="Resource" uid="uid://ttw5wslekxbr" path="res://cards/red/cleave.tres" id="2_k75is"]
-[ext_resource type="Texture2D" uid="uid://dhmtctwb5ymhc" path="res://art/gold.png" id="2_s11cf"]
+[ext_resource type="Texture2D" uid="uid://dhmtctwb5ymhc" path="res://assets/gold.png" id="2_s11cf"]
 [ext_resource type="Resource" uid="uid://sqhn7c8gt344" path="res://cards/red/bash.tres" id="4_wei1c"]
 
 [node name="ShopCard" type="VBoxContainer"]

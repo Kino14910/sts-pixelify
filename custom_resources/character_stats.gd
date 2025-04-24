@@ -27,9 +27,9 @@ var exhaust_pile: CardPile
 func reset_energy() -> void:
 	energy = max_energy
 
-func take_damage(damage: int) -> void:
+func take_damage(damage: int, damagetype: DamageAction.DamageType) -> void:
 	var initial_health = health
-	super.take_damage(damage)
+	super.take_damage(damage, damagetype)
 	if initial_health > health:
 		Events.player_hit.emit()
 

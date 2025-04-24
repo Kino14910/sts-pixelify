@@ -4,7 +4,7 @@ extends HBoxContainer
 signal relics_activated(type: Relic.Type)
 
 const RELIC_APPLY_INTERVAL = 0.5
-const RELIC_UI = preload("res://scenes/relic_handler/relic_ui.tscn")
+const RELIC_UI = preload('res://scenes/relic_handler/relic_ui.tscn')
 @onready var relics_control: RelicsControl = $RelicsControl
 
 @onready var relics: HBoxContainer = %Relics

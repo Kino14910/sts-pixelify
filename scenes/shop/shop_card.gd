@@ -1,7 +1,7 @@
 class_name ShopCard
 extends VBoxContainer
 
-const CARD_MENU_UI = preload("res://scenes/ui/card_menu_ui.tscn")
+const CARD_MENU_UI = preload('res://scenes/ui/card_menu_ui.tscn')
 
 @export var card: Card: 
 	set(value):
@@ -34,10 +34,10 @@ func update(run_stats: RunStats) -> void:
 	price_label.text = str(gold_cost)
 	
 	if run_stats.gold >= gold_cost:
-		price_label.remove_theme_color_override("font_color")
+		price_label.remove_theme_color_override('font_color')
 		current_card_ui.affordable = true
 	else:
-		price_label.add_theme_color_override("font_color", Color.RED)
+		price_label.add_theme_color_override('font_color', Color.RED)
 		current_card_ui.affordable = false
 
 

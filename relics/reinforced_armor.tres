@@ -1,6 +1,6 @@
 [gd_resource type="Resource" load_steps=3 format=3 uid="uid://ph22cpxintef"]
 
-[ext_resource type="Texture2D" uid="uid://dytq0eumwvky6" path="res://art/tile_0074.png" id="1_af34x"]
+[ext_resource type="Texture2D" uid="uid://dytq0eumwvky6" path="res://assets/tile_0074.png" id="1_af34x"]
 [ext_resource type="Script" path="res://relics/reinforced_armor.gd" id="2_w3vb2"]
 
 [resource]

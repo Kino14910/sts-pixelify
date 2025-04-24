@@ -1,7 +1,7 @@
 [gd_scene load_steps=8 format=3 uid="uid://djcb8mnmthtpm"]
 
 [ext_resource type="Script" path="res://scenes/map/map_room.gd" id="1_1rfj3"]
-[ext_resource type="Texture2D" uid="uid://bfvi02kojsa00" path="res://art/tile_0103.png" id="1_hme85"]
+[ext_resource type="Texture2D" uid="uid://bfvi02kojsa00" path="res://assets/tile_0103.png" id="1_hme85"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_auf4t"]
 

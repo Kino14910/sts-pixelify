@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://scenes/monster/monster_action_picker.gd" id="1_xa4bx"]
 [ext_resource type="Script" path="res://monsters/louse_defensive/louse_defensive_attack.gd" id="2_o5qa1"]
-[ext_resource type="Texture2D" uid="uid://d2u747hso4crg" path="res://art/attack.png" id="3_u6h7t"]
+[ext_resource type="Texture2D" uid="uid://d2u747hso4crg" path="res://assets/intents/attack.png" id="3_u6h7t"]
 [ext_resource type="Script" path="res://custom_resources/intent.gd" id="4_ndja1"]
 
 [sub_resource type="Resource" id="Resource_bkrjr"]

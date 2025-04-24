@@ -63,8 +63,10 @@ const RARITY_COLORS = {
 @export var magicNumber: int
 @export var rarity: CardRarity
 @export var exhaust: bool = false
-#@export var tags: Array
-#@export var color: CardColor
+@export var ethereal: bool = false
+@export var innate: bool = false
+@export var tags: Array[String]
+@export var color: CardColor
 
 @export_group("Card Visuals")
 @export var icon: Texture

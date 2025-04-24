@@ -19,8 +19,8 @@ func generate_relic() -> void:
 	found_relic = RNG.array_pick_random(available_relics)
 
 
-# Called from the AnimationPlayer, at the
-# end of the 'open' animation.
+# Called from the AnimationPlayer, at the end of the 'open' animation.
+# 在 AnimationPlayer 中的 'open' 播放完毕后执行
 func _on_treasure_opened() -> void:
 	Events.treasure_room_exited.emit(found_relic)
 

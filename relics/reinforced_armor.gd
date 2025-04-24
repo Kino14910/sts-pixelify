@@ -4,7 +4,7 @@ extends Relic
 
 
 func activate_relic(owner: RelicUI) -> void:
-	var player = owner.get_tree().get_nodes_in_group("player")
+	var player = owner.get_tree().get_nodes_in_group('player')
 	GainBlockAction.new(player, block_bonus)
 	
 	owner.flash()

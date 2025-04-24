@@ -4,7 +4,7 @@ extends GridContainer
 signal powers_applied(type: Power.Type)
 
 const POWER_APPLY_INTERVAL = 0.25
-const POWER_UI = preload("res://scenes/power_handler/power_ui.tscn")
+const POWER_UI = preload('res://scenes/power_handler/power_ui.tscn')
 
 @export var power_owner: Node2D
 
@@ -81,7 +81,7 @@ func _on_power_applied(power: Power) -> void:
 
 
 func _on_gui_input(event: InputEvent) -> void:
-	if event.is_action_pressed("left_mouse"):
+	if event.is_action_pressed('left_mouse'):
 		Events.power_tooltip_requested.emit(_get_all_powers())
 
 

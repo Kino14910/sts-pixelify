@@ -20,6 +20,9 @@ var camera_edge_y: float
 func _ready() -> void:
 	camera_edge_y = MapGenerator.Y_DIST * (MapGenerator.FLOORS - 1)
 
+
+# 使用_unhandled_input是为了防止card_view在地图界面打开的时候依然能互动
+# use _unhandled_input to prevent card_view interacting while it's open in map UI
 func _unhandled_input(event: InputEvent) -> void:
 	if not visible:
 		return
@@ -57,6 +60,7 @@ func create_map() -> void:
 				_spawn_room(room)
 	
 	# Boss room has no next room but we need to spawn it
+	# Boss房居中生成且没有下一个房间
 	var middle = floori(MapGenerator.MAP_WIDTH * 0.5)
 	_spawn_room(map_data[MapGenerator.FLOORS-1][middle])
 

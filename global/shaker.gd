@@ -1,6 +1,6 @@
 extends Node
 
-
+# 角色抖动动画
 func shake(thing: Node2D, strength: float, duration: float = 0.2) -> void:
 	if not thing:
 		return

@@ -1,7 +1,7 @@
 class_name Player
 extends Node2D
 
-const WHITE_SPRITE_MATERIAL = preload("res://art/white_sprite_material.tres")
+const WHITE_SPRITE_MATERIAL = preload("res://assets/white_sprite_material.tres")
 
 @export var stats: CharacterStats:
 	set(value):
@@ -43,7 +43,7 @@ func update_stats() -> void:
 	stats_ui.update(stats)
 
 
-func take_damage(damage: int, modifier_type: Modifier.Type) -> void:
+func take_damage(damage: int, modifier_type: Modifier.Type, damagetype: DamageAction.DamageType) -> void:
 	if stats.health <= 0: 
 		return
 		
@@ -51,7 +51,7 @@ func take_damage(damage: int, modifier_type: Modifier.Type) -> void:
 	
 	var tween = create_tween()
 	tween.tween_callback(Shaker.shake.bind(self, 16, 0.15))
-	tween.tween_callback(stats.take_damage.bind(modified_damage))
+	tween.tween_callback(stats.take_damage.bind(modified_damage, damagetype))
 	tween.tween_interval(0.17)
 
 	tween.finished.connect(

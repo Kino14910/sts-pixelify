@@ -2,9 +2,9 @@
 
 [ext_resource type="Script" path="res://scenes/monster/monster_action_picker.gd" id="1_7nbtn"]
 [ext_resource type="Script" path="res://monsters/lagavulin/lagavulin_attack.gd" id="2_447m4"]
-[ext_resource type="Texture2D" uid="uid://d2u747hso4crg" path="res://art/attack.png" id="3_up0qw"]
+[ext_resource type="Texture2D" uid="uid://d2u747hso4crg" path="res://assets/intents/attack.png" id="3_up0qw"]
 [ext_resource type="Script" path="res://custom_resources/intent.gd" id="4_4lik6"]
-[ext_resource type="AudioStream" uid="uid://de2ryat1pxq6" path="res://art/enemy_attack.ogg" id="5_uu5p0"]
+[ext_resource type="AudioStream" uid="uid://de2ryat1pxq6" path="res://assets/enemy_attack.ogg" id="5_uu5p0"]
 
 [sub_resource type="Resource" id="Resource_gx8v1"]
 script = ExtResource("4_4lik6")

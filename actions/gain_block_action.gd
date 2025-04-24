@@ -1,7 +1,7 @@
 class_name GainBlockAction
 extends Action
 
-const GainBlockSound = preload('res://art/SOTE_SFX_GainDefense_RR1_v3.ogg')
+const GainBlockSound = preload('res://assets/SOTE_SFX_GainDefense_RR1_v3.ogg')
 
 func _init(targets: Array[Node], amount: int) -> void:
 	execute(targets, amount)

@@ -1,6 +1,6 @@
 [gd_resource type="Resource" load_steps=3 format=3 uid="uid://btjxur1kw6hvn"]
 
-[ext_resource type="Texture2D" uid="uid://bi6pfjs32f820" path="res://art/tile_0101.png" id="1_7yupo"]
+[ext_resource type="Texture2D" uid="uid://bi6pfjs32f820" path="res://assets/tile_0101.png" id="1_7yupo"]
 [ext_resource type="Script" path="res://cards/red/defend_red.gd" id="2_gkh3f"]
 
 [resource]
@@ -15,5 +15,9 @@ block = 5
 magicNumber = 0
 rarity = 0
 exhaust = false
+ethereal = false
+innate = false
+tags = Array[String]([])
+color = 0
 icon = ExtResource("1_7yupo")
 description = "获得%s点[color=gold]格挡[/color]。"

@@ -2,7 +2,7 @@ class_name Monster
 extends Area2D
 
 const selected_indicator_size = Vector2(20, 20)
-const WHITE_SPRITE_MATERIAL = preload("res://art/white_sprite_material.tres")
+const WHITE_SPRITE_MATERIAL = preload("res://assets/white_sprite_material.tres")
 
 @export var stats: MonsterStats: 
 	set(value):
@@ -98,7 +98,7 @@ func do_turn() -> void:
 
 	current_action.perform_action()
 
-func take_damage(damage: int, modifier_type: Modifier.Type) -> void:
+func take_damage(damage: int, modifier_type: Modifier.Type, damagetype: DamageAction.DamageType) -> void:
 	if stats.health <= 0:
 		return
 	
@@ -106,7 +106,7 @@ func take_damage(damage: int, modifier_type: Modifier.Type) -> void:
 	
 	var tween = create_tween()
 	tween.tween_callback(Shaker.shake.bind(self, 16, 0.15))
-	tween.tween_callback(stats.take_damage.bind(modified_damage))
+	tween.tween_callback(stats.take_damage.bind(modified_damage, damagetype))
 	tween.tween_interval(0.17)
 	
 	tween.finished.connect(

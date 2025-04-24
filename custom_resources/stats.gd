@@ -28,10 +28,14 @@ var block: int:
 		block = clampi(value, 0, 999)
 		stats_changed.emit()
 
-func take_damage(damage : int) -> void:
+func take_damage(damage : int, damagetype: DamageAction.DamageType) -> void:
 	if damage <= 0:
 		return
 
+	if damagetype == DamageAction.DamageType.HP_LOSS:
+		health -= damage
+		return
+	
 	damage -= block
 	if (damage < 0):
 		block = -damage

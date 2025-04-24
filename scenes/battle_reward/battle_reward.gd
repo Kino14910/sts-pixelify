@@ -1,12 +1,12 @@
 class_name BattleReward
 extends Control
 
-const CARD_REWARDS = preload("res://scenes/ui/card_rewards.tscn")
-const REWARD_BUTTON = preload("res://scenes/ui/reward_button.tscn")
-const GOLD_ICON = preload("res://art/gold.png")
-const GOLD_TEXT = "%s gold"
-const CARD_ICON = preload("res://art/rarity.png")
-const CARD_TEXT = "Add New Card"
+const CARD_REWARDS = preload('res://scenes/ui/card_rewards.tscn')
+const REWARD_BUTTON = preload('res://scenes/ui/reward_button.tscn')
+const GOLD_ICON = preload('res://assets/gold.png')
+const GOLD_TEXT = '%s gold'
+const CARD_ICON = preload('res://assets/rarity.png')
+const CARD_TEXT = 'Add New Card'
 
 @export var run_stats: RunStats
 @export var char_stats: CharacterStats
@@ -64,6 +64,7 @@ func _show_card_rewards() -> void:
 	var card_reward_array: Array[Card] = []
 	var available_cards: Array[Card] = char_stats.cardpool.duplicate_cards()
 	
+	# 从奖励卡池中根据稀有度获取对应的奖励
 	for i in run_stats.card_rewards:
 		_setup_card_chances()
 		var roll = RNG.instance.randf_range(0, card_reward_total_weight)
@@ -73,6 +74,7 @@ func _show_card_rewards() -> void:
 				_modify_weights(rarity)
 				var picked_card = _get_random_available_card(available_cards, rarity)
 				card_reward_array.append(picked_card)
+				# 保证不会出现两张一样的奖励
 				available_cards.erase(picked_card)
 				break
 
@@ -87,6 +89,7 @@ func _setup_card_chances() -> void:
 	card_rarity_weights[Card.CardRarity.RARE] = card_reward_total_weight
 
 
+# 如果拿到稀有卡，重置稀有度权重，没拿到则稀有度权重至少+3
 func _modify_weights(rarity_rolled: Card.CardRarity) -> void:
 	if rarity_rolled == Card.CardRarity.RARE:
 		run_stats.rare_weight = RunStats.BASE_RARE_WEIGHT

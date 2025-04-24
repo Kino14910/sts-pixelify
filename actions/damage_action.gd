@@ -1,7 +1,7 @@
 class_name DamageAction
 extends Action
 
-const attack_sound = preload('res://art/SOTE_SFX_FastAtk_v2.ogg')
+const attack_sound = preload('res://assets/SOTE_SFX_FastAtk_v2.ogg')
 
 var receiver_modifier_type = Modifier.Type.DMG_TAKEN
 var damagetype: DamageType = DamageType.NORMAL
@@ -26,8 +26,8 @@ func execute(targets: Array[Node], amount: int) -> void:
 			continue
 		if target is Monster or target is Player:
 			if damagetype == DamageType.NORMAL:
-				target.take_damage(amount, receiver_modifier_type)
-			if damagetype == DamageType.THORNS:
-				target.take_damage(amount, Modifier.Type.NO_MODIFIER)
+				target.take_damage(amount, receiver_modifier_type, damagetype)
+			else:
+				target.take_damage(amount, Modifier.Type.NO_MODIFIER, damagetype)
 			SFXPlayer.play(sound if sound else attack_sound)
 			target.create_tween().set_trans(Tween.TRANS_QUINT).tween_interval(0.5)

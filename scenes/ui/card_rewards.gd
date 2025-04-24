@@ -11,7 +11,7 @@ const CARD_MENU_UI = preload("res://scenes/ui/card_menu_ui.tscn")
 		
 		if not is_node_ready():
 			await ready
-			
+		
 		_clear_rewards()
 		for card: Card in rewards:
 			var new_card = CARD_MENU_UI.instantiate()

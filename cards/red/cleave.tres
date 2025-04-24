@@ -1,7 +1,7 @@
 [gd_resource type="Resource" load_steps=3 format=3 uid="uid://ttw5wslekxbr"]
 
+[ext_resource type="Texture2D" uid="uid://0yaxm1dbbcss" path="res://assets/cards/cleave.png" id="1_h5ena"]
 [ext_resource type="Script" path="res://cards/red/cleave.gd" id="1_p0p35"]
-[ext_resource type="Texture2D" uid="uid://c6rme2o6dyaoj" path="res://art/tile_0104.png" id="1_p0ps5"]
 
 [resource]
 script = ExtResource("1_p0p35")
@@ -15,5 +15,9 @@ block = 0
 magicNumber = 0
 rarity = 2
 exhaust = false
-icon = ExtResource("1_p0ps5")
+ethereal = false
+innate = false
+tags = Array[String]([])
+color = 0
+icon = ExtResource("1_h5ena")
 description = "对所有敌人造成%s点伤害。"

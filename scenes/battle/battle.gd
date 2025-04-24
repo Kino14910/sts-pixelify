@@ -47,6 +47,8 @@ func _on_monsters_child_order_changed() -> void:
 	if monster_handler.get_child_count() == 0 and is_instance_valid(relics):
 		relics.activate_relics_by_type(Relic.Type.END_OF_COMBAT)
 		
+		
+# 写出来自己都绷不住的逆天生命周期
 func _on_relics_activated(type: Relic.Type) -> void:
 	match type:
 		Relic.Type.START_OF_COMBAT:

@@ -49,10 +49,10 @@ signal campfire_exited
 # Battle Reward-related events
 signal battle_reward_exited
 
-## Treasure Room-related events
+# Treasure Room-related events
 signal treasure_room_exited(relic: Relic)
-#
-## Relic-related events
+
+# Relic-related events
 signal relic_tooltip_requested(relic: Relic)
 signal relic_tooltip_hide()
 # Random Event room-related events

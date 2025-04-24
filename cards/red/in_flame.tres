@@ -1,7 +1,7 @@
 [gd_resource type="Resource" load_steps=3 format=3 uid="uid://bwf84fx3v87yu"]
 
+[ext_resource type="Texture2D" uid="uid://b012nrpk2lyq0" path="res://assets/cards/in_flame.png" id="1_8wkht"]
 [ext_resource type="Script" path="res://cards/red/in_flame.gd" id="1_e2d5s"]
-[ext_resource type="Texture2D" uid="uid://dojlh80rte165" path="res://art/tile_0107.png" id="1_lief8"]
 
 [resource]
 script = ExtResource("1_e2d5s")
@@ -15,5 +15,9 @@ block = 0
 magicNumber = 2
 rarity = 3
 exhaust = false
-icon = ExtResource("1_lief8")
+ethereal = false
+innate = false
+tags = Array[String]([])
+color = 0
+icon = ExtResource("1_8wkht")
 description = "获得%s点[color=gold]力量[/color]。"

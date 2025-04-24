@@ -1,9 +1,9 @@
 [gd_scene load_steps=8 format=3 uid="uid://nqvpogmvfn3t"]
 
 [ext_resource type="Script" path="res://scenes/relic_handler/relic_ui.gd" id="1_12s3y"]
-[ext_resource type="Texture2D" uid="uid://dytq0eumwvky6" path="res://art/tile_0074.png" id="1_3654h"]
+[ext_resource type="Texture2D" uid="uid://dytq0eumwvky6" path="res://assets/tile_0074.png" id="1_3654h"]
 [ext_resource type="Resource" uid="uid://dl52ja8yamvkl" path="res://relics/healing_potion.tres" id="2_ed5mv"]
-[ext_resource type="Material" uid="uid://d30aqi80c1nrc" path="res://art/white_sprite_material.tres" id="2_t20sa"]
+[ext_resource type="Material" uid="uid://d30aqi80c1nrc" path="res://assets/white_sprite_material.tres" id="2_t20sa"]
 
 [sub_resource type="Animation" id="Animation_ymr5g"]
 length = 0.001

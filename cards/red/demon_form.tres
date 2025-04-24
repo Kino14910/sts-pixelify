@@ -1,5 +1,6 @@
-[gd_resource type="Resource" load_steps=2 format=3 uid="uid://se3ainr3brk5"]
+[gd_resource type="Resource" load_steps=3 format=3 uid="uid://se3ainr3brk5"]
 
+[ext_resource type="Texture2D" uid="uid://vxskoesi0xyy" path="res://assets/cards/demon_form.png" id="1_15kmt"]
 [ext_resource type="Script" path="res://cards/red/demon_form.gd" id="1_pcwic"]
 
 [resource]
@@ -14,4 +15,9 @@ block = 0
 magicNumber = 2
 rarity = 4
 exhaust = false
+ethereal = false
+innate = false
+tags = Array[String]([])
+color = 0
+icon = ExtResource("1_15kmt")
 description = "在每回合开始时获得%s点[color=gold]力量[/color]"

@@ -31,7 +31,7 @@ func _on_card_played(card: Card) -> void:
 	skills_this_turn += 1
 	
 	if skills_this_turn % skills_required == 0:
-		var monsters = relic_ui.get_tree().get_nodes_in_group("monster")
+		var monsters = relic_ui.get_tree().get_nodes_in_group('monster')
 		var damage_action = DamageAction.new(monsters, damage)
 		damage_action.receiver_modifier_type = Modifier.Type.NO_MODIFIER
 		

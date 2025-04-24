@@ -21,7 +21,7 @@ func perform_action() -> void:
 
 	tween.tween_property(monster, "global_position", end, 0.1)
 	tween.tween_callback(DamageAction.new().execute.bind(target_array, player.modifier_handler.get_modified_value(damage, Modifier.Type.DMG_TAKEN)))
-	tween.tween_callback(player.stats.draw_pile.add_card.bind(TOXIN.duplicate()))
+	tween.tween_callback(MakeTempCardInDrawPileAction.new().execute.bind(target_array, TOXIN, 1))
 	tween.tween_interval(0.25)
 	tween.tween_property(monster, "global_position", start, 0.1)
 	

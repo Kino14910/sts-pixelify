@@ -12,8 +12,15 @@ enum StackType {NONE, INTENSITY, DURATION}
 @export var type: Type
 @export var stack_type: StackType
 @export var can_expire: bool
-@export var duration: int : set = set_duration
-@export var stacks: int : set = set_stacks
+@export var duration: int:
+	set(value):
+		duration = value
+		power_changed.emit()
+		
+@export var stacks: int: 
+	set(value):
+		stacks = value
+		power_changed.emit()
 
 @export_group("Power Visuals")
 @export var icon: Texture
@@ -23,23 +30,11 @@ enum StackType {NONE, INTENSITY, DURATION}
 func initialize_power(_target: Node) -> void:
 	pass
 
-
 func apply_power(_target: Node) -> void:
 	power_applied.emit(self)
 
-
 func get_tooltip() -> String:
 	return tooltip
-
-
-func set_duration(new_duration: int) -> void:
-	duration = new_duration
-	power_changed.emit()
-
-
-func set_stacks(new_stacks: int) -> void:
-	stacks = new_stacks
-	power_changed.emit()
 
 func new() -> Resource:
 	return duplicate()

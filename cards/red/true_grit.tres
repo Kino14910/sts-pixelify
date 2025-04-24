@@ -14,5 +14,9 @@ block = 8
 magicNumber = 1
 rarity = 3
 exhaust = true
+ethereal = false
+innate = false
+tags = Array[String]([])
+color = 0
 description = "获得%s点[color=gold]格挡[/color] 。 [color=gold]消耗[/color]一张随机手牌。
 [color=gold]消耗[/color]"

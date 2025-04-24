@@ -1,8 +1,8 @@
 [gd_scene load_steps=4 format=3 uid="uid://b5p22qeu5tbtr"]
 
 [ext_resource type="Script" path="res://scenes/ui/floor_ui.gd" id="1_k0ahd"]
-[ext_resource type="Texture2D" uid="uid://d0g1204jlka8w" path="res://art/floor.png" id="2_1on7d"]
-[ext_resource type="FontFile" uid="uid://dskmdk146n4rq" path="res://art/pixel_rpg.ttf" id="3_dqku5"]
+[ext_resource type="Texture2D" uid="uid://d0g1204jlka8w" path="res://assets/floor.png" id="2_1on7d"]
+[ext_resource type="FontFile" uid="uid://dskmdk146n4rq" path="res://assets/fonts/pixel_rpg.ttf" id="3_dqku5"]
 
 [node name="FloorUI" type="HBoxContainer"]
 offset_right = 32.0

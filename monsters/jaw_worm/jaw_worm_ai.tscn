@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://scenes/monster/monster_action_picker.gd" id="1_xi3xt"]
 [ext_resource type="Script" path="res://monsters/jaw_worm/jaw_worm_attack.gd" id="2_wtoh2"]
-[ext_resource type="Texture2D" uid="uid://d2u747hso4crg" path="res://art/attack.png" id="3_6g40o"]
+[ext_resource type="Texture2D" uid="uid://d2u747hso4crg" path="res://assets/intents/attack.png" id="3_6g40o"]
 [ext_resource type="Script" path="res://custom_resources/intent.gd" id="4_a5q1c"]
 
 [sub_resource type="Resource" id="Resource_qw8dp"]

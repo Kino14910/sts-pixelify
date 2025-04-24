@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://scenes/relic_handler/relic_tooltip.gd" id="1_qps86"]
 [ext_resource type="StyleBox" uid="uid://bijoefntbq3be" path="res://scenes/card_ui/base_stylebox.tres" id="2_4528i"]
-[ext_resource type="FontFile" uid="uid://7cxf84hdbfj5" path="res://art/fusion-pixel-12px-proportional-zh_hans.ttf" id="3_bsndc"]
+[ext_resource type="FontFile" uid="uid://7cxf84hdbfj5" path="res://assets/fonts/fusion-pixel-12px-proportional-zh_hans.ttf" id="3_bsndc"]
 
 [node name="RelicTooltip" type="Control"]
 layout_mode = 3

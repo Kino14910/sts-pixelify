@@ -52,6 +52,7 @@ func _start_next_monster_turn() -> void:
 	acting_monsters[0].power_handler.apply_powers_by_type(Power.Type.START_OF_TURN)
 
 
+# 写出来自己都绷不住的逆天生命周期
 func _on_monster_powers_applied(type: Power.Type, monster: Monster) -> void:
 	match type:
 		Power.Type.START_OF_TURN:

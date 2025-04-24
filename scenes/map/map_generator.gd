@@ -24,7 +24,8 @@ var random_room_type_weights = {
 var random_room_type_total_weight = 0
 var map_data: Array[Array]
 
-
+# 算法参考以下链接
+# https://kosgames.com/slay-the-spire-map-generation-guide-26769/
 func generate_map() -> Array[Array]:
 	map_data = _generate_initial_grid()
 	var starting_points = _get_random_starting_points()
@@ -42,6 +43,7 @@ func generate_map() -> Array[Array]:
 	return map_data
 
 
+# 生成7*15的网格来放置节点，并使每一个节点位置随机轻微偏移
 func _generate_initial_grid() -> Array[Array]:
 	var result: Array[Array] = []
 	
@@ -57,6 +59,7 @@ func _generate_initial_grid() -> Array[Array]:
 			current_room.next_rooms = [] as Array[Room]
 			
 			# Boss room has a non-random Y
+			# Boss房Y值固定
 			if i == FLOORS - 1:
 				current_room.position.y = (i + 1) * -Y_DIST
 			
@@ -67,6 +70,7 @@ func _generate_initial_grid() -> Array[Array]:
 	return result
 
 
+# 生成六条路线和至少两个起点
 func _get_random_starting_points() -> Array[int]:
 	var y_coordinates: Array[int]
 	var unique_points: int = 0
@@ -84,7 +88,7 @@ func _get_random_starting_points() -> Array[int]:
 		
 	return y_coordinates
 
-
+# 连接所有节点
 func _setup_connection(i: int, j: int) -> int:
 	var next_room: Room = null
 	var current_room = map_data[i][j] as Room
@@ -96,26 +100,31 @@ func _setup_connection(i: int, j: int) -> int:
 	current_room.next_rooms.append(next_room)
 	
 	return next_room.column
-#
 
+
+# 保证路线不会交叉
 func _would_cross_existing_path(i: int, j: int, room: Room) -> bool:
 	var left_neighbour: Room
 	var right_neighbour: Room
 	
 	# if j == 0, there's no left neighbour
+	# if j == 0， 则没有左侧相邻节点
 	if j > 0:
 		left_neighbour = map_data[i][j - 1]
 	# if j == MAP_WIDTH - 1, there's no right neighbour
+	# if j == 0， 则没有右侧相邻节点
 	if j < MAP_WIDTH - 1:
 		right_neighbour = map_data[i][j + 1]
 	
 	# can't cross in right dir if right neighbour goes to left
+	# 如果右侧相邻节点要去左边，则此节点不能去右边
 	if right_neighbour and room.column > j:
 		for next_room: Room in right_neighbour.next_rooms:
 			if next_room.column < room.column:
 				return true
 	
 	# can't cross in left dir if left neighbour goes to right
+	# 如果左侧相邻节点要去右边，则此节点不能去左边
 	if left_neighbour and room.column < j:
 		for next_room: Room in left_neighbour.next_rooms:
 			if next_room.column > room.column:
@@ -149,22 +158,26 @@ func _setup_random_room_weights() -> void:
 
 func _setup_room_types() -> void:
 	# first floor is always a battle
+	# 第1层为战斗节点
 	for room: Room in map_data[0]:
 		if room.next_rooms.size() > 0:
 				room.type = Room.Type.MONSTER
 				room.battle_stats = battle_stats_pool.get_random_battle_for_tier(0)
 
 	# 9th floor is always a treasure
+	# 第9层为宝箱节点
 	for room: Room in map_data[8]:
 		if room.next_rooms.size() > 0:
 				room.type = Room.Type.TREASURE
 				
 	# last floor before the boss is always a campfire
+	# BOSS层前一定为篝火节点
 	for room: Room in map_data[13]:
 		if room.next_rooms.size() > 0:
 				room.type = Room.Type.CAMPFIRE
 	
 	# rest of rooms
+	# 剩余房间节点
 	for current_floor in map_data:
 		for room: Room in current_floor:
 			for next_room: Room in room.next_rooms:
@@ -172,6 +185,7 @@ func _setup_room_types() -> void:
 					_set_room_randomly(next_room)
 
 
+# 房间生成规则： 三层及以下无篝火，不会生成连续篝火和商店，第十二层不会生成篝火
 func _set_room_randomly(room_to_set: Room) -> void:
 	var campfire_below_4 = true
 	var consecutive_campfire = true
@@ -206,7 +220,8 @@ func _set_room_randomly(room_to_set: Room) -> void:
 	if type_candidate == Room.Type.EVENT:
 		room_to_set.event_scene = event_room_pool.get_random()
 
-
+# 检测三个父节点是否有对应类型的节点
+# detect whether parent nodes has specified type node
 func _room_has_parent_of_type(room: Room, type: Room.Type) -> bool:
 	var parents: Array[Room] = []
 	# left parent

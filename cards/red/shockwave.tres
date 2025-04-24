@@ -1,0 +1,22 @@
+[gd_resource type="Resource" load_steps=2 format=3 uid="uid://cpp143hbgi4jm"]
+
+[ext_resource type="Script" path="res://cards/red/shockwave.gd" id="1_r6qkg"]
+
+[resource]
+script = ExtResource("1_r6qkg")
+id = "shockwave"
+type = 1
+target = 1
+cost = 2
+card_name = "震荡波"
+damage = 0
+block = 0
+magicNumber = 4
+rarity = 3
+exhaust = true
+ethereal = false
+innate = false
+tags = Array[String]([])
+color = 0
+description = "给予所有敌人 %s 层 [color=gold]虚弱[/color]  和 [color=gold]易伤[/color]  。
+消耗 。"

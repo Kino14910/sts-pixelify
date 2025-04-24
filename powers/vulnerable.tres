@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="VulnerablePower" load_steps=3 format=3 uid="uid://cxqq0117oxehu"]
 
-[ext_resource type="Texture2D" uid="uid://2egbj0w2asc2" path="res://art/expose.png" id="1_puesa"]
+[ext_resource type="Texture2D" uid="uid://2egbj0w2asc2" path="res://assets/powers/expose.png" id="1_puesa"]
 [ext_resource type="Script" path="res://powers/vulnerable.gd" id="2_7rx4i"]
 
 [resource]

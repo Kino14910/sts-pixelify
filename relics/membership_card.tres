@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="MembershipCard" load_steps=3 format=3 uid="uid://bvonlfum8708o"]
 
-[ext_resource type="Texture2D" uid="uid://cjclq485fhfjv" path="res://art/coupons.png" id="1_e8l52"]
+[ext_resource type="Texture2D" uid="uid://cjclq485fhfjv" path="res://assets/coupons.png" id="1_e8l52"]
 [ext_resource type="Script" path="res://relics/membership_card.gd" id="2_dierv"]
 
 [resource]

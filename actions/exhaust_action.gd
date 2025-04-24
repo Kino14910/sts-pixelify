@@ -12,14 +12,9 @@ func _init(targets: Array[Node], amount:int, random: bool = false) -> void:
 
 
 func execute(targets: Array[Node], amount: int) -> void:
-	var player: Player
-	for target in targets:
-		if target is Monster:
-			return
-		if target is Player:
-			player = target
+	var player: Player = targets[0].get_tree().get_first_node_in_group('player')
 	var char_stats: CharacterStats = player.stats
-	var player_handler = player.get_tree().get_first_node_in_group("player_handler") as PlayerHandler
+	var player_handler = player.get_tree().get_first_node_in_group('player_handler') as PlayerHandler
 	
 	if not player_handler:
 		return
@@ -40,7 +35,8 @@ func execute(targets: Array[Node], amount: int) -> void:
 			candidates.remove_at(random_index)
 		cards_to_exhaust = selected
 	else:
-		cards_to_exhaust = player_handler.hand.cards.slice(0, amount)
+		cards_to_exhaust = player_handler.hand.get_children().slice(0, amount)
+	
 	for card in cards_to_exhaust:
 		player_handler.hand.discard_card(card)
 		char_stats.exhaust_pile.add_card(card.card)

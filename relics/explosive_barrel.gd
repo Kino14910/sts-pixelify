@@ -4,7 +4,7 @@ extends Relic
 
 
 func activate_relic(owner: RelicUI) -> void:
-	var monster = owner.get_tree().get_nodes_in_group("monster")
+	var monster = owner.get_tree().get_nodes_in_group('monster')
 	DamageAction.new(monster, damage, DamageAction.DamageType.THORNS)
 	
 	owner.flash()

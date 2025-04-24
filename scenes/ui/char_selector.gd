@@ -11,25 +11,22 @@ const WIZARD = preload('res://characters/Wizard/Wizard.tres')
 @onready var character_portrait: TextureRect = %CharacterPortrait
 @onready var start_button: Button = $StartButton
 
-var current_character: CharacterStats : set = set_current_character
+var current_character: CharacterStats: 
+	set(value):	
+		current_character = value
+		title.text = current_character.character_name
+		description.text = current_character.description
+		character_portrait.texture = current_character.portrait
+		start_button.disabled = false
 
 
 func _ready() -> void:
 	title.text = ''
 	description.text = ''
 	character_portrait.texture = null
-	#set_current_character(IRONCLAD)
 
-
-func set_current_character(new_character: CharacterStats) -> void:
-	current_character = new_character
-	title.text = current_character.character_name
-	description.text = current_character.description
-	character_portrait.texture = current_character.portrait
-	start_button.disabled = false
 
 func _on_start_button_pressed() -> void:
-	print("Start new Run with %s" % current_character.character_name)
 	run_startup.type = RunStartup.Type.NEW_RUN
 	run_startup.picked_character = current_character
 	get_tree().change_scene_to_packed(RUN_SCENE)

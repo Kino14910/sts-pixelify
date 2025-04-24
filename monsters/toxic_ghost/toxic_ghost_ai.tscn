@@ -2,14 +2,14 @@
 
 [ext_resource type="Script" path="res://scenes/monster/monster_action_picker.gd" id="1_5bnwn"]
 [ext_resource type="Script" path="res://monsters/toxic_ghost/toxic_ghost_muscle_buff_action.gd" id="2_i5hjy"]
-[ext_resource type="Texture2D" uid="uid://bd5h68e0k66iu" path="res://art/buff_intent.png" id="3_7wve0"]
+[ext_resource type="Texture2D" uid="uid://bd5h68e0k66iu" path="res://assets/intents/buff_intent.png" id="3_7wve0"]
 [ext_resource type="Script" path="res://custom_resources/intent.gd" id="4_fh8gu"]
-[ext_resource type="AudioStream" uid="uid://k8m4o3hlwm7l" path="res://art/enemy_block.ogg" id="5_p0wt6"]
+[ext_resource type="AudioStream" uid="uid://k8m4o3hlwm7l" path="res://assets/enemy_block.ogg" id="5_p0wt6"]
 [ext_resource type="Script" path="res://monsters/toxic_ghost/toxic_ghost_attack_action.gd" id="6_cpx6d"]
-[ext_resource type="Texture2D" uid="uid://cul5qoemvh5nu" path="res://art/attack_negative.png" id="7_tt27l"]
-[ext_resource type="AudioStream" uid="uid://de2ryat1pxq6" path="res://art/enemy_attack.ogg" id="8_1btn0"]
+[ext_resource type="Texture2D" uid="uid://cul5qoemvh5nu" path="res://assets/attack_negative.png" id="7_tt27l"]
+[ext_resource type="AudioStream" uid="uid://de2ryat1pxq6" path="res://assets/enemy_attack.ogg" id="8_1btn0"]
 [ext_resource type="Script" path="res://monsters/toxic_ghost/toxic_ghost_block_action.gd" id="9_gs6um"]
-[ext_resource type="Texture2D" uid="uid://oe7v35ii8vrs" path="res://art/tile_0102.png" id="10_ptccm"]
+[ext_resource type="Texture2D" uid="uid://oe7v35ii8vrs" path="res://assets/tile_0102.png" id="10_ptccm"]
 
 [sub_resource type="Resource" id="Resource_x87li"]
 script = ExtResource("4_fh8gu")
@@ -36,6 +36,7 @@ sound = ExtResource("5_p0wt6")
 
 [node name="AttackAction" type="Node" parent="."]
 script = ExtResource("6_cpx6d")
+damage = null
 intent = SubResource("Resource_ge4s4")
 sound = ExtResource("8_1btn0")
 type = 1

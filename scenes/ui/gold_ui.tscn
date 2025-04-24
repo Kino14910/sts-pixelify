@@ -1,8 +1,8 @@
 [gd_scene load_steps=4 format=3 uid="uid://b5edngt76iuu5"]
 
 [ext_resource type="Script" path="res://scenes/ui/gold_ui.gd" id="1_7byab"]
-[ext_resource type="Texture2D" uid="uid://c2ohyvfd6kahf" path="res://art/money.png" id="2_m1rf8"]
-[ext_resource type="FontFile" uid="uid://dskmdk146n4rq" path="res://art/pixel_rpg.ttf" id="3_lpx8b"]
+[ext_resource type="Texture2D" uid="uid://c2ohyvfd6kahf" path="res://assets/money.png" id="2_m1rf8"]
+[ext_resource type="FontFile" uid="uid://dskmdk146n4rq" path="res://assets/fonts/pixel_rpg.ttf" id="3_lpx8b"]
 
 [node name="GoldUI" type="HBoxContainer"]
 offset_right = 32.0

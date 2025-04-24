@@ -1,0 +1,21 @@
+[gd_resource type="Resource" load_steps=2 format=3 uid="uid://dpc62gytd8x6y"]
+
+[ext_resource type="Script" path="res://cards/red/carnage.gd" id="1_cu6k8"]
+
+[resource]
+script = ExtResource("1_cu6k8")
+id = "carnage"
+type = 0
+target = 1
+cost = 2
+card_name = "残杀"
+damage = 20
+block = 0
+magicNumber = 0
+rarity = 4
+exhaust = false
+ethereal = false
+innate = false
+tags = Array[String]([])
+color = 0
+description = "虚无 。  造成%s点伤害。"

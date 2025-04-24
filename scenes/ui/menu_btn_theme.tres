@@ -1,6 +1,6 @@
 [gd_resource type="Theme" load_steps=4 format=3 uid="uid://ppksjylyhy1b"]
 
-[ext_resource type="FontFile" uid="uid://drwgjm5l0g4s0" path="res://art/fusion-pixel-8px-proportional-zh_hans.ttf" id="1_l4a0n"]
+[ext_resource type="FontFile" uid="uid://drwgjm5l0g4s0" path="res://assets/fonts/fusion-pixel-8px-proportional-zh_hans.ttf" id="1_l4a0n"]
 [ext_resource type="StyleBox" uid="uid://cqnhca3x8ee3a" path="res://scenes/ui/menu_btn_stylebox.tres" id="2_apvp1"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pal14"]

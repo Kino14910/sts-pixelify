@@ -1,0 +1,22 @@
+[gd_resource type="Resource" load_steps=2 format=3 uid="uid://bejos3b70h74n"]
+
+[ext_resource type="Script" path="res://cards/red/impervious.gd" id="1_522i1"]
+
+[resource]
+script = ExtResource("1_522i1")
+id = "impervious"
+type = 1
+target = 2
+cost = 2
+card_name = "岿然不动"
+damage = 0
+block = 30
+magicNumber = 0
+rarity = 4
+exhaust = true
+ethereal = false
+innate = false
+tags = Array[String]([])
+color = 0
+description = "获得%s点[color=gold]格挡[/color]。 
+消耗。"

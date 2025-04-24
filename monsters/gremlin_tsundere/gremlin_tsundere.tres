@@ -1,7 +1,7 @@
 [gd_resource type="Resource" script_class="MonsterStats" load_steps=4 format=3 uid="uid://ww5grv0cnomt"]
 
 [ext_resource type="PackedScene" uid="uid://do82qv3lk4ysk" path="res://monsters/gremlin_tsundere/gremlin_tsundere_ai.tscn" id="1_jf3fy"]
-[ext_resource type="Texture2D" uid="uid://pbyr7c7mihgc" path="res://art/gremlin_tsundere.png" id="2_oq3ar"]
+[ext_resource type="Texture2D" uid="uid://pbyr7c7mihgc" path="res://assets/monsters/gremlin_tsundere.png" id="2_oq3ar"]
 [ext_resource type="Script" path="res://custom_resources/monster_stats.gd" id="3_f44il"]
 
 [resource]

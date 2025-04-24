@@ -1,7 +1,7 @@
 class_name ShopRelic
 extends VBoxContainer
 
-const RELIC_UI = preload("res://scenes/relic_handler/relic_ui.tscn")
+const RELIC_UI = preload('res://scenes/relic_handler/relic_ui.tscn')
 
 @export var relic: Relic:
 	set(value):
@@ -34,10 +34,10 @@ func update(run_stats: RunStats) -> void:
 	price_label.text = str(gold_cost)
 	
 	if run_stats.gold >= gold_cost:
-		price_label.remove_theme_color_override("font_color")
+		price_label.remove_theme_color_override('font_color')
 		current_relic_ui.affordable = true
 	else:
-		price_label.add_theme_color_override("font_color", Color.RED)
+		price_label.add_theme_color_override('font_color', Color.RED)
 		current_relic_ui.affordable = false
 
 

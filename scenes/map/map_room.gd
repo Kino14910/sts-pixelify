@@ -6,12 +6,12 @@ signal selected(room: Room)
 
 const ICONS = {
 	Room.Type.NOT_ASSIGNED: [null, Vector2.ONE],
-	Room.Type.MONSTER: [preload("res://art/tile_0103.png"), Vector2.ONE],
-	Room.Type.TREASURE: [preload("res://art/tile_0089.png"), Vector2.ONE],
-	Room.Type.CAMPFIRE: [preload("res://art/player_heart.png"), Vector2(0.6, 0.6)],
-	Room.Type.SHOP: [preload("res://art/gold.png"), Vector2(0.6, 0.6)],
-	Room.Type.BOSS: [preload("res://art/tile_0105.png"), Vector2(1.25, 1.25)],
-	Room.Type.EVENT: [preload("res://art/rarity.png"), Vector2(0.9, 0.9)],
+	Room.Type.MONSTER: [preload("res://assets/tile_0103.png"), Vector2.ONE],
+	Room.Type.TREASURE: [preload("res://assets/tile_0089.png"), Vector2.ONE],
+	Room.Type.CAMPFIRE: [preload("res://assets/player_heart.png"), Vector2(0.6, 0.6)],
+	Room.Type.SHOP: [preload("res://assets/gold.png"), Vector2(0.6, 0.6)],
+	Room.Type.BOSS: [preload("res://assets/tile_0105.png"), Vector2(1.25, 1.25)],
+	Room.Type.EVENT: [preload("res://assets/rarity.png"), Vector2(0.9, 0.9)],
 }
 
 @onready var sprite_2d: Sprite2D = $Visuals/Sprite2D
@@ -50,7 +50,7 @@ func _on_input_event(_viewport: Node, event: InputEvent, _shape_idx: int) -> voi
 	animation_player.play("select")
 
 
-# Called by the AnimationPLayer when the 
-# "select" animation finishes.
+# Called by the AnimationPlayer when the 'select' animation finishes.
+# 在 AnimationPlayer 中的 'select' 播放完毕后执行
 func _on_map_room_selected() -> void:
 	selected.emit(room)

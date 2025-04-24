@@ -1,8 +1,8 @@
 class_name Shop
 extends Control
 
-const SHOP_CARD = preload("res://scenes/shop/shop_card.tscn")
-const SHOP_RELIC = preload("res://scenes/shop/shop_relic.tscn")
+const SHOP_CARD = preload('res://scenes/shop/shop_card.tscn')
+const SHOP_RELIC = preload('res://scenes/shop/shop_relic.tscn')
 
 @export var shop_relics: Array[Relic]
 @export var char_stats: CharacterStats
@@ -32,7 +32,7 @@ func _ready() -> void:
 
 
 #func _input(event: InputEvent) -> void:
-	#if event.is_action_pressed("ui_cancel") and card_tooltip_popup.visible:
+	#if event.is_action_pressed('ui_cancel') and card_tooltip_popup.visible:
 		#card_tooltip_popup.hide_tooltip()
 
 
@@ -125,5 +125,5 @@ func _on_shop_relic_bought(relic: Relic, gold_cost: int) -> void:
 
 
 func _on_blink_timer_timeout() -> void:
-	shop_keeper_animation.play("blink")
+	shop_keeper_animation.play('blink')
 	_blink_timer_setup()

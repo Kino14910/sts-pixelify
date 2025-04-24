@@ -2,9 +2,9 @@
 
 [ext_resource type="Script" path="res://scenes/monster/monster_action_picker.gd" id="1_dqbnu"]
 [ext_resource type="Script" path="res://monsters/gremlin_warrior/gremlin_warrior_attack.gd" id="2_mxy8i"]
-[ext_resource type="Texture2D" uid="uid://d2u747hso4crg" path="res://art/attack.png" id="3_d2k46"]
+[ext_resource type="Texture2D" uid="uid://d2u747hso4crg" path="res://assets/intents/attack.png" id="3_d2k46"]
 [ext_resource type="Script" path="res://custom_resources/intent.gd" id="4_ule3c"]
-[ext_resource type="AudioStream" uid="uid://de2ryat1pxq6" path="res://art/enemy_attack.ogg" id="5_ewhqp"]
+[ext_resource type="AudioStream" uid="uid://de2ryat1pxq6" path="res://assets/enemy_attack.ogg" id="5_ewhqp"]
 
 [sub_resource type="Resource" id="Resource_f30vc"]
 script = ExtResource("4_ule3c")

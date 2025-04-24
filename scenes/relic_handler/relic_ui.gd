@@ -23,7 +23,7 @@ var affordable = true:
 			
 
 func flash() -> void:
-	animation_player.play("flash")
+	animation_player.play('flash')
 
 
 func _on_mouse_entered() -> void:

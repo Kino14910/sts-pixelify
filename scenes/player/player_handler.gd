@@ -39,7 +39,6 @@ func start_turn() -> void:
 	relics.activate_relics_by_type(Relic.Type.START_OF_TURN)
 
 
-
 func end_turn() -> void:
 	hand.disable_hand()
 	relics.activate_relics_by_type(Relic.Type.END_OF_TURN)
@@ -47,6 +46,8 @@ func end_turn() -> void:
 
 func draw_card() -> void:
 	reshuffle_deck_from_discard()
+	if character.draw_pile.empty():
+		return
 	var card: Card = character.draw_pile.draw_card()
 	hand.add_card(card)
 	reshuffle_deck_from_discard()
@@ -103,6 +104,7 @@ func _on_card_played(card: Card) -> void:
 	character.discard.add_card(card)
 
 
+# 写出来自己都绷不住的逆天生命周期
 func _on_powers_applied(type: Power.Type) -> void:
 	match type:
 		Power.Type.START_OF_TURN:

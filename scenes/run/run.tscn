@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://bb56t0mmf8gsg"]
+[gd_scene load_steps=17 format=3 uid="uid://bb56t0mmf8gsg"]
 
 [ext_resource type="Script" path="res://scenes/run/run.gd" id="1_3anbx"]
 [ext_resource type="PackedScene" uid="uid://dh4rpv5nxuuvp" path="res://scenes/map/map.tscn" id="1_5ag4j"]
@@ -7,8 +7,10 @@
 [ext_resource type="PackedScene" uid="uid://ct8ogayx0nuii" path="res://scenes/ui/card_pile_opener.tscn" id="4_jc5yd"]
 [ext_resource type="PackedScene" uid="uid://b5edngt76iuu5" path="res://scenes/ui/gold_ui.tscn" id="4_nf8tb"]
 [ext_resource type="PackedScene" uid="uid://dn7kxpuwcukg3" path="res://scenes/ui/card_pile_view.tscn" id="6_up838"]
-[ext_resource type="Texture2D" uid="uid://xyk2ky4v7afs" path="res://art/card_pile.png" id="6_x6f6g"]
-[ext_resource type="FontFile" uid="uid://dskmdk146n4rq" path="res://art/pixel_rpg.ttf" id="7_n3rx7"]
+[ext_resource type="PackedScene" uid="uid://ycb5va1edl7o" path="res://scenes/ui/potions_ui.tscn" id="6_v51te"]
+[ext_resource type="Texture2D" uid="uid://xyk2ky4v7afs" path="res://assets/card_pile.png" id="6_x6f6g"]
+[ext_resource type="Script" path="res://scenes/ui/potions_ui.gd" id="7_56g78"]
+[ext_resource type="FontFile" uid="uid://dskmdk146n4rq" path="res://assets/fonts/pixel_rpg.ttf" id="7_n3rx7"]
 [ext_resource type="PackedScene" uid="uid://b5p22qeu5tbtr" path="res://scenes/ui/floor_ui.tscn" id="9_fwxoa"]
 [ext_resource type="PackedScene" uid="uid://bltkcscivnh8p" path="res://scenes/relic_handler/relic_handler.tscn" id="11_rb226"]
 [ext_resource type="PackedScene" uid="uid://bwtke8nmynqt2" path="res://scenes/relic_handler/relic_tooltip.tscn" id="12_iirq1"]
@@ -25,6 +27,7 @@ run_startup = ExtResource("2_o5o23")
 [node name="CurrentView" type="Node" parent="."]
 
 [node name="DebugButtons" type="VBoxContainer" parent="."]
+visible = false
 anchors_preset = 9
 anchor_bottom = 1.0
 grow_vertical = 2
@@ -96,10 +99,16 @@ unique_name_in_owner = true
 custom_minimum_size = Vector2(48, 0)
 layout_mode = 2
 
+[node name="Potions" parent="TopBar/Background/MarginContainer/BarItems" instance=ExtResource("6_v51te")]
+unique_name_in_owner = true
+layout_mode = 2
+script = ExtResource("7_56g78")
+
 [node name="FloorUI" parent="TopBar/Background/MarginContainer/BarItems" instance=ExtResource("9_fwxoa")]
 unique_name_in_owner = true
-custom_minimum_size = Vector2(24, 0)
+custom_minimum_size = Vector2(48, 0)
 layout_mode = 2
+alignment = 1
 
 [node name="Placeholder" type="Control" parent="TopBar/Background/MarginContainer/BarItems"]
 layout_mode = 2
@@ -126,10 +135,6 @@ text = "20"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="DeckView" parent="TopBar" instance=ExtResource("6_up838")]
-unique_name_in_owner = true
-visible = false
-
 [node name="RelicHandler" parent="TopBar" instance=ExtResource("11_rb226")]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(254, 12)
@@ -141,6 +146,10 @@ offset_bottom = 24.0
 grow_horizontal = 1
 
 [node name="RelicTooltip" parent="TopBar" instance=ExtResource("12_iirq1")]
+unique_name_in_owner = true
+visible = false
+
+[node name="DeckView" parent="TopBar" instance=ExtResource("6_up838")]
 unique_name_in_owner = true
 visible = false
 

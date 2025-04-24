@@ -1,6 +1,6 @@
 [gd_resource type="Resource" load_steps=3 format=3 uid="uid://c4ltkyh8pq0rc"]
 
-[ext_resource type="Texture2D" uid="uid://cqcal03735mv8" path="res://art/tile_0118.png" id="1_4frox"]
+[ext_resource type="Texture2D" uid="uid://cqcal03735mv8" path="res://assets/tile_0118.png" id="1_4frox"]
 [ext_resource type="Script" path="res://cards/red/bludgeon.gd" id="1_rotii"]
 
 [resource]
@@ -15,5 +15,9 @@ block = 0
 magicNumber = 0
 rarity = 4
 exhaust = false
+ethereal = false
+innate = false
+tags = Array[String]([])
+color = 0
 icon = ExtResource("1_4frox")
 description = "造成%s点伤害。"

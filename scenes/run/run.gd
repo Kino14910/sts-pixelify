@@ -2,13 +2,13 @@ class_name Run
 extends Node
 
 
-const BATTLE_SCENE = preload("res://scenes/battle/battle.tscn")
-const BATTLE_REWARD_SCENE = preload("res://scenes/battle_reward/battle_reward.tscn")
-const CAMPFIRE_SCENE = preload("res://scenes/campfire/campfire.tscn")
-const SHOP_SCENE = preload("res://scenes/shop/shop.tscn")
-const TREASURE_SCENE = preload("res://scenes/treasure/treasure.tscn")
-const WIN_SCREEN_SCENE = preload("res://scenes/win_screen/win_screen.tscn")
-const MAIN_MENU_PATH = "res://scenes/ui/main_menu.tscn"
+const BATTLE_SCENE = preload('res://scenes/battle/battle.tscn')
+const BATTLE_REWARD_SCENE = preload('res://scenes/battle_reward/battle_reward.tscn')
+const CAMPFIRE_SCENE = preload('res://scenes/campfire/campfire.tscn')
+const SHOP_SCENE = preload('res://scenes/shop/shop.tscn')
+const TREASURE_SCENE = preload('res://scenes/treasure/treasure.tscn')
+const WIN_SCREEN_SCENE = preload('res://scenes/win_screen/win_screen.tscn')
+const MAIN_MENU_PATH = 'res://scenes/ui/main_menu.tscn'
 
 
 @export var run_startup: RunStartup
@@ -49,6 +49,8 @@ func _ready() -> void:
 			get_tree().change_scene_to_file(MAIN_MENU_PATH)
 	)
 	
+	
+	# 写出来自己都绷不住的逆天生命周期
 	match run_startup.type:
 		RunStartup.Type.NEW_RUN:
 			char_stats = run_startup.picked_character.instantiate()
@@ -170,7 +172,7 @@ func _setup_top_bar():
 	floor_ui.run_stats = stats
 	deck_button.card_pile = char_stats.deck
 	deck_view.card_pile = char_stats.deck
-	deck_button.pressed.connect(deck_view.show_current_view.bind("Deck"))
+	deck_button.pressed.connect(deck_view.show_current_view.bind('Deck'))
 
 	relic_handler.add_relic(char_stats.starting_relic)
 	Events.relic_tooltip_requested.connect(relic_tooltip.show_tooltip)
