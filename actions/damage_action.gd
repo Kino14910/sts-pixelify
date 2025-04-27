@@ -17,7 +17,7 @@ enum DamageType {
 func _init(targets: Array[Node] = [], amount: int = 0, damagetype:DamageType = DamageType.NORMAL, sound:AudioStream = attack_sound) -> void:
 	self.damagetype = damagetype
 	self.sound = sound
-	execute(targets, amount)
+	execute(targets, GameManager.player.modifier_handler.get_modified_value(amount, Modifier.Type.DMG_DEALT))
 
 
 func execute(targets: Array[Node], amount: int) -> void:

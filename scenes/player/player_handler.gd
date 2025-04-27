@@ -47,7 +47,7 @@ func end_turn() -> void:
 
 func draw_card() -> void:
 	reshuffle_deck_from_discard()
-	if char_stats.draw_pile.empty():
+	if char_stats.draw_pile.empty() && char_stats.discard.empty():
 		return
 	var card: Card = char_stats.draw_pile.draw_card()
 	hand.add_card(card)

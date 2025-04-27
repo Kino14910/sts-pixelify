@@ -5,7 +5,7 @@ const VULNERABLE = preload('res://powers/vulnerable.tres')
 
 
 func apply_actions(targets: Array[Node], modifiers: ModifierHandler) -> void:
-	DamageAction.new(targets, modifiers.get_modified_value(damage, Modifier.Type.DMG_DEALT), DamageAction.DamageType.NORMAL, optional_sound)
+	DamageAction.new(targets, damage)
 	
 	PowerAction.new(targets, VULNERABLE.new(), magicNumber)
 	

@@ -7,3 +7,5 @@
 script = ExtResource("1_wdqti")
 
 [node name="Attack" parent="." instance=ExtResource("2_p8w50")]
+min_dmg = 6
+max_dmg = 6

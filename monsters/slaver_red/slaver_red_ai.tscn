@@ -7,5 +7,5 @@
 script = ExtResource("1_n7cdk")
 
 [node name="Attack" parent="." instance=ExtResource("2_kacm4")]
-intent = null
-sound = null
+min_dmg = 6
+max_dmg = 6

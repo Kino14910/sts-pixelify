@@ -2,7 +2,7 @@ extends Card
 
 func apply_actions(targets: Array[Node], modifiers: ModifierHandler) -> void:
 	DamageAction.new(targets, damage, DamageAction.DamageType.HP_LOSS)
-	GainEnergyAction.new(targets[0].get_tree().get_nodes_in_group('player'), magicNumber)
+	GainEnergyAction.new([GameManager.player], magicNumber)
 
 func get_default_description() -> String:
 	return description % [damage, magicNumber]

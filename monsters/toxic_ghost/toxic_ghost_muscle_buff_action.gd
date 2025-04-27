@@ -22,7 +22,7 @@ func perform_action() -> void:
 		return
 	
 	usages += 1
-	var power_action = PowerAction.new([monster], STRENGTH.new(), stacks_per_action)
+	PowerAction.new([monster], STRENGTH.new(), stacks_per_action)
 	
 	SFXPlayer.play(sound)
 

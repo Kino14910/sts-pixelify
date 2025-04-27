@@ -1,8 +1,8 @@
 extends Card
 
 func apply_actions(targets: Array[Node], modifiers: ModifierHandler) -> void:
-	DamageAction.new(targets[0].get_tree().get_nodes_in_group('player'), magicNumber, DamageAction.DamageType.HP_LOSS)
-	DamageAction.new(targets, modifiers.get_modified_value(damage, Modifier.Type.DMG_DEALT))
+	DamageAction.new([GameManager.player], magicNumber, DamageAction.DamageType.HP_LOSS)
+	DamageAction.new(targets, damage)
 
 func get_default_description() -> String:
 	return description % [magicNumber, damage]

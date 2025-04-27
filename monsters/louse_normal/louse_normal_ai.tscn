@@ -11,3 +11,5 @@ script = ExtResource("1_rn7d6")
 block = 8
 
 [node name="Attack" parent="." instance=ExtResource("3_3wwmy")]
+min_dmg = 6
+max_dmg = 6

@@ -4,7 +4,7 @@ extends Card
 
 
 func apply_actions(targets: Array[Node], modifiers: ModifierHandler) -> void:
-	DamageAction.new(targets, modifiers.get_modified_value(damage, Modifier.Type.DMG_DEALT))
+	DamageAction.new(targets, damage)
 
 	
 func get_default_description() -> String:

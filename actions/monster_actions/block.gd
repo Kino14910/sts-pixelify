@@ -13,3 +13,6 @@ func perform_action() -> void:
 		func():
 			Events.monster_action_completed.emit(monster)
 	)
+
+func update_intent_text() -> void:
+	intent.current_text = intent.base_text % block
