@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://ehdtvybuhmga"]
+
+[ext_resource type="Script" path="res://scenes/monster/monster_action_picker.gd" id="1_xa4bx"]
+[ext_resource type="PackedScene" uid="uid://cxx5ieg2ljtuu" path="res://scripts/monster_actions/attack.tscn" id="2_wt47c"]
+
+[node name="LouseDefensiveAI" type="Node"]
+script = ExtResource("1_xa4bx")
+
+[node name="Attack" parent="." instance=ExtResource("2_wt47c")]
+min_dmg = 6
+max_dmg = 6

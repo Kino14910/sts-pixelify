@@ -1,0 +1,22 @@
+[gd_resource type="Resource" load_steps=2 format=3 uid="uid://cvaiu06ftsqgm"]
+
+[ext_resource type="Script" path="res://scripts/cards/red/pummel.gd" id="1_3itkc"]
+
+[resource]
+script = ExtResource("1_3itkc")
+id = "pummel"
+type = 0
+target = 0
+cost = 1
+card_name = "连续拳"
+damage = 2
+block = 0
+magicNumber = 5
+rarity = 3
+exhaust = true
+ethereal = false
+innate = false
+tags = Array[String]([])
+color = 0
+description = "造成%s点伤害%s次。
+[color=gold]消耗[/color] 。"

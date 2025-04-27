@@ -1,10 +1,10 @@
 [gd_scene load_steps=8 format=3 uid="uid://b2n0s8gh53k8p"]
 
-[ext_resource type="Theme" uid="uid://2tytydfeg3gl" path="res://main_theme.tres" id="1_ruvld"]
+[ext_resource type="Theme" uid="uid://2tytydfeg3gl" path="res://resources/theme/main_theme.tres" id="1_ruvld"]
 [ext_resource type="Script" path="res://scenes/ui/card_visuals.gd" id="2_6iwdn"]
 [ext_resource type="StyleBox" uid="uid://bijoefntbq3be" path="res://scenes/card_ui/base_stylebox.tres" id="2_36wg4"]
 [ext_resource type="Texture2D" uid="uid://vdp7cms7ljgj" path="res://assets/energy.png" id="3_jyadm"]
-[ext_resource type="Resource" uid="uid://5nh4yv103t33" path="res://cards/red/strike_red.tres" id="3_w2ddi"]
+[ext_resource type="Resource" uid="uid://5nh4yv103t33" path="res://scripts/cards/red/strike_red.tres" id="3_w2ddi"]
 [ext_resource type="Texture2D" uid="uid://c6rme2o6dyaoj" path="res://assets/tile_0104.png" id="4_h5gsn"]
 [ext_resource type="FontFile" uid="uid://7cxf84hdbfj5" path="res://assets/fonts/fusion-pixel-12px-proportional-zh_hans.ttf" id="7_1mbkw"]
 

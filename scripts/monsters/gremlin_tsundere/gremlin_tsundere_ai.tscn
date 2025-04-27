@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://do82qv3lk4ysk"]
+
+[ext_resource type="Script" path="res://scenes/monster/monster_action_picker.gd" id="1_wdqti"]
+[ext_resource type="PackedScene" uid="uid://cxx5ieg2ljtuu" path="res://scripts/monster_actions/attack.tscn" id="2_p8w50"]
+
+[node name="GremlinTsundereAI" type="Node"]
+script = ExtResource("1_wdqti")
+
+[node name="Attack" parent="." instance=ExtResource("2_p8w50")]
+min_dmg = 6
+max_dmg = 6

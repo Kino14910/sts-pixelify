@@ -2,10 +2,10 @@
 
 [ext_resource type="Script" path="res://scenes/ui/card_rewards.gd" id="1_okwb6"]
 [ext_resource type="PackedScene" uid="uid://2maccgqd0vm6" path="res://scenes/ui/card_menu_ui.tscn" id="1_spfg3"]
-[ext_resource type="Script" path="res://custom_resources/card.gd" id="2_axqut"]
-[ext_resource type="Resource" uid="uid://5nh4yv103t33" path="res://cards/red/strike_red.tres" id="3_0xkvl"]
-[ext_resource type="Resource" uid="uid://btjxur1kw6hvn" path="res://cards/red/defend_red.tres" id="4_q6a8d"]
-[ext_resource type="Resource" uid="uid://sqhn7c8gt344" path="res://cards/red/bash.tres" id="5_w5k5q"]
+[ext_resource type="Script" path="res://resources/custom_resources/card.gd" id="2_axqut"]
+[ext_resource type="Resource" uid="uid://5nh4yv103t33" path="res://scripts/cards/red/strike_red.tres" id="3_0xkvl"]
+[ext_resource type="Resource" uid="uid://btjxur1kw6hvn" path="res://scripts/cards/red/defend_red.tres" id="4_q6a8d"]
+[ext_resource type="Resource" uid="uid://sqhn7c8gt344" path="res://scripts/cards/red/bash.tres" id="5_w5k5q"]
 
 [node name="CardRewards" type="ColorRect"]
 anchors_preset = 15

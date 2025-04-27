@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://ou8foqhr125v"]
+
+[ext_resource type="Script" path="res://scenes/monster/monster_action_picker.gd" id="1_6gcsy"]
+[ext_resource type="PackedScene" uid="uid://cxx5ieg2ljtuu" path="res://scripts/monster_actions/attack.tscn" id="2_gs8bn"]
+
+[node name="CultistAI" type="Node"]
+script = ExtResource("1_6gcsy")
+
+[node name="Attack" parent="." instance=ExtResource("2_gs8bn")]
+min_dmg = 6
+max_dmg = 6

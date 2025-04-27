@@ -1,9 +1,9 @@
 [gd_scene load_steps=5 format=3 uid="uid://bf0p0w25ki8ff"]
 
-[ext_resource type="Theme" uid="uid://2tytydfeg3gl" path="res://main_theme.tres" id="1_4vadc"]
+[ext_resource type="Theme" uid="uid://2tytydfeg3gl" path="res://resources/theme/main_theme.tres" id="1_4vadc"]
 [ext_resource type="Texture2D" uid="uid://vdp7cms7ljgj" path="res://assets/energy.png" id="2_t7mot"]
 [ext_resource type="Script" path="res://scenes/card_ui/energy_ui.gd" id="3_blxfb"]
-[ext_resource type="Resource" uid="uid://4qo5n75hbldo" path="res://characters/Ironclad/Ironclad.tres" id="4_6aake"]
+[ext_resource type="Resource" uid="uid://4qo5n75hbldo" path="res://scripts/characters/Ironclad/Ironclad.tres" id="4_6aake"]
 
 [node name="EnergyUI" type="TextureRect"]
 anchors_preset = 2

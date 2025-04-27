@@ -1,0 +1,20 @@
+[gd_scene load_steps=5 format=3 uid="uid://dosrm8oortv75"]
+
+[ext_resource type="PackedScene" uid="uid://bqkrwbju4mck8" path="res://scenes/monster/monster.tscn" id="1_xiqvf"]
+[ext_resource type="Resource" uid="uid://cn740t1p4t03c" path="res://scripts/monsters/gremlin_fat/gremlin_fat.tres" id="2_dd1yk"]
+[ext_resource type="Resource" uid="uid://c6lbfsq1e8a31" path="res://scripts/monsters/gremlin_warrior/gremlin_warrior.tres" id="3_sqsuu"]
+[ext_resource type="Resource" uid="uid://ww5grv0cnomt" path="res://scripts/monsters/gremlin_tsundere/gremlin_tsundere.tres" id="4_vlik2"]
+
+[node name="Gremlin" type="Node2D"]
+
+[node name="GremlinFat" parent="." instance=ExtResource("1_xiqvf")]
+position = Vector2(145, 77)
+stats = ExtResource("2_dd1yk")
+
+[node name="GremlinWarrior" parent="." instance=ExtResource("1_xiqvf")]
+position = Vector2(167, 78)
+stats = ExtResource("3_sqsuu")
+
+[node name="GremlinTsundere" parent="." instance=ExtResource("1_xiqvf")]
+position = Vector2(189, 78)
+stats = ExtResource("4_vlik2")

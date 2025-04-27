@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="WeakenedPower" load_steps=3 format=3 uid="uid://dbmjp625jdkr8"]
+
+[ext_resource type="Texture2D" uid="uid://c7xx3uproscj" path="res://assets/tile_0128.png" id="1_u3pd6"]
+[ext_resource type="Script" path="res://scripts/powers/weakened.gd" id="2_awvp1"]
+
+[resource]
+script = ExtResource("2_awvp1")
+id = "weakened"
+type = 0
+stack_type = 2
+can_expire = true
+duration = 1
+stacks = 0
+icon = ExtResource("1_u3pd6")
+tooltip = "[color=gold]攻击[/color]造成的伤害减少%s%% 。 持续时间%s回合。"

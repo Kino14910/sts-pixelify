@@ -75,7 +75,7 @@ func play() -> void:
 	if not card:
 		return
 	
-	card.play(targets, char_stats, player_modifiers)
+	card.play(targets, char_stats)
 	queue_free()
 	
 

@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="BattleStatsPool" load_steps=9 format=3 uid="uid://d0s1g4ixq18kc"]
+
+[ext_resource type="Script" path="res://resources/custom_resources/battle_stats.gd" id="1_88ie2"]
+[ext_resource type="Resource" uid="uid://bopn01fod7lj1" path="res://scripts/dungeons/exordium/weak/2_louse.tres" id="2_lbdtk"]
+[ext_resource type="Resource" uid="uid://dn0kito8g2yqd" path="res://scripts/dungeons/exordium/weak/jaw_worm.tres" id="3_gd6kl"]
+[ext_resource type="Resource" uid="uid://dhogi5uqiyrhg" path="res://scripts/dungeons/exordium/weak/culist.tres" id="4_006k0"]
+[ext_resource type="Script" path="res://resources/custom_resources/battle_stats_pool.gd" id="4_r7ova"]
+[ext_resource type="Resource" uid="uid://hp8ehtwkssqt" path="res://scripts/dungeons/exordium/strong/gremlin.tres" id="5_mbdlf"]
+[ext_resource type="Resource" uid="uid://cnse5exfh2eec" path="res://scripts/dungeons/exordium/elite/lagavulin.tres" id="6_7qb8d"]
+[ext_resource type="Resource" uid="uid://d3e4osl3tc86v" path="res://scripts/dungeons/exordium/boss/tier_2_toxic_ghost.tres" id="7_is22e"]
+
+[resource]
+script = ExtResource("4_r7ova")
+pool = Array[ExtResource("1_88ie2")]([ExtResource("2_lbdtk"), ExtResource("4_006k0"), ExtResource("3_gd6kl"), ExtResource("5_mbdlf"), ExtResource("6_7qb8d"), ExtResource("7_is22e")])

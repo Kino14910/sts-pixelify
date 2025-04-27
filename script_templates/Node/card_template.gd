@@ -4,7 +4,7 @@ extends Card
 
 @export var optional_sound: AudioStream
 
-func apply_actions(targets: Array[Node], _modifiers: ModifierHandler) -> void:
+func apply_actions(targets: Array[Node]) -> void:
 	print("My awesome card has been played!")
 	print("Targets: %s" % targets)
 

@@ -1,0 +1,23 @@
+[gd_resource type="Resource" script_class="Card" load_steps=3 format=3 uid="uid://cc5petfya5u8s"]
+
+[ext_resource type="Texture2D" uid="uid://psr6xk3k26oh" path="res://assets/tile_0114.png" id="1_0j1je"]
+[ext_resource type="Script" path="res://resources/custom_resources/card.gd" id="1_jxisp"]
+
+[resource]
+script = ExtResource("1_jxisp")
+id = "toxin"
+type = 1
+target = 0
+cost = 1
+card_name = ""
+damage = 0
+block = 0
+magicNumber = 0
+rarity = 1
+exhaust = false
+ethereal = false
+innate = false
+tags = Array[String]([])
+color = 4
+icon = ExtResource("1_0j1je")
+description = "[color=gold]消耗[/color] 。"

@@ -1,8 +1,8 @@
 [gd_scene load_steps=12 format=3 uid="uid://bgdh50jyx0702"]
 
-[ext_resource type="Theme" uid="uid://2tytydfeg3gl" path="res://main_theme.tres" id="1_6jvbn"]
+[ext_resource type="Theme" uid="uid://2tytydfeg3gl" path="res://resources/theme/main_theme.tres" id="1_6jvbn"]
 [ext_resource type="Script" path="res://scenes/card_ui/card_ui.gd" id="2_1k3vl"]
-[ext_resource type="Resource" uid="uid://5nh4yv103t33" path="res://cards/red/strike_red.tres" id="2_uwe1l"]
+[ext_resource type="Resource" uid="uid://5nh4yv103t33" path="res://scripts/cards/red/strike_red.tres" id="2_uwe1l"]
 [ext_resource type="Script" path="res://scenes/card_ui/card_state_machine.gd" id="3_f6yj3"]
 [ext_resource type="PackedScene" uid="uid://b2n0s8gh53k8p" path="res://scenes/ui/card_visuals.tscn" id="4_m05n8"]
 [ext_resource type="Script" path="res://scenes/card_ui/card_state/base_state.gd" id="4_rywma"]

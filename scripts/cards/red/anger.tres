@@ -1,0 +1,22 @@
+[gd_resource type="Resource" load_steps=2 format=3 uid="uid://deycgwfy0gttk"]
+
+[ext_resource type="Script" path="res://scripts/cards/red/anger.gd" id="1_8adky"]
+
+[resource]
+script = ExtResource("1_8adky")
+id = "anger"
+type = 0
+target = 0
+cost = 0
+card_name = "愤怒"
+damage = 6
+block = 0
+magicNumber = 0
+rarity = 3
+exhaust = false
+ethereal = false
+innate = false
+tags = Array[String]([])
+color = 0
+description = "造成%s点伤害。
+在弃牌堆放入一张此牌的复制品。"

@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://scenes/ui/stats_ui.gd" id="1_0xfxr"]
 [ext_resource type="Texture2D" uid="uid://dtlodwtrhhw46" path="res://assets/health_bar_maxhealth.png" id="1_gaqns"]
 [ext_resource type="Texture2D" uid="uid://cm7i0jbpaw8wt" path="res://assets/health_bar.png" id="2_diflr"]
-[ext_resource type="Theme" uid="uid://2tytydfeg3gl" path="res://main_theme.tres" id="3_4qogu"]
+[ext_resource type="Theme" uid="uid://2tytydfeg3gl" path="res://resources/theme/main_theme.tres" id="3_4qogu"]
 [ext_resource type="FontFile" uid="uid://dskmdk146n4rq" path="res://assets/fonts/pixel_rpg.ttf" id="4_4fg2o"]
 [ext_resource type="Texture2D" uid="uid://lucauwqq5e4n" path="res://assets/block.png" id="5_fpw0n"]
 

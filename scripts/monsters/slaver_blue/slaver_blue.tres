@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="MonsterStats" load_steps=4 format=3 uid="uid://dhp7yihiap6a8"]
+
+[ext_resource type="PackedScene" uid="uid://cottuxqshwvgp" path="res://scripts/monsters/slaver_blue/slaver_blue_ai.tscn" id="1_0lc44"]
+[ext_resource type="Texture2D" uid="uid://ijcjf024eviy" path="res://assets/monsters/slaver_blue.png" id="2_sbhas"]
+[ext_resource type="Script" path="res://resources/custom_resources/monster_stats.gd" id="3_wevw0"]
+
+[resource]
+script = ExtResource("3_wevw0")
+ai = ExtResource("1_0lc44")
+min_hp = 46
+max_hp = 50
+art = ExtResource("2_sbhas")
+max_health = 1

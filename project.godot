@@ -15,15 +15,19 @@ run/main_scene="res://scenes/ui/main_menu.tscn"
 config/features=PackedStringArray("4.3", "Forward Plus")
 config/icon="res://icon.png"
 
+[audio]
+
+buses/default_bus_layout="res://sounds_bus_layout.tres"
+
 [autoload]
 
-Events="*res://global/events.gd"
-Shaker="*res://global/shaker.gd"
-MusicPlayer="*res://global/music_player.tscn"
-SFXPlayer="*res://global/sfx_player.tscn"
-RNG="*res://global/rng.gd"
+Events="*res://autoloads/events.gd"
+Shaker="*res://autoloads/shaker.gd"
+MusicPlayer="*res://autoloads/music_player.tscn"
+SFXPlayer="*res://autoloads/sound_player.tscn"
+RNG="*res://autoloads/rng.gd"
 Signal_Debugger="*res://addons/SignalVisualizer/Debugger/SignalDebugger.gd"
-GameManager="*res://global/game_manager.gd"
+GameManager="*res://autoloads/game_manager.gd"
 
 [debug]
 
@@ -44,7 +48,7 @@ enabled=PackedStringArray("res://addons/SignalVisualizer/plugin.cfg", "res://add
 
 [gui]
 
-theme/custom="res://main_theme.tres"
+theme/custom="res://resources/theme/main_theme.tres"
 
 [input]
 

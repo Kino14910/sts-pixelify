@@ -1,7 +1,7 @@
 [gd_resource type="Resource" script_class="RunStartup" load_steps=3 format=3 uid="uid://drbh5deiiyr6f"]
 
-[ext_resource type="Script" path="res://custom_resources/run_startup.gd" id="1_nndta"]
-[ext_resource type="Resource" uid="uid://4qo5n75hbldo" path="res://characters/Ironclad/Ironclad.tres" id="1_r6d45"]
+[ext_resource type="Script" path="res://resources/custom_resources/run_startup.gd" id="1_nndta"]
+[ext_resource type="Resource" uid="uid://4qo5n75hbldo" path="res://scripts/characters/Ironclad/Ironclad.tres" id="1_r6d45"]
 
 [resource]
 script = ExtResource("1_nndta")

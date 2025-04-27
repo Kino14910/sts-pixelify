@@ -1,7 +1,7 @@
 [gd_scene load_steps=14 format=3 uid="uid://c40s1bx1nilti"]
 
 [ext_resource type="Script" path="res://scenes/campfire/campfire.gd" id="1_8uaj7"]
-[ext_resource type="Resource" uid="uid://4qo5n75hbldo" path="res://characters/Ironclad/Ironclad.tres" id="2_5ovp4"]
+[ext_resource type="Resource" uid="uid://4qo5n75hbldo" path="res://scripts/characters/Ironclad/Ironclad.tres" id="2_5ovp4"]
 [ext_resource type="Texture2D" uid="uid://djbldcvfo4swr" path="res://assets/line.png" id="2_r8a2w"]
 
 [sub_resource type="Gradient" id="Gradient_51bgw"]

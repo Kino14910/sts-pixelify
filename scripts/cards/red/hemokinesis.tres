@@ -1,0 +1,21 @@
+[gd_resource type="Resource" load_steps=2 format=3 uid="uid://c2hxuf63nwt5b"]
+
+[ext_resource type="Script" path="res://scripts/cards/red/hemokinesis.gd" id="1_ygruk"]
+
+[resource]
+script = ExtResource("1_ygruk")
+id = "hemokinesis"
+type = 0
+target = 0
+cost = 1
+card_name = "御血术"
+damage = 12
+block = 0
+magicNumber = 2
+rarity = 3
+exhaust = false
+ethereal = false
+innate = false
+tags = Array[String]([])
+color = 0
+description = "失去%s点生命。 造成%s点伤害。"

@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://bjlwfq5plkr2s"]
+
+[ext_resource type="PackedScene" uid="uid://bqkrwbju4mck8" path="res://scenes/monster/monster.tscn" id="1_iept0"]
+[ext_resource type="Resource" uid="uid://cyl4dpbtl7m85" path="res://scripts/monsters/lagavulin/lagavulin.tres" id="2_uruyc"]
+
+[node name="Lagavulin" type="Node2D"]
+
+[node name="Lagavulin" parent="." instance=ExtResource("1_iept0")]
+position = Vector2(199, 80)
+stats = ExtResource("2_uruyc")

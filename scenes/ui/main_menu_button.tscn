@@ -1,8 +1,6 @@
-[gd_scene load_steps=4 format=3 uid="uid://dlytqkh07jj0t"]
+[gd_scene load_steps=2 format=3 uid="uid://dlytqkh07jj0t"]
 
 [ext_resource type="Theme" uid="uid://ppksjylyhy1b" path="res://scenes/ui/menu_btn_theme.tres" id="1_ckleq"]
-[ext_resource type="Texture2D" uid="uid://bh8l6alyl1jsn" path="res://scenes/ui/new_gradient_texture_1d.tres" id="2_6p41c"]
-[ext_resource type="Script" path="res://scenes/ui/btn_hover.gd" id="3_f4iyi"]
 
 [node name="Button" type="Button"]
 offset_right = 43.0
@@ -11,18 +9,3 @@ theme = ExtResource("1_ckleq")
 theme_type_variation = &"FlatButton"
 text = "New Game"
 alignment = 0
-
-[node name="TextureRect" type="TextureRect" parent="."]
-visible = false
-z_index = -1
-layout_mode = 1
-anchors_preset = 9
-anchor_bottom = 1.0
-offset_right = 32.0
-grow_vertical = 2
-theme = ExtResource("1_ckleq")
-texture = ExtResource("2_6p41c")
-script = ExtResource("3_f4iyi")
-
-[connection signal="mouse_entered" from="." to="TextureRect" method="_on_button_mouse_entered"]
-[connection signal="mouse_exited" from="." to="TextureRect" method="_on_button_mouse_exited"]

@@ -57,28 +57,36 @@ sts-pixelify 是一款使用Godot引擎开发的类《杀戮尖塔》策略卡�
 
 ## 项目结构
 
-```
-.
-├── assets/            # 美术资源
-│   ├── cards/        # 卡牌贴图
-│   ├── characters/   # 角色立绘
-│   ├── fonts/   # 字体文件
-│   ├── monsters/   # 怪物立绘
-│   ├── intents/   # 意图图标
-│   ├── potions/   # 药水图标
-│   ├── powers/   # 能力图标
-├── others/   # 我不会分类（bushi
+```shell
+sts-pixelify
+├─assets
+├─autoloads
+├─scripts
+│  ├─actions
+│  ├─cards
+│  ├─characters
+│  ├─dungeons
+│  ├─monsters
+│  ├─monster_actions
+│  ├─powers
+│  ├─relics
+├─resources
+│  ├─curves
+│  ├─custom_resources
+│  └─theme
+├─scenes
+└─script_templates
 ```
 
 ## 开发者指南
 
 ### 添加新卡牌
-1. 在`cards`目录创建脚本，复制下面的模板或者在新建界面的模板选择Node: Card Logic
+1. 在`res://scripts/cards`目录创建脚本，复制下面的模板或者在新建界面的模板选择`Node: Card Logic`
    ```gdscript
    extends Card
    
-   func apply_actions(targets: Array[Node], modifiers: ModifierHandler) -> void:
-   	DamageAction.new(targets, modifiers.get_modified_value(damage, Modifier.Type.DMG_DEALT))
+   func apply_actions(targets: Array[Node]) -> void:
+   	DamageAction.new(targets, damage)
    
    func get_default_description() -> String:
    	return description % damage
@@ -92,44 +100,52 @@ sts-pixelify 是一款使用Godot引擎开发的类《杀戮尖塔》策略卡�
    	return description % modified_dmg
    ```
 
-2. 在`cards`目录创建资源
+2. 在`res://scripts/cards`目录创建资源
 
    在检查器中填写对应的数据
 
 3. 将创建的脚本拖拽到对应资源的检查器底部`RefCounted/Script`处,替换原来的`Card.gd`
 
-### 事件系统示例
-```gdscript
-# 订阅事件
-Events.connect("card_played", _on_card_played)
-
-func _on_card_played(card, target):
-    print("卡牌已使用:", card.card_name)
-```
-
 
 
 ### 添加新怪物
 
-1. 在`monster`目录创建目录，名字为你想创建的怪物名字
+1. 在`res://scripts/monster`目录创建目录，名字为你想创建的怪物名字
 2. 复制一份`res://scenes/monster/monster_action_picker.tscn`到目录下，在场景中新建`Node`子节点
 3. 创建脚本，复制下面的模板或者在新建界面的模板选择`Node: MonsterAction`
+4. 如果想写公共的怪物action脚本，请写在`res://scripts/monster_actions`目录下
+5. 添加好怪物之后在`res://scripts/dungeons`目录下对应的目录添加地牢房间，然后在`battle_stats_pool.tres`中注册对应的dungeon（最好将资源拖入到检查器中，直接在检查器中选择可能触发godot引擎bug导致引用出错）
 
 
 
-### 添加新Action
+### 添加新Action/Power/Relic
 
-1. 在`action`目录创建脚本，在新建界面的模板选择`Node: Action`
+1. 在对应目录创建脚本，在新建界面的模板选择对应模板
+2. 创建对应的资源并应用脚本
 
-2. 获取几种节点的方式：
 
-   | Node           | Method                                                       |
-   | -------------- | ------------------------------------------------------------ |
-   | player         | `targets[0].get_tree().get_first_node_in_group('player')`    |
-   | player_handler | `player.get_tree().get_first_node_in_group('player_handler') as PlayerHandler` |
-   | monsters       | `targets[0].get_tree().get_nodes_in_group('monster') `       |
 
-   
+
+
+### 事件系统示例（以抽卡事件为例）
+
+```gdscript
+# 注册事件
+Events.gd
+signal draw_cards
+
+
+# 订阅事件
+player_handler.gd
+Events.draw_cards.connect(draw_cards)
+
+
+# 发送事件
+draw_card_action.gd
+Events.draw_cards.emit(amount)
+```
+
+
 
 ## 参与贡献
 
