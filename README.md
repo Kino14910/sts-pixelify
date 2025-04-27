@@ -31,7 +31,6 @@ sts-pixelify 是一款使用Godot引擎开发的类《杀戮尖塔》策略卡�
 - 基于Godot 4的ECS架构（实验性）
 - 全响应式UI系统
 - 可扩展的事件总线系统
-- 完整的单元测试覆盖（使用GUT框架）
 
 ## 安装指南
 
@@ -106,9 +105,6 @@ Events.connect("card_played", _on_card_played)
 
 func _on_card_played(card, target):
     print("卡牌已使用:", card.card_name)
-    
-# 触发事件
-EventBus.emit_signal("enemy_turn_started")
 ```
 
 
@@ -121,7 +117,7 @@ EventBus.emit_signal("enemy_turn_started")
 
 
 
-### 添加新Action(Effect)
+### 添加新Action
 
 1. 在`action`目录创建脚本，在新建界面的模板选择`Node: Action`
 
@@ -147,7 +143,6 @@ EventBus.emit_signal("enemy_turn_started")
 - 使用GDScript静态类型
 - 节点命名使用snake_case
 - 遵循Godot官方代码风格
-- 重要功能需包含单元测试
 
 ## 路线图
 
