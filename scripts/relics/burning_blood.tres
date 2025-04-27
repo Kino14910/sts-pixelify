@@ -7,7 +7,7 @@
 script = ExtResource("2_ebvif")
 heal_amount = 6
 relic_name = "燃烧之血"
-id = "BurningBlood"
+id = "Burning Blood"
 type = 3
 character_type = 2
 starter_relic = true

@@ -1,6 +1,6 @@
 extends Card
 
-const VULNERABLE = preload('res://powers/vulnerable.tres')
+const VULNERABLE = preload('res://scripts/powers/vulnerable.tres')
 
 
 func apply_actions(targets: Array[Node]) -> void:

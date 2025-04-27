@@ -1,9 +1,9 @@
 extends Control
 
 const RUN_SCENE = preload("res://scenes/run/run.tscn")
-const IRONCLAD = preload('res://characters/Ironclad/Ironclad.tres')
-const SILENCE_HUNTER = preload('res://characters/TheSilent/TheSilent.tres')
-const WIZARD = preload('res://characters/Wizard/Wizard.tres')
+const IRONCLAD = preload('res://scripts/characters/Ironclad/Ironclad.tres')
+const SILENCE_HUNTER = preload('res://scripts/characters/TheSilent/TheSilent.tres')
+const WIZARD = preload('res://scripts/characters/Wizard/Wizard.tres')
 @export var run_startup: RunStartup
 
 @onready var title: Label = %Name

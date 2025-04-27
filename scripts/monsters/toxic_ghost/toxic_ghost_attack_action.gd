@@ -1,6 +1,6 @@
 extends MonsterAction
 
-const TOXIN = preload('res://cards/colorless/toxin.tres')
+const TOXIN = preload('res://scripts/cards/colorless/toxin.tres')
 
 @export var damage = 8
 

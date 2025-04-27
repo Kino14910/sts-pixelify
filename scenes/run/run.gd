@@ -49,6 +49,8 @@ func _ready() -> void:
 			get_tree().change_scene_to_file(MAIN_MENU_PATH)
 	)
 	
+	GameManager.run = self
+	
 	
 	# 写出来自己都绷不住的逆天生命周期
 	match run_startup.type:
@@ -57,6 +59,7 @@ func _ready() -> void:
 			_start_run()
 		RunStartup.Type.CONTINUED_RUN:
 			_load_run()
+	
 
 
 func _start_run() -> void:
@@ -194,7 +197,7 @@ func _on_battle_room_entered(room: Room) -> void:
 	battle_scene.battle_stats = room.battle_stats
 	battle_scene.relics = relic_handler
 	battle_scene.start_battle()
-
+	GameManager.room = room
 
 func _on_treasure_room_entered() -> void:
 	var treasure_scene = _change_view(TREASURE_SCENE) as Treasure

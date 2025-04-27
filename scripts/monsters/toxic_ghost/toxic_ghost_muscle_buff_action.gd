@@ -1,7 +1,7 @@
 extends MonsterAction
 
 
-const STRENGTH = preload('res://powers/strength.tres')
+const STRENGTH = preload('res://scripts/powers/strength.tres')
 @export var stacks_per_action = 2
 
 var hp_threshold = 25

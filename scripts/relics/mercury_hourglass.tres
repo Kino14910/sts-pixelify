@@ -1,0 +1,19 @@
+[gd_resource type="Resource" load_steps=4 format=3 uid="uid://dprcg0tbjp0pj"]
+
+[ext_resource type="Texture2D" uid="uid://dw6es7vkokmgo" path="res://assets/relics/relics.png" id="1_de1tp"]
+[ext_resource type="Script" path="res://scripts/relics/mercury_hourglass.gd" id="2_6fiy6"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_071lc"]
+atlas = ExtResource("1_de1tp")
+region = Rect2(98, 72, 5, 8)
+
+[resource]
+script = ExtResource("2_6fiy6")
+damage = 2
+relic_name = "水银沙漏"
+id = "Mercury Hourglass"
+type = 0
+character_type = 0
+starter_relic = false
+icon = SubResource("AtlasTexture_071lc")
+tooltip = "在你的回合开始时，对所有敌人造成2点伤害。"

@@ -18,7 +18,6 @@ func setup_monsters(battle_stats: BattleStats) -> void:
 		monster.queue_free()
 	
 	var all_new_monsters = battle_stats.monsters.instantiate()
-	
 	for new_monster: Node2D in all_new_monsters.get_children():
 		var new_monster_child = new_monster.duplicate() as Monster
 		add_child(new_monster_child)

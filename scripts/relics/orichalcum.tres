@@ -1,0 +1,22 @@
+[gd_resource type="Resource" load_steps=5 format=3 uid="uid://ph22cpxintef"]
+
+[ext_resource type="Texture2D" uid="uid://dw6es7vkokmgo" path="res://assets/relics/relics.png" id="1_stg2o"]
+[ext_resource type="Script" path="res://scripts/relics/orichalcum.gd" id="2_7l5r2"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_njjrr"]
+atlas = ExtResource("1_stg2o")
+region = Rect2(24, 25, 8, 7)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0wua8"]
+atlas = SubResource("AtlasTexture_njjrr")
+
+[resource]
+script = ExtResource("2_7l5r2")
+block_bonus = null
+relic_name = "奥利哈钢"
+id = "Orichalcum"
+type = 2
+character_type = 2
+starter_relic = null
+icon = SubResource("AtlasTexture_0wua8")
+tooltip = "如果你在回合结束时没有任何格挡，获得3点格挡。"

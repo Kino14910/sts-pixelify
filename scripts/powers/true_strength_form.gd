@@ -1,7 +1,7 @@
 class_name TrueStrengthPower
 extends Power
 
-const STRENGTH = preload('res://powers/strength.tres')
+const STRENGTH = preload('res://scripts/powers/strength.tres')
 
 
 func apply_power(target: Node) -> void:

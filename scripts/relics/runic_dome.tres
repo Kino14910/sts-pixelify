@@ -1,0 +1,19 @@
+[gd_resource type="Resource" load_steps=4 format=3 uid="uid://7p0cu4d72cnj"]
+
+[ext_resource type="Texture2D" uid="uid://dw6es7vkokmgo" path="res://assets/relics/relics.png" id="1_mpdwq"]
+[ext_resource type="Script" path="res://scripts/relics/runic_dome.gd" id="2_kl6jd"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hig6k"]
+atlas = ExtResource("1_mpdwq")
+region = Rect2(12, 159, 8, 6)
+
+[resource]
+script = ExtResource("2_kl6jd")
+relic_name = "符文圆顶"
+id = "Runic Dome"
+type = 1
+character_type = 0
+starter_relic = false
+icon = SubResource("AtlasTexture_hig6k")
+tooltip = "你无法再看见敌人的意图 。
+在每回合开始时获得1点能量"

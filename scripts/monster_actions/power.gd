@@ -2,7 +2,7 @@ extends MonsterAction
 
 @export var number: int
 
-const STRENGTH = preload('res://powers/strength.tres')
+const STRENGTH = preload('res://scripts/powers/strength.tres')
 
 func perform_action() -> void:
 	if not monster or not target:

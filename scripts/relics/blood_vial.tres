@@ -1,0 +1,20 @@
+[gd_resource type="Resource" load_steps=4 format=3 uid="uid://dl52ja8yamvkl"]
+
+[ext_resource type="Texture2D" uid="uid://dw6es7vkokmgo" path="res://assets/relics/relics.png" id="1_m88oy"]
+[ext_resource type="Script" path="res://scripts/relics/blood_vial.gd" id="2_vdhar"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_f8k5v"]
+atlas = ExtResource("1_m88oy")
+region = Rect2(108, 0, 8, 8)
+
+[resource]
+script = ExtResource("2_vdhar")
+heal_amount = 2
+relic_name = "小血瓶"
+id = "Blood Vial"
+type = 1
+character_type = 2
+starter_relic = true
+icon = SubResource("AtlasTexture_f8k5v")
+tooltip = "[color=\"ffdf00\"]Endless Healing Potion[/color]
+At the end of combat, heal 6 HP."
