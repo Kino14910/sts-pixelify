@@ -10,3 +10,4 @@ ai = ExtResource("1_mqwp0")
 min_hp = 11
 max_hp = 17
 art = ExtResource("1_crtmn")
+max_health = 1

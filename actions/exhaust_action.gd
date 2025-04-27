@@ -12,9 +12,8 @@ func _init(targets: Array[Node], amount:int, random: bool = false) -> void:
 
 
 func execute(targets: Array[Node], amount: int) -> void:
-	var player: Player = targets[0].get_tree().get_first_node_in_group('player')
-	var char_stats: CharacterStats = player.stats
-	var player_handler = player.get_tree().get_first_node_in_group('player_handler') as PlayerHandler
+	var char_stats: CharacterStats = GameManager.player_handler.char_stats
+	var player_handler = GameManager.player_handler
 	
 	if not player_handler:
 		return

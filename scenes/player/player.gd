@@ -27,7 +27,7 @@ func _ready() -> void:
 	power_handler.power_owner = self
 	stats_ui.pos_init()
 	power_handler.position = stats_ui.position + Vector2(stats_ui.block.size.x, stats_ui.health.size.y)
-
+	GameManager.player = self
 
 func update_player() -> void:
 	if not stats is CharacterStats: 

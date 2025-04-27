@@ -9,5 +9,5 @@ func _ready() -> void:
 	label.text = "0/0"
 
 
-func _update_health(character: CharacterStats) -> void:
-	label.text = str(character.health) + '\\' + str(character.max_health)
+func _update_health(char_stats: CharacterStats) -> void:
+	label.text = str(char_stats.health) + '\\' + str(char_stats.max_health)

@@ -1,21 +1,11 @@
-[gd_scene load_steps=6 format=3 uid="uid://c5uv7ch52n3r1"]
+[gd_scene load_steps=3 format=3 uid="uid://c5uv7ch52n3r1"]
 
 [ext_resource type="Script" path="res://scenes/monster/monster_action_picker.gd" id="1_xi3xt"]
-[ext_resource type="Script" path="res://monsters/jaw_worm/jaw_worm_attack.gd" id="2_wtoh2"]
-[ext_resource type="Texture2D" uid="uid://d2u747hso4crg" path="res://assets/intents/attack.png" id="3_6g40o"]
-[ext_resource type="Script" path="res://custom_resources/intent.gd" id="4_a5q1c"]
-
-[sub_resource type="Resource" id="Resource_qw8dp"]
-script = ExtResource("4_a5q1c")
-base_text = "%s"
-icon = ExtResource("3_6g40o")
+[ext_resource type="PackedScene" uid="uid://cxx5ieg2ljtuu" path="res://actions/monster_actions/attack.tscn" id="2_l1wkk"]
 
 [node name="JawWormAI" type="Node"]
 script = ExtResource("1_xi3xt")
 
-[node name="Attack" type="Node" parent="."]
-script = ExtResource("2_wtoh2")
-damage = 11
-intent = SubResource("Resource_qw8dp")
-type = 1
-chance_weight = 1.0
+[node name="Attack" parent="." instance=ExtResource("2_l1wkk")]
+min_dmg = 6
+max_dmg = 6

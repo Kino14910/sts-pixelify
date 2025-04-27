@@ -1,22 +1,9 @@
-[gd_scene load_steps=7 format=3 uid="uid://do82qv3lk4ysk"]
+[gd_scene load_steps=3 format=3 uid="uid://do82qv3lk4ysk"]
 
 [ext_resource type="Script" path="res://scenes/monster/monster_action_picker.gd" id="1_wdqti"]
-[ext_resource type="Script" path="res://monsters/gremlin_tsundere/gremlin_tsundere_attack.gd" id="2_p0rvh"]
-[ext_resource type="Texture2D" uid="uid://d2u747hso4crg" path="res://assets/intents/attack.png" id="3_us0b8"]
-[ext_resource type="Script" path="res://custom_resources/intent.gd" id="4_30dfp"]
-[ext_resource type="AudioStream" uid="uid://de2ryat1pxq6" path="res://assets/enemy_attack.ogg" id="5_oanmn"]
-
-[sub_resource type="Resource" id="Resource_frqy2"]
-script = ExtResource("4_30dfp")
-base_text = "%s"
-icon = ExtResource("3_us0b8")
+[ext_resource type="PackedScene" uid="uid://cxx5ieg2ljtuu" path="res://actions/monster_actions/attack.tscn" id="2_p8w50"]
 
 [node name="GremlinTsundereAI" type="Node"]
 script = ExtResource("1_wdqti")
 
-[node name="Attack" type="Node" parent="."]
-script = ExtResource("2_p0rvh")
-intent = SubResource("Resource_frqy2")
-sound = ExtResource("5_oanmn")
-type = 1
-chance_weight = 1.0
+[node name="Attack" parent="." instance=ExtResource("2_p8w50")]

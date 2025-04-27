@@ -1,12 +1,12 @@
 class_name MonsterAction
 extends Node
 
-enum Type {CONDITIONAL, CHANCE_BASED}
+enum Type {CHANCE_BASED, CONDITIONAL}
 
 @export var intent: Intent
 @export var sound: AudioStream
 @export var type: Type
-@export_range(0.0, 10.0) var chance_weight = 0.0
+@export_range(0.0, 10.0) var chance_weight = 1.0
 
 @onready var accumulated_weight = 0.0
 

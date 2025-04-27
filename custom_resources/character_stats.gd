@@ -24,6 +24,7 @@ var discard: CardPile
 var draw_pile: CardPile
 var exhaust_pile: CardPile
 
+
 func reset_energy() -> void:
 	energy = max_energy
 

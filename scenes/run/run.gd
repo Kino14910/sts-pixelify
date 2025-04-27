@@ -113,7 +113,6 @@ func _setup_event_connections() -> void:
 	treasure_button.pressed.connect(_change_view.bind(TREASURE_SCENE))
 
 
-
 func _on_map_exited(room: Room) -> void:
 	_save_run(false)
 	

@@ -33,6 +33,7 @@ const BASE_RARE_WEIGHT = 3
 func _ready() -> void:
 	health = char_stats.health
 	max_health = char_stats.max_health
+	GameManager.current_game = self
 
 func reset_weights() -> void:
 	common_weight = BASE_COMMON_WEIGHT

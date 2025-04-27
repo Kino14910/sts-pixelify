@@ -12,7 +12,7 @@ const SHOP_RELIC = preload('res://scenes/shop/shop_relic.tscn')
 @onready var cards: HBoxContainer = %Cards
 @onready var relics: HBoxContainer = %Relics
 @onready var shop_keeper_animation: AnimationPlayer = %ShopkeeperAnimation
-@onready var blink_timer: Timer = %BlinkTimer
+#@onready var blink_timer: Timer = %BlinkTimer
 @onready var modifier_handler: ModifierHandler = $ModifierHandler
 
 
@@ -27,8 +27,8 @@ func _ready() -> void:
 	Events.shop_card_bought.connect(_on_shop_card_bought)
 	Events.shop_relic_bought.connect(_on_shop_relic_bought)
 	
-	_blink_timer_setup()
-	blink_timer.timeout.connect(_on_blink_timer_timeout)
+	#_blink_timer_setup()
+	#blink_timer.timeout.connect(_on_blink_timer_timeout)
 
 
 #func _input(event: InputEvent) -> void:
@@ -41,9 +41,9 @@ func populate_shop() -> void:
 	_generate_shop_relics()
 
 
-func _blink_timer_setup() -> void:
-	blink_timer.wait_time = randf_range(1.0, 5.0)
-	blink_timer.start()
+#func _blink_timer_setup() -> void:
+	#blink_timer.wait_time = randf_range(1.0, 5.0)
+	#blink_timer.start()
 
 
 func _generate_shop_cards() -> void:
@@ -124,6 +124,6 @@ func _on_shop_relic_bought(relic: Relic, gold_cost: int) -> void:
 		_update_items()
 
 
-func _on_blink_timer_timeout() -> void:
-	shop_keeper_animation.play('blink')
-	_blink_timer_setup()
+#func _on_blink_timer_timeout() -> void:
+	#shop_keeper_animation.play('blink')
+	#_blink_timer_setup()

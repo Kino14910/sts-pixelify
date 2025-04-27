@@ -23,6 +23,7 @@ MusicPlayer="*res://global/music_player.tscn"
 SFXPlayer="*res://global/sfx_player.tscn"
 RNG="*res://global/rng.gd"
 Signal_Debugger="*res://addons/SignalVisualizer/Debugger/SignalDebugger.gd"
+GameManager="*res://global/game_manager.gd"
 
 [debug]
 

@@ -16,26 +16,27 @@ const HAND_DISCARD_INTERVAL = 0.1
 @export var player: Player
 @export var hand: Hand
 
-var character: CharacterStats
+var char_stats: CharacterStats
 
 func _ready() -> void:
 	Events.card_played.connect(_on_card_played)
 	Events.draw_cards.connect(draw_cards)
+	GameManager.player_handler = self
 	
-func start_battle(char_stats: CharacterStats) -> void:
-	character = char_stats
-	character.draw_pile = character.deck.custom_duplicate()
-	character.draw_pile.shuffle()
-	character.discard = CardPile.new()
-	character.exhaust_pile = CardPile.new()
+func start_battle(new_char_stats: CharacterStats) -> void:
+	char_stats = new_char_stats
+	char_stats.draw_pile = char_stats.deck.custom_duplicate()
+	char_stats.draw_pile.shuffle()
+	char_stats.discard = CardPile.new()
+	char_stats.exhaust_pile = CardPile.new()
 	relics.relics_activated.connect(_on_relics_activated)
 	player.power_handler.powers_applied.connect(_on_powers_applied)
 	start_turn()
 
 
 func start_turn() -> void:
-	character.block = 0
-	character.reset_energy()
+	char_stats.block = 0
+	char_stats.reset_energy()
 	relics.activate_relics_by_type(Relic.Type.START_OF_TURN)
 
 
@@ -46,9 +47,9 @@ func end_turn() -> void:
 
 func draw_card() -> void:
 	reshuffle_deck_from_discard()
-	if character.draw_pile.empty():
+	if char_stats.draw_pile.empty():
 		return
-	var card: Card = character.draw_pile.draw_card()
+	var card: Card = char_stats.draw_pile.draw_card()
 	hand.add_card(card)
 	reshuffle_deck_from_discard()
 
@@ -74,7 +75,7 @@ func discard_cards() -> void:
 
 	var tween = create_tween()
 	for card_ui: CardUI in hand.get_children():
-		tween.tween_callback(character.discard.add_card.bind(card_ui.card))
+		tween.tween_callback(char_stats.discard.add_card.bind(card_ui.card))
 		tween.tween_callback(hand.discard_card.bind(card_ui))
 		tween.tween_interval(HAND_DISCARD_INTERVAL)
 	
@@ -85,30 +86,30 @@ func discard_cards() -> void:
 
 
 func reshuffle_deck_from_discard() -> void:
-	if not character.draw_pile.empty():
+	if not char_stats.draw_pile.empty():
 		return
 
-	while not character.discard.empty():
-		character.draw_pile.add_card(character.discard.draw_card())
+	while not char_stats.discard.empty():
+		char_stats.draw_pile.add_card(char_stats.discard.draw_card())
 
-	character.draw_pile.shuffle()
+	char_stats.draw_pile.shuffle()
 
 func _on_card_played(card: Card) -> void:
 	if card.type == Card.CardType.POWER:
 		return
 	
 	if card.exhaust:
-		character.exhaust_pile.add_card(card)
+		char_stats.exhaust_pile.add_card(card)
 		return
 	
-	character.discard.add_card(card)
+	char_stats.discard.add_card(card)
 
 
 # 写出来自己都绷不住的逆天生命周期
 func _on_powers_applied(type: Power.Type) -> void:
 	match type:
 		Power.Type.START_OF_TURN:
-			draw_cards(character.cards_per_turn, true)
+			draw_cards(char_stats.cards_per_turn, true)
 		Power.Type.END_OF_TURN:
 			discard_cards()
 

@@ -1,20 +1,13 @@
-[gd_scene load_steps=6 format=3 uid="uid://bdpgyjnvtg8hv"]
+[gd_scene load_steps=4 format=3 uid="uid://bdpgyjnvtg8hv"]
 
 [ext_resource type="Script" path="res://scenes/monster/monster_action_picker.gd" id="1_rn7d6"]
-[ext_resource type="Script" path="res://monsters/louse_normal/louse_normal_block.gd" id="3_dnhl4"]
-[ext_resource type="Script" path="res://custom_resources/intent.gd" id="4_bs38m"]
-[ext_resource type="Texture2D" uid="uid://oe7v35ii8vrs" path="res://assets/tile_0102.png" id="6_ohy2g"]
-
-[sub_resource type="Resource" id="Resource_l8fyd"]
-script = ExtResource("4_bs38m")
-base_text = "6"
-icon = ExtResource("6_ohy2g")
+[ext_resource type="PackedScene" uid="uid://g0t3bw2an32j" path="res://actions/monster_actions/block.tscn" id="2_4afjn"]
+[ext_resource type="PackedScene" uid="uid://cxx5ieg2ljtuu" path="res://actions/monster_actions/attack.tscn" id="3_3wwmy"]
 
 [node name="LouseNormalAI" type="Node"]
 script = ExtResource("1_rn7d6")
 
-[node name="Block" type="Node" parent="."]
-script = ExtResource("3_dnhl4")
-intent = SubResource("Resource_l8fyd")
-type = 1
-chance_weight = 1.0
+[node name="Block" parent="." instance=ExtResource("2_4afjn")]
+block = 8
+
+[node name="Attack" parent="." instance=ExtResource("3_3wwmy")]

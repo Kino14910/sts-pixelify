@@ -10,8 +10,8 @@ func initialize_relic(owner: RelicUI) -> void:
 		return
 
 	var run = owner.get_tree().get_first_node_in_group("run") as Run
-	run.character.max_mana += 1
-	run.character.mana = run.character.max_mana
+	run.char_stats.max_mana += 1
+	run.char_stats.mana = run.char_stats.max_mana
 	already_initialized = true
 
 
@@ -21,4 +21,4 @@ func activate_relic(owner: RelicUI) -> void:
 
 func deactivate_relic(owner: RelicUI) -> void:
 	var run = owner.get_tree().get_first_node_in_group("run") as Run
-	run.character.max_mana -= 1
+	run.char_stats.max_mana -= 1

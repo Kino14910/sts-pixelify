@@ -36,7 +36,6 @@ sound = ExtResource("5_p0wt6")
 
 [node name="AttackAction" type="Node" parent="."]
 script = ExtResource("6_cpx6d")
-damage = null
 intent = SubResource("Resource_ge4s4")
 sound = ExtResource("8_1btn0")
 type = 1

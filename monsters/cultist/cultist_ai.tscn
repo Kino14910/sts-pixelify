@@ -1,23 +1,11 @@
-[gd_scene load_steps=7 format=3 uid="uid://ou8foqhr125v"]
+[gd_scene load_steps=3 format=3 uid="uid://ou8foqhr125v"]
 
 [ext_resource type="Script" path="res://scenes/monster/monster_action_picker.gd" id="1_6gcsy"]
-[ext_resource type="Script" path="res://monsters/cultist/cultist_attack_action.gd" id="2_tufse"]
-[ext_resource type="Texture2D" uid="uid://d2u747hso4crg" path="res://assets/intents/attack.png" id="3_gcepl"]
-[ext_resource type="Script" path="res://custom_resources/intent.gd" id="4_q83du"]
-[ext_resource type="AudioStream" uid="uid://de2ryat1pxq6" path="res://assets/enemy_attack.ogg" id="5_1xm1l"]
-
-[sub_resource type="Resource" id="Resource_3fjyv"]
-script = ExtResource("4_q83du")
-base_text = "%s"
-icon = ExtResource("3_gcepl")
+[ext_resource type="PackedScene" uid="uid://cxx5ieg2ljtuu" path="res://actions/monster_actions/attack.tscn" id="2_gs8bn"]
 
 [node name="CultistAI" type="Node"]
 script = ExtResource("1_6gcsy")
 
-[node name="Attack" type="Node" parent="."]
-script = ExtResource("2_tufse")
-damage = 5
-intent = SubResource("Resource_3fjyv")
-sound = ExtResource("5_1xm1l")
-type = 1
-chance_weight = 1.0
+[node name="Attack" parent="." instance=ExtResource("2_gs8bn")]
+intent = null
+sound = null
