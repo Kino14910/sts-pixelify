@@ -26,7 +26,6 @@ Shaker="*res://autoloads/shaker.gd"
 MusicPlayer="*res://autoloads/music_player.tscn"
 SFXPlayer="*res://autoloads/sound_player.tscn"
 RNG="*res://autoloads/rng.gd"
-Signal_Debugger="*res://addons/SignalVisualizer/Debugger/SignalDebugger.gd"
 GameManager="*res://autoloads/game_manager.gd"
 LoadResFromDir="*res://autoloads/load_res_from_dir.gd"
 
@@ -45,7 +44,7 @@ window/stretch/mode="canvas_items"
 
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/SignalVisualizer/plugin.cfg", "res://addons/script-ide/plugin.cfg")
+enabled=PackedStringArray()
 
 [gui]
 
