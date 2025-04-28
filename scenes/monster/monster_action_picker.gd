@@ -21,7 +21,7 @@ extends Node
 
 
 func _ready() -> void:
-	player = GameManager.player
+	player = get_tree().get_first_node_in_group('player')
 	setup_chances()
 
 

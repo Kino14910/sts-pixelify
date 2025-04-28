@@ -161,52 +161,56 @@ layout_mode = 2
 [node name="ShopCard5" parent="UILayer/ShopContent/Cards" instance=ExtResource("4_2u2et")]
 layout_mode = 2
 
-[node name="ColorlessCards" type="HBoxContainer" parent="UILayer/ShopContent"]
-unique_name_in_owner = true
+[node name="HBoxContainer" type="HBoxContainer" parent="UILayer/ShopContent"]
 layout_mode = 2
 theme_override_constants/separation = 4
 alignment = 1
 
-[node name="ShopCard6" parent="UILayer/ShopContent/ColorlessCards" instance=ExtResource("4_2u2et")]
+[node name="ColorlessCards" type="HBoxContainer" parent="UILayer/ShopContent/HBoxContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(84, 52)
 layout_mode = 2
 
-[node name="ShopCard7" parent="UILayer/ShopContent/ColorlessCards" instance=ExtResource("4_2u2et")]
+[node name="ShopCard6" parent="UILayer/ShopContent/HBoxContainer/ColorlessCards" instance=ExtResource("4_2u2et")]
 layout_mode = 2
 
-[node name="VBoxContainer" type="VBoxContainer" parent="UILayer/ShopContent/ColorlessCards"]
+[node name="ShopCard7" parent="UILayer/ShopContent/HBoxContainer/ColorlessCards" instance=ExtResource("4_2u2et")]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="UILayer/ShopContent/HBoxContainer"]
 custom_minimum_size = Vector2(84, 0)
 layout_mode = 2
 
-[node name="Relics" type="HBoxContainer" parent="UILayer/ShopContent/ColorlessCards/VBoxContainer"]
+[node name="Relics" type="HBoxContainer" parent="UILayer/ShopContent/HBoxContainer/VBoxContainer"]
 unique_name_in_owner = true
 layout_mode = 2
 theme_override_constants/separation = 2
 alignment = 1
 
-[node name="ShopRelic" parent="UILayer/ShopContent/ColorlessCards/VBoxContainer/Relics" instance=ExtResource("5_m1t66")]
+[node name="ShopRelic" parent="UILayer/ShopContent/HBoxContainer/VBoxContainer/Relics" instance=ExtResource("5_m1t66")]
 layout_mode = 2
 
-[node name="ShopRelic2" parent="UILayer/ShopContent/ColorlessCards/VBoxContainer/Relics" instance=ExtResource("5_m1t66")]
+[node name="ShopRelic2" parent="UILayer/ShopContent/HBoxContainer/VBoxContainer/Relics" instance=ExtResource("5_m1t66")]
 layout_mode = 2
 
-[node name="ShopRelic3" parent="UILayer/ShopContent/ColorlessCards/VBoxContainer/Relics" instance=ExtResource("5_m1t66")]
+[node name="ShopRelic3" parent="UILayer/ShopContent/HBoxContainer/VBoxContainer/Relics" instance=ExtResource("5_m1t66")]
 layout_mode = 2
 
-[node name="Potions" type="HBoxContainer" parent="UILayer/ShopContent/ColorlessCards/VBoxContainer"]
+[node name="Potions" type="HBoxContainer" parent="UILayer/ShopContent/HBoxContainer/VBoxContainer"]
 unique_name_in_owner = true
 layout_mode = 2
 alignment = 1
 
-[node name="ShopRelic" parent="UILayer/ShopContent/ColorlessCards/VBoxContainer/Potions" instance=ExtResource("5_m1t66")]
+[node name="ShopRelic" parent="UILayer/ShopContent/HBoxContainer/VBoxContainer/Potions" instance=ExtResource("5_m1t66")]
 layout_mode = 2
 
-[node name="ShopRelic2" parent="UILayer/ShopContent/ColorlessCards/VBoxContainer/Potions" instance=ExtResource("5_m1t66")]
+[node name="ShopRelic2" parent="UILayer/ShopContent/HBoxContainer/VBoxContainer/Potions" instance=ExtResource("5_m1t66")]
 layout_mode = 2
 
-[node name="ShopRelic3" parent="UILayer/ShopContent/ColorlessCards/VBoxContainer/Potions" instance=ExtResource("5_m1t66")]
+[node name="ShopRelic3" parent="UILayer/ShopContent/HBoxContainer/VBoxContainer/Potions" instance=ExtResource("5_m1t66")]
 layout_mode = 2
 
-[node name="ShopCard8" parent="UILayer/ShopContent/ColorlessCards" instance=ExtResource("4_2u2et")]
+[node name="ShopCard8" parent="UILayer/ShopContent/HBoxContainer" instance=ExtResource("4_2u2et")]
 layout_mode = 2
 
 [node name="ModifierHandler" parent="." instance=ExtResource("11_863hj")]

@@ -23,4 +23,4 @@ tags = Array[String]([])
 color = 0
 icon = ExtResource("1_tu4an")
 description = "造成%s点伤害。
-给予[color=red]%s[/color]层[color=gold]易伤[/color]。"
+给予%s层[color=gold]易伤[/color]。"

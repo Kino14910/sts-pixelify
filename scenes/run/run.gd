@@ -70,6 +70,11 @@ func _start_run() -> void:
 	
 	map.generate_new_map()
 	map.unlock_floor(0)
+	if GameManager.colorless == null:
+		var colorless = CardPile.new()
+		colorless.add_cards_by_path('colorless')
+		GameManager.colorless = colorless
+		
 	
 	save_data = SaveGame.new()
 	_save_run(true)

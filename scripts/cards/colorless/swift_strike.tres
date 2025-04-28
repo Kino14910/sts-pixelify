@@ -1,0 +1,21 @@
+[gd_resource type="Resource" load_steps=2 format=3 uid="uid://dowhdrrglrqyg"]
+
+[ext_resource type="Script" path="res://scripts/cards/colorless/swift_strike.gd" id="1_h55p0"]
+
+[resource]
+script = ExtResource("1_h55p0")
+id = "Swift Strike"
+type = 0
+target = 0
+cost = 0
+card_name = "迅捷打击"
+damage = 7
+block = 0
+magicNumber = 0
+rarity = 3
+exhaust = false
+ethereal = false
+innate = false
+tags = Array[String](["strike"])
+color = 4
+description = "造成%s点伤害。"

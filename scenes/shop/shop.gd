@@ -9,7 +9,7 @@ const SHOP_RELIC = preload('res://scenes/shop/shop_relic.tscn')
 @export var run_stats: RunStats
 @export var relic_handler: RelicHandler
 
-@onready var cards: HBoxContainer = %Cards
+@onready var char_cards: HBoxContainer = %Cards
 @onready var colorless_cards: HBoxContainer = %ColorlessCards
 @onready var relics: HBoxContainer = %Relics
 @onready var potions: HBoxContainer = %Potions
@@ -19,19 +19,18 @@ const SHOP_RELIC = preload('res://scenes/shop/shop_relic.tscn')
 
 
 func _ready() -> void:
-	for shop_card: ShopCard in cards.get_children():
+	for shop_card: ShopCard in char_cards.get_children():
 		shop_card.queue_free()
 	
-	for shop_card: ShopCard in colorless_cards.get_children():
-		shop_card.queue_free()
+	for colorless_card: ShopCard in colorless_cards.get_children():
+		colorless_card.queue_free()
 	
 	for shop_relic: ShopRelic in relics.get_children():
 		shop_relic.queue_free()
 		
 	for shop_relic: ShopRelic in potions.get_children():
 		shop_relic.queue_free()
-		
-	
+
 	Events.shop_card_bought.connect(_on_shop_card_bought)
 	Events.shop_relic_bought.connect(_on_shop_relic_bought)
 	
@@ -47,6 +46,8 @@ func _ready() -> void:
 func populate_shop() -> void:
 	_generate_shop_cards()
 	_generate_shop_relics()
+	_generate_colorless_cards()
+	_generate_shop_potions()
 
 
 #func _blink_timer_setup() -> void:
@@ -57,18 +58,27 @@ func populate_shop() -> void:
 func _generate_shop_cards() -> void:
 	var shop_card_array: Array[Card] = []
 	var available_cards: Array[Card] = char_stats.cardpool.duplicate_cards()
-	#var colorless_available_cards: Array[Card]
 	RNG.array_shuffle(available_cards)
 	shop_card_array = available_cards.slice(0, 5)
 	
-	for card: Card in shop_card_array:
+	_generate_cards(shop_card_array, char_cards)
+
+func _generate_colorless_cards() -> void:
+	var colorless_array: Array[Card] = []
+	var available_cards: Array[Card] = GameManager.colorless.duplicate_cards()
+	RNG.array_shuffle(available_cards)
+	colorless_array = available_cards.slice(0, 2)
+	_generate_cards(colorless_array, colorless_cards)
+
+func _generate_cards(cards, cardsContainer) -> void:
+	for card: Card in cards:
 		var shop_card = SHOP_CARD.instantiate() as ShopCard
-		cards.add_child(shop_card)
+		cardsContainer.add_child(shop_card)
 		shop_card.card = card
 		shop_card.gold_cost = _get_updated_shop_cost(shop_card.gold_cost)
 		shop_card.update(run_stats)
 
-
+		
 func _generate_shop_relics() -> void:
 	var shop_relics_array: Array[Relic] = []
 	var available_relics = shop_relics.filter(
@@ -88,19 +98,28 @@ func _generate_shop_relics() -> void:
 		shop_relic.gold_cost = _get_updated_shop_cost(shop_relic.gold_cost)
 		shop_relic.update(run_stats)
 
-
+func _generate_shop_potions() -> void:
+	pass
+	
 func _update_items() -> void:
-	for shop_card: ShopCard in cards.get_children():
+	for shop_card: ShopCard in char_cards.get_children():
 		shop_card.update(run_stats)
 		
+	for shop_colorless: ShopCard in colorless_cards.get_children():
+		shop_colorless.update(run_stats)
+	
 	for shop_relic: ShopRelic in relics.get_children():
 		shop_relic.update(run_stats)
 
 
 func _update_item_costs() -> void:
-	for shop_card: ShopCard in cards.get_children():
+	for shop_card: ShopCard in char_cards.get_children():
 		shop_card.gold_cost = _get_updated_shop_cost(shop_card.gold_cost)
 		shop_card.update(run_stats)
+		
+	for shop_colorless: ShopCard in colorless_cards.get_children():
+		shop_colorless.gold_cost = _get_updated_shop_cost(shop_colorless.gold_cost)
+		shop_colorless.update(run_stats)
 		
 	for shop_relic: ShopRelic in relics.get_children():
 		shop_relic.gold_cost = _get_updated_shop_cost(shop_relic.gold_cost)
