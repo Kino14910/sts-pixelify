@@ -1,6 +1,8 @@
 extends MonsterAction
 
 @export var block: int
+@export var power: Power
+@export var number: int
 
 
 func perform_action() -> void:
@@ -8,6 +10,4 @@ func perform_action() -> void:
 		return
 	
 	GainBlockAction.new([monster], block)
-
-func update_intent_text() -> void:
-	intent.current_text = intent.base_text % block
+	PowerAction.new([monster], power, number)

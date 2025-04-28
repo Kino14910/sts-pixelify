@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="StrengthPower" load_steps=3 format=3 uid="uid://dfmuquglr01qk"]
+[gd_resource type="Resource" script_class="Strength" load_steps=3 format=3 uid="uid://dfmuquglr01qk"]
 
 [ext_resource type="Texture2D" uid="uid://sdlx7km5ddaa" path="res://assets/powers/strength.png" id="1_648xr"]
 [ext_resource type="Script" path="res://scripts/powers/strength.gd" id="1_jmpem"]
@@ -12,4 +12,4 @@ can_expire = false
 duration = 0
 stacks = 1
 icon = ExtResource("1_648xr")
-tooltip = "攻击伤害提升%s。"
+tooltip = "攻击%s提升%s。"

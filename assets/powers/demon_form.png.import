@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bl6yo1dqne8t6"
-path="res://.godot/imported/demon_form.png-e248253620df558a02f046cfc60a2d8a.ctex"
+uid="uid://rpcec241k6j6"
+path="res://.godot/imported/demon_form.png-7fec2975dff43483876efffed01129c1.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/cards/demon_form.png"
-dest_files=["res://.godot/imported/demon_form.png-e248253620df558a02f046cfc60a2d8a.ctex"]
+source_file="res://assets/powers/demon_form.png"
+dest_files=["res://.godot/imported/demon_form.png-7fec2975dff43483876efffed01129c1.ctex"]
 
 [params]
 

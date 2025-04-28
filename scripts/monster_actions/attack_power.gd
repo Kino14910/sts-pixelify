@@ -3,6 +3,8 @@ extends MonsterAction
 @export var min_dmg: int
 @export var max_dmg: int
 @export var time: int = 1
+@export var power: Power
+@export var number: int
 var damage
 
 func _ready() -> void:
@@ -14,6 +16,7 @@ func perform_action() -> void:
 	
 	#damage_action.sound = sound
 	DamageAction.new([player], damage)
+	PowerAction.new([player], power, number)
 
 
 func update_intent_text() -> void:

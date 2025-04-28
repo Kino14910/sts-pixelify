@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b4lrsrcjtsiyv"
-path="res://.godot/imported/block&attack.png-3dd9fedab27af815bd5dfa44d94773bc.ctex"
+uid="uid://cbup70i5jgbb1"
+path="res://.godot/imported/Snecko.png-b4f6f04cab9b58026f494f36611dcedc.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/intents/block&attack.png"
-dest_files=["res://.godot/imported/block&attack.png-3dd9fedab27af815bd5dfa44d94773bc.ctex"]
+source_file="res://assets/monsters/Snecko.png"
+dest_files=["res://.godot/imported/Snecko.png-b4f6f04cab9b58026f494f36611dcedc.ctex"]
 
 [params]
 

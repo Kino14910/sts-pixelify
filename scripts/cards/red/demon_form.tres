@@ -1,6 +1,6 @@
 [gd_resource type="Resource" load_steps=3 format=3 uid="uid://se3ainr3brk5"]
 
-[ext_resource type="Texture2D" uid="uid://vxskoesi0xyy" path="res://assets/cards/demon_form.png" id="1_15kmt"]
+[ext_resource type="Texture2D" uid="uid://bl6yo1dqne8t6" path="res://assets/cards/demon_form.png" id="1_15kmt"]
 [ext_resource type="Script" path="res://scripts/cards/red/demon_form.gd" id="1_pcwic"]
 
 [resource]

@@ -1,4 +1,4 @@
-class_name TrueStrengthPower
+class_name DemonForm
 extends Power
 
 const STRENGTH = preload('res://scripts/powers/strength.tres')

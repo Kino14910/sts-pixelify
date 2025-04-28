@@ -1,11 +1,23 @@
 extends MonsterAction
 
+enum TargetType { MONSTER, PLAYER }
+@export var target_type: TargetType
+@export var powers: Array[Power]
 @export var number: int
 
-const STRENGTH = preload('res://scripts/powers/strength.tres')
-
 func perform_action() -> void:
-	if not monster or not target:
+	if not monster or not player:
 		return
-	PowerAction.new([monster], STRENGTH.new(), number)
-	Events.monster_action_completed.emit(monster)
+	for power in powers:
+		PowerAction.new([_get_target()], power, number)
+
+
+func _get_target() -> Node2D:
+	match target_type:
+		TargetType.MONSTER: 
+			return monster
+		TargetType.PLAYER: 
+			return player
+		_:
+			push_error("Invalid target type")
+			return null

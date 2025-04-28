@@ -1,9 +1,9 @@
 extends Card
 
-const TRUE_STRENGTH_FORM = preload('res://scripts/powers/true_strength_form.tres')
+const DEMON_FORM = preload('res://scripts/powers/demon_form.tres')
 
 func apply_actions(targets: Array[Node]) -> void:
-	PowerAction.new(targets, TRUE_STRENGTH_FORM.new(), magicNumber)
+	PowerAction.new(targets, DEMON_FORM.new(), magicNumber)
 
 func get_default_description() -> String:
 	return description % magicNumber

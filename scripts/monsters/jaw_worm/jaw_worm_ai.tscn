@@ -1,23 +1,10 @@
-[gd_scene load_steps=11 format=3 uid="uid://drfa0g4wyvwqd"]
+[gd_scene load_steps=6 format=3 uid="uid://drfa0g4wyvwqd"]
 
 [ext_resource type="Script" path="res://scenes/monster/monster_action_picker.gd" id="1_xi3xt"]
 [ext_resource type="PackedScene" uid="uid://cxx5ieg2ljtuu" path="res://scripts/monster_actions/attack.tscn" id="2_l1wkk"]
-[ext_resource type="Script" path="res://scripts/monsters/jaw_worm/block_buff.gd" id="3_mcdx6"]
-[ext_resource type="Texture2D" uid="uid://ckego8nhvcdty" path="res://assets/intents/block_buff_intent.png" id="4_ep6mf"]
-[ext_resource type="Script" path="res://resources/custom_resources/intent.gd" id="5_wnqk5"]
-[ext_resource type="Script" path="res://scripts/monsters/jaw_worm/block_attack.gd" id="6_g34fe"]
-[ext_resource type="Texture2D" uid="uid://b4lrsrcjtsiyv" path="res://assets/intents/block&attack.png" id="7_cl276"]
-[ext_resource type="AudioStream" uid="uid://df64e7qat73gs" path="res://assets/block.ogg" id="7_ftve0"]
-
-[sub_resource type="Resource" id="Resource_tm57r"]
-script = ExtResource("5_wnqk5")
-base_text = ""
-icon = ExtResource("4_ep6mf")
-
-[sub_resource type="Resource" id="Resource_6aulr"]
-script = ExtResource("5_wnqk5")
-base_text = ""
-icon = ExtResource("7_cl276")
+[ext_resource type="PackedScene" uid="uid://dkm253k1t5yin" path="res://scripts/monster_actions/block_power.tscn" id="9_0dtqi"]
+[ext_resource type="Resource" uid="uid://dfmuquglr01qk" path="res://scripts/powers/strength.tres" id="10_jxowm"]
+[ext_resource type="PackedScene" uid="uid://c172rxqrpmupf" path="res://scripts/monster_actions/attack_block.tscn" id="11_h8bl5"]
 
 [node name="JawWormAI" type="Node"]
 script = ExtResource("1_xi3xt")
@@ -26,17 +13,12 @@ script = ExtResource("1_xi3xt")
 min_dmg = 6
 max_dmg = 6
 
-[node name="Block&Buff" type="Node" parent="."]
-script = ExtResource("3_mcdx6")
+[node name="Block&Power" parent="." instance=ExtResource("9_0dtqi")]
 block = 5
-magicNumber = 3
-intent = SubResource("Resource_tm57r")
-sound = ExtResource("7_ftve0")
-chance_weight = 10.0
+power = ExtResource("10_jxowm")
+number = 3
 
-[node name="Block&Attack" type="Node" parent="."]
-script = ExtResource("6_g34fe")
-damage = 7
+[node name="Attack&Block" parent="." instance=ExtResource("11_h8bl5")]
+min_dmg = 7
+max_dmg = 7
 block = 5
-intent = SubResource("Resource_6aulr")
-sound = ExtResource("7_ftve0")

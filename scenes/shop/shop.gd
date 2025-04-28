@@ -10,7 +10,9 @@ const SHOP_RELIC = preload('res://scenes/shop/shop_relic.tscn')
 @export var relic_handler: RelicHandler
 
 @onready var cards: HBoxContainer = %Cards
+@onready var colorless_cards: HBoxContainer = %ColorlessCards
 @onready var relics: HBoxContainer = %Relics
+@onready var potions: HBoxContainer = %Potions
 @onready var shop_keeper_animation: AnimationPlayer = %ShopkeeperAnimation
 #@onready var blink_timer: Timer = %BlinkTimer
 @onready var modifier_handler: ModifierHandler = $ModifierHandler
@@ -19,8 +21,14 @@ const SHOP_RELIC = preload('res://scenes/shop/shop_relic.tscn')
 func _ready() -> void:
 	for shop_card: ShopCard in cards.get_children():
 		shop_card.queue_free()
-		
+	
+	for shop_card: ShopCard in colorless_cards.get_children():
+		shop_card.queue_free()
+	
 	for shop_relic: ShopRelic in relics.get_children():
+		shop_relic.queue_free()
+		
+	for shop_relic: ShopRelic in potions.get_children():
 		shop_relic.queue_free()
 		
 	
@@ -49,6 +57,7 @@ func populate_shop() -> void:
 func _generate_shop_cards() -> void:
 	var shop_card_array: Array[Card] = []
 	var available_cards: Array[Card] = char_stats.cardpool.duplicate_cards()
+	#var colorless_available_cards: Array[Card]
 	RNG.array_shuffle(available_cards)
 	shop_card_array = available_cards.slice(0, 5)
 	

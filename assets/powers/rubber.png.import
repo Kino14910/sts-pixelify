@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bl6yo1dqne8t6"
-path="res://.godot/imported/demon_form.png-e248253620df558a02f046cfc60a2d8a.ctex"
+uid="uid://dka5fh2aak2jw"
+path="res://.godot/imported/rubber.png-52cbc820549df9e9387213e14b72a1b1.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/cards/demon_form.png"
-dest_files=["res://.godot/imported/demon_form.png-e248253620df558a02f046cfc60a2d8a.ctex"]
+source_file="res://assets/powers/rubber.png"
+dest_files=["res://.godot/imported/rubber.png-52cbc820549df9e9387213e14b72a1b1.ctex"]
 
 [params]
 

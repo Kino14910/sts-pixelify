@@ -4,7 +4,7 @@ extends MonsterAction
 
 
 func perform_action() -> void:
-	if not monster or not target:
+	if not monster or not player:
 		return
 	
 	GainBlockAction.new([monster], block)

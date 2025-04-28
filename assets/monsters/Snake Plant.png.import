@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bl6yo1dqne8t6"
-path="res://.godot/imported/demon_form.png-e248253620df558a02f046cfc60a2d8a.ctex"
+uid="uid://bl4pob5j8etaf"
+path="res://.godot/imported/Snake Plant.png-798232d36283c02d866571b407e939ea.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/cards/demon_form.png"
-dest_files=["res://.godot/imported/demon_form.png-e248253620df558a02f046cfc60a2d8a.ctex"]
+source_file="res://assets/monsters/Snake Plant.png"
+dest_files=["res://.godot/imported/Snake Plant.png-798232d36283c02d866571b407e939ea.ctex"]
 
 [params]
 

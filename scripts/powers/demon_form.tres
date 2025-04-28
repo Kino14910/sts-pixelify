@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="DemonForm" load_steps=3 format=3 uid="uid://x5i2ygwubpne"]
+
+[ext_resource type="Texture2D" uid="uid://rpcec241k6j6" path="res://assets/powers/demon_form.png" id="1_sqx7n"]
+[ext_resource type="Script" path="res://scripts/powers/demon_form.gd" id="2_w4xqk"]
+
+[resource]
+script = ExtResource("2_w4xqk")
+id = "Demon Form"
+type = 0
+stack_type = 1
+can_expire = false
+duration = 0
+stacks = 2
+icon = ExtResource("1_sqx7n")
+tooltip = "在你的回合开始时，获得%s点[color=gold]力量[/color]。"

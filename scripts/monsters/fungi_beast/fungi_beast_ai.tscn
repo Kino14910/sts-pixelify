@@ -1,8 +1,10 @@
-[gd_scene load_steps=4 format=3 uid="uid://dth7l72xv8wqs"]
+[gd_scene load_steps=6 format=3 uid="uid://dth7l72xv8wqs"]
 
 [ext_resource type="Script" path="res://scenes/monster/monster_action_picker.gd" id="1_awm5h"]
 [ext_resource type="PackedScene" uid="uid://cxx5ieg2ljtuu" path="res://scripts/monster_actions/attack.tscn" id="2_2ug10"]
 [ext_resource type="PackedScene" uid="uid://cojyt22teo1g7" path="res://scripts/monster_actions/power.tscn" id="3_kvgtf"]
+[ext_resource type="Resource" uid="uid://dfmuquglr01qk" path="res://scripts/powers/strength.tres" id="4_f4lxx"]
+[ext_resource type="Script" path="res://resources/custom_resources/power.gd" id="4_mpaib"]
 
 [node name="FungiBeastAI" type="Node"]
 script = ExtResource("1_awm5h")
@@ -12,4 +14,5 @@ min_dmg = 6
 max_dmg = 6
 
 [node name="Power" parent="." instance=ExtResource("3_kvgtf")]
+powers = Array[ExtResource("4_mpaib")]([ExtResource("4_f4lxx")])
 number = 3

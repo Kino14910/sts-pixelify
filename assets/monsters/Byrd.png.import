@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bl6yo1dqne8t6"
-path="res://.godot/imported/demon_form.png-e248253620df558a02f046cfc60a2d8a.ctex"
+uid="uid://lx8uobecgvtu"
+path="res://.godot/imported/Byrd.png-89e693e9a7bd7fcab620924c759852a3.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/cards/demon_form.png"
-dest_files=["res://.godot/imported/demon_form.png-e248253620df558a02f046cfc60a2d8a.ctex"]
+source_file="res://assets/monsters/Byrd.png"
+dest_files=["res://.godot/imported/Byrd.png-89e693e9a7bd7fcab620924c759852a3.ctex"]
 
 [params]
 

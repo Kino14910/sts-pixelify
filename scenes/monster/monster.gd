@@ -96,7 +96,7 @@ func do_turn() -> void:
 	if not current_action:
 		return
 
-	current_action.perform_action()
+	current_action.execute()
 
 func take_damage(damage: int, modifier_type: Modifier.Type, damagetype: DamageAction.DamageType) -> void:
 	if stats.health <= 0:

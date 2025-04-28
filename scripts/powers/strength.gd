@@ -1,4 +1,4 @@
-class_name StrengthPower
+class_name Strength
 extends Power
 
 var member_var = 0
@@ -10,7 +10,6 @@ func initialize_power(target: Node) -> void:
 
 
 func _on_power_change(target: Node) -> void:
-	
 	assert(target.get("modifier_handler"), "No modifiers on %s" % target)
 	
 	var dmg_dealt_modifier: Modifier = target.modifier_handler.get_modifier(Modifier.Type.DMG_DEALT)
@@ -23,6 +22,12 @@ func _on_power_change(target: Node) -> void:
 		
 	strength_modifier_value.flat_value = stacks
 	dmg_dealt_modifier.add_new_value(strength_modifier_value)
-
+	
 func get_tooltip() -> String:
-	return tooltip % stacks
+	var increase
+	if stacks > 0:
+		increase = '提升'
+	else:
+		increase = '下降'
+		stacks = -stacks
+	return tooltip % [increase, stacks]

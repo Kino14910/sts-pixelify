@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://c6d6enmixbyqb"]
+
+[ext_resource type="Script" path="res://scripts/monster_actions/attack_power.gd" id="1_5tayv"]
+
+[node name="Attack&Power" type="Node"]
+script = ExtResource("1_5tayv")

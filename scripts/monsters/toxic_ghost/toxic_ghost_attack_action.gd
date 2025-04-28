@@ -1,15 +1,15 @@
 extends MonsterAction
 
-const TOXIN = preload('res://scripts/cards/colorless/toxin.tres')
+const SLIMED = preload('res://scripts/cards/status/slimed.tres')
 
 @export var damage = 8
 
 
 func perform_action() -> void:
-	if not monster or not target:
+	if not monster or not player:
 		return
 	
-	var player = target as Player
+	var player = player as Player
 	if not player:
 		return
 	
@@ -17,11 +17,11 @@ func perform_action() -> void:
 	var start = monster.global_position
 	var end = monster.global_position + Vector2.LEFT * 8
 	
-	var target_array: Array[Node] = [target]
+	var player_array: Array[Node] = [player]
 
 	tween.tween_property(monster, "global_position", end, 0.1)
-	tween.tween_callback(DamageAction.new().execute.bind(target_array, player.modifier_handler.get_modified_value(damage, Modifier.Type.DMG_TAKEN)))
-	tween.tween_callback(MakeTempCardInDrawPileAction.new().execute.bind(target_array, TOXIN, 1))
+	tween.tween_callback(DamageAction.new().execute.bind(player_array, player.modifier_handler.get_modified_value(damage, Modifier.Type.DMG_TAKEN)))
+	tween.tween_callback(MakeTempCardInDrawPileAction.new().execute.bind(player_array, SLIMED, 1))
 	tween.tween_interval(0.25)
 	tween.tween_property(monster, "global_position", start, 0.1)
 	
@@ -32,7 +32,7 @@ func perform_action() -> void:
 
 
 func update_intent_text() -> void:
-	var player = target as Player
+	var player = player as Player
 	if not player:
 		return
 	

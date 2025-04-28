@@ -18,7 +18,7 @@ func is_performable() -> bool:
 
 
 func perform_action() -> void:
-	if not monster or not target:
+	if not monster or not player:
 		return
 	
 	usages += 1

@@ -28,6 +28,7 @@ SFXPlayer="*res://autoloads/sound_player.tscn"
 RNG="*res://autoloads/rng.gd"
 Signal_Debugger="*res://addons/SignalVisualizer/Debugger/SignalDebugger.gd"
 GameManager="*res://autoloads/game_manager.gd"
+LoadResFromDir="*res://autoloads/load_res_from_dir.gd"
 
 [debug]
 

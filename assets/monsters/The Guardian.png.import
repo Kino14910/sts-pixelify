@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bl6yo1dqne8t6"
-path="res://.godot/imported/demon_form.png-e248253620df558a02f046cfc60a2d8a.ctex"
+uid="uid://b6vcliepgvapo"
+path="res://.godot/imported/The Guardian.png-6362a374ded432bdaa77d71a864e0276.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/cards/demon_form.png"
-dest_files=["res://.godot/imported/demon_form.png-e248253620df558a02f046cfc60a2d8a.ctex"]
+source_file="res://assets/monsters/The Guardian.png"
+dest_files=["res://.godot/imported/The Guardian.png-6362a374ded432bdaa77d71a864e0276.ctex"]
 
 [params]
 

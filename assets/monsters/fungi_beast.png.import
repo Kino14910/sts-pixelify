@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bl6yo1dqne8t6"
-path="res://.godot/imported/demon_form.png-e248253620df558a02f046cfc60a2d8a.ctex"
+uid="uid://hhm3b4dtqj8p"
+path="res://.godot/imported/fungi_beast.png-7da90838a24e0771646c52f0a0d91f23.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/cards/demon_form.png"
-dest_files=["res://.godot/imported/demon_form.png-e248253620df558a02f046cfc60a2d8a.ctex"]
+source_file="res://assets/monsters/fungi_beast.png"
+dest_files=["res://.godot/imported/fungi_beast.png-7da90838a24e0771646c52f0a0d91f23.ctex"]
 
 [params]
 

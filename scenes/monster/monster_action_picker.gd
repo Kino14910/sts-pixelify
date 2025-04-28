@@ -9,19 +9,19 @@ extends Node
 			action.monster = monster
 
 
-@export var target: Node2D: 
+@export var player: Node2D: 
 	set(value):
-		target = value
+		player = value
 		
 		for action: MonsterAction in get_children():
-			action.target = target
+			action.player = player
 
 
 @onready var total_weight = 0.0
 
 
 func _ready() -> void:
-	target = get_tree().get_first_node_in_group("player")
+	player = GameManager.player
 	setup_chances()
 
 
