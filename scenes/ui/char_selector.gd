@@ -4,6 +4,8 @@ const RUN_SCENE = preload("res://scenes/run/run.tscn")
 const IRONCLAD = preload('res://scripts/characters/Ironclad/Ironclad.tres')
 const SILENCE_HUNTER = preload('res://scripts/characters/TheSilent/TheSilent.tres')
 const WIZARD = preload('res://scripts/characters/Wizard/Wizard.tres')
+const MAIN_MENU_PATH = "res://scenes/ui/main_menu.tscn"
+
 @export var run_startup: RunStartup
 
 @onready var title: Label = %Name
@@ -24,6 +26,11 @@ func _ready() -> void:
 	title.text = ''
 	description.text = ''
 	character_portrait.texture = null
+
+
+func _shortcut_input(event: InputEvent) -> void:
+	if event.is_action_pressed("pause"):
+		get_tree().change_scene_to_file(MAIN_MENU_PATH)
 
 
 func _on_start_button_pressed() -> void:

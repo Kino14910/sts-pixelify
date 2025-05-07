@@ -48,11 +48,10 @@ func _on_monsters_child_order_changed() -> void:
 		relics.activate_relics_by_type(Relic.Type.END_OF_COMBAT)
 		
 		
-# 写出来自己都绷不住的逆天生命周期
 func _on_relics_activated(type: Relic.Type) -> void:
 	match type:
 		Relic.Type.START_OF_COMBAT:
 			player_handler.start_battle(char_stats)
 			battle_ui.initialize_card_pile_ui()
 		Relic.Type.END_OF_COMBAT:
-			Events.battle_over_screen_requested.emit("Victorious!", BattleOverPanel.Type.WIN)
+			Events.battle_won.emit()

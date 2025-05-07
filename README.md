@@ -181,7 +181,11 @@ Events.draw_cards.emit(amount)
 
 🔧卡图
 
+🔧floor变量名和MonsterAction中的player变量名需要修改，否则会分别出现一个报错
+
 ❌药水
+
+❌卡牌选择界面（用于非随机卡牌选择如生存者）
 
 ❌卡牌升级
 

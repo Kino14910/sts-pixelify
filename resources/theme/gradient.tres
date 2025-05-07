@@ -1,7 +1,8 @@
-[gd_resource type="Theme" load_steps=7 format=3 uid="uid://bu1g5tnpx6v1q"]
+[gd_resource type="Theme" load_steps=5 format=3 uid="uid://cg3bkj8bontgf"]
 
-[ext_resource type="FontFile" uid="uid://drwgjm5l0g4s0" path="res://assets/fonts/fusion-pixel-8px-proportional-zh_hans.ttf" id="1_ddiej"]
-[ext_resource type="StyleBox" uid="uid://cqnhca3x8ee3a" path="res://scenes/ui/menu_btn_stylebox.tres" id="2_wicfo"]
+[ext_resource type="FontFile" uid="uid://drwgjm5l0g4s0" path="res://assets/fonts/fusion-pixel-8px-proportional-zh_hans.ttf" id="1_d8mx8"]
+[ext_resource type="StyleBox" uid="uid://cqnhca3x8ee3a" path="res://scenes/ui/menu_btn_stylebox.tres" id="2_p3gn1"]
+[ext_resource type="StyleBox" uid="uid://djy0yqc1hf1mt" path="res://scenes/ui/gradient.tres" id="3_60qab"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pal14"]
 content_margin_left = 2.0
@@ -14,16 +15,6 @@ corner_radius_top_right = 3
 corner_radius_bottom_right = 3
 corner_radius_bottom_left = 3
 corner_detail = 5
-
-[sub_resource type="Gradient" id="Gradient_cpdbu"]
-colors = PackedColorArray(1, 0.853991, 0.0986479, 0.564706, 1, 1, 1, 0)
-
-[sub_resource type="GradientTexture1D" id="GradientTexture1D_lg2i7"]
-gradient = SubResource("Gradient_cpdbu")
-
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_nk6tf"]
-content_margin_left = 4.0
-texture = SubResource("GradientTexture1D_lg2i7")
 
 [resource]
 Button/colors/font_color = Color(0.875, 0.875, 0.875, 1)
@@ -44,10 +35,10 @@ Button/constants/h_separation = 4
 Button/constants/icon_max_width = 0
 Button/constants/outline_size = 0
 Button/font_sizes/font_size = 8
-Button/fonts/font = ExtResource("1_ddiej")
-Button/styles/disabled = ExtResource("2_wicfo")
-Button/styles/focus = ExtResource("2_wicfo")
+Button/fonts/font = ExtResource("1_d8mx8")
+Button/styles/disabled = ExtResource("2_p3gn1")
+Button/styles/focus = ExtResource("2_p3gn1")
 Button/styles/hover = SubResource("StyleBoxFlat_pal14")
-Button/styles/normal = ExtResource("2_wicfo")
-Button/styles/pressed = ExtResource("2_wicfo")
-PanelContainer/styles/panel = SubResource("StyleBoxTexture_nk6tf")
+Button/styles/normal = ExtResource("2_p3gn1")
+Button/styles/pressed = ExtResource("2_p3gn1")
+PanelContainer/styles/panel = ExtResource("3_60qab")

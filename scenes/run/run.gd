@@ -4,12 +4,14 @@ extends Node
 
 const BATTLE_SCENE = preload('res://scenes/battle/battle.tscn')
 const BATTLE_REWARD_SCENE = preload('res://scenes/battle_reward/battle_reward.tscn')
+const BATTLE_OVER_PANEL = preload('res://scenes/ui/battle_over_panel.tscn')
 const CAMPFIRE_SCENE = preload('res://scenes/campfire/campfire.tscn')
 const SHOP_SCENE = preload('res://scenes/shop/shop.tscn')
 const TREASURE_SCENE = preload('res://scenes/treasure/treasure.tscn')
-const WIN_SCREEN_SCENE = preload('res://scenes/win_screen/win_screen.tscn')
 const MAIN_MENU_PATH = 'res://scenes/ui/main_menu.tscn'
 
+
+@export var open_tutorial: bool
 
 @export var run_startup: RunStartup
 
@@ -20,6 +22,7 @@ const MAIN_MENU_PATH = 'res://scenes/ui/main_menu.tscn'
 @onready var gold_ui: GoldUI = %GoldUI
 @onready var health_ui: HealthUI = %HealthUI
 @onready var floor_ui: FloorUI = %FloorUI
+@onready var potions_ui: PotionUI = %PotionsUI
 @onready var deck_button: CardPileOpener = %DeckButton
 @onready var deck_view: CardPileView = %DeckView
 @onready var pause_menu: PauseMenu = $PauseMenu
@@ -33,11 +36,14 @@ const MAIN_MENU_PATH = 'res://scenes/ui/main_menu.tscn'
 @onready var rewards_button: Button = %RewardsButton
 @onready var shop_button: Button = %ShopButton
 @onready var treasure_button: Button = %TreasureButton
+@onready var tutorial: CanvasLayer = $Tutorial
+@onready var battle_tutorial: CanvasLayer = $BattleTutorial
 
 
 var stats: RunStats
 var char_stats: CharacterStats
 var save_data: SaveGame
+var once: bool = false
 
 
 func _ready() -> void:
@@ -52,14 +58,12 @@ func _ready() -> void:
 	GameManager.run = self
 	
 	
-	# 写出来自己都绷不住的逆天生命周期
 	match run_startup.type:
 		RunStartup.Type.NEW_RUN:
 			char_stats = run_startup.picked_character.instantiate()
 			_start_run()
 		RunStartup.Type.CONTINUED_RUN:
 			_load_run()
-	
 
 
 func _start_run() -> void:
@@ -70,11 +74,8 @@ func _start_run() -> void:
 	
 	map.generate_new_map()
 	map.unlock_floor(0)
-	if GameManager.colorless == null:
-		var colorless = CardPile.new()
-		colorless.add_cards_by_path('colorless')
-		GameManager.colorless = colorless
-		
+	if open_tutorial:
+		tutorial.visible = true
 	
 	save_data = SaveGame.new()
 	_save_run(true)
@@ -203,6 +204,10 @@ func _on_battle_room_entered(room: Room) -> void:
 	battle_scene.relics = relic_handler
 	battle_scene.start_battle()
 	GameManager.room = room
+	if !once && open_tutorial:
+		once = true
+		battle_tutorial.visible = true
+
 
 func _on_treasure_room_entered() -> void:
 	var treasure_scene = _change_view(TREASURE_SCENE) as Treasure
@@ -216,7 +221,6 @@ func _on_treasure_room_exited(relic: Relic) -> void:
 	reward_scene.run_stats = stats
 	reward_scene.char_stats = char_stats
 	reward_scene.relic_handler = relic_handler
-	
 	reward_scene.add_relic_reward(relic)
 
 
@@ -243,8 +247,16 @@ func _on_event_room_entered(room: Room) -> void:
 
 func _on_battle_won() -> void:
 	if map.floors_climbed == MapGenerator.FLOORS:
-		var win_screen = _change_view(WIN_SCREEN_SCENE) as WinScreen
+		var win_screen = _change_view(BATTLE_OVER_PANEL) as BattleOverPanel
 		win_screen.char_stats = char_stats
 		SaveGame.delete_data()
 	else:
 		_show_regular_battle_rewards()
+
+
+func _on_tutorial_button_pressed() -> void:
+	tutorial.visible = false
+
+
+func _on_battle_tutprial_button_pressed() -> void:
+	battle_tutorial.visible = false

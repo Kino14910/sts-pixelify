@@ -1,11 +1,29 @@
-[gd_scene load_steps=2 format=3 uid="uid://dlytqkh07jj0t"]
+[gd_scene load_steps=5 format=3 uid="uid://dlytqkh07jj0t"]
 
 [ext_resource type="Theme" uid="uid://ppksjylyhy1b" path="res://scenes/ui/menu_btn_theme.tres" id="1_ckleq"]
+[ext_resource type="StyleBox" uid="uid://cpbrqt1fmj2lp" path="res://scenes/ui/border_radius.tres" id="1_it2hj"]
+[ext_resource type="Script" path="res://scenes/ui/main_menu_button.gd" id="2_ftvt6"]
 
-[node name="Button" type="Button"]
-offset_right = 43.0
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_rlf8w"]
+
+[node name="BorderRadius" type="PanelContainer"]
+clip_children = 1
+offset_right = 39.0
 offset_bottom = 12.0
+theme_override_styles/panel = ExtResource("1_it2hj")
+script = ExtResource("2_ftvt6")
+
+[node name="Gradient" type="PanelContainer" parent="."]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_rlf8w")
+
+[node name="Button" type="Button" parent="Gradient"]
+layout_mode = 2
 theme = ExtResource("1_ckleq")
 theme_type_variation = &"FlatButton"
 text = "New Game"
 alignment = 0
+
+[connection signal="mouse_entered" from="Gradient/Button" to="." method="_on_button_mouse_entered"]
+[connection signal="mouse_exited" from="Gradient/Button" to="." method="_on_button_mouse_exited"]
+[connection signal="pressed" from="Gradient/Button" to="." method="_on_button_pressed"]

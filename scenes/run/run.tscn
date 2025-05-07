@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://bb56t0mmf8gsg"]
+[gd_scene load_steps=27 format=3 uid="uid://bb56t0mmf8gsg"]
 
 [ext_resource type="Script" path="res://scenes/run/run.gd" id="1_3anbx"]
 [ext_resource type="PackedScene" uid="uid://dh4rpv5nxuuvp" path="res://scenes/map/map.tscn" id="1_5ag4j"]
@@ -15,8 +15,38 @@
 [ext_resource type="PackedScene" uid="uid://bltkcscivnh8p" path="res://scenes/relic_handler/relic_handler.tscn" id="11_rb226"]
 [ext_resource type="PackedScene" uid="uid://bwtke8nmynqt2" path="res://scenes/relic_handler/relic_tooltip.tscn" id="12_iirq1"]
 [ext_resource type="Script" path="res://scenes/run/pause_menu.gd" id="13_nrk6i"]
+[ext_resource type="FontFile" uid="uid://7cxf84hdbfj5" path="res://assets/fonts/fusion-pixel-12px-proportional-zh_hans.ttf" id="16_wi8my"]
+[ext_resource type="Texture2D" uid="uid://bfvi02kojsa00" path="res://assets/tile_0103.png" id="17_52a7f"]
+[ext_resource type="Texture2D" uid="uid://dmnh5xxe2xne0" path="res://assets/player_heart.png" id="18_0genp"]
+[ext_resource type="Texture2D" uid="uid://dhmtctwb5ymhc" path="res://assets/gold.png" id="19_qbxg3"]
+[ext_resource type="Texture2D" uid="uid://du7r7v1iaahuo" path="res://assets/rarity.png" id="20_iohu1"]
+[ext_resource type="Texture2D" uid="uid://hva3iy5hon7a" path="res://assets/tile_0089.png" id="21_50we1"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_erc2h"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qcr0k"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.839216, 0.160784, 0.0980392, 1)
+
+[sub_resource type="Theme" id="Theme_m2281"]
+default_font = ExtResource("16_wi8my")
+Panel/styles/panel = SubResource("StyleBoxFlat_qcr0k")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vrwg7"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.839216, 0.160784, 0.0980392, 1)
+
+[sub_resource type="Theme" id="Theme_qtnu0"]
+default_font = ExtResource("16_wi8my")
+Panel/styles/panel = SubResource("StyleBoxFlat_vrwg7")
 
 [node name="Run" type="Node"]
 script = ExtResource("1_3anbx")
@@ -99,7 +129,7 @@ unique_name_in_owner = true
 custom_minimum_size = Vector2(48, 0)
 layout_mode = 2
 
-[node name="Potions" parent="TopBar/Background/MarginContainer/BarItems" instance=ExtResource("6_v51te")]
+[node name="PotionsUI" parent="TopBar/Background/MarginContainer/BarItems" instance=ExtResource("6_v51te")]
 unique_name_in_owner = true
 layout_mode = 2
 script = ExtResource("7_56g78")
@@ -203,3 +233,554 @@ unique_name_in_owner = true
 custom_minimum_size = Vector2(50, 0)
 layout_mode = 2
 text = "Main Menu"
+
+[node name="Tutorial" type="CanvasLayer" parent="."]
+layer = 6
+visible = false
+
+[node name="Bg" type="ColorRect" parent="Tutorial"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.666667)
+metadata/_edit_use_anchors_ = true
+
+[node name="health" type="Panel" parent="Tutorial"]
+offset_right = 39.0
+offset_bottom = 12.0
+theme = SubResource("Theme_m2281")
+metadata/_edit_use_anchors_ = true
+
+[node name="health2" type="Label" parent="Tutorial"]
+z_index = 1
+offset_left = 33.0
+offset_top = 7.0
+offset_right = 54.0
+offset_bottom = 15.0
+theme_override_fonts/font = ExtResource("16_wi8my")
+text = "生命值"
+metadata/_edit_use_anchors_ = true
+
+[node name="money" type="Panel" parent="Tutorial"]
+offset_left = 48.0
+offset_right = 87.0
+offset_bottom = 12.0
+theme = SubResource("Theme_m2281")
+metadata/_edit_use_anchors_ = true
+
+[node name="money2" type="Label" parent="Tutorial"]
+z_index = 1
+offset_left = 84.0
+offset_top = 7.0
+offset_right = 105.0
+offset_bottom = 15.0
+theme_override_fonts/font = ExtResource("16_wi8my")
+text = "金币"
+metadata/_edit_use_anchors_ = true
+
+[node name="potion" type="Panel" parent="Tutorial"]
+offset_left = 101.0
+offset_right = 140.0
+offset_bottom = 12.0
+theme = SubResource("Theme_m2281")
+metadata/_edit_use_anchors_ = true
+
+[node name="potion2" type="Label" parent="Tutorial"]
+anchors_preset = -1
+anchor_left = 0.383
+anchor_top = 0.083
+anchor_right = 0.656
+anchor_bottom = 0.139
+offset_left = -0.0480042
+offset_top = 0.0479994
+offset_right = 0.0639954
+offset_bottom = -0.0160027
+theme_override_fonts/font = ExtResource("16_wi8my")
+text = "药水栏：在战斗中可以使用药水"
+metadata/_edit_use_anchors_ = true
+
+[node name="floor" type="Panel" parent="Tutorial"]
+anchors_preset = -1
+anchor_left = 0.594
+anchor_right = 0.703
+anchor_bottom = 0.083
+offset_left = -0.0640106
+offset_right = 0.0319977
+offset_bottom = 0.0479994
+theme = SubResource("Theme_m2281")
+metadata/_edit_use_anchors_ = true
+
+[node name="floor2" type="Label" parent="Tutorial"]
+anchors_preset = -1
+anchor_left = 0.668
+anchor_top = 0.042
+anchor_right = 0.765219
+anchor_bottom = 0.097
+offset_left = -0.00801086
+offset_top = -0.0480003
+offset_right = 0.103989
+offset_bottom = 0.0319996
+theme_override_fonts/font = ExtResource("16_wi8my")
+text = "当前楼层"
+metadata/_edit_use_anchors_ = true
+
+[node name="relics" type="Panel" parent="Tutorial"]
+anchors_preset = -1
+anchor_top = 0.09
+anchor_right = 0.359
+anchor_bottom = 0.174
+offset_top = 0.039999
+offset_right = 0.095993
+offset_bottom = -0.0560017
+theme = SubResource("Theme_m2281")
+metadata/_edit_use_anchors_ = true
+
+[node name="relics2" type="Label" parent="Tutorial"]
+anchors_preset = -1
+anchor_left = 0.02
+anchor_top = 0.181
+anchor_right = 0.332
+anchor_bottom = 0.236
+offset_left = -0.12
+offset_top = -0.0640011
+offset_right = -58.992
+offset_bottom = 0.0159988
+theme_override_fonts/font = ExtResource("16_wi8my")
+text = "遗物栏：遗物在游戏中拥有永久效果"
+metadata/_edit_use_anchors_ = true
+
+[node name="deck" type="Panel" parent="Tutorial"]
+anchors_preset = -1
+anchor_left = 0.925781
+anchor_right = 1.0
+anchor_bottom = 0.09
+offset_top = -1.0
+offset_right = -1.0
+offset_bottom = 0.039999
+theme = SubResource("Theme_m2281")
+metadata/_edit_use_anchors_ = true
+
+[node name="deck2" type="Label" parent="Tutorial"]
+custom_minimum_size = Vector2(5, 0)
+anchors_preset = -1
+anchor_left = 0.824
+anchor_top = 0.083
+anchor_right = 1.00009
+anchor_bottom = 0.215
+offset_left = 0.0559845
+offset_top = 0.0479994
+offset_right = -0.0240173
+offset_bottom = 0.039999
+size_flags_horizontal = 4
+theme_override_constants/line_spacing = -2
+theme_override_fonts/font = ExtResource("16_wi8my")
+text = "卡组：这是你目前的卡组，点击可查看"
+autowrap_mode = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="Tutorial"]
+position = Vector2(19, 53)
+texture = ExtResource("17_52a7f")
+
+[node name="battle" type="Label" parent="Tutorial"]
+offset_left = 32.0
+offset_top = 51.0
+offset_right = 112.0
+offset_bottom = 59.0
+theme_override_fonts/font = ExtResource("16_wi8my")
+text = "普通怪物：可以获得金币和卡牌"
+metadata/_edit_use_anchors_ = true
+
+[node name="Sprite2D2" type="Sprite2D" parent="Tutorial"]
+position = Vector2(20, 67)
+scale = Vector2(0.575, 0.575)
+texture = ExtResource("18_0genp")
+
+[node name="campfire" type="Label" parent="Tutorial"]
+offset_left = 32.0
+offset_top = 63.0
+offset_right = 112.0
+offset_bottom = 71.0
+theme_override_fonts/font = ExtResource("16_wi8my")
+text = "篝火：可以在这里休息来回复生命值"
+metadata/_edit_use_anchors_ = true
+
+[node name="Sprite2D3" type="Sprite2D" parent="Tutorial"]
+position = Vector2(20, 80)
+scale = Vector2(0.65, 0.65)
+texture = ExtResource("19_qbxg3")
+
+[node name="shop" type="Label" parent="Tutorial"]
+offset_left = 32.0
+offset_top = 76.0
+offset_right = 112.0
+offset_bottom = 84.0
+theme_override_fonts/font = ExtResource("16_wi8my")
+text = "商店：你可以在这里使用金币购买卡牌和遗物"
+metadata/_edit_use_anchors_ = true
+
+[node name="Sprite2D4" type="Sprite2D" parent="Tutorial"]
+position = Vector2(20, 95)
+scale = Vector2(1.025, 1.025)
+texture = ExtResource("20_iohu1")
+
+[node name="event" type="Label" parent="Tutorial"]
+offset_left = 32.0
+offset_top = 90.0
+offset_right = 112.0
+offset_bottom = 98.0
+theme_override_fonts/font = ExtResource("16_wi8my")
+text = "随机事件：会遇到随机的事件"
+metadata/_edit_use_anchors_ = true
+
+[node name="Sprite2D5" type="Sprite2D" parent="Tutorial"]
+position = Vector2(20, 108)
+scale = Vector2(0.785, 0.784999)
+texture = ExtResource("21_50we1")
+
+[node name="treasure" type="Label" parent="Tutorial"]
+offset_left = 32.0
+offset_top = 104.0
+offset_right = 112.0
+offset_bottom = 112.0
+theme_override_fonts/font = ExtResource("16_wi8my")
+text = "宝箱：给予随机遗物"
+metadata/_edit_use_anchors_ = true
+
+[node name="Button" type="Button" parent="Tutorial"]
+offset_left = 208.0
+offset_top = 124.0
+offset_right = 248.0
+offset_bottom = 140.0
+text = "返回"
+
+[node name="BattleTutorial" type="CanvasLayer" parent="."]
+layer = 6
+visible = false
+
+[node name="Bg" type="ColorRect" parent="BattleTutorial"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.666667)
+metadata/_edit_use_anchors_ = true
+
+[node name="health" type="Panel" parent="BattleTutorial"]
+offset_right = 39.0
+offset_bottom = 12.0
+theme = SubResource("Theme_qtnu0")
+metadata/_edit_use_anchors_ = true
+
+[node name="health2" type="Label" parent="BattleTutorial"]
+z_index = 1
+offset_left = 33.0
+offset_top = 7.0
+offset_right = 54.0
+offset_bottom = 15.0
+theme_override_fonts/font = ExtResource("16_wi8my")
+text = "生命值"
+metadata/_edit_use_anchors_ = true
+
+[node name="money" type="Panel" parent="BattleTutorial"]
+offset_left = 48.0
+offset_right = 87.0
+offset_bottom = 12.0
+theme = SubResource("Theme_qtnu0")
+metadata/_edit_use_anchors_ = true
+
+[node name="money2" type="Label" parent="BattleTutorial"]
+z_index = 1
+offset_left = 84.0
+offset_top = 7.0
+offset_right = 105.0
+offset_bottom = 15.0
+theme_override_fonts/font = ExtResource("16_wi8my")
+text = "金币"
+metadata/_edit_use_anchors_ = true
+
+[node name="potion" type="Panel" parent="BattleTutorial"]
+offset_left = 101.0
+offset_right = 140.0
+offset_bottom = 12.0
+theme = SubResource("Theme_qtnu0")
+metadata/_edit_use_anchors_ = true
+
+[node name="potion2" type="Label" parent="BattleTutorial"]
+anchors_preset = -1
+anchor_left = 0.383
+anchor_top = 0.083
+anchor_right = 0.656
+anchor_bottom = 0.139
+offset_left = -0.0480042
+offset_top = 0.0479994
+offset_right = 0.0639954
+offset_bottom = -0.0160027
+theme_override_fonts/font = ExtResource("16_wi8my")
+text = "药水栏：在战斗中可以使用药水"
+metadata/_edit_use_anchors_ = true
+
+[node name="floor" type="Panel" parent="BattleTutorial"]
+anchors_preset = -1
+anchor_left = 0.594
+anchor_right = 0.703
+anchor_bottom = 0.083
+offset_left = -0.0640106
+offset_right = 0.0319977
+offset_bottom = 0.0479994
+theme = SubResource("Theme_qtnu0")
+metadata/_edit_use_anchors_ = true
+
+[node name="floor2" type="Label" parent="BattleTutorial"]
+anchors_preset = -1
+anchor_left = 0.668
+anchor_top = 0.042
+anchor_right = 0.765219
+anchor_bottom = 0.097
+offset_left = -0.00801086
+offset_top = -0.0480003
+offset_right = 0.103989
+offset_bottom = 0.0319996
+theme_override_fonts/font = ExtResource("16_wi8my")
+text = "当前楼层"
+metadata/_edit_use_anchors_ = true
+
+[node name="relics" type="Panel" parent="BattleTutorial"]
+anchors_preset = -1
+anchor_top = 0.09
+anchor_right = 0.359
+anchor_bottom = 0.174
+offset_top = 0.039999
+offset_right = 0.095993
+offset_bottom = -0.0560017
+theme = SubResource("Theme_qtnu0")
+metadata/_edit_use_anchors_ = true
+
+[node name="relics2" type="Label" parent="BattleTutorial"]
+anchors_preset = -1
+anchor_left = 0.02
+anchor_top = 0.181
+anchor_right = 0.332
+anchor_bottom = 0.236
+offset_left = -0.12
+offset_top = -0.0640011
+offset_right = -58.992
+offset_bottom = 0.0159988
+theme_override_fonts/font = ExtResource("16_wi8my")
+text = "遗物栏：遗物在游戏中拥有永久效果"
+metadata/_edit_use_anchors_ = true
+
+[node name="deck" type="Panel" parent="BattleTutorial"]
+anchors_preset = -1
+anchor_left = 0.925781
+anchor_right = 1.0
+anchor_bottom = 0.09
+offset_top = -1.0
+offset_right = -1.0
+offset_bottom = 0.039999
+theme = SubResource("Theme_qtnu0")
+metadata/_edit_use_anchors_ = true
+
+[node name="deck2" type="Label" parent="BattleTutorial"]
+custom_minimum_size = Vector2(5, 0)
+anchors_preset = -1
+anchor_left = 0.824
+anchor_top = 0.083
+anchor_right = 1.00009
+anchor_bottom = 0.215
+offset_left = 0.0559845
+offset_top = 0.0479994
+offset_right = -0.0240173
+offset_bottom = 0.039999
+size_flags_horizontal = 4
+theme_override_constants/line_spacing = -2
+theme_override_fonts/font = ExtResource("16_wi8my")
+text = "卡组：这是你目前的卡组，点击可查看"
+autowrap_mode = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="drawPile" type="Panel" parent="BattleTutorial"]
+anchors_preset = -1
+anchor_left = 0.925781
+anchor_top = -0.0208333
+anchor_right = 1.01172
+anchor_bottom = 0.09
+offset_left = -237.0
+offset_top = 129.0
+offset_right = -238.0
+offset_bottom = 130.04
+theme = SubResource("Theme_qtnu0")
+metadata/_edit_use_anchors_ = true
+
+[node name="drawPile2" type="Label" parent="BattleTutorial"]
+custom_minimum_size = Vector2(5, 0)
+anchors_preset = -1
+anchor_left = 0.824
+anchor_top = 0.083
+anchor_right = 1.00009
+anchor_bottom = 0.145556
+offset_left = -188.944
+offset_top = 122.048
+offset_right = -189.024
+offset_bottom = 122.04
+size_flags_horizontal = 4
+theme_override_constants/line_spacing = -2
+theme_override_fonts/font = ExtResource("16_wi8my")
+text = "抽牌堆"
+autowrap_mode = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="discard" type="Panel" parent="BattleTutorial"]
+anchors_preset = -1
+anchor_left = 0.925781
+anchor_top = -0.0208333
+anchor_right = 1.01172
+anchor_bottom = 0.09
+offset_left = -3.0
+offset_top = 129.0
+offset_right = -4.0
+offset_bottom = 130.04
+theme = SubResource("Theme_qtnu0")
+metadata/_edit_use_anchors_ = true
+
+[node name="discard2" type="Label" parent="BattleTutorial"]
+custom_minimum_size = Vector2(5, 0)
+anchors_preset = -1
+anchor_left = 0.824
+anchor_top = 0.083
+anchor_right = 0.886813
+anchor_bottom = 0.145556
+offset_left = 5.05598
+offset_top = 123.048
+offset_right = 4.97598
+offset_bottom = 123.04
+size_flags_horizontal = 4
+theme_override_constants/line_spacing = -2
+theme_override_fonts/font = ExtResource("16_wi8my")
+text = "弃牌堆"
+autowrap_mode = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="hand" type="Panel" parent="BattleTutorial"]
+anchors_preset = -1
+anchor_left = 0.160156
+anchor_top = -0.0902778
+anchor_right = 0.828125
+anchor_bottom = 0.09
+offset_left = -3.0
+offset_top = 129.0
+offset_right = -4.0
+offset_bottom = 130.04
+theme = SubResource("Theme_qtnu0")
+metadata/_edit_use_anchors_ = true
+
+[node name="hand2" type="Label" parent="BattleTutorial"]
+custom_minimum_size = Vector2(5, 0)
+anchors_preset = -1
+anchor_left = 0.824
+anchor_top = 0.0205555
+anchor_right = 1.13291
+anchor_bottom = 0.0205555
+offset_left = -137.944
+offset_top = 95.048
+offset_right = -138.024
+offset_bottom = 112.04
+size_flags_horizontal = 4
+theme_override_constants/line_spacing = -2
+theme_override_fonts/font = ExtResource("16_wi8my")
+text = "手牌，将它们向上拖动就可以打出"
+autowrap_mode = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="energy" type="Panel" parent="BattleTutorial"]
+anchors_preset = -1
+anchor_left = 0.164063
+anchor_top = -0.0694444
+anchor_right = 0.242188
+anchor_bottom = 0.0552778
+offset_left = -25.0
+offset_top = 121.0
+offset_right = -26.0
+offset_bottom = 122.04
+theme = SubResource("Theme_qtnu0")
+metadata/_edit_use_anchors_ = true
+
+[node name="energy2" type="Label" parent="BattleTutorial"]
+custom_minimum_size = Vector2(5, 0)
+anchors_preset = -1
+anchor_left = 0.824
+anchor_top = 0.0205555
+anchor_right = 0.961031
+anchor_bottom = 0.187222
+offset_left = -207.944
+offset_top = 67.04
+offset_right = -208.024
+offset_bottom = 93.04
+size_flags_horizontal = 4
+theme_override_constants/line_spacing = -2
+theme_override_fonts/font = ExtResource("16_wi8my")
+text = "能量：每张卡牌左上角都有其需要消耗的能量，每回合开始拥有三点能量，好好利用能量来最大化收益"
+autowrap_mode = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="exhaust2" type="Panel" parent="BattleTutorial"]
+anchors_preset = -1
+anchor_left = 0.175782
+anchor_top = -0.0555555
+anchor_right = 0.242188
+anchor_bottom = 0.0552778
+offset_left = 195.0
+offset_top = 115.0
+offset_right = 194.0
+offset_bottom = 116.04
+theme = SubResource("Theme_qtnu0")
+metadata/_edit_use_anchors_ = true
+
+[node name="exhaust" type="Label" parent="BattleTutorial"]
+custom_minimum_size = Vector2(5, 0)
+anchors_preset = -1
+anchor_left = 0.859
+anchor_top = 0.778
+anchor_right = 0.93
+anchor_bottom = 0.84
+offset_left = 0.095993
+offset_top = -0.0320053
+offset_right = -0.0800171
+offset_bottom = 0.0399933
+size_flags_horizontal = 4
+theme_override_constants/line_spacing = -2
+theme_override_fonts/font = ExtResource("16_wi8my")
+text = "消耗堆"
+autowrap_mode = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="exhaust3" type="Label" parent="BattleTutorial"]
+custom_minimum_size = Vector2(5, 0)
+anchors_preset = -1
+anchor_left = 0.262
+anchor_top = 0.34
+anchor_right = 0.687438
+anchor_bottom = 0.562
+offset_left = -0.0720062
+offset_top = 0.0400009
+offset_right = 1.01599
+offset_bottom = 0.071991
+size_flags_horizontal = 4
+theme_override_constants/line_spacing = -2
+theme_override_fonts/font = ExtResource("16_wi8my")
+text = "每回合从抽牌堆抽出五张牌，打出手牌会将其放入弃牌堆，如果有消耗字段则进入消耗堆。回合结束手牌全部进入弃牌堆。抽牌堆为空时抽牌，会将弃牌堆的所有牌放入抽牌堆，但消耗堆不会放入抽牌堆。"
+autowrap_mode = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Button" type="Button" parent="BattleTutorial"]
+offset_left = 215.0
+offset_top = 53.0
+offset_right = 255.0
+offset_bottom = 69.0
+text = "返回"
+
+[connection signal="pressed" from="Tutorial/Button" to="." method="_on_tutorial_button_pressed"]
+[connection signal="pressed" from="BattleTutorial/Button" to="." method="_on_battle_tutprial_button_pressed"]

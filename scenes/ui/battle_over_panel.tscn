@@ -1,12 +1,15 @@
-[gd_scene load_steps=4 format=3 uid="uid://bfp68paujyrvi"]
+[gd_scene load_steps=5 format=3 uid="uid://bfp68paujyrvi"]
 
 [ext_resource type="Script" path="res://scenes/ui/battle_over_panel.gd" id="1_msgmm"]
+[ext_resource type="Texture2D" uid="uid://cajnlcltuvgy5" path="res://assets/UI/banner.png" id="2_84svc"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dhly6"]
 bg_color = Color(0, 0, 0, 0.34902)
 
 [sub_resource type="LabelSettings" id="LabelSettings_bijyl"]
-font_size = 24
+font_size = 8
+outline_size = 1
+outline_color = Color(0, 0, 0, 1)
 
 [node name="BattleOverPanel" type="Panel"]
 process_mode = 3
@@ -17,6 +20,34 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_dhly6")
 script = ExtResource("1_msgmm")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 2
+offset_left = 63.0
+offset_top = 32.0
+offset_right = 193.0
+offset_bottom = 48.0
+texture = ExtResource("2_84svc")
+stretch_mode = 5
+
+[node name="Label" type="Label" parent="TextureRect"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -22.0
+offset_top = -8.0
+offset_right = 23.0
+offset_bottom = 4.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Victorious!"
+label_settings = SubResource("LabelSettings_bijyl")
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 layout_mode = 1
@@ -31,14 +62,6 @@ offset_right = 20.0
 offset_bottom = 20.0
 grow_horizontal = 2
 grow_vertical = 2
-
-[node name="Label" type="Label" parent="VBoxContainer"]
-unique_name_in_owner = true
-layout_mode = 2
-text = "Victorious!"
-label_settings = SubResource("LabelSettings_bijyl")
-horizontal_alignment = 1
-vertical_alignment = 1
 
 [node name="ContinueButton" type="Button" parent="VBoxContainer"]
 unique_name_in_owner = true
