@@ -2,13 +2,21 @@ extends Control
 
 const RUN_SCENE = preload("res://scenes/run/run.tscn")
 const IRONCLAD = preload('res://scripts/characters/Ironclad/Ironclad.tres')
-const SILENCE_HUNTER = preload('res://scripts/characters/TheSilent/TheSilent.tres')
-const WIZARD = preload('res://scripts/characters/Wizard/Wizard.tres')
+const THE_SILENT = preload('res://scripts/characters/TheSilent/TheSilent.tres')
+const DETECT = preload('res://scripts/characters/Detect/Detect.tres')
+const WATCHER = preload('res://scripts/characters/Watcher/Watcher.tres')
+
+const IRONCLAD_PORTRAIT = preload('res://assets/characters/Ironclad_portrait.png')
+const THE_SLIENT_PORTRAIT = preload('res://assets/characters/The_slient_portrait.png')
+const DETECT_PORTRAIT = preload('res://assets/characters/Detect_Portrait.png')
+const WATCHER_PORTRAIT = preload('res://assets/characters/Watcher_portrait.png')
+
 const MAIN_MENU_PATH = "res://scenes/ui/main_menu.tscn"
 
 @export var run_startup: RunStartup
+@onready var name_2
 
-@onready var title: Label = %Name
+@onready var title: TextureRect = %Name
 @onready var description: Label = %Description
 @onready var character_portrait: TextureRect = %CharacterPortrait
 @onready var start_button: Button = $StartButton
@@ -16,14 +24,14 @@ const MAIN_MENU_PATH = "res://scenes/ui/main_menu.tscn"
 var current_character: CharacterStats: 
 	set(value):	
 		current_character = value
-		title.text = current_character.character_name
+		title.texture = current_character.character_name_picture
 		description.text = current_character.description
 		character_portrait.texture = current_character.portrait
 		start_button.disabled = false
 
 
 func _ready() -> void:
-	title.text = ''
+	title.texture = null
 	description.text = ''
 	character_portrait.texture = null
 
@@ -43,9 +51,13 @@ func _on_iron_clad_pressed() -> void:
 	current_character = IRONCLAD
 
 
-func _on_silence_hunter_pressed() -> void:
-	current_character = SILENCE_HUNTER
+func _on_the_silent_pressed() -> void:
+	current_character = THE_SILENT
 
 
-func _on_wizard_pressed() -> void:
-	current_character = WIZARD
+func _on_detect_pressed() -> void:
+	current_character = DETECT
+
+
+func _on_watcher_pressed() -> void:
+	current_character = WATCHER

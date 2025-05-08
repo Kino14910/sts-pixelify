@@ -1,0 +1,60 @@
+[gd_resource type="SpriteFrames" load_steps=9 format=3 uid="uid://buckvsikak5dl"]
+
+[ext_resource type="Texture2D" uid="uid://dih0sdxfa7l2o" path="res://assets/characters/Defect-Sheet.png" id="1_j203j"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lxkfk"]
+atlas = ExtResource("1_j203j")
+region = Rect2(0, 0, 54, 47)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kaga6"]
+atlas = ExtResource("1_j203j")
+region = Rect2(54, 0, 54, 47)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6k5lk"]
+atlas = ExtResource("1_j203j")
+region = Rect2(108, 0, 54, 47)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nugc2"]
+atlas = ExtResource("1_j203j")
+region = Rect2(162, 0, 54, 47)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5jicc"]
+atlas = ExtResource("1_j203j")
+region = Rect2(216, 0, 54, 47)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sxiev"]
+atlas = ExtResource("1_j203j")
+region = Rect2(270, 0, 54, 47)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_l6n0r"]
+atlas = ExtResource("1_j203j")
+region = Rect2(324, 0, 54, 47)
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lxkfk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kaga6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6k5lk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nugc2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5jicc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sxiev")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_l6n0r")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]

@@ -1,16 +1,21 @@
-[gd_resource type="Resource" script_class="CharacterStats" load_steps=6 format=3 uid="uid://4qo5n75hbldo"]
+[gd_resource type="Resource" script_class="CharacterStats" load_steps=9 format=3 uid="uid://4qo5n75hbldo"]
 
 [ext_resource type="Texture2D" uid="uid://b685x37oj0smj" path="res://assets/characters/ironclad.png" id="1_wie4u"]
 [ext_resource type="Resource" uid="uid://bps0lp0brkvou" path="res://scripts/characters/Ironclad/Ironclad_cardpool.tres" id="2_7eamv"]
+[ext_resource type="SpriteFrames" uid="uid://dmxq48sy1vquo" path="res://resources/character/Ironclad.tres" id="3_namc3"]
 [ext_resource type="Script" path="res://resources/custom_resources/character_stats.gd" id="3_x0sf1"]
 [ext_resource type="Resource" uid="uid://boeh0bq8w7kbr" path="res://scripts/characters/Ironclad/Ironclad_starting_deck.tres" id="4_2h1q4"]
+[ext_resource type="Texture2D" uid="uid://qbiiced3btdk" path="res://assets/characters/Ironclad_name.png" id="4_8jvup"]
+[ext_resource type="Texture2D" uid="uid://ccn1ttjdlfq20" path="res://assets/characters/Ironclad.tres" id="5_dk314"]
 [ext_resource type="Resource" uid="uid://c5q3aakgenikm" path="res://scripts/relics/burning_blood.tres" id="5_vln5c"]
 
 [resource]
 script = ExtResource("3_x0sf1")
 character_name = "Iron Clad"
 description = "Iron Clad"
-portrait = ExtResource("1_wie4u")
+character_name_picture = ExtResource("4_8jvup")
+portrait = ExtResource("5_dk314")
+char_sprite = ExtResource("3_namc3")
 starting_deck = ExtResource("4_2h1q4")
 cardpool = ExtResource("2_7eamv")
 cards_per_turn = 5

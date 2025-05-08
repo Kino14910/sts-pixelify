@@ -1,0 +1,74 @@
+[gd_resource type="SpriteFrames" load_steps=11 format=3 uid="uid://w521litngtcg"]
+
+[ext_resource type="Texture2D" uid="uid://d3e4qql70wnis" path="res://assets/characters/Watcher-Sheet.png" id="1_t38wx"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3v0wd"]
+atlas = ExtResource("1_t38wx")
+region = Rect2(0, 0, 89, 59)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ews3g"]
+atlas = ExtResource("1_t38wx")
+region = Rect2(89, 0, 89, 59)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3td1a"]
+atlas = ExtResource("1_t38wx")
+region = Rect2(178, 0, 89, 59)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_w8te7"]
+atlas = ExtResource("1_t38wx")
+region = Rect2(267, 0, 89, 59)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_15d87"]
+atlas = ExtResource("1_t38wx")
+region = Rect2(356, 0, 89, 59)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8542v"]
+atlas = ExtResource("1_t38wx")
+region = Rect2(445, 0, 89, 59)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ha07w"]
+atlas = ExtResource("1_t38wx")
+region = Rect2(534, 0, 89, 59)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2ypip"]
+atlas = ExtResource("1_t38wx")
+region = Rect2(623, 0, 89, 59)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tofxm"]
+atlas = ExtResource("1_t38wx")
+region = Rect2(712, 0, 89, 59)
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3v0wd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ews3g")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3td1a")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_w8te7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_15d87")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8542v")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ha07w")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2ypip")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tofxm")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]

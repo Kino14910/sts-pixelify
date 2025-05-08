@@ -12,8 +12,8 @@ const WHITE_SPRITE_MATERIAL = preload("res://assets/white_sprite_material.tres")
 
 		update_player()
 
+@onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
 
-@onready var sprite_2d: Sprite2D = $Sprite2D
 @onready var stats_ui: StatsUI = $StatsUI
 @onready var selected_indicator: NinePatchRect = $SelectedIndicator
 
@@ -35,7 +35,7 @@ func update_player() -> void:
 	if not is_inside_tree(): 
 		await ready
 
-	sprite_2d.texture = stats.art
+	animated_sprite_2d.sprite_frames = stats.char_sprite
 	update_stats()
 
 

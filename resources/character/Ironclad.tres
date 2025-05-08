@@ -1,0 +1,46 @@
+[gd_resource type="SpriteFrames" load_steps=7 format=3 uid="uid://dmxq48sy1vquo"]
+
+[ext_resource type="Texture2D" uid="uid://bhvuhsqgpsa0" path="res://assets/characters/Iron_clad-Sheet.png" id="1_0wr4r"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4xojl"]
+atlas = ExtResource("1_0wr4r")
+region = Rect2(0, 0, 74, 50)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2qq4w"]
+atlas = ExtResource("1_0wr4r")
+region = Rect2(74, 0, 74, 50)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_njwgh"]
+atlas = ExtResource("1_0wr4r")
+region = Rect2(148, 0, 74, 50)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_b4xkj"]
+atlas = ExtResource("1_0wr4r")
+region = Rect2(222, 0, 74, 50)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_05ggl"]
+atlas = ExtResource("1_0wr4r")
+region = Rect2(296, 0, 74, 50)
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4xojl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2qq4w")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_njwgh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_b4xkj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_05ggl")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]

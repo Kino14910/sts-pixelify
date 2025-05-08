@@ -1,0 +1,7 @@
+[gd_resource type="AtlasTexture" load_steps=2 format=3 uid="uid://0rxpdi2mehsu"]
+
+[ext_resource type="Texture2D" uid="uid://dih0sdxfa7l2o" path="res://assets/characters/Defect-Sheet.png" id="1_od84k"]
+
+[resource]
+atlas = ExtResource("1_od84k")
+region = Rect2(0, 0, 54, 47)

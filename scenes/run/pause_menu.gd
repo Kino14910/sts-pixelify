@@ -10,6 +10,7 @@ signal save_and_quit
 @onready var option_button: OptionButton = %OptionButton
 
 var pause_time: float
+var target_volume: float = 1.0
 
 func _ready() -> void:
 	back_to_game_button.pressed.connect(_unpause)
@@ -18,10 +19,8 @@ func _ready() -> void:
 
 func _process(delta: float) -> void:
 	var volume_linear 
-	var target_volume
 	for player: AudioStreamPlayer in MusicPlayer.get_children():
 		volume_linear = db_to_linear(player.volume_db)
-		target_volume = 0.0 if get_tree().paused else 1.0
 		volume_linear = lerp(volume_linear, target_volume, 8.0 * delta)
 		player.volume_db = linear_to_db(volume_linear)
 		player.stream_paused = get_tree().paused and Time.get_ticks_msec() > pause_time + 300
@@ -60,8 +59,7 @@ func _on_volume_value_changed(value: float) -> void:
 
 
 func _on_music_volume_value_changed(value: float) -> void:
-	for music: AudioStreamPlayer in SFXPlayer.get_children():
-		music.volume_db = value
+	target_volume = value
 
 
 func _on_sfx_volume_value_changed(value: float) -> void:
@@ -78,6 +76,7 @@ func _on_option_button_item_selected(index: int) -> void:
 		0: DisplayServer.window_set_size(Vector2i(1920, 1080))
 		1: DisplayServer.window_set_size(Vector2i(1600, 900))
 		2: DisplayServer.window_set_size(Vector2i(1280, 720))
+	get_tree().root.move_to_center()
 
 func _on_window_mode_option_button_item_selected(index: int) -> void:
 	DisplayServer.window_set_mode(option_button.get_item_id(index))

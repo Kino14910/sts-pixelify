@@ -1,0 +1,7 @@
+[gd_resource type="AtlasTexture" load_steps=2 format=3 uid="uid://c8wenlaynshx7"]
+
+[ext_resource type="Texture2D" uid="uid://d3e4qql70wnis" path="res://assets/characters/Watcher-Sheet.png" id="1_gplxy"]
+
+[resource]
+atlas = ExtResource("1_gplxy")
+region = Rect2(0, 0, 89, 59)

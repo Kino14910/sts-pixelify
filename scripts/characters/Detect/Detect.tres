@@ -1,0 +1,20 @@
+[gd_resource type="Resource" script_class="CharacterStats" load_steps=6 format=3 uid="uid://b5xnoxnpuj1ma"]
+
+[ext_resource type="Texture2D" uid="uid://p21wrqkbl2b" path="res://assets/characters/Detect_Portrait.png" id="1_3ja0w"]
+[ext_resource type="SpriteFrames" uid="uid://buckvsikak5dl" path="res://resources/character/Detect.tres" id="2_coj3g"]
+[ext_resource type="Texture2D" uid="uid://d125m0n2r8xyl" path="res://assets/characters/Detect_name.png" id="3_a3jvf"]
+[ext_resource type="Texture2D" uid="uid://0rxpdi2mehsu" path="res://assets/characters/Detect.tres" id="4_qjjoe"]
+[ext_resource type="Script" path="res://resources/custom_resources/character_stats.gd" id="4_yao0d"]
+
+[resource]
+script = ExtResource("4_yao0d")
+character_name = "Detect"
+description = "Detect"
+character_name_picture = ExtResource("3_a3jvf")
+portrait = ExtResource("4_qjjoe")
+char_sprite = ExtResource("2_coj3g")
+cards_per_turn = 5
+max_energy = 3
+char_max_hp = 70
+art = ExtResource("1_3ja0w")
+max_health = 1

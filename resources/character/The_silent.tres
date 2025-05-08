@@ -1,0 +1,60 @@
+[gd_resource type="SpriteFrames" load_steps=9 format=3 uid="uid://bl645mh3s5ni7"]
+
+[ext_resource type="Texture2D" uid="uid://dwui81u381l23" path="res://assets/characters/The_silent-Sheet.png" id="1_tfdje"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4r4so"]
+atlas = ExtResource("1_tfdje")
+region = Rect2(0, 0, 48, 53)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1ymx4"]
+atlas = ExtResource("1_tfdje")
+region = Rect2(48, 0, 48, 53)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vppl8"]
+atlas = ExtResource("1_tfdje")
+region = Rect2(96, 0, 48, 53)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8wy15"]
+atlas = ExtResource("1_tfdje")
+region = Rect2(144, 0, 48, 53)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_a5621"]
+atlas = ExtResource("1_tfdje")
+region = Rect2(192, 0, 48, 53)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_eahq2"]
+atlas = ExtResource("1_tfdje")
+region = Rect2(240, 0, 48, 53)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tyjun"]
+atlas = ExtResource("1_tfdje")
+region = Rect2(288, 0, 48, 53)
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4r4so")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1ymx4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vppl8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8wy15")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_a5621")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_eahq2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tyjun")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]

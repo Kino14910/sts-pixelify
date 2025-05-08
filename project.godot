@@ -21,12 +21,12 @@ buses/default_bus_layout="res://sounds_bus_layout.tres"
 
 [autoload]
 
+GameManager="*res://autoloads/game_manager.gd"
 Events="*res://autoloads/events.gd"
-Shaker="*res://autoloads/shaker.gd"
+RNG="*res://autoloads/rng.gd"
 MusicPlayer="*res://autoloads/music_player.tscn"
 SFXPlayer="*res://autoloads/sound_player.tscn"
-RNG="*res://autoloads/rng.gd"
-GameManager="*res://autoloads/game_manager.gd"
+Shaker="*res://autoloads/shaker.gd"
 LoadResFromDir="*res://autoloads/load_res_from_dir.gd"
 
 [debug]

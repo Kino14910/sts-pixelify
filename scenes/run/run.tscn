@@ -246,8 +246,10 @@ unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 4
+max_value = 1.0
+step = 0.0
 
-[node name="MusicContainer2" type="HBoxContainer" parent="PauseMenu/PanelContainer/Control"]
+[node name="MusicContainer" type="HBoxContainer" parent="PauseMenu/PanelContainer/Control"]
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
@@ -259,18 +261,20 @@ offset_bottom = 24.0
 grow_horizontal = 2
 scale = Vector2(0.5, 0.5)
 
-[node name="Label" type="Label" parent="PauseMenu/PanelContainer/Control/MusicContainer2"]
+[node name="Label" type="Label" parent="PauseMenu/PanelContainer/Control/MusicContainer"]
 custom_minimum_size = Vector2(24, 0)
 layout_mode = 2
 theme_override_font_sizes/font_size = 8
 text = "Music"
 
-[node name="Volume" type="HSlider" parent="PauseMenu/PanelContainer/Control/MusicContainer2"]
+[node name="Volume" type="HSlider" parent="PauseMenu/PanelContainer/Control/MusicContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 4
+max_value = 1.0
+step = 0.0
 
-[node name="SFXContainer3" type="HBoxContainer" parent="PauseMenu/PanelContainer/Control"]
+[node name="SFXContainer" type="HBoxContainer" parent="PauseMenu/PanelContainer/Control"]
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
@@ -282,16 +286,18 @@ offset_bottom = 32.0
 grow_horizontal = 2
 scale = Vector2(0.5, 0.5)
 
-[node name="Label" type="Label" parent="PauseMenu/PanelContainer/Control/SFXContainer3"]
+[node name="Label" type="Label" parent="PauseMenu/PanelContainer/Control/SFXContainer"]
 custom_minimum_size = Vector2(24, 0)
 layout_mode = 2
 theme_override_font_sizes/font_size = 8
 text = "Sound"
 
-[node name="Volume" type="HSlider" parent="PauseMenu/PanelContainer/Control/SFXContainer3"]
+[node name="Volume" type="HSlider" parent="PauseMenu/PanelContainer/Control/SFXContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 4
+max_value = 1.0
+step = 0.0
 
 [node name="MuteContainer" type="HBoxContainer" parent="PauseMenu/PanelContainer/Control"]
 layout_mode = 1
@@ -350,7 +356,7 @@ popup/item_1/id = 1
 popup/item_2/text = "1280x720"
 popup/item_2/id = 2
 
-[node name="ResolutionContainer2" type="HBoxContainer" parent="PauseMenu/PanelContainer/Control"]
+[node name="WindowModeContainer" type="HBoxContainer" parent="PauseMenu/PanelContainer/Control"]
 custom_minimum_size = Vector2(0, 12)
 layout_mode = 1
 anchors_preset = 5
@@ -358,18 +364,18 @@ anchor_left = 0.5
 anchor_right = 0.5
 offset_left = -48.0
 offset_top = 44.0
-offset_right = 53.0
+offset_right = 74.0
 offset_bottom = 62.0
 grow_horizontal = 2
 scale = Vector2(0.5, 0.5)
 
-[node name="Label" type="Label" parent="PauseMenu/PanelContainer/Control/ResolutionContainer2"]
+[node name="Label" type="Label" parent="PauseMenu/PanelContainer/Control/WindowModeContainer"]
 custom_minimum_size = Vector2(24, 0)
 layout_mode = 2
 theme_override_font_sizes/font_size = 8
 text = "Window Mode"
 
-[node name="OptionButton" type="OptionButton" parent="PauseMenu/PanelContainer/Control/ResolutionContainer2"]
+[node name="OptionButton" type="OptionButton" parent="PauseMenu/PanelContainer/Control/WindowModeContainer"]
 unique_name_in_owner = true
 layout_mode = 2
 selected = 0
@@ -947,10 +953,10 @@ offset_bottom = 69.0
 text = "返回"
 
 [connection signal="value_changed" from="PauseMenu/PanelContainer/Control/VolumeContainer/Volume" to="PauseMenu" method="_on_volume_value_changed"]
-[connection signal="value_changed" from="PauseMenu/PanelContainer/Control/MusicContainer2/Volume" to="PauseMenu" method="_on_music_volume_value_changed"]
-[connection signal="value_changed" from="PauseMenu/PanelContainer/Control/SFXContainer3/Volume" to="PauseMenu" method="_on_sfx_volume_value_changed"]
+[connection signal="value_changed" from="PauseMenu/PanelContainer/Control/MusicContainer/Volume" to="PauseMenu" method="_on_music_volume_value_changed"]
+[connection signal="value_changed" from="PauseMenu/PanelContainer/Control/SFXContainer/Volume" to="PauseMenu" method="_on_sfx_volume_value_changed"]
 [connection signal="toggled" from="PauseMenu/PanelContainer/Control/MuteContainer/Mute" to="PauseMenu" method="_on_mute_toggled"]
 [connection signal="item_selected" from="PauseMenu/PanelContainer/Control/ResolutionContainer/OptionButton" to="PauseMenu" method="_on_option_button_item_selected"]
-[connection signal="item_selected" from="PauseMenu/PanelContainer/Control/ResolutionContainer2/OptionButton" to="PauseMenu" method="_on_window_mode_option_button_item_selected"]
+[connection signal="item_selected" from="PauseMenu/PanelContainer/Control/WindowModeContainer/OptionButton" to="PauseMenu" method="_on_window_mode_option_button_item_selected"]
 [connection signal="pressed" from="Tutorial/Button" to="." method="_on_tutorial_button_pressed"]
 [connection signal="pressed" from="BattleTutorial/Button" to="." method="_on_battle_tutprial_button_pressed"]

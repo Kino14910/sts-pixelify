@@ -1,11 +1,10 @@
-[gd_scene load_steps=9 format=3 uid="uid://wpwan0wnqg3s"]
+[gd_scene load_steps=8 format=3 uid="uid://wpwan0wnqg3s"]
 
 [ext_resource type="Script" path="res://scenes/ui/char_selector.gd" id="1_rs0pr"]
 [ext_resource type="Resource" uid="uid://drbh5deiiyr6f" path="res://scenes/run/run_startup.tres" id="2_jy7ne"]
-[ext_resource type="Texture2D" uid="uid://hwkgoriaq512" path="res://assets/characters/Ironclad_portrait.png" id="3_jysy4"]
-[ext_resource type="Texture2D" uid="uid://b7a838nj8y8u" path="res://assets/characters/The_slient_portrait.png" id="4_yadb5"]
-[ext_resource type="Texture2D" uid="uid://p21wrqkbl2b" path="res://assets/characters/Detect_Portrait.png" id="5_s0xux"]
-[ext_resource type="Texture2D" uid="uid://chespk0wc8s3y" path="res://assets/characters/Watcher_portrait.png" id="6_h7gmm"]
+[ext_resource type="Texture2D" uid="uid://c87pliqhyiybv" path="res://assets/characters/Ironclad_selector.png" id="3_5prw4"]
+[ext_resource type="Texture2D" uid="uid://bfvi02kojsa00" path="res://assets/tile_0103.png" id="4_wuesw"]
+[ext_resource type="Texture2D" uid="uid://pgj8vfpj6tc5" path="res://assets/tile_0130.png" id="5_ee1nt"]
 [ext_resource type="Texture2D" uid="uid://qbiiced3btdk" path="res://assets/characters/Ironclad_name.png" id="6_uaol3"]
 
 [sub_resource type="ButtonGroup" id="ButtonGroup_gb06a"]
@@ -80,16 +79,16 @@ offset_right = 12.0
 offset_bottom = 12.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("3_jysy4")
+texture = ExtResource("3_5prw4")
 stretch_mode = 5
 
-[node name="TheSlient" type="Button" parent="HBoxContainer"]
+[node name="SilenceHunter" type="Button" parent="HBoxContainer"]
 custom_minimum_size = Vector2(30, 30)
 layout_mode = 2
 toggle_mode = true
 button_group = SubResource("ButtonGroup_gb06a")
 
-[node name="TextureRect" type="TextureRect" parent="HBoxContainer/TheSlient"]
+[node name="TextureRect" type="TextureRect" parent="HBoxContainer/SilenceHunter"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -102,7 +101,7 @@ offset_right = 12.0
 offset_bottom = 12.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("4_yadb5")
+texture = ExtResource("4_wuesw")
 stretch_mode = 5
 
 [node name="Detect" type="Button" parent="HBoxContainer"]
@@ -124,29 +123,7 @@ offset_right = 12.0
 offset_bottom = 12.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("5_s0xux")
-stretch_mode = 5
-
-[node name="Watcher" type="Button" parent="HBoxContainer"]
-custom_minimum_size = Vector2(30, 30)
-layout_mode = 2
-toggle_mode = true
-button_group = SubResource("ButtonGroup_gb06a")
-
-[node name="TextureRect" type="TextureRect" parent="HBoxContainer/Watcher"]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -12.0
-offset_top = -12.0
-offset_right = 12.0
-offset_bottom = 12.0
-grow_horizontal = 2
-grow_vertical = 2
-texture = ExtResource("6_h7gmm")
+texture = ExtResource("5_ee1nt")
 stretch_mode = 5
 
 [node name="StartButton" type="Button" parent="."]
@@ -181,30 +158,16 @@ unique_name_in_owner = true
 layout_mode = 2
 size_flags_vertical = 2
 
-[node name="Container" type="Control" parent="."]
-anchors_preset = 0
-offset_left = 93.0
-offset_right = 256.0
-offset_bottom = 88.0
-
-[node name="CharacterPortrait" type="TextureRect" parent="Container"]
+[node name="CharacterPortrait" type="TextureRect" parent="."]
 unique_name_in_owner = true
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 1.0
-anchor_top = 0.261
-anchor_right = 1.0
-anchor_bottom = 0.841
-offset_left = -98.0
-offset_top = 0.0319996
-offset_right = -2.0
-offset_bottom = -0.00800323
-grow_horizontal = 0
-grow_vertical = 2
+layout_mode = 0
+offset_left = 165.0
+offset_top = 7.0
+offset_right = 248.0
+offset_bottom = 91.0
 stretch_mode = 5
 
 [connection signal="pressed" from="HBoxContainer/IronClad" to="." method="_on_iron_clad_pressed"]
-[connection signal="pressed" from="HBoxContainer/TheSlient" to="." method="_on_the_silent_pressed"]
-[connection signal="pressed" from="HBoxContainer/Detect" to="." method="_on_detect_pressed"]
-[connection signal="pressed" from="HBoxContainer/Watcher" to="." method="_on_watcher_pressed"]
+[connection signal="pressed" from="HBoxContainer/SilenceHunter" to="." method="_on_silence_hunter_pressed"]
+[connection signal="pressed" from="HBoxContainer/Detect" to="." method="_on_wizard_pressed"]
 [connection signal="pressed" from="StartButton" to="." method="_on_start_button_pressed"]

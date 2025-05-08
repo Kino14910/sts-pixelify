@@ -1,14 +1,20 @@
-[gd_resource type="Resource" script_class="CharacterStats" load_steps=3 format=3 uid="uid://dqohxugta8kvw"]
+[gd_resource type="Resource" script_class="CharacterStats" load_steps=6 format=3 uid="uid://dqohxugta8kvw"]
 
-[ext_resource type="Texture2D" uid="uid://cwf6dyi56tgo" path="res://assets/characters/tile_0088.png" id="1_0b8qh"]
+[ext_resource type="Texture2D" uid="uid://b7a838nj8y8u" path="res://assets/characters/The_slient_portrait.png" id="1_aqlbv"]
 [ext_resource type="Script" path="res://resources/custom_resources/character_stats.gd" id="1_r1ypy"]
+[ext_resource type="SpriteFrames" uid="uid://bl645mh3s5ni7" path="res://resources/character/The_silent.tres" id="2_o1g1r"]
+[ext_resource type="Texture2D" uid="uid://bjit225e1sjd6" path="res://assets/characters/The_slient_name.png" id="3_nt3sf"]
+[ext_resource type="Texture2D" uid="uid://ciboq8kgsjpxe" path="res://assets/characters/The_slient.tres" id="4_qouhy"]
 
 [resource]
 script = ExtResource("1_r1ypy")
-character_name = "Assassin"
-description = "Sneaky lil' boi."
-portrait = ExtResource("1_0b8qh")
+character_name = "The Slient"
+description = "The Slient"
+character_name_picture = ExtResource("3_nt3sf")
+portrait = ExtResource("4_qouhy")
+char_sprite = ExtResource("2_o1g1r")
 cards_per_turn = 5
-max_energy = 0
-char_max_hp = 0
-art = ExtResource("1_0b8qh")
+max_energy = 3
+char_max_hp = 60
+art = ExtResource("1_aqlbv")
+max_health = 1
