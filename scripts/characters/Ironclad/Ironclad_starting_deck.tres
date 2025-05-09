@@ -1,14 +1,10 @@
-[gd_resource type="Resource" script_class="CardPile" load_steps=9 format=3 uid="uid://boeh0bq8w7kbr"]
+[gd_resource type="Resource" script_class="CardPile" load_steps=4 format=3 uid="uid://boeh0bq8w7kbr"]
 
 [ext_resource type="Script" path="res://resources/custom_resources/card.gd" id="1_t3wnt"]
 [ext_resource type="Script" path="res://resources/custom_resources/card_pile.gd" id="2_8g476"]
 [ext_resource type="Resource" uid="uid://5nh4yv103t33" path="res://scripts/cards/red/strike_red.tres" id="2_pw7b2"]
-[ext_resource type="Resource" uid="uid://btjxur1kw6hvn" path="res://scripts/cards/red/defend_red.tres" id="3_l132a"]
-[ext_resource type="Resource" uid="uid://sqhn7c8gt344" path="res://scripts/cards/red/bash.tres" id="4_evdik"]
-[ext_resource type="Resource" uid="uid://couivaisvc5g7" path="res://scripts/cards/red/fiend_fire.tres" id="5_2hbrk"]
-[ext_resource type="Resource" uid="uid://dxcggut5ohvcl" path="res://scripts/cards/red/burning_pact.tres" id="6_iwfdy"]
-[ext_resource type="Resource" uid="uid://bwf84fx3v87yu" path="res://scripts/cards/red/in_flame.tres" id="7_j66rm"]
 
 [resource]
 script = ExtResource("2_8g476")
-cards = Array[ExtResource("1_t3wnt")]([ExtResource("2_pw7b2"), ExtResource("2_pw7b2"), ExtResource("3_l132a"), ExtResource("4_evdik"), ExtResource("5_2hbrk"), ExtResource("6_iwfdy"), ExtResource("7_j66rm")])
+cards = Array[ExtResource("1_t3wnt")]([ExtResource("2_pw7b2"), ExtResource("2_pw7b2"), ExtResource("2_pw7b2"), ExtResource("2_pw7b2"), ExtResource("2_pw7b2"), ExtResource("2_pw7b2"), ExtResource("2_pw7b2")])
+card_type = ""

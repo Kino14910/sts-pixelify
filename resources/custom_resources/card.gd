@@ -52,7 +52,12 @@ const RARITY_COLORS = {
 	CardRarity.CURSE: Color.DIM_GRAY,
 }
 
-@export_group("Card Attributes")
+
+const COLOR_UP = "#4CAF50"   # 增强绿色
+const COLOR_DOWN = "#F44336" # 削弱红色
+const COLOR_DEFAULT = "#FFFFFF" # 默认白色
+
+@export_group('Card Attributes')
 @export var id: String
 @export var type: CardType
 @export var target: CardTarget
@@ -67,8 +72,11 @@ const RARITY_COLORS = {
 @export var innate: bool = false
 @export var tags: Array[String]
 @export var color: CardColor
+@export var modified_damage: int
+@export var modified_block: int
+@export var modified_magicNumber: int
 
-@export_group("Card Visuals")
+@export_group('Card Visuals')
 @export var icon: Texture
 @export_multiline var description: String
 #@export_multiline var updated_description: String
@@ -80,16 +88,16 @@ func is_single_target() -> bool:
 func _get_targets(targets: Array[Node]) -> Array[Node]:
 	if not targets:
 		return []
-		
+	
 	var tree = targets[0].get_tree()
 	
 	match target:
 		CardTarget.SELF:
-			return tree.get_nodes_in_group("player")
+			return tree.get_nodes_in_group('player')
 		CardTarget.ALL_ENEMIES:
-			return tree.get_nodes_in_group("monster")
+			return tree.get_nodes_in_group('monster')
 		CardTarget.ALL:
-			return tree.get_nodes_in_group("player") + tree.get_nodes_in_group("monster")
+			return tree.get_nodes_in_group('player') + tree.get_nodes_in_group('monster')
 		_:
 			return []
 
@@ -112,4 +120,21 @@ func get_default_description() -> String:
 	return description
 	
 func get_updated_description(_player_modifiers: ModifierHandler, _enemy_modifiers: ModifierHandler) -> String:
-	return get_default_description()
+	var desc = description
+	
+	desc = desc.replace('!D!', _get_colored_value(_player_modifiers, 'damage'))\
+		.replace('!M!', _get_colored_value(_player_modifiers, 'magicNumber'))\
+		.replace('!B!', _get_colored_value(_player_modifiers, 'block'))
+
+	return desc
+
+func _get_colored_value(player_modifiers: ModifierHandler, stat: String) -> String:
+	var current = player_modifiers.get_modified_value(damage, Modifier.Type.DMG_DEALT)
+	var base = get(stat)
+	
+	if current > base:
+		return '[color=%s]%d[/color]' % [COLOR_UP, current]
+	elif current < base:
+		return '[color=%s]%d[/color]' % [COLOR_DOWN, current]
+	else:
+		return '[color=%s]%d[/color]' % [COLOR_DEFAULT, current]

@@ -18,5 +18,8 @@ ethereal = false
 innate = false
 tags = Array[String]([])
 color = 0
+modified_damage = 0
+modified_block = 0
+modified_magicNumber = 0
 description = "造成%s点伤害。
 在弃牌堆放入一张此牌的复制品。"

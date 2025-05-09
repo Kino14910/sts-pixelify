@@ -2,6 +2,8 @@ class_name CardUI
 extends Control
 
 # signal reparent_requested(which: CardUI)
+func begin_play():
+	request_description()
 
 const DRAG_STYLE = preload('res://scenes/card_ui/dragging_stylebox.tres')
 const HOVER_STYLE = preload('res://scenes/card_ui/hover_stylebox.tres')
@@ -86,11 +88,14 @@ func get_active_monster_modifiers() -> ModifierHandler:
 	return targets[0].modifier_handler
 
 func request_description() -> void:
+	if !card:
+		return
 	var monster_modifiers = get_active_monster_modifiers()
 	var updated_description = card.get_updated_description(player_modifiers, monster_modifiers)
 	card_visuals.description.text = updated_description
 
-
+func on_ready() -> void:
+	pass
 	
 func _on_gui_input(event: InputEvent) -> void:
 	card_state_machine.on_gui_input(event)

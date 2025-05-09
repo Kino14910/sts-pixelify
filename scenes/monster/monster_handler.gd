@@ -22,7 +22,7 @@ func setup_monsters(battle_stats: BattleStats) -> void:
 		var new_monster_child = new_monster.duplicate() as Monster
 		add_child(new_monster_child)
 		new_monster_child.power_handler.powers_applied.connect(_on_monster_powers_applied.bind(new_monster_child))
-		
+	
 	all_new_monsters.queue_free()
 
 

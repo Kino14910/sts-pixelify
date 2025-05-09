@@ -13,10 +13,12 @@ func init(card: CardUI) -> void:
 			states[child.state] = child
 			child.transition_requested.connect(_on_transition_requested)
 			child.card_ui = card
+			
 	
 	if initial_state:
 		current_state = initial_state
 		current_state.enter()
+		
 	
 func on_input(event: InputEvent) -> void:
 	current_state.on_input(event)

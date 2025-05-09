@@ -29,7 +29,6 @@ func on_mouse_entered() -> void:
 		return
 
 	card_ui.card_visuals.panel.set("theme_override_styles/panel", card_ui.HOVER_STYLE)
-	card_ui.request_description()
 func on_mouse_exited() -> void:
 	mouse_over_card = false
 	

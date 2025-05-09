@@ -22,6 +22,7 @@ func add_card(card: Card) -> void:
 	new_card_ui.player_modifiers = player.modifier_handler
 	if not char_stats.can_play_card(card):
 		new_card_ui.disable_card(card)
+	new_card_ui.begin_play()
 
 
 func displayCards():

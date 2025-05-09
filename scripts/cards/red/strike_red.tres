@@ -1,10 +1,10 @@
 [gd_resource type="Resource" load_steps=3 format=3 uid="uid://5nh4yv103t33"]
 
 [ext_resource type="Texture2D" uid="uid://bq4im540nk025" path="res://assets/tile_0106.png" id="1_04hg3"]
-[ext_resource type="Script" path="res://scripts/cards/red/stike_red.gd" id="2_w7axl"]
+[ext_resource type="Script" path="res://scripts/cards/red/strike_red.gd" id="2_qkquq"]
 
 [resource]
-script = ExtResource("2_w7axl")
+script = ExtResource("2_qkquq")
 id = "strike_R"
 type = 0
 target = 0
@@ -19,5 +19,8 @@ ethereal = false
 innate = false
 tags = Array[String](["strike"])
 color = 0
+modified_damage = 0
+modified_block = 0
+modified_magicNumber = 0
 icon = ExtResource("1_04hg3")
-description = "造成%s点伤害。"
+description = "造成!D!点伤害。"

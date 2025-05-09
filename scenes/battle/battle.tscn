@@ -96,6 +96,9 @@ position = Vector2(128, 54)
 shape = SubResource("RectangleShape2D_txd0m")
 debug_color = Color(0, 0.6, 0.701961, 0.133333)
 
+[node name="Player" parent="." instance=ExtResource("5_ljh07")]
+position = Vector2(57, 84)
+
 [node name="MonsterHandler" type="Node2D" parent="."]
 script = ExtResource("6_jy7xv")
 
@@ -106,9 +109,6 @@ stats = ExtResource("13_cjwsn")
 [node name="LouseDefensive" parent="MonsterHandler" instance=ExtResource("4_xxlhy")]
 position = Vector2(188, 89)
 stats = ExtResource("10_1qio4")
-
-[node name="Player" parent="." instance=ExtResource("5_ljh07")]
-position = Vector2(57, 84)
 
 [node name="CardTargetSelector" parent="." instance=ExtResource("5_386xa")]
 
