@@ -21,10 +21,10 @@ extends Node
 
 
 func _ready() -> void:
-	#player = get_tree().get_first_node_in_group('player')
-	player = GameManager.player
+	player = get_tree().get_first_node_in_group('player')
+	#player = GameManager.player
 	setup_chances()
-	print(GameManager.player)
+	#print(GameManager.player)
 
 
 func get_action() -> MonsterAction:

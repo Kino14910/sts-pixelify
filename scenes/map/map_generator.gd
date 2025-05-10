@@ -163,7 +163,8 @@ func _setup_room_types() -> void:
 		if room.next_rooms.size() > 0:
 				room.type = Room.Type.MONSTER
 				room.battle_stats = battle_stats_pool.get_random_battle_for_tier(0)
-
+				#battle_stats_pool.pool.remove_at(battle_stats_pool.pool.find(battle_stats_pool.get_random_battle_for_tier(0)))
+				
 	# 9th floor is always a treasure
 	# 第9层为宝箱节点
 	for room: Room in map_data[8]:

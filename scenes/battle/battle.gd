@@ -7,9 +7,9 @@ extends Node2D
 @export var relics: RelicHandler
 
 @onready var battle_ui: BattleUI = $BattleUI
+@onready var monster_handler: MonsterHandler = $MonsterHandler
 @onready var player: Player = $Player
 @onready var player_handler: PlayerHandler = $PlayerHandler
-@onready var monster_handler: MonsterHandler = $MonsterHandler
 
 
 func _ready() -> void:
@@ -46,8 +46,8 @@ func _on_monster_turn_ended() -> void:
 func _on_monsters_child_order_changed() -> void:
 	if monster_handler.get_child_count() == 0 and is_instance_valid(relics):
 		relics.activate_relics_by_type(Relic.Type.END_OF_COMBAT)
-
-
+		
+		
 func _on_relics_activated(type: Relic.Type) -> void:
 	match type:
 		Relic.Type.START_OF_COMBAT:
