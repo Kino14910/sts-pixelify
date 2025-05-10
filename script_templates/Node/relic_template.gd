@@ -4,13 +4,14 @@ extends Relic
 
 var member_var = 0
 
-
+# this happens once when we gain a new relic
 func initialize_relic(_owner: RelicUI) -> void:
-	print("this happens once when we gain a new relic")
+	pass
 
 
+# this happens at specific times based on the Relic.Type property
 func activate_relic(_owner: RelicUI) -> void:
-	print("this happens at specific times based on the Relic.Type property")
+	pass
 
 
 func deactivate_relic(_owner: RelicUI) -> void:

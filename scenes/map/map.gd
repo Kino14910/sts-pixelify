@@ -87,7 +87,6 @@ func show_map() -> void:
 
 
 func hide_map() -> void:
-	hide()
 	camera_2d.enabled = false
 
 

@@ -87,19 +87,8 @@ sts-pixelify
    
    func apply_actions(targets: Array[Node]) -> void:
    	DamageAction.new(targets, damage)
-   
-   func get_default_description() -> String:
-   	return description % damage
-   	
-   func get_updated_description(player_modifiers: ModifierHandler, monster_modifiers: ModifierHandler) -> String:
-   	var modified_dmg = player_modifiers.get_modified_value(damage, Modifier.Type.DMG_DEALT)
-   
-   	if monster_modifiers:
-   		modified_dmg = monster_modifiers.get_modified_value(modified_dmg, Modifier.Type.DMG_TAKEN)
-   
-   	return description % modified_dmg
    ```
-
+   
 2. 在`res://scripts/cards`目录创建资源
 
    在检查器中填写对应的数据
@@ -182,6 +171,8 @@ Events.draw_cards.emit(amount)
 🔧卡图
 
 🔧floor变量名和MonsterAction中的player变量名需要修改，否则会分别出现一个报错
+
+ 🔧BATTLE_REWARD_SCENE不应该是一个单独场景，应该在battle中，胜利后使其visible=true
 
 ❌药水
 

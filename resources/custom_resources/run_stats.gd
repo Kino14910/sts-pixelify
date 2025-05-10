@@ -29,7 +29,6 @@ const BASE_RARE_WEIGHT = 3
 @export_range(0, 100) var rare_weight = BASE_RARE_WEIGHT
 
 
-
 func _ready() -> void:
 	health = char_stats.health
 	max_health = char_stats.max_health

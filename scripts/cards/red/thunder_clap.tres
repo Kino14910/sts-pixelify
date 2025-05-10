@@ -1,10 +1,12 @@
-[gd_resource type="Resource" load_steps=3 format=3 uid="uid://deo7d24pbuatg"]
+[gd_resource type="Resource" load_steps=4 format=3 uid="uid://deo7d24pbuatg"]
 
+[ext_resource type="Resource" uid="uid://cxqq0117oxehu" path="res://scripts/powers/vulnerable.tres" id="1_cnh5l"]
 [ext_resource type="Script" path="res://scripts/cards/red/thunder_clap.gd" id="1_gxseo"]
 [ext_resource type="Texture2D" uid="uid://kebg3353l68q" path="res://assets/cards/thunder_clap.png" id="1_tm2v0"]
 
 [resource]
 script = ExtResource("1_gxseo")
+Vulnerable = ExtResource("1_cnh5l")
 id = "thunder_clap"
 type = 0
 target = 1
@@ -20,4 +22,5 @@ innate = false
 tags = Array[String]([])
 color = 0
 icon = ExtResource("1_tm2v0")
-description = "对所有敌人造成%s点伤害，给予[color=red]%s[/color]层 [color=gold]易伤[/color] 。"
+description = "对所有敌人造成!D!点伤害。
+给予!M!层 易伤 。"

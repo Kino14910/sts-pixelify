@@ -20,4 +20,4 @@ innate = false
 tags = Array[String]([])
 color = 0
 icon = ExtResource("1_h5ena")
-description = "对所有敌人造成%s点伤害。"
+description = "对所有敌人造成!D!点伤害。"

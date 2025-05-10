@@ -13,7 +13,6 @@ const HAND_DRAW_INTERVAL = 0.2
 const HAND_DISCARD_INTERVAL = 0.1
 
 @export var relics: RelicHandler
-@export var player: Player
 @export var hand: Hand
 
 var char_stats: CharacterStats
@@ -30,7 +29,7 @@ func start_battle(new_char_stats: CharacterStats) -> void:
 	char_stats.discard = CardPile.new()
 	char_stats.exhaust_pile = CardPile.new()
 	relics.relics_activated.connect(_on_relics_activated)
-	player.power_handler.powers_applied.connect(_on_powers_applied)
+	GameManager.player.power_handler.powers_applied.connect(_on_powers_applied)
 	start_turn()
 
 
@@ -117,6 +116,6 @@ func _on_powers_applied(type: Power.Type) -> void:
 func _on_relics_activated(type: Relic.Type) -> void:
 	match type:
 		Relic.Type.START_OF_TURN:
-			player.power_handler.apply_powers_by_type(Power.Type.START_OF_TURN)
+			GameManager.player.power_handler.apply_powers_by_type(Power.Type.START_OF_TURN)
 		Relic.Type.END_OF_TURN:
-			player.power_handler.apply_powers_by_type(Power.Type.END_OF_TURN)
+			GameManager.player.power_handler.apply_powers_by_type(Power.Type.END_OF_TURN)

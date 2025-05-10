@@ -38,6 +38,7 @@ const MAIN_MENU_PATH = 'res://scenes/ui/main_menu.tscn'
 @onready var treasure_button: Button = %TreasureButton
 @onready var tutorial: CanvasLayer = $Tutorial
 @onready var battle_tutorial: CanvasLayer = $BattleTutorial
+@onready var player: Player = %Player
 
 
 var stats: RunStats
@@ -80,6 +81,8 @@ func _start_run() -> void:
 	save_data = SaveGame.new()
 	_save_run(true)
 	
+	GameManager.player = self.player
+
 
 func _change_view(scene: PackedScene) -> Node:
 	if current_view.get_child_count() > 0:
@@ -91,6 +94,7 @@ func _change_view(scene: PackedScene) -> Node:
 	map.hide_map()
 	
 	stats.floor += 1
+	player.visible = false
 	
 	return new_view
 
@@ -186,7 +190,6 @@ func _setup_top_bar():
 	Events.relic_tooltip_requested.connect(relic_tooltip.show_tooltip)
 	Events.relic_tooltip_hide.connect(relic_tooltip.hide_tooltip)
 
-	
 
 func _show_regular_battle_rewards() -> void:
 	var reward_scene = _change_view(BATTLE_REWARD_SCENE) as BattleReward
@@ -199,10 +202,14 @@ func _show_regular_battle_rewards() -> void:
 
 func _on_battle_room_entered(room: Room) -> void:
 	var battle_scene: Battle = _change_view(BATTLE_SCENE) as Battle
+	
 	battle_scene.char_stats = char_stats
 	battle_scene.battle_stats = room.battle_stats
 	battle_scene.relics = relic_handler
 	battle_scene.start_battle()
+	player.char_stats = char_stats
+	player.visible = true
+	
 	GameManager.room = room
 	if !once && open_tutorial:
 		once = true
@@ -258,5 +265,5 @@ func _on_tutorial_button_pressed() -> void:
 	tutorial.visible = false
 
 
-func _on_battle_tutprial_button_pressed() -> void:
+func _on_battle_tutorial_button_pressed() -> void:
 	battle_tutorial.visible = false

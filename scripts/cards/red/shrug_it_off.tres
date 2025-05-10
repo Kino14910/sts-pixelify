@@ -19,6 +19,9 @@ ethereal = false
 innate = false
 tags = Array[String]([])
 color = 0
+modified_damage = 0
+modified_block = 0
+modified_magicNumber = 0
 icon = ExtResource("1_j2kqw")
-description = "获得%s点[color=gold]格挡[/color]。
-抽%s张牌。"
+description = "获得!B!点 格挡 。
+抽!M!张牌。"

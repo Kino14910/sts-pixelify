@@ -18,5 +18,8 @@ ethereal = false
 innate = false
 tags = Array[String]([])
 color = 0
-description = "获得%s点[color=gold]格挡[/color]。 
-消耗。"
+modified_damage = 0
+modified_block = 0
+modified_magicNumber = 0
+description = "获得!B!点 格挡 。 
+ 消耗 。"

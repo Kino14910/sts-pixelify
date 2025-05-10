@@ -18,6 +18,6 @@ ethereal = false
 innate = false
 tags = Array[String]([])
 color = 0
-description = "[color=gold]消耗[/color]所有手牌。
-每张被[color=gold]消耗[/color]的牌造成 %s 点伤害。
-[color=gold]消耗[/color] 。"
+description = " 消耗 所有手牌。
+每张被 消耗 的牌造成 !D! 点伤害。
+ 消耗  。"

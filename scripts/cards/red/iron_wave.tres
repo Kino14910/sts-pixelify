@@ -18,4 +18,5 @@ ethereal = false
 innate = false
 tags = Array[String]([])
 color = 0
-description = "获得%s点 格挡 。  造成%s点伤害。"
+description = "获得!B!点 格挡 。
+造成!D!点伤害。"

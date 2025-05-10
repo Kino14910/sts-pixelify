@@ -20,4 +20,4 @@ innate = false
 tags = Array[String]([])
 color = 0
 icon = ExtResource("1_7yupo")
-description = "获得%s点[color=gold]格挡[/color]。"
+description = "获得!B!点 格挡 。"

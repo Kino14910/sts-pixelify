@@ -10,5 +10,5 @@ func activate_relic(owner: RelicUI) -> void:
 func _add_energy(owner: RelicUI) -> void:
 	var player = GameManager.player
 	if player:
-		player.stats.energy += 1
+		player.char_stats.energy += 1
 		owner.flash()

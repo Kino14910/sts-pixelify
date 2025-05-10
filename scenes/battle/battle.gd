@@ -8,7 +8,6 @@ extends Node2D
 
 @onready var battle_ui: BattleUI = $BattleUI
 @onready var monster_handler: MonsterHandler = $MonsterHandler
-@onready var player: Player = $Player
 @onready var player_handler: PlayerHandler = $PlayerHandler
 
 
@@ -26,7 +25,6 @@ func start_battle() -> void:
 	MusicPlayer.play(music, true)
 	
 	battle_ui.char_stats = char_stats
-	player.stats = char_stats
 	player_handler.relics = relics
 	monster_handler.setup_monsters(battle_stats)
 	monster_handler.reset_monster_actions()

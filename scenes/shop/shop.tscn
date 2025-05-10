@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://c2k6lpae18q8v"]
+[gd_scene load_steps=18 format=3 uid="uid://c2k6lpae18q8v"]
 
 [ext_resource type="Script" path="res://scenes/shop/shop.gd" id="1_oqoy8"]
 [ext_resource type="Script" path="res://resources/custom_resources/relic.gd" id="2_2rexp"]
@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://d24w6bygugbhd" path="res://scenes/shop/shop_card.tscn" id="4_2u2et"]
 [ext_resource type="Resource" uid="uid://h5kydtcjwww" path="res://scripts/relics/slavers_collar.tres" id="4_4u268"]
 [ext_resource type="PackedScene" uid="uid://dlt6561ywjx8m" path="res://scenes/shop/shop_relic.tscn" id="5_m1t66"]
+[ext_resource type="PackedScene" uid="uid://iprni3gicvfa" path="res://scenes/shop/delete_card.tscn" id="10_fo0t4"]
 [ext_resource type="PackedScene" uid="uid://ctvxie3ni1ik4" path="res://scenes/modifier_handler/modifier_handler.tscn" id="11_863hj"]
 [ext_resource type="PackedScene" uid="uid://bqefj5q31b84i" path="res://scenes/modifier_handler/modifier.tscn" id="12_xf6l8"]
 
@@ -210,7 +211,8 @@ layout_mode = 2
 [node name="ShopRelic3" parent="UILayer/ShopContent/HBoxContainer/VBoxContainer/Potions" instance=ExtResource("5_m1t66")]
 layout_mode = 2
 
-[node name="ShopCard8" parent="UILayer/ShopContent/HBoxContainer" instance=ExtResource("4_2u2et")]
+[node name="DeleteCard" parent="UILayer/ShopContent/HBoxContainer" instance=ExtResource("10_fo0t4")]
+unique_name_in_owner = true
 layout_mode = 2
 
 [node name="ModifierHandler" parent="." instance=ExtResource("11_863hj")]

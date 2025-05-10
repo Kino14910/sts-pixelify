@@ -3,7 +3,7 @@ extends Node2D
 
 const card_scene = preload('res://scenes/card_ui/card_ui.tscn')
 
-@export var player: Player
+
 @export var char_stats: CharacterStats
 #@onready var hand: Node2D = $Hand
 @export var spread_curve: Curve
@@ -19,7 +19,7 @@ func add_card(card: Card) -> void:
 	add_child(new_card_ui)
 	new_card_ui.card = card
 	new_card_ui.char_stats = char_stats
-	new_card_ui.player_modifiers = player.modifier_handler
+	new_card_ui.player_modifiers = GameManager.player.modifier_handler
 	if not char_stats.can_play_card(card):
 		new_card_ui.disable_card(card)
 	new_card_ui.begin_play()

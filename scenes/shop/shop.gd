@@ -8,13 +8,13 @@ const SHOP_RELIC = preload('res://scenes/shop/shop_relic.tscn')
 @export var char_stats: CharacterStats
 @export var run_stats: RunStats
 @export var relic_handler: RelicHandler
+@onready var delete_card: VBoxContainer = %DeleteCard
 
 @onready var char_cards: HBoxContainer = %Cards
 @onready var colorless_cards: HBoxContainer = %ColorlessCards
 @onready var relics: HBoxContainer = %Relics
 @onready var potions: HBoxContainer = %Potions
 @onready var shop_keeper_animation: AnimationPlayer = %ShopkeeperAnimation
-#@onready var blink_timer: Timer = %BlinkTimer
 @onready var modifier_handler: ModifierHandler = $ModifierHandler
 
 
@@ -34,25 +34,12 @@ func _ready() -> void:
 	Events.shop_card_bought.connect(_on_shop_card_bought)
 	Events.shop_relic_bought.connect(_on_shop_relic_bought)
 	
-	#_blink_timer_setup()
-	#blink_timer.timeout.connect(_on_blink_timer_timeout)
-
-
-#func _input(event: InputEvent) -> void:
-	#if event.is_action_pressed('ui_cancel') and card_tooltip_popup.visible:
-		#card_tooltip_popup.hide_tooltip()
-
 
 func populate_shop() -> void:
 	_generate_shop_cards()
 	_generate_shop_relics()
 	_generate_colorless_cards()
 	_generate_shop_potions()
-
-
-#func _blink_timer_setup() -> void:
-	#blink_timer.wait_time = randf_range(1.0, 5.0)
-	#blink_timer.start()
 
 
 func _generate_shop_cards() -> void:
@@ -110,6 +97,8 @@ func _update_items() -> void:
 	
 	for shop_relic: ShopRelic in relics.get_children():
 		shop_relic.update(run_stats)
+		
+	delete_card.update(run_stats)
 
 
 func _update_item_costs() -> void:
@@ -152,6 +141,5 @@ func _on_shop_relic_bought(relic: Relic, gold_cost: int) -> void:
 		_update_items()
 
 
-#func _on_blink_timer_timeout() -> void:
-	#shop_keeper_animation.play('blink')
-	#_blink_timer_setup()
+func _on_delete_card_btn_pressed() -> void:
+	pass # Replace with function body.

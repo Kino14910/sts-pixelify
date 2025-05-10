@@ -18,5 +18,5 @@ ethereal = false
 innate = false
 tags = Array[String]([])
 color = 0
-description = "获得%s能量 。
-失去%s点生命。"
+description = "获得!M!能量。
+失去!D!点生命。"

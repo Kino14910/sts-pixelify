@@ -18,5 +18,8 @@ ethereal = false
 innate = false
 tags = Array[String]([])
 color = 0
-description = "给予所有敌人 %s 层 [color=gold]虚弱[/color]  和 [color=gold]易伤[/color]  。
-消耗 。"
+modified_damage = 0
+modified_block = 0
+modified_magicNumber = 0
+description = "给予所有敌人!M!层 虚弱  和 易伤  。
+ 消耗 。"

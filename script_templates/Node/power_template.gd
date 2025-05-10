@@ -11,7 +11,6 @@ func initialize_power(target: Node) -> void:
 
 
 func apply_power(target: Node) -> void:
-	print("My power targets %s" % target)
-	print("It does %s something" % member_var)
+	pass
 	
 	power_applied.emit(self)

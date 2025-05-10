@@ -20,4 +20,5 @@ innate = false
 tags = Array[String]([])
 color = 0
 icon = ExtResource("1_7ftah")
-description = "消耗 1张牌。  抽%s张牌。"
+description = " 消耗 1张牌。
+抽!M!张牌。"

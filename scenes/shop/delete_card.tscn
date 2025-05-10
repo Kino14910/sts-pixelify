@@ -1,0 +1,60 @@
+[gd_scene load_steps=6 format=3 uid="uid://iprni3gicvfa"]
+
+[ext_resource type="Script" path="res://scenes/shop/delete_card.gd" id="1_vcc45"]
+[ext_resource type="Texture2D" uid="uid://b0rejt17100p4" path="res://assets/UI/shop_card_remove_btn.png" id="2_tqycn"]
+[ext_resource type="Script" path="res://scenes/shop/delete_button.gd" id="3_mpblk"]
+[ext_resource type="Texture2D" uid="uid://cpvc1gy2nmfhp" path="res://assets/UI/card_delete_icon.png" id="3_wlua7"]
+[ext_resource type="Texture2D" uid="uid://dhmtctwb5ymhc" path="res://assets/gold.png" id="4_yag3q"]
+
+[node name="DeleteCard" type="VBoxContainer"]
+custom_minimum_size = Vector2(40, 52)
+theme_override_constants/separation = 0
+script = ExtResource("1_vcc45")
+
+[node name="ButtonContainer" type="CenterContainer" parent="."]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="DeleteButton" type="TextureButton" parent="ButtonContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+disabled = true
+texture_normal = ExtResource("2_tqycn")
+script = ExtResource("3_mpblk")
+
+[node name="TextureRect" type="TextureRect" parent="ButtonContainer/DeleteButton"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -10.5
+offset_top = -10.5
+offset_right = 10.5
+offset_bottom = 10.5
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_wlua7")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Price" type="HBoxContainer" parent="."]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_constants/separation = 2
+alignment = 1
+
+[node name="PriceLabel" type="Label" parent="Price"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "999"
+
+[node name="GoldIcon" type="TextureRect" parent="Price"]
+custom_minimum_size = Vector2(8, 8)
+layout_mode = 2
+texture = ExtResource("4_yag3q")
+expand_mode = 1
+stretch_mode = 5
+
+[connection signal="pressed" from="ButtonContainer/DeleteButton" to="." method="_on_delete_button_pressed"]

@@ -52,6 +52,16 @@ const RARITY_COLORS = {
 	CardRarity.CURSE: Color.DIM_GRAY,
 }
 
+const Keywords = {
+	'消耗': '',
+	'虚无': '',
+	'固有': '',
+	'格挡': '',
+	'易伤': '',
+	'虚弱': '',
+	'力量': ''
+}
+
 
 const COLOR_UP = "#4CAF50"   # 增强绿色
 const COLOR_DOWN = "#F44336" # 削弱红色
@@ -72,9 +82,9 @@ const COLOR_DEFAULT = "#FFFFFF" # 默认白色
 @export var innate: bool = false
 @export var tags: Array[String]
 @export var color: CardColor
-@export var modified_damage: int
-@export var modified_block: int
-@export var modified_magicNumber: int
+var modified_damage: int
+var modified_block: int
+var modified_magicNumber: int
 
 @export_group('Card Visuals')
 @export var icon: Texture
@@ -117,24 +127,39 @@ func apply_actions(targets: Array[Node]) -> void:
 	pass
 
 func get_default_description() -> String:
-	return description
+	var desc = description.replace('!D!', str(damage))\
+		.replace('!B!', str(block))\
+		.replace('!M!', str(magicNumber))
 	
-func get_updated_description(_player_modifiers: ModifierHandler, _enemy_modifiers: ModifierHandler) -> String:
-	var desc = description
+	return get_keywords_color(desc)
 	
-	desc = desc.replace('!D!', _get_colored_value(_player_modifiers, 'damage'))\
-		.replace('!M!', _get_colored_value(_player_modifiers, 'magicNumber'))\
-		.replace('!B!', _get_colored_value(_player_modifiers, 'block'))
+func get_updated_description(_player_modifiers: ModifierHandler) -> String:
+	var desc = description.replace('!D!', _get_colored_value(_player_modifiers, 'damage'))\
+		.replace('!B!', _get_colored_value(_player_modifiers, 'block'))\
+		.replace('!M!', _get_colored_value(_player_modifiers, 'magicNumber'))
 
-	return desc
+	return get_keywords_color(desc)
+
 
 func _get_colored_value(player_modifiers: ModifierHandler, stat: String) -> String:
-	var current = player_modifiers.get_modified_value(damage, Modifier.Type.DMG_DEALT)
 	var base = get(stat)
-	
+	match stat:
+		'damage': Modifier.Type.DMG_DEALT
+		'block': Modifier.Type.DMG_DEALT
+		'magicNumber': Modifier.Type.NO_MODIFIER
+	var current = player_modifiers.get_modified_value(base, Modifier.Type.DMG_DEALT)
+
 	if current > base:
 		return '[color=%s]%d[/color]' % [COLOR_UP, current]
 	elif current < base:
 		return '[color=%s]%d[/color]' % [COLOR_DOWN, current]
 	else:
 		return '[color=%s]%d[/color]' % [COLOR_DEFAULT, current]
+
+
+func get_keywords_color(desc: String) -> String:
+	for word in desc.split(" "):
+		if Keywords.has(word):
+			desc = desc.replace(' %s ' % [word], "[color=gold]%s[/color]" % [word])
+
+	return desc

@@ -91,7 +91,7 @@ func request_description() -> void:
 	if !card:
 		return
 	var monster_modifiers = get_active_monster_modifiers()
-	var updated_description = card.get_updated_description(player_modifiers, monster_modifiers)
+	var updated_description = card.get_updated_description(player_modifiers)
 	card_visuals.description.text = updated_description
 
 func on_ready() -> void:

@@ -5,7 +5,7 @@ extends Relic
 
 func activate_relic(owner: RelicUI) -> void:
 	var player = GameManager.player
-	if player.stats.block == 0:
+	if player.char_stats.block == 0:
 		GainBlockAction.new([player], block_bonus)
 	
 	owner.flash()
