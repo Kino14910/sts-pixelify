@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://2maccgqd0vm6"]
 
-[ext_resource type="Script" path="res://scenes/ui/card_menu_ui.gd" id="1_ifd8b"]
+[ext_resource type="Script" uid="uid://dilwkr4rhygq2" path="res://scenes/ui/card_menu_ui.gd" id="1_ifd8b"]
 [ext_resource type="PackedScene" uid="uid://b2n0s8gh53k8p" path="res://scenes/ui/card_visuals.tscn" id="2_g5h2p"]
 
 [node name="CardMenuUI" type="CenterContainer"]

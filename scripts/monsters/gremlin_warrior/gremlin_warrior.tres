@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://dgromob0r6uk2" path="res://scripts/monsters/gremlin_warrior/gremlin_warrior_ai.tscn" id="1_2h1qf"]
 [ext_resource type="Texture2D" uid="uid://cfnojwfkjx6kw" path="res://assets/monsters/gremlin_warrior.png" id="2_ujdii"]
-[ext_resource type="Script" path="res://resources/custom_resources/monster_stats.gd" id="3_vxfsk"]
+[ext_resource type="Script" uid="uid://dupstijj20dh5" path="res://resources/custom_resources/monster_stats.gd" id="3_vxfsk"]
 
 [resource]
 script = ExtResource("3_vxfsk")

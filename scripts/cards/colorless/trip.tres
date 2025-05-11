@@ -1,7 +1,7 @@
 [gd_resource type="Resource" load_steps=3 format=3 uid="uid://7cpegmmxp5sk"]
 
 [ext_resource type="Resource" uid="uid://cxqq0117oxehu" path="res://scripts/powers/vulnerable.tres" id="1_n4xor"]
-[ext_resource type="Script" path="res://scripts/cards/colorless/trip.gd" id="2_63r6f"]
+[ext_resource type="Script" uid="uid://7dhnpn4toxjk" path="res://scripts/cards/colorless/trip.gd" id="2_63r6f"]
 
 [resource]
 script = ExtResource("2_63r6f")

@@ -1,8 +1,8 @@
 [gd_scene load_steps=6 format=3 uid="uid://g0t3bw2an32j"]
 
-[ext_resource type="Script" path="res://scripts/monster_actions/block.gd" id="1_b1p2d"]
+[ext_resource type="Script" uid="uid://cbvj6k4uub6l1" path="res://scripts/monster_actions/block.gd" id="1_b1p2d"]
 [ext_resource type="Texture2D" uid="uid://oe7v35ii8vrs" path="res://assets/tile_0102.png" id="2_6nq00"]
-[ext_resource type="Script" path="res://resources/custom_resources/intent.gd" id="2_fvo17"]
+[ext_resource type="Script" uid="uid://d0gs8wfvj3sqf" path="res://resources/custom_resources/intent.gd" id="2_fvo17"]
 [ext_resource type="AudioStream" uid="uid://df64e7qat73gs" path="res://assets/block.ogg" id="2_jqihx"]
 
 [sub_resource type="Resource" id="Resource_tciia"]

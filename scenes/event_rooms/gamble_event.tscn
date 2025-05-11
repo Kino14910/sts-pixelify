@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://g8ya03t8eema"]
 
-[ext_resource type="Script" path="res://scenes/event_rooms/gamble_event.gd" id="1_gxqxk"]
+[ext_resource type="Script" uid="uid://cxa562s67yrc1" path="res://scenes/event_rooms/gamble_event.gd" id="1_gxqxk"]
 [ext_resource type="PackedScene" uid="uid://br2rpgkb7gbxr" path="res://scenes/event_rooms/event_room_button.tscn" id="2_xqbom"]
 
 [node name="GambleEvent" type="Control"]

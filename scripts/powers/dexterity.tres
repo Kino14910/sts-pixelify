@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="Dexterity" load_steps=3 format=3 uid="uid://ebx5qpe0gq7c"]
 
-[ext_resource type="Script" path="res://scripts/powers/dexterity.gd" id="1_1rnex"]
+[ext_resource type="Script" uid="uid://ctsls53wdm8un" path="res://scripts/powers/dexterity.gd" id="1_1rnex"]
 [ext_resource type="Texture2D" uid="uid://lucauwqq5e4n" path="res://assets/block.png" id="1_cv8a2"]
 
 [resource]

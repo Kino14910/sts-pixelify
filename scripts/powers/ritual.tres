@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="Ritual" load_steps=3 format=3 uid="uid://bxe1ie7kwovco"]
 
-[ext_resource type="Script" path="res://scripts/powers/ritual.gd" id="1_6m0wk"]
+[ext_resource type="Script" uid="uid://bmetl0obn6sq" path="res://scripts/powers/ritual.gd" id="1_6m0wk"]
 [ext_resource type="Texture2D" uid="uid://b4kgm6o7oxw03" path="res://assets/powers/Ritual.png" id="1_l50kr"]
 
 [resource]

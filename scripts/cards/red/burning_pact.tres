@@ -1,7 +1,7 @@
 [gd_resource type="Resource" load_steps=3 format=3 uid="uid://dxcggut5ohvcl"]
 
 [ext_resource type="Texture2D" uid="uid://bhfhqv0btqdjd" path="res://assets/cards/burning_pact.png" id="1_7ftah"]
-[ext_resource type="Script" path="res://scripts/cards/red/burning_pact.gd" id="2_rmd7o"]
+[ext_resource type="Script" uid="uid://t2jjq1mb4hsm" path="res://scripts/cards/red/burning_pact.gd" id="2_rmd7o"]
 
 [resource]
 script = ExtResource("2_rmd7o")

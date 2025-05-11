@@ -1,7 +1,7 @@
 [gd_scene load_steps=2 format=3 uid="uid://cqdnabey3rxr"]
 
 [sub_resource type="Curve" id="Curve_3bclj"]
-min_value = 0.2
+_limits = [0.2, 1.0, 0.0, 1.0]
 _data = [Vector2(0, 0.2), 0.0, 0.0, 0, 0, Vector2(0.856818, 1), 0.0, 0.0, 0, 0, Vector2(1, 0.2), 0.0, 0.0, 0, 0]
 point_count = 3
 

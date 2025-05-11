@@ -1,7 +1,7 @@
 [gd_resource type="Resource" load_steps=3 format=3 uid="uid://ttw5wslekxbr"]
 
 [ext_resource type="Texture2D" uid="uid://0yaxm1dbbcss" path="res://assets/cards/cleave.png" id="1_h5ena"]
-[ext_resource type="Script" path="res://scripts/cards/red/cleave.gd" id="1_p0p35"]
+[ext_resource type="Script" uid="uid://y1hoswkhg7kq" path="res://scripts/cards/red/cleave.gd" id="1_p0p35"]
 
 [resource]
 script = ExtResource("1_p0p35")

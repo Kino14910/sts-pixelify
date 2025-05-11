@@ -2,7 +2,7 @@
 
 [ext_resource type="Theme" uid="uid://ppksjylyhy1b" path="res://scenes/ui/menu_btn_theme.tres" id="1_ckleq"]
 [ext_resource type="StyleBox" uid="uid://cpbrqt1fmj2lp" path="res://scenes/ui/border_radius.tres" id="1_it2hj"]
-[ext_resource type="Script" path="res://scenes/ui/main_menu_button.gd" id="2_ftvt6"]
+[ext_resource type="Script" uid="uid://dboqa2iodglau" path="res://scenes/ui/main_menu_button.gd" id="2_ftvt6"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_rlf8w"]
 

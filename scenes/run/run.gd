@@ -207,7 +207,7 @@ func _on_battle_room_entered(room: Room) -> void:
 	battle_scene.battle_stats = room.battle_stats
 	battle_scene.relics = relic_handler
 	battle_scene.start_battle()
-	player.char_stats = char_stats
+	player.stats = char_stats
 	player.visible = true
 	
 	GameManager.room = room
@@ -253,9 +253,8 @@ func _on_event_room_entered(room: Room) -> void:
 
 
 func _on_battle_won() -> void:
-	if map.floors_climbed == MapGenerator.FLOORS:
+	if map.floors_climbed == MapGenerator.FLOORS - 1:
 		var win_screen = _change_view(BATTLE_OVER_PANEL) as BattleOverPanel
-		win_screen.char_stats = char_stats
 		SaveGame.delete_data()
 	else:
 		_show_regular_battle_rewards()

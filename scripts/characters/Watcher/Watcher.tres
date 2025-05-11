@@ -3,7 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://chespk0wc8s3y" path="res://assets/characters/Watcher_portrait.png" id="1_1ofrw"]
 [ext_resource type="SpriteFrames" uid="uid://w521litngtcg" path="res://resources/character/Watcher.tres" id="2_3p02w"]
 [ext_resource type="Texture2D" uid="uid://djd3akgucc67t" path="res://assets/characters/Watcher_name.png" id="3_jrauv"]
-[ext_resource type="Script" path="res://resources/custom_resources/character_stats.gd" id="4_qy206"]
+[ext_resource type="Script" uid="uid://da5axlojdsyms" path="res://resources/custom_resources/character_stats.gd" id="4_qy206"]
 [ext_resource type="Texture2D" uid="uid://c8wenlaynshx7" path="res://assets/characters/Watcher.tres" id="4_tu7dk"]
 
 [resource]

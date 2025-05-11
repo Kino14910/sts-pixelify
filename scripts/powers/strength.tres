@@ -1,7 +1,7 @@
 [gd_resource type="Resource" script_class="Strength" load_steps=3 format=3 uid="uid://dfmuquglr01qk"]
 
 [ext_resource type="Texture2D" uid="uid://sdlx7km5ddaa" path="res://assets/powers/strength.png" id="1_648xr"]
-[ext_resource type="Script" path="res://scripts/powers/strength.gd" id="1_jmpem"]
+[ext_resource type="Script" uid="uid://cig5sc44f80wo" path="res://scripts/powers/strength.gd" id="1_jmpem"]
 
 [resource]
 script = ExtResource("1_jmpem")

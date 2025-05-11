@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://dlt6561ywjx8m"]
 
-[ext_resource type="Script" path="res://scenes/shop/shop_relic.gd" id="1_b84y1"]
+[ext_resource type="Script" uid="uid://dl5fh8r3p1cg0" path="res://scenes/shop/shop_relic.gd" id="1_b84y1"]
 [ext_resource type="PackedScene" uid="uid://nqvpogmvfn3t" path="res://scenes/relic_handler/relic_ui.tscn" id="1_h34vc"]
 [ext_resource type="Resource" uid="uid://h5kydtcjwww" path="res://scripts/relics/slavers_collar.tres" id="2_uujtg"]
 [ext_resource type="Texture2D" uid="uid://dhmtctwb5ymhc" path="res://assets/gold.png" id="4_0iw0f"]

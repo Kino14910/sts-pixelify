@@ -1,7 +1,7 @@
 [gd_resource type="Resource" load_steps=4 format=3 uid="uid://7p0cu4d72cnj"]
 
 [ext_resource type="Texture2D" uid="uid://dw6es7vkokmgo" path="res://assets/relics/relics.png" id="1_mpdwq"]
-[ext_resource type="Script" path="res://scripts/relics/runic_dome.gd" id="2_kl6jd"]
+[ext_resource type="Script" uid="uid://beeb62arbh01v" path="res://scripts/relics/runic_dome.gd" id="2_kl6jd"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_hig6k"]
 atlas = ExtResource("1_mpdwq")

@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://eii7srnfcnt0"]
 
-[ext_resource type="Script" path="res://scenes/power_handler/power_ui.gd" id="1_rwwo0"]
+[ext_resource type="Script" uid="uid://b0xnpu1khdn0q" path="res://scenes/power_handler/power_ui.gd" id="1_rwwo0"]
 [ext_resource type="Resource" uid="uid://x5i2ygwubpne" path="res://scripts/powers/demon_form.tres" id="2_it8mi"]
 [ext_resource type="Texture2D" uid="uid://d0edy7thj8ce6" path="res://assets/heart.png" id="2_uaxok"]
 [ext_resource type="FontFile" uid="uid://dskmdk146n4rq" path="res://assets/fonts/pixel_rpg.ttf" id="3_28h13"]

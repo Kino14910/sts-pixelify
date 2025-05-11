@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=3 uid="uid://cg6eqhe0t3dv2"]
 
-[ext_resource type="Script" path="res://scenes/win_screen/win_screen.gd" id="1_n40vj"]
+[ext_resource type="Script" uid="uid://ckcjfvfccqdvm" path="res://scenes/win_screen/win_screen.gd" id="1_n40vj"]
 [ext_resource type="Texture2D" uid="uid://cpydvk8mq66o5" path="res://assets/characters/tile_0087.png" id="3_13ibh"]
 
 [sub_resource type="Gradient" id="Gradient_7af3e"]

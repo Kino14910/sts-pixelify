@@ -1,7 +1,7 @@
 [gd_scene load_steps=10 format=3 uid="uid://bqkrwbju4mck8"]
 
 [ext_resource type="Texture2D" uid="uid://cea6dkq0jvw04" path="res://assets/monsters/louse_defensive.png" id="1_btel6"]
-[ext_resource type="Script" path="res://scenes/monster/monster.gd" id="1_nrynt"]
+[ext_resource type="Script" uid="uid://bp7xyu5ugybpf" path="res://scenes/monster/monster.gd" id="1_nrynt"]
 [ext_resource type="Texture2D" uid="uid://bgonh0uqkbitg" path="res://assets/selected_indicator.png" id="3_08duy"]
 [ext_resource type="PackedScene" uid="uid://cpgpjk5ayx78o" path="res://scenes/ui/stats_ui.tscn" id="4_c36ax"]
 [ext_resource type="PackedScene" uid="uid://beepbuhvpju07" path="res://scenes/ui/intent_ui.tscn" id="5_ohe7i"]

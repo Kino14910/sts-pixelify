@@ -1,8 +1,8 @@
 [gd_scene load_steps=5 format=3 uid="uid://cojyt22teo1g7"]
 
-[ext_resource type="Script" path="res://scripts/monster_actions/power.gd" id="1_xjokq"]
+[ext_resource type="Script" uid="uid://ds7s5q1w2qnqr" path="res://scripts/monster_actions/power.gd" id="1_xjokq"]
 [ext_resource type="Texture2D" uid="uid://bd5h68e0k66iu" path="res://assets/intents/buff_intent.png" id="2_o7ucx"]
-[ext_resource type="Script" path="res://resources/custom_resources/intent.gd" id="3_hhlrv"]
+[ext_resource type="Script" uid="uid://d0gs8wfvj3sqf" path="res://resources/custom_resources/intent.gd" id="3_hhlrv"]
 
 [sub_resource type="Resource" id="Resource_rrjfe"]
 script = ExtResource("3_hhlrv")

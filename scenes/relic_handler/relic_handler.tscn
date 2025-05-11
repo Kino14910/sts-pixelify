@@ -1,9 +1,9 @@
 [gd_scene load_steps=8 format=3 uid="uid://bltkcscivnh8p"]
 
-[ext_resource type="Script" path="res://scenes/relic_handler/relic_handler.gd" id="1_7nrs2"]
+[ext_resource type="Script" uid="uid://3mge3eabkblc" path="res://scenes/relic_handler/relic_handler.gd" id="1_7nrs2"]
 [ext_resource type="Texture2D" uid="uid://313csfw3voyr" path="res://assets/arrow_small.png" id="1_ptctx"]
 [ext_resource type="Texture2D" uid="uid://7eek2jxk3xu8" path="res://assets/arrow_small_disabled.png" id="2_7cl4q"]
-[ext_resource type="Script" path="res://scenes/relic_handler/relics_control.gd" id="3_1h0c2"]
+[ext_resource type="Script" uid="uid://dn01uhwtcvmb4" path="res://scenes/relic_handler/relics_control.gd" id="3_1h0c2"]
 [ext_resource type="PackedScene" uid="uid://nqvpogmvfn3t" path="res://scenes/relic_handler/relic_ui.tscn" id="4_vgweh"]
 [ext_resource type="Resource" uid="uid://bvonlfum8708o" path="res://scripts/relics/membership_card.tres" id="6_00mmy"]
 [ext_resource type="Resource" uid="uid://c5q3aakgenikm" path="res://scripts/relics/burning_blood.tres" id="7_cwjco"]

@@ -9,7 +9,6 @@ enum Type {WIN, LOSE}
 @onready var continue_button: Button = %ContinueButton
 @onready var main_menu_button: Button = %MainMenuButton
 
-
 func _ready() -> void:
 	continue_button.pressed.connect(func(): Events.battle_won.emit())
 	main_menu_button.pressed.connect(get_tree().change_scene_to_file.bind(MAIN_MENU))

@@ -1,7 +1,7 @@
 [gd_resource type="Resource" script_class="BattleStats" load_steps=3 format=3 uid="uid://bopn01fod7lj1"]
 
 [ext_resource type="PackedScene" uid="uid://c6usxfuvol1vu" path="res://scripts/dungeons/exordium/weak/2_louse.tscn" id="1_20u1d"]
-[ext_resource type="Script" path="res://resources/custom_resources/battle_stats.gd" id="1_shpql"]
+[ext_resource type="Script" uid="uid://b8ohkuos1bg2q" path="res://resources/custom_resources/battle_stats.gd" id="1_shpql"]
 
 [resource]
 script = ExtResource("1_shpql")

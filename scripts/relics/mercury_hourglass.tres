@@ -1,7 +1,7 @@
 [gd_resource type="Resource" load_steps=4 format=3 uid="uid://dprcg0tbjp0pj"]
 
 [ext_resource type="Texture2D" uid="uid://dw6es7vkokmgo" path="res://assets/relics/relics.png" id="1_de1tp"]
-[ext_resource type="Script" path="res://scripts/relics/mercury_hourglass.gd" id="2_6fiy6"]
+[ext_resource type="Script" uid="uid://wxmc072pav2p" path="res://scripts/relics/mercury_hourglass.gd" id="2_6fiy6"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_071lc"]
 atlas = ExtResource("1_de1tp")

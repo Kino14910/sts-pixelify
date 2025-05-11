@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://dth7l72xv8wqs" path="res://scripts/monsters/fungi_beast/fungi_beast_ai.tscn" id="1_f3dp0"]
 [ext_resource type="Texture2D" uid="uid://hhm3b4dtqj8p" path="res://assets/monsters/fungi_beast.png" id="2_oyois"]
-[ext_resource type="Script" path="res://resources/custom_resources/monster_stats.gd" id="3_xgy4n"]
+[ext_resource type="Script" uid="uid://dupstijj20dh5" path="res://resources/custom_resources/monster_stats.gd" id="3_xgy4n"]
 
 [resource]
 script = ExtResource("3_xgy4n")

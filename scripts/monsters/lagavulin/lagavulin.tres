@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://b3v670ijhbyuk" path="res://scripts/monsters/lagavulin/lagavulin_ai.tscn" id="1_q6e3o"]
 [ext_resource type="Texture2D" uid="uid://6r2k7f2c3c7f" path="res://assets/monsters/Lagavulin1.png" id="2_mgoaw"]
-[ext_resource type="Script" path="res://resources/custom_resources/monster_stats.gd" id="3_06lbp"]
+[ext_resource type="Script" uid="uid://dupstijj20dh5" path="res://resources/custom_resources/monster_stats.gd" id="3_06lbp"]
 
 [resource]
 script = ExtResource("3_06lbp")
@@ -10,3 +10,4 @@ ai = ExtResource("1_q6e3o")
 min_hp = 109
 max_hp = 111
 art = ExtResource("2_mgoaw")
+max_health = 1

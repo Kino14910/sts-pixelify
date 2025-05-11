@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://qd2lt374xj2l"]
 
-[ext_resource type="Script" path="res://scenes/event_rooms/helpful_boi_event.gd" id="1_7infd"]
+[ext_resource type="Script" uid="uid://cueuaetnvuos7" path="res://scenes/event_rooms/helpful_boi_event.gd" id="1_7infd"]
 [ext_resource type="PackedScene" uid="uid://br2rpgkb7gbxr" path="res://scenes/event_rooms/event_room_button.tscn" id="1_850a0"]
 [ext_resource type="Texture2D" uid="uid://b1nj6u7dxl3mh" path="res://assets/characters/tile_0085.png" id="2_0pbu5"]
 

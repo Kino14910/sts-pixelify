@@ -10,7 +10,8 @@ func enter() -> void:
 	get_tree().create_timer(0.05).timeout.connect(func(): 
 		min_drag_time_elapsed = true
 	)
-	
+
+
 func exit() -> void:
 	Events.card_drag_ended.emit(card_ui)
 
@@ -24,7 +25,7 @@ func on_input(event: InputEvent) -> void:
 	if mouse_motion and is_single_target and card_ui.targets.size() > 0:
 		transition_requested.emit(self, CardState.State.AIMING)
 		return
-
+	
 	if mouse_motion:
 		card_ui.global_position = card_ui.get_global_mouse_position() - card_ui.pivot_offset
 	

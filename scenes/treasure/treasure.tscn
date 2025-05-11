@@ -1,9 +1,9 @@
 [gd_scene load_steps=23 format=3 uid="uid://dmcijnftvib2m"]
 
-[ext_resource type="Script" path="res://scenes/treasure/treasure.gd" id="1_0dgmn"]
+[ext_resource type="Script" uid="uid://btlvm5wmt7atd" path="res://scenes/treasure/treasure.gd" id="1_0dgmn"]
 [ext_resource type="Texture2D" uid="uid://cp4iq5fd6j8be" path="res://assets/background.png" id="2_g7pdp"]
 [ext_resource type="Resource" uid="uid://dprcg0tbjp0pj" path="res://scripts/relics/mercury_hourglass.tres" id="2_g8620"]
-[ext_resource type="Script" path="res://resources/custom_resources/relic.gd" id="2_qjjym"]
+[ext_resource type="Script" uid="uid://ch4h3vgonrwk2" path="res://resources/custom_resources/relic.gd" id="2_qjjym"]
 [ext_resource type="Texture2D" uid="uid://hva3iy5hon7a" path="res://assets/tile_0089.png" id="3_4v1q1"]
 [ext_resource type="Resource" uid="uid://h5kydtcjwww" path="res://scripts/relics/slavers_collar.tres" id="3_b2sgi"]
 [ext_resource type="Texture2D" uid="uid://dhmtctwb5ymhc" path="res://assets/gold.png" id="4_3wkp5"]
@@ -115,9 +115,9 @@ tracks/2/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_w7tb8"]
 _data = {
-"RESET": SubResource("Animation_uiaoo"),
-"highlight": SubResource("Animation_iws3o"),
-"open": SubResource("Animation_8kvkc")
+&"RESET": SubResource("Animation_uiaoo"),
+&"highlight": SubResource("Animation_iws3o"),
+&"open": SubResource("Animation_8kvkc")
 }
 
 [sub_resource type="Curve" id="Curve_4ptkd"]

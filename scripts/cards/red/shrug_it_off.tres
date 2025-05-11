@@ -1,7 +1,7 @@
 [gd_resource type="Resource" load_steps=3 format=3 uid="uid://db6mvuv2ga204"]
 
 [ext_resource type="Texture2D" uid="uid://beaaqcoxllcj1" path="res://assets/cards/shrug_it_off.png" id="1_j2kqw"]
-[ext_resource type="Script" path="res://scripts/cards/red/shrug_it_off.gd" id="1_ok6rp"]
+[ext_resource type="Script" uid="uid://b16qw8l8capv6" path="res://scripts/cards/red/shrug_it_off.gd" id="1_ok6rp"]
 
 [resource]
 script = ExtResource("1_ok6rp")
@@ -19,9 +19,6 @@ ethereal = false
 innate = false
 tags = Array[String]([])
 color = 0
-modified_damage = 0
-modified_block = 0
-modified_magicNumber = 0
 icon = ExtResource("1_j2kqw")
 description = "获得!B!点 格挡 。
 抽!M!张牌。"

@@ -1,6 +1,6 @@
 [gd_scene load_steps=14 format=3 uid="uid://c40s1bx1nilti"]
 
-[ext_resource type="Script" path="res://scenes/campfire/campfire.gd" id="1_8uaj7"]
+[ext_resource type="Script" uid="uid://eayqnqfk74pj" path="res://scenes/campfire/campfire.gd" id="1_8uaj7"]
 [ext_resource type="Resource" uid="uid://4qo5n75hbldo" path="res://scripts/characters/Ironclad/Ironclad.tres" id="2_5ovp4"]
 [ext_resource type="Texture2D" uid="uid://djbldcvfo4swr" path="res://assets/line.png" id="2_r8a2w"]
 
@@ -117,8 +117,8 @@ tracks/2/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_yh16j"]
 _data = {
-"RESET": SubResource("Animation_ik7bi"),
-"fade_out": SubResource("Animation_67og2")
+&"RESET": SubResource("Animation_ik7bi"),
+&"fade_out": SubResource("Animation_67og2")
 }
 
 [node name="Campfire" type="Control"]

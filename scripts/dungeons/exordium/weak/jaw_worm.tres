@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="BattleStats" load_steps=3 format=3 uid="uid://dn0kito8g2yqd"]
 
-[ext_resource type="Script" path="res://resources/custom_resources/battle_stats.gd" id="1_8s413"]
+[ext_resource type="Script" uid="uid://b8ohkuos1bg2q" path="res://resources/custom_resources/battle_stats.gd" id="1_8s413"]
 [ext_resource type="PackedScene" uid="uid://cg04sv1ci6656" path="res://scripts/dungeons/exordium/weak/jaw_worm.tscn" id="1_ivum7"]
 
 [resource]

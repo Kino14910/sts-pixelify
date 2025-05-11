@@ -1,7 +1,7 @@
 [gd_resource type="Resource" load_steps=5 format=3 uid="uid://ph22cpxintef"]
 
 [ext_resource type="Texture2D" uid="uid://dw6es7vkokmgo" path="res://assets/relics/relics.png" id="1_stg2o"]
-[ext_resource type="Script" path="res://scripts/relics/orichalcum.gd" id="2_7l5r2"]
+[ext_resource type="Script" uid="uid://5gn7tjcuf5du" path="res://scripts/relics/orichalcum.gd" id="2_7l5r2"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_njjrr"]
 atlas = ExtResource("1_stg2o")

@@ -1,7 +1,7 @@
 [gd_resource type="Resource" load_steps=5 format=3 uid="uid://bumuotd7d7btt"]
 
 [ext_resource type="Texture2D" uid="uid://dftqth8mi7a6m" path="res://assets/cards/uppercut.png" id="1_ay7ed"]
-[ext_resource type="Script" path="res://scripts/cards/red/uppercut.gd" id="1_vin4e"]
+[ext_resource type="Script" uid="uid://cifqsqwyalara" path="res://scripts/cards/red/uppercut.gd" id="1_vin4e"]
 [ext_resource type="Resource" uid="uid://cxqq0117oxehu" path="res://scripts/powers/vulnerable.tres" id="1_y6da0"]
 [ext_resource type="Resource" uid="uid://dbmjp625jdkr8" path="res://scripts/powers/weakened.tres" id="2_6c86g"]
 
@@ -23,9 +23,6 @@ ethereal = false
 innate = false
 tags = Array[String]([])
 color = 0
-modified_damage = 0
-modified_block = 0
-modified_magicNumber = 0
 icon = ExtResource("1_ay7ed")
 description = "造成!D!点伤害。
 给予!M!层 易伤 和 虚弱 。"

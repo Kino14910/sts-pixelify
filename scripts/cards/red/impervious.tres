@@ -1,6 +1,6 @@
 [gd_resource type="Resource" load_steps=2 format=3 uid="uid://bejos3b70h74n"]
 
-[ext_resource type="Script" path="res://scripts/cards/red/impervious.gd" id="1_522i1"]
+[ext_resource type="Script" uid="uid://lv23law7j7m7" path="res://scripts/cards/red/impervious.gd" id="1_522i1"]
 
 [resource]
 script = ExtResource("1_522i1")
@@ -18,8 +18,5 @@ ethereal = false
 innate = false
 tags = Array[String]([])
 color = 0
-modified_damage = 0
-modified_block = 0
-modified_magicNumber = 0
 description = "获得!B!点 格挡 。 
  消耗 。"

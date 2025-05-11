@@ -1,6 +1,6 @@
 [gd_resource type="Resource" load_steps=2 format=3 uid="uid://coejni7b7okbo"]
 
-[ext_resource type="Script" path="res://scripts/cards/red/iron_wave.gd" id="1_r43lb"]
+[ext_resource type="Script" uid="uid://dttu81pufou5n" path="res://scripts/cards/red/iron_wave.gd" id="1_r43lb"]
 
 [resource]
 script = ExtResource("1_r43lb")

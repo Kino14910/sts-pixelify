@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=3 uid="uid://drfa0g4wyvwqd"]
 
-[ext_resource type="Script" path="res://scenes/monster/monster_action_picker.gd" id="1_xi3xt"]
+[ext_resource type="Script" uid="uid://dcclq4xy6k01d" path="res://scenes/monster/monster_action_picker.gd" id="1_xi3xt"]
 [ext_resource type="PackedScene" uid="uid://cxx5ieg2ljtuu" path="res://scripts/monster_actions/attack.tscn" id="2_l1wkk"]
 [ext_resource type="PackedScene" uid="uid://dkm253k1t5yin" path="res://scripts/monster_actions/block_power.tscn" id="9_0dtqi"]
 [ext_resource type="Resource" uid="uid://dfmuquglr01qk" path="res://scripts/powers/strength.tres" id="10_jxowm"]

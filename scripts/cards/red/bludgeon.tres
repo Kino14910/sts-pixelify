@@ -1,7 +1,7 @@
 [gd_resource type="Resource" load_steps=3 format=3 uid="uid://c4ltkyh8pq0rc"]
 
 [ext_resource type="Texture2D" uid="uid://cqcal03735mv8" path="res://assets/tile_0118.png" id="1_4frox"]
-[ext_resource type="Script" path="res://scripts/cards/red/bludgeon.gd" id="1_rotii"]
+[ext_resource type="Script" uid="uid://6crfoc121uvf" path="res://scripts/cards/red/bludgeon.gd" id="1_rotii"]
 
 [resource]
 script = ExtResource("1_rotii")
@@ -19,8 +19,5 @@ ethereal = false
 innate = false
 tags = Array[String]([])
 color = 0
-modified_damage = 0
-modified_block = 0
-modified_magicNumber = 0
 icon = ExtResource("1_4frox")
 description = "造成!D!点伤害。"

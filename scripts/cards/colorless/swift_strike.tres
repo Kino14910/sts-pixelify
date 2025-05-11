@@ -1,6 +1,6 @@
 [gd_resource type="Resource" load_steps=2 format=3 uid="uid://dowhdrrglrqyg"]
 
-[ext_resource type="Script" path="res://scripts/cards/colorless/swift_strike.gd" id="1_h55p0"]
+[ext_resource type="Script" uid="uid://bjc13h4wevtx8" path="res://scripts/cards/colorless/swift_strike.gd" id="1_h55p0"]
 
 [resource]
 script = ExtResource("1_h55p0")

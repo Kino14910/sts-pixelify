@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://bwet1kdg2v1di"]
 
-[ext_resource type="Script" path="res://scenes/power_handler/power_handler.gd" id="1_71aku"]
+[ext_resource type="Script" uid="uid://caw38q4t00sve" path="res://scenes/power_handler/power_handler.gd" id="1_71aku"]
 
 [node name="PowerHandler" type="GridContainer"]
 mouse_filter = 0

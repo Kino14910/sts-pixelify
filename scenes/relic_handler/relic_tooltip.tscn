@@ -1,15 +1,15 @@
 [gd_scene load_steps=4 format=3 uid="uid://bwtke8nmynqt2"]
 
-[ext_resource type="Script" path="res://scenes/relic_handler/relic_tooltip.gd" id="1_qps86"]
+[ext_resource type="Script" uid="uid://baotip06yb7u6" path="res://scenes/relic_handler/relic_tooltip.gd" id="1_qps86"]
 [ext_resource type="StyleBox" uid="uid://bijoefntbq3be" path="res://scenes/card_ui/base_stylebox.tres" id="2_4528i"]
 [ext_resource type="FontFile" uid="uid://7cxf84hdbfj5" path="res://assets/fonts/fusion-pixel-12px-proportional-zh_hans.ttf" id="3_bsndc"]
 
 [node name="RelicTooltip" type="Control"]
 layout_mode = 3
-anchor_right = 0.208
-anchor_bottom = 0.444
-offset_right = 1.752
-offset_bottom = -1.936
+anchor_right = 0.215
+anchor_bottom = 0.16
+offset_right = -0.0400009
+offset_bottom = -0.0400009
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
@@ -47,5 +47,5 @@ mouse_filter = 2
 theme_override_constants/line_separation = -2
 theme_override_fonts/normal_font = ExtResource("3_bsndc")
 bbcode_enabled = true
-text = "Relic Tooltip Relic Tooltip Relic Tooltip Relic Tooltip Relic Tooltip Relic Tooltip "
+text = "Relic Tooltip Relic Tooltip Relic Tooltip Relic "
 fit_content = true

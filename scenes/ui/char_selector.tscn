@@ -1,6 +1,6 @@
 [gd_scene load_steps=9 format=3 uid="uid://wpwan0wnqg3s"]
 
-[ext_resource type="Script" path="res://scenes/ui/char_selector.gd" id="1_rs0pr"]
+[ext_resource type="Script" uid="uid://cwn8ph5lnj5ms" path="res://scenes/ui/char_selector.gd" id="1_rs0pr"]
 [ext_resource type="Resource" uid="uid://drbh5deiiyr6f" path="res://scenes/run/run_startup.tres" id="2_jy7ne"]
 [ext_resource type="Texture2D" uid="uid://hwkgoriaq512" path="res://assets/characters/Ironclad_portrait.png" id="3_jysy4"]
 [ext_resource type="Texture2D" uid="uid://b7a838nj8y8u" path="res://assets/characters/The_slient_portrait.png" id="4_yadb5"]

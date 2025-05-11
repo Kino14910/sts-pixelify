@@ -1,7 +1,7 @@
 [gd_resource type="Resource" script_class="ManaPotion" load_steps=4 format=3 uid="uid://h5kydtcjwww"]
 
 [ext_resource type="Texture2D" uid="uid://dw6es7vkokmgo" path="res://assets/relics/relics.png" id="1_m363k"]
-[ext_resource type="Script" path="res://scripts/relics/slavers_collar.gd" id="2_2lpue"]
+[ext_resource type="Script" uid="uid://dy4p7ii8cfsi4" path="res://scripts/relics/slavers_collar.gd" id="2_2lpue"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_gye1e"]
 atlas = ExtResource("1_m363k")

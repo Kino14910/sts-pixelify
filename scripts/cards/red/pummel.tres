@@ -1,6 +1,6 @@
 [gd_resource type="Resource" load_steps=2 format=3 uid="uid://cvaiu06ftsqgm"]
 
-[ext_resource type="Script" path="res://scripts/cards/red/pummel.gd" id="1_3itkc"]
+[ext_resource type="Script" uid="uid://ddnb2t6dliu76" path="res://scripts/cards/red/pummel.gd" id="1_3itkc"]
 
 [resource]
 script = ExtResource("1_3itkc")
@@ -18,8 +18,5 @@ ethereal = false
 innate = false
 tags = Array[String]([])
 color = 0
-modified_damage = 0
-modified_block = 0
-modified_magicNumber = 0
 description = "造成!D!点伤害!M!次。
  消耗 。"

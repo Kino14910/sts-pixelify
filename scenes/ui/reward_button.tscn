@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://vgvhq1ds6hlf"]
 
-[ext_resource type="Script" path="res://scenes/ui/reward_button.gd" id="1_0k6p2"]
+[ext_resource type="Script" uid="uid://bpiywr8fshayo" path="res://scenes/ui/reward_button.gd" id="1_0k6p2"]
 [ext_resource type="Texture2D" uid="uid://dhmtctwb5ymhc" path="res://assets/gold.png" id="1_q1h24"]
 [ext_resource type="FontFile" uid="uid://dskmdk146n4rq" path="res://assets/fonts/pixel_rpg.ttf" id="3_vyrda"]
 

@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://bvssgbghkwf3w"]
 
-[ext_resource type="Script" path="res://scenes/map/map_generator.gd" id="1_8r2dm"]
+[ext_resource type="Script" uid="uid://dnsblysgok43u" path="res://scenes/map/map_generator.gd" id="1_8r2dm"]
 [ext_resource type="Resource" uid="uid://d0s1g4ixq18kc" path="res://scripts/dungeons/battle_stats_pool.tres" id="2_ej12c"]
 [ext_resource type="Resource" uid="uid://bncylsfojpqyu" path="res://scenes/event_rooms/event_room_pool.tres" id="3_syeym"]
 

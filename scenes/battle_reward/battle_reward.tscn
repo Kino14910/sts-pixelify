@@ -1,6 +1,6 @@
 [gd_scene load_steps=8 format=3 uid="uid://b8hnd6jb5jw38"]
 
-[ext_resource type="Script" path="res://scenes/battle_reward/battle_reward.gd" id="1_q1rg4"]
+[ext_resource type="Script" uid="uid://bb3q748vc0as3" path="res://scenes/battle_reward/battle_reward.gd" id="1_q1rg4"]
 [ext_resource type="Texture2D" uid="uid://cp4iq5fd6j8be" path="res://assets/background.png" id="2_ymhpx"]
 [ext_resource type="PackedScene" uid="uid://vgvhq1ds6hlf" path="res://scenes/ui/reward_button.tscn" id="3_1u6of"]
 [ext_resource type="Texture2D" uid="uid://dhmtctwb5ymhc" path="res://assets/gold.png" id="4_pr1pa"]

@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://cottuxqshwvgp" path="res://scripts/monsters/slaver_blue/slaver_blue_ai.tscn" id="1_0lc44"]
 [ext_resource type="Texture2D" uid="uid://ijcjf024eviy" path="res://assets/monsters/slaver_blue.png" id="2_sbhas"]
-[ext_resource type="Script" path="res://resources/custom_resources/monster_stats.gd" id="3_wevw0"]
+[ext_resource type="Script" uid="uid://dupstijj20dh5" path="res://resources/custom_resources/monster_stats.gd" id="3_wevw0"]
 
 [resource]
 script = ExtResource("3_wevw0")
