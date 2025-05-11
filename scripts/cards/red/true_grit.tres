@@ -18,8 +18,5 @@ ethereal = false
 innate = false
 tags = Array[String]([])
 color = 0
-modified_damage = 0
-modified_block = 0
-modified_magicNumber = 0
 description = "获得!B!点 格挡 。
  消耗 一张随机手牌。"

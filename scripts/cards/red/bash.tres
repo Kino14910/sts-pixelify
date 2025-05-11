@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://44jbm5bqr4k" path="res://assets/tile_0117.png" id="1_tu4an"]
 [ext_resource type="Script" path="res://scripts/cards/red/bash.gd" id="2_arrtr"]
-[ext_resource type="AudioStream" uid="uid://b35o1n7vysbtn" path="res://assets/SOTE_SFX_IronClad_Atk_RR1_v2.ogg" id="2_btq5v"]
+[ext_resource type="AudioStream" uid="uid://b35o1n7vysbtn" path="res://assets/sounds/SOTE_SFX_IronClad_Atk_RR1_v2.ogg" id="2_btq5v"]
 [ext_resource type="Resource" uid="uid://cxqq0117oxehu" path="res://scripts/powers/vulnerable.tres" id="3_4u71i"]
 
 [resource]

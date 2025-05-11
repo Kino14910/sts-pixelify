@@ -1,9 +1,13 @@
-[gd_resource type="Resource" load_steps=2 format=3 uid="uid://cpp143hbgi4jm"]
+[gd_resource type="Resource" load_steps=4 format=3 uid="uid://cpp143hbgi4jm"]
 
+[ext_resource type="Resource" uid="uid://cxqq0117oxehu" path="res://scripts/powers/vulnerable.tres" id="1_1r1o5"]
 [ext_resource type="Script" path="res://scripts/cards/red/shockwave.gd" id="1_r6qkg"]
+[ext_resource type="Resource" uid="uid://dbmjp625jdkr8" path="res://scripts/powers/weakened.tres" id="2_43cjw"]
 
 [resource]
 script = ExtResource("1_r6qkg")
+Weakened = ExtResource("2_43cjw")
+Vulnerable = ExtResource("1_1r1o5")
 id = "shockwave"
 type = 1
 target = 1
@@ -18,8 +22,5 @@ ethereal = false
 innate = false
 tags = Array[String]([])
 color = 0
-modified_damage = 0
-modified_block = 0
-modified_magicNumber = 0
 description = "给予所有敌人!M!层 虚弱  和 易伤  。
  消耗 。"

@@ -1,0 +1,22 @@
+[gd_resource type="Resource" load_steps=2 format=3 uid="uid://mobdmctqdj65"]
+
+[ext_resource type="Script" path="res://scripts/cards/red/pommel_strike.gd" id="1_0rfxw"]
+
+[resource]
+script = ExtResource("1_0rfxw")
+id = "PommelStrike"
+type = 0
+target = 0
+cost = 1
+card_name = "剑柄打击"
+damage = 9
+block = 0
+magicNumber = 2
+rarity = 2
+exhaust = false
+ethereal = false
+innate = false
+tags = Array[String](["strike"])
+color = 0
+description = "造成 !D! 点伤害。 
+抽 !M! 张牌。"

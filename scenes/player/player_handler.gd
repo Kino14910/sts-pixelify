@@ -34,7 +34,8 @@ func start_battle(new_char_stats: CharacterStats) -> void:
 
 
 func start_turn() -> void:
-	char_stats.block = 0
+	if !GameManager.player.power_handler._has_power('Barricade'):
+		char_stats.block = 0
 	char_stats.reset_energy()
 	relics.activate_relics_by_type(Relic.Type.START_OF_TURN)
 

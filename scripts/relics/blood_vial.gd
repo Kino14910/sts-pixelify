@@ -6,5 +6,5 @@ extends Relic
 func activate_relic(owner: RelicUI) -> void:
 	var player = GameManager.player
 	if player:
-		player.char_stats.heal(heal_amount)
+		player.stats.heal(heal_amount)
 		owner.flash()

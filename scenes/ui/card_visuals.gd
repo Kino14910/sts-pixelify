@@ -20,3 +20,11 @@ extends Control
 		card_name.text = card.card_name
 		description.text = card.get_default_description()
 		banner.color = Card.RARITY_COLORS[card.rarity]
+
+@export var pos: Vector2 = Vector2.ZERO
+@export var rot: float
+@export var anim_speed: float = 100.
+
+func _process(delta: float) -> void:
+	position = lerp(position, pos, anim_speed * delta)
+	rotation = lerp(rotation, rot, anim_speed * delta)

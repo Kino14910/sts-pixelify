@@ -1,0 +1,21 @@
+[gd_resource type="Resource" load_steps=2 format=3 uid="uid://cdyn3s0xvip23"]
+
+[ext_resource type="Script" path="res://scripts/cards/red/barricade.gd" id="1_ltna5"]
+
+[resource]
+script = ExtResource("1_ltna5")
+id = "Barricade"
+type = 2
+target = 2
+cost = 3
+card_name = "壁垒"
+damage = 0
+block = 0
+magicNumber = 1
+rarity = 4
+exhaust = false
+ethereal = false
+innate = false
+tags = Array[String]([])
+color = 0
+description = " 格挡 不再在你的回合开始时消失。"

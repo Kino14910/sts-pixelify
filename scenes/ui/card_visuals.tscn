@@ -12,6 +12,10 @@
 custom_minimum_size = Vector2(30, 40)
 layout_mode = 3
 anchors_preset = 0
+offset_left = 2.0
+offset_top = 2.0
+offset_right = 32.0
+offset_bottom = 42.0
 theme = ExtResource("1_ruvld")
 script = ExtResource("2_6iwdn")
 card = ExtResource("3_w2ddi")

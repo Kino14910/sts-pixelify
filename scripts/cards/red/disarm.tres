@@ -1,0 +1,24 @@
+[gd_resource type="Resource" load_steps=3 format=3 uid="uid://bspxwd7tohxe1"]
+
+[ext_resource type="Resource" uid="uid://dfmuquglr01qk" path="res://scripts/powers/strength.tres" id="1_hp42i"]
+[ext_resource type="Script" path="res://scripts/cards/red/disarm.gd" id="2_ars8q"]
+
+[resource]
+script = ExtResource("2_ars8q")
+power = ExtResource("1_hp42i")
+id = "Disarm"
+type = 1
+target = 0
+cost = 0
+card_name = "缴械"
+damage = 0
+block = 0
+magicNumber = -2
+rarity = 3
+exhaust = true
+ethereal = false
+innate = false
+tags = Array[String]([])
+color = 0
+description = "使敌人失去 !M! 点 力量 。
+ 消耗 。"

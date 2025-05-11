@@ -52,17 +52,6 @@ const RARITY_COLORS = {
 	CardRarity.CURSE: Color.DIM_GRAY,
 }
 
-const Keywords = {
-	'消耗': '',
-	'虚无': '',
-	'固有': '',
-	'格挡': '',
-	'易伤': '',
-	'虚弱': '',
-	'力量': ''
-}
-
-
 const COLOR_UP = "#4CAF50"   # 增强绿色
 const COLOR_DOWN = "#F44336" # 削弱红色
 const COLOR_DEFAULT = "#FFFFFF" # 默认白色
@@ -90,6 +79,23 @@ var modified_magicNumber: int
 @export var icon: Texture
 @export_multiline var description: String
 #@export_multiline var updated_description: String
+
+var keywords: Dictionary
+
+func _init() -> void:
+	load_keywords()
+
+func load_keywords() -> void:
+	var file = FileAccess.open('res://localization/zhs/keywords.json', FileAccess.READ)
+	var data = JSON.parse_string(file.get_as_text())
+	keywords = data
+	file.close()
+
+func get_keywords_color(desc: String) -> String:
+	for word in desc.split(" "):
+		if keywords.has(word):
+			desc = desc.replace(' %s ' % [word], "[color=gold]%s[/color]" % [word])
+	return desc
 
 func is_single_target() -> bool:
 	return target == CardTarget.ENEMY
@@ -143,11 +149,12 @@ func get_updated_description(_player_modifiers: ModifierHandler) -> String:
 
 func _get_colored_value(player_modifiers: ModifierHandler, stat: String) -> String:
 	var base = get(stat)
+	var modifier = Modifier.Type.NO_MODIFIER
 	match stat:
-		'damage': Modifier.Type.DMG_DEALT
-		'block': Modifier.Type.DMG_DEALT
-		'magicNumber': Modifier.Type.NO_MODIFIER
-	var current = player_modifiers.get_modified_value(base, Modifier.Type.DMG_DEALT)
+		'damage': modifier = Modifier.Type.DMG_DEALT
+		'block': modifier = Modifier.Type.BLOCK_GAIN
+	
+	var current = player_modifiers.get_modified_value(base, modifier)
 
 	if current > base:
 		return '[color=%s]%d[/color]' % [COLOR_UP, current]
@@ -155,11 +162,3 @@ func _get_colored_value(player_modifiers: ModifierHandler, stat: String) -> Stri
 		return '[color=%s]%d[/color]' % [COLOR_DOWN, current]
 	else:
 		return '[color=%s]%d[/color]' % [COLOR_DEFAULT, current]
-
-
-func get_keywords_color(desc: String) -> String:
-	for word in desc.split(" "):
-		if Keywords.has(word):
-			desc = desc.replace(' %s ' % [word], "[color=gold]%s[/color]" % [word])
-
-	return desc

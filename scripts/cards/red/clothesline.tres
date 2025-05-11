@@ -1,0 +1,26 @@
+[gd_resource type="Resource" load_steps=4 format=3 uid="uid://cfopcwkpxe8w3"]
+
+[ext_resource type="Resource" uid="uid://dbmjp625jdkr8" path="res://scripts/powers/weakened.tres" id="1_njvr8"]
+[ext_resource type="Script" path="res://scripts/cards/red/clothesline.gd" id="1_sm77i"]
+[ext_resource type="AudioStream" uid="uid://dj3enif1at5au" path="res://assets/sounds/SOTE_SFX_HeavyBlunt_v2.ogg" id="2_iki0u"]
+
+[resource]
+script = ExtResource("1_sm77i")
+optional_sound = ExtResource("2_iki0u")
+Weakened = ExtResource("1_njvr8")
+id = "bash"
+type = 0
+target = 0
+cost = 2
+card_name = "痛击"
+damage = 12
+block = 0
+magicNumber = 2
+rarity = 2
+exhaust = false
+ethereal = false
+innate = false
+tags = Array[String]([])
+color = 0
+description = "造成!D!点伤害。
+给予!M!层 虚弱 。"

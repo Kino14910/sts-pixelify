@@ -15,7 +15,6 @@ func _ready() -> void:
 	
 	for card: Node in cards.get_children():
 		card.queue_free()
-	
 
 
 func _input(event: InputEvent) -> void:

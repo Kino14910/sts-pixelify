@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="Metallicize" load_steps=3 format=3 uid="uid://cf5rcsc7hg82m"]
+
+[ext_resource type="Texture2D" uid="uid://dytq0eumwvky6" path="res://assets/tile_0074.png" id="1_u2qwu"]
+[ext_resource type="Script" path="res://scripts/powers/metallicize.gd" id="2_3ls3o"]
+
+[resource]
+script = ExtResource("2_3ls3o")
+id = "Metallicize"
+type = 1
+stack_type = 1
+can_expire = false
+duration = 0
+stacks = 3
+icon = ExtResource("1_u2qwu")
+tooltip = "在回合结束时获得 %s 点 [color=gold]格挡[/color]。"

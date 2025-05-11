@@ -23,9 +23,6 @@ ethereal = false
 innate = false
 tags = Array[String]([])
 color = 0
-modified_damage = 0
-modified_block = 0
-modified_magicNumber = 0
 icon = ExtResource("1_ay7ed")
 description = "造成!D!点伤害。
 给予!M!层 易伤 和 虚弱 。"

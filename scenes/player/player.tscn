@@ -1,8 +1,7 @@
-[gd_scene load_steps=10 format=3 uid="uid://dcjodj7wgvjld"]
+[gd_scene load_steps=9 format=3 uid="uid://dcjodj7wgvjld"]
 
 [ext_resource type="Script" path="res://scenes/player/player.gd" id="1_t70mi"]
 [ext_resource type="PackedScene" uid="uid://cpgpjk5ayx78o" path="res://scenes/ui/stats_ui.tscn" id="2_7oyrp"]
-[ext_resource type="Resource" uid="uid://4qo5n75hbldo" path="res://scripts/characters/Ironclad/Ironclad.tres" id="2_ukinn"]
 [ext_resource type="SpriteFrames" uid="uid://dmxq48sy1vquo" path="res://resources/character/Ironclad.tres" id="3_d0ufo"]
 [ext_resource type="Texture2D" uid="uid://bgonh0uqkbitg" path="res://assets/selected_indicator.png" id="5_kwpum"]
 [ext_resource type="PackedScene" uid="uid://bwet1kdg2v1di" path="res://scenes/power_handler/power_handler.tscn" id="6_e2m7p"]
@@ -14,7 +13,6 @@ size = Vector2(46, 34)
 
 [node name="Player" type="Area2D" groups=["player"]]
 script = ExtResource("1_t70mi")
-stats = ExtResource("2_ukinn")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(1.96695e-06, 1)

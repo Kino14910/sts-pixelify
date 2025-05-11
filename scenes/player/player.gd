@@ -3,12 +3,12 @@ extends Node2D
 
 const WHITE_SPRITE_MATERIAL = preload("res://assets/white_sprite_material.tres")
 
-@export var char_stats: CharacterStats:
+@export var stats: CharacterStats:
 	set(value):
-		char_stats = value
+		stats = value
 		
-		if not char_stats.stats_changed.is_connected(update_stats):
-			char_stats.stats_changed.connect(update_stats)
+		if not stats.stats_changed.is_connected(update_stats):
+			stats.stats_changed.connect(update_stats)
 
 		update_player()
 
@@ -30,35 +30,35 @@ func _ready() -> void:
 	GameManager.player = self
 
 func update_player() -> void:
-	if not char_stats is CharacterStats: 
+	if not stats is CharacterStats: 
 		return
 	if not is_inside_tree(): 
 		await ready
 
-	animated_sprite_2d.sprite_frames = char_stats.char_sprite
+	animated_sprite_2d.sprite_frames = stats.char_sprite
 	update_stats()
 
 
 func update_stats() -> void:
-	stats_ui.update(char_stats)
+	stats_ui.update(stats)
 
 
 func take_damage(damage: int, modifier_type: Modifier.Type, damagetype: DamageAction.DamageType) -> void:
-	if char_stats.health <= 0: 
+	if stats.health <= 0: 
 		return
 		
 	var modified_damage = modifier_handler.get_modified_value(damage, modifier_type)
 	
 	var tween = create_tween()
 	tween.tween_callback(Shaker.shake.bind(self, 16, 0.15))
-	tween.tween_callback(char_stats.take_damage.bind(modified_damage, damagetype))
+	tween.tween_callback(stats.take_damage.bind(modified_damage, damagetype))
 	tween.tween_interval(0.17)
 
 	tween.finished.connect(
 		func():
 		#sprite_2d.material = null
 				
-		if char_stats.health <= 0:
+		if stats.health <= 0:
 			Events.player_died.emit()
 			queue_free()
 	)
