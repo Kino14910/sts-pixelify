@@ -1,7 +1,7 @@
 class_name DamageAction
 extends Action
 
-const attack_sound = preload('res://assets/SOTE_SFX_FastAtk_v2.ogg')
+const attack_sound = preload('res://assets/sounds/SOTE_SFX_FastAtk_v2.ogg')
 
 var receiver_modifier_type = Modifier.Type.DMG_TAKEN
 var damagetype: DamageType = DamageType.NORMAL

@@ -1,7 +1,7 @@
 class_name GainBlockAction
 extends Action
 
-const GainBlockSound = preload('res://assets/SOTE_SFX_GainDefense_RR1_v3.ogg')
+const GainBlockSound = preload('res://assets/sounds/SOTE_SFX_GainDefense_RR1_v3.ogg')
 
 func _init(targets: Array[Node], amount:int,) -> void:
 	execute(targets, GameManager.player.modifier_handler.get_modified_value(amount, Modifier.Type.BLOCK_GAIN))
