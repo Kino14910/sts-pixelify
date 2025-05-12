@@ -1,4 +1,4 @@
-class_name VulnerablePower
+class_name Vulnerable
 extends Power
 
 const MODIFIER = 0.5

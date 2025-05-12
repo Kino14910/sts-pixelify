@@ -80,23 +80,6 @@ var modified_magicNumber: int
 @export_multiline var description: String
 #@export_multiline var updated_description: String
 
-var keywords: Dictionary
-
-func _init() -> void:
-	load_keywords()
-
-func load_keywords() -> void:
-	var file = FileAccess.open('res://localization/zhs/keywords.json', FileAccess.READ)
-	var data = JSON.parse_string(file.get_as_text())
-	keywords = data
-	file.close()
-
-func get_keywords_color(desc: String) -> String:
-	for word in desc.split(" "):
-		if keywords.has(word):
-			desc = desc.replace(' %s ' % [word], "[color=gold]%s[/color]" % [word])
-	return desc
-
 func is_single_target() -> bool:
 	return target == CardTarget.ENEMY
 
@@ -137,14 +120,14 @@ func get_default_description() -> String:
 		.replace('!B!', str(block))\
 		.replace('!M!', str(magicNumber))
 	
-	return get_keywords_color(desc)
+	return Utils.get_keywords_color(desc)
 	
 func get_updated_description(_player_modifiers: ModifierHandler) -> String:
 	var desc = description.replace('!D!', _get_colored_value(_player_modifiers, 'damage'))\
 		.replace('!B!', _get_colored_value(_player_modifiers, 'block'))\
 		.replace('!M!', _get_colored_value(_player_modifiers, 'magicNumber'))
 
-	return get_keywords_color(desc)
+	return Utils.get_keywords_color(desc)
 
 
 func _get_colored_value(player_modifiers: ModifierHandler, stat: String) -> String:

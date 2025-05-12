@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="Dexterity" load_steps=3 format=3 uid="uid://du27srubt1inj"]
+[gd_resource type="Resource" script_class="Barricade" load_steps=3 format=3 uid="uid://du27srubt1inj"]
 
 [ext_resource type="Script" path="res://scripts/powers/barricade.gd" id="1_gw056"]
 [ext_resource type="Texture2D" uid="uid://bi6pfjs32f820" path="res://assets/tile_0101.png" id="1_o8hy7"]

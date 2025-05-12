@@ -20,7 +20,7 @@ func draw_card() -> Card:
 func add_cards_by_path(path) -> Array[Card]:
 	# godot没有泛型，只能这样写
 	var arr: Array[Card]
-	for card in LoadResFromDir.load('res://scripts/cards/' + path+ '/'):
+	for card in Utils.load_res_from_dir('res://scripts/cards/' + path+ '/'):
 		if card is Card && card.rarity != Card.CardRarity.BASIC:
 			arr.append(card as Card)
 	cards = arr

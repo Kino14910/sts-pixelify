@@ -1,4 +1,4 @@
-class_name Dexterity
+class_name Barricade
 extends Power
 
 var member_var = 0

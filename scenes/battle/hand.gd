@@ -44,6 +44,7 @@ func displayCards():
 
 
 func discard_card(card: CardUI) -> void:
+	card.get_parent().remove_child(card)
 	card.queue_free()
 
 

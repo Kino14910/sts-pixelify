@@ -105,7 +105,7 @@ func take_damage(damage: int, modifier_type: Modifier.Type, damagetype: DamageAc
 	var modified_damage = modifier_handler.get_modified_value(damage, modifier_type)
 	
 	var tween = create_tween()
-	tween.tween_callback(Shaker.shake.bind(self, 16, 0.15))
+	tween.tween_callback(Utils.shake.bind(self, 16, 0.15))
 	tween.tween_callback(stats.take_damage.bind(modified_damage, damagetype))
 	tween.tween_interval(0.17)
 	

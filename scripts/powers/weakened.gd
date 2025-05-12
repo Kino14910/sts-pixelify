@@ -1,4 +1,4 @@
-class_name WeakenedPower
+class_name Weakened
 extends Power
 
 const MODIFIER = -0.25
