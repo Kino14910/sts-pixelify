@@ -41,7 +41,6 @@ func shake(thing: Node2D, strength: float, duration: float = 0.2) -> void:
 	)
 
 
-
 func fetch_json_data(path: String) -> Dictionary:
 	var file = FileAccess.open(path, FileAccess.READ)
 	var data = JSON.parse_string(file.get_as_text())
