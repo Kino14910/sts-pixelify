@@ -1,0 +1,19 @@
+[gd_resource type="Resource" script_class="CardPile" load_steps=13 format=3 uid="uid://biltnc6o1fe8a"]
+
+[ext_resource type="Script" path="res://resources/custom_resources/card.gd" id="1_eig6f"]
+[ext_resource type="Resource" uid="uid://basctt12n4bl3" path="res://scripts/cards/green/all_out_attack.tres" id="2_rs8m2"]
+[ext_resource type="Script" path="res://resources/custom_resources/card_pile.gd" id="2_umhy7"]
+[ext_resource type="Resource" uid="uid://c5gjlx74jv7bs" path="res://scripts/cards/green/bane.tres" id="3_5d516"]
+[ext_resource type="Resource" uid="uid://bbvhvv3bsvh54" path="res://scripts/cards/green/bouncing_flask.tres" id="4_m0mf2"]
+[ext_resource type="Resource" uid="uid://l6c30krrufqs" path="res://scripts/cards/green/catalyst.tres" id="5_6uk3r"]
+[ext_resource type="Resource" uid="uid://bick03hs3e1ck" path="res://scripts/cards/green/corpse_explosion.tres" id="6_bgqho"]
+[ext_resource type="Resource" uid="uid://c6wxtlnr7p55s" path="res://scripts/cards/green/defend_green.tres" id="7_wkgln"]
+[ext_resource type="Resource" uid="uid://dq1qphfqqxunj" path="res://scripts/cards/green/poisoned_stab.tres" id="8_osey2"]
+[ext_resource type="Resource" uid="uid://ckopq4cawj50i" path="res://scripts/cards/green/strike_green.tres" id="9_dk88v"]
+[ext_resource type="Resource" uid="uid://cteyp1o6v2s2e" path="res://scripts/cards/green/survivor.tres" id="10_ywuqd"]
+[ext_resource type="Resource" uid="uid://dtlei1dgqnap0" path="res://scripts/cards/green/terror.tres" id="11_uqwch"]
+
+[resource]
+script = ExtResource("2_umhy7")
+cards = Array[ExtResource("1_eig6f")]([ExtResource("2_rs8m2"), ExtResource("3_5d516"), ExtResource("4_m0mf2"), ExtResource("5_6uk3r"), ExtResource("6_bgqho"), ExtResource("7_wkgln"), ExtResource("8_osey2"), ExtResource("9_dk88v"), ExtResource("10_ywuqd"), ExtResource("11_uqwch"), ExtResource("6_bgqho"), ExtResource("6_bgqho"), null, null])
+card_type = "green"

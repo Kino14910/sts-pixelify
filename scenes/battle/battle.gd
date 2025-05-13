@@ -26,6 +26,7 @@ func start_battle() -> void:
 	
 	battle_ui.char_stats = char_stats
 	player_handler.relics = relics
+	player_handler.start_battle(char_stats)
 	monster_handler.setup_monsters(battle_stats)
 	monster_handler.reset_monster_actions()
 	
@@ -49,7 +50,6 @@ func _on_monsters_child_order_changed() -> void:
 func _on_relics_activated(type: Relic.Type) -> void:
 	match type:
 		Relic.Type.START_OF_COMBAT:
-			player_handler.start_battle(char_stats)
 			battle_ui.initialize_card_pile_ui()
 		Relic.Type.END_OF_COMBAT:
 			Events.battle_won.emit()

@@ -22,5 +22,4 @@ func _on_button_mouse_entered() -> void:
 	
 	
 func _on_button_mouse_exited() -> void:
-	#gradient.remove_theme_stylebox_override('panel')
 	gradient.add_theme_stylebox_override('panel', StyleBoxEmpty.new())

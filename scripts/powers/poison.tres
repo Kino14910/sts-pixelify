@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="Power" load_steps=2 format=3 uid="uid://bcn765c15f41c"]
+
+[ext_resource type="Script" path="res://resources/custom_resources/power.gd" id="1_hk6bu"]
+
+[resource]
+script = ExtResource("1_hk6bu")
+id = "Poison"
+type = 1
+lifetime = 0
+stack_type = 2
+can_expire = true
+duration = 1
+stacks = 0
+tooltip = "在回合开始时，减少%s点生命然后将 中毒 层数减少 1 。"

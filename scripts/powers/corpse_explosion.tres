@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="CorpseExplosion" load_steps=2 format=3 uid="uid://cp7aqh1ake85l"]
+
+[ext_resource type="Script" path="res://scripts/powers/corpse_explosion.gd" id="1_ypaip"]
+
+[resource]
+script = ExtResource("1_ypaip")
+id = "Corpse Explosion"
+type = 1
+lifetime = 2
+stack_type = 0
+can_expire = false
+duration = 0
+stacks = 0
+tooltip = "当这名敌人死亡时，对所有敌人造成等于其最大生命值的伤害。"

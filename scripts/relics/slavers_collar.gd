@@ -2,7 +2,6 @@ class_name ManaPotion
 extends Relic
 
 func activate_relic(owner: RelicUI) -> void:
-	#_add_energy(owner)
 	if GameManager.room.battle_stats.battle_tier > 1:
 		_add_energy(owner)
 		

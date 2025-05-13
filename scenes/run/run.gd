@@ -202,7 +202,6 @@ func _show_regular_battle_rewards() -> void:
 
 func _on_battle_room_entered(room: Room) -> void:
 	var battle_scene: Battle = _change_view(BATTLE_SCENE) as Battle
-	
 	battle_scene.char_stats = char_stats
 	battle_scene.battle_stats = room.battle_stats
 	battle_scene.relics = relic_handler

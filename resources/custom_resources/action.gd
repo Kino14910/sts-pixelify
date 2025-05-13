@@ -1,7 +1,6 @@
 class_name Action
 extends RefCounted
 
-#@export var sound: AudioStream
 
 func _init(targets: Array[Node], amount: int) -> void:
 	execute(targets, amount)

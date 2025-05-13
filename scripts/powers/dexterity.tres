@@ -1,12 +1,13 @@
 [gd_resource type="Resource" script_class="Dexterity" load_steps=3 format=3 uid="uid://ebx5qpe0gq7c"]
 
 [ext_resource type="Script" path="res://scripts/powers/dexterity.gd" id="1_1rnex"]
-[ext_resource type="Texture2D" uid="uid://lucauwqq5e4n" path="res://assets/block.png" id="1_cv8a2"]
+[ext_resource type="Texture2D" uid="uid://lucauwqq5e4n" path="res://assets/UI/block.png" id="1_cv8a2"]
 
 [resource]
 script = ExtResource("1_1rnex")
 id = "Dexterity"
 type = 2
+lifetime = 2
 stack_type = 1
 can_expire = false
 duration = 0

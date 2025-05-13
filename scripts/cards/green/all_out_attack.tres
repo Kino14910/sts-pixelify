@@ -1,0 +1,22 @@
+[gd_resource type="Resource" load_steps=2 format=3 uid="uid://basctt12n4bl3"]
+
+[ext_resource type="Script" path="res://scripts/cards/green/all_out_attack.gd" id="1_aipks"]
+
+[resource]
+script = ExtResource("1_aipks")
+id = "All Out Attack"
+type = 0
+target = 1
+cost = 1
+card_name = "全力攻击"
+damage = 10
+block = 0
+magicNumber = 0
+rarity = 3
+exhaust = false
+ethereal = false
+innate = false
+tags = Array[String]([])
+color = 1
+description = "对所有敌人造成 !D! 点伤害。 
+丢弃一张随机手牌。"

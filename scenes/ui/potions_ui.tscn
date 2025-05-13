@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://ycb5va1edl7o"]
 
-[ext_resource type="Texture2D" uid="uid://vflbpwmmqbst" path="res://assets/empty_potion.png" id="1_lkwba"]
+[ext_resource type="Texture2D" uid="uid://vflbpwmmqbst" path="res://assets/UI/empty_potion.png" id="1_lkwba"]
 
 [node name="Potions" type="HBoxContainer"]
 custom_minimum_size = Vector2(32, 0)

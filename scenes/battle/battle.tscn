@@ -22,8 +22,8 @@
 [ext_resource type="PackedScene" uid="uid://bfp68paujyrvi" path="res://scenes/ui/battle_over_panel.tscn" id="21_auwcm"]
 [ext_resource type="PackedScene" uid="uid://ct8ogayx0nuii" path="res://scenes/ui/card_pile_opener.tscn" id="21_emcc8"]
 [ext_resource type="FontFile" uid="uid://dskmdk146n4rq" path="res://assets/fonts/pixel_rpg.ttf" id="22_sy6vr"]
-[ext_resource type="Texture2D" uid="uid://2gpsnrxk7whj" path="res://assets/discard_pile.png" id="23_tr7vp"]
-[ext_resource type="Texture2D" uid="uid://cq4u4p23kpcqo" path="res://assets/exhausted_pile.png" id="24_y3ckv"]
+[ext_resource type="Texture2D" uid="uid://2gpsnrxk7whj" path="res://assets/UI/discard_pile.png" id="23_tr7vp"]
+[ext_resource type="Texture2D" uid="uid://cq4u4p23kpcqo" path="res://assets/UI/exhausted_pile.png" id="24_y3ckv"]
 [ext_resource type="PackedScene" uid="uid://dxycg4oxuubob" path="res://scenes/ui/power_tooltips_view.tscn" id="25_nlv0y"]
 [ext_resource type="PackedScene" uid="uid://dn7kxpuwcukg3" path="res://scenes/ui/card_pile_view.tscn" id="25_xtb34"]
 

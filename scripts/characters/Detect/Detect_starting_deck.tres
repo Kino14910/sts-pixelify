@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="CardPile" load_steps=6 format=3 uid="uid://ckjk0p4kl3pvu"]
+
+[ext_resource type="Script" path="res://resources/custom_resources/card.gd" id="1_y1qn4"]
+[ext_resource type="Resource" uid="uid://1j2gc7qgv62g" path="res://scripts/cards/blue/defend_blue.tres" id="2_s17m8"]
+[ext_resource type="Resource" uid="uid://cdifjlbd8xke4" path="res://scripts/cards/blue/strike_blue.tres" id="3_r3gls"]
+[ext_resource type="Resource" uid="uid://17re8gdvxd4x" path="res://scripts/cards/blue/sweeping_beam.tres" id="4_in0n1"]
+[ext_resource type="Script" path="res://resources/custom_resources/card_pile.gd" id="8_cpd45"]
+
+[resource]
+script = ExtResource("8_cpd45")
+cards = Array[ExtResource("1_y1qn4")]([ExtResource("2_s17m8"), ExtResource("3_r3gls"), ExtResource("4_in0n1"), null, null, null, null, null, null, null])
+card_type = "blue"

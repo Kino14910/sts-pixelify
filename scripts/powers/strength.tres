@@ -5,8 +5,9 @@
 
 [resource]
 script = ExtResource("1_jmpem")
-id = "strength"
+id = "Strength"
 type = 2
+lifetime = 2
 stack_type = 1
 can_expire = false
 duration = 0

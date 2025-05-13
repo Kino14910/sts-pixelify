@@ -76,8 +76,9 @@ func animate_to_position(target: Vector2, duration: float) -> void:
 func play() -> void:
 	if not card:
 		return
-	
+	#self.reparent(get_tree().get_first_node_in_group("ui_layer"))
 	card.play(targets, char_stats)
+	#self.reparent(GameManager.player_handler.hand)
 	queue_free()
 	
 

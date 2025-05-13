@@ -9,8 +9,8 @@ region = Rect2(48, 158, 8, 8)
 
 [resource]
 script = ExtResource("2_2lpue")
-relic_name = "奴隶贩子颈环"
 id = "Slavers Collar"
+relic_name = "奴隶贩子颈环"
 type = 0
 character_type = 0
 starter_relic = false

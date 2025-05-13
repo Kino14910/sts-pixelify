@@ -1,0 +1,18 @@
+[gd_resource type="Resource" load_steps=4 format=3 uid="uid://dbhdn8gvh0xj0"]
+
+[ext_resource type="Script" path="res://scripts/relics/ring_of_the_snake.gd" id="1_beg6e"]
+[ext_resource type="Texture2D" uid="uid://5y632i2cifil" path="res://assets/relics/the_silent_relics.png" id="1_irrk1"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fsho3"]
+atlas = ExtResource("1_irrk1")
+region = Rect2(0, 0, 8, 7)
+
+[resource]
+script = ExtResource("1_beg6e")
+id = "Ring of the Snake"
+relic_name = "蛇之戒指"
+type = 1
+character_type = 2
+starter_relic = true
+icon = SubResource("AtlasTexture_fsho3")
+tooltip = "在每场战斗开始时，额外抽1张牌。"

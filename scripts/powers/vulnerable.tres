@@ -1,12 +1,13 @@
-[gd_resource type="Resource" script_class="VulnerablePower" load_steps=3 format=3 uid="uid://cxqq0117oxehu"]
+[gd_resource type="Resource" script_class="Vulnerable" load_steps=3 format=3 uid="uid://cxqq0117oxehu"]
 
 [ext_resource type="Texture2D" uid="uid://2egbj0w2asc2" path="res://assets/powers/expose.png" id="1_puesa"]
 [ext_resource type="Script" path="res://scripts/powers/vulnerable.gd" id="2_7rx4i"]
 
 [resource]
 script = ExtResource("2_7rx4i")
-id = "vulnerable"
-type = 0
+id = "Vulnerable"
+type = 1
+lifetime = 0
 stack_type = 2
 can_expire = true
 duration = 1

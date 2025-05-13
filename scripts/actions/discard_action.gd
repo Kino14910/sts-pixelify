@@ -2,7 +2,6 @@ class_name DiscardAction
 extends Action
 
 
-var player_handler: PlayerHandler
 var random: bool
 
 
@@ -20,11 +19,6 @@ func execute(targets: Array[Node], amount: int) -> void:
 	
 	if player_handler.hand.is_empty():
 		return
-
-
-
-		
-	self.player_handler = player_handler
 		
 	var cards_to_discard
 	if random:
@@ -41,5 +35,4 @@ func execute(targets: Array[Node], amount: int) -> void:
 	
 	for card in cards_to_discard:
 		player_handler.hand.discard_card(card)
-		char_stats.discard_pile.add_card(card.card)
 		Events.card_discarded.emit()

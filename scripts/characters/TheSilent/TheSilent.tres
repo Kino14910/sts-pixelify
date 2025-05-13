@@ -1,20 +1,27 @@
-[gd_resource type="Resource" script_class="CharacterStats" load_steps=6 format=3 uid="uid://dqohxugta8kvw"]
+[gd_resource type="Resource" script_class="CharacterStats" load_steps=9 format=3 uid="uid://dqohxugta8kvw"]
 
 [ext_resource type="Texture2D" uid="uid://b7a838nj8y8u" path="res://assets/characters/The_slient_portrait.png" id="1_aqlbv"]
 [ext_resource type="Script" path="res://resources/custom_resources/character_stats.gd" id="1_r1ypy"]
+[ext_resource type="Resource" uid="uid://uqhy15v2kxbf" path="res://scripts/characters/TheSilent/TheSilent_starting_deck.tres" id="2_5h4f0"]
 [ext_resource type="SpriteFrames" uid="uid://bl645mh3s5ni7" path="res://resources/character/The_silent.tres" id="2_o1g1r"]
 [ext_resource type="Texture2D" uid="uid://bjit225e1sjd6" path="res://assets/characters/The_slient_name.png" id="3_nt3sf"]
 [ext_resource type="Texture2D" uid="uid://ciboq8kgsjpxe" path="res://assets/characters/The_slient.tres" id="4_qouhy"]
+[ext_resource type="Resource" uid="uid://biltnc6o1fe8a" path="res://scripts/characters/TheSilent/TheSilent_cardpool.tres" id="7_lnjss"]
+[ext_resource type="Resource" uid="uid://dbhdn8gvh0xj0" path="res://scripts/relics/ring_of_the_snake.tres" id="8_ipv6o"]
 
 [resource]
 script = ExtResource("1_r1ypy")
 character_name = "The Slient"
-description = "The Slient"
+description = "来自雾霾之地的致命女猎手。 
+使用匕首和下毒来消灭敌人。"
 character_name_picture = ExtResource("3_nt3sf")
 portrait = ExtResource("4_qouhy")
 char_sprite = ExtResource("2_o1g1r")
+starting_deck = ExtResource("2_5h4f0")
+cardpool = ExtResource("7_lnjss")
 cards_per_turn = 5
 max_energy = 3
 char_max_hp = 60
+starting_relic = ExtResource("8_ipv6o")
 art = ExtResource("1_aqlbv")
-max_health = 1
+max_health = 60

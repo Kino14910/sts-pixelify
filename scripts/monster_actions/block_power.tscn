@@ -1,9 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://dkm253k1t5yin"]
+[gd_scene load_steps=5 format=3 uid="uid://dkm253k1t5yin"]
 
 [ext_resource type="Script" path="res://scripts/monster_actions/block_power.gd" id="1_s84nx"]
 [ext_resource type="Texture2D" uid="uid://ckego8nhvcdty" path="res://assets/intents/block_buff_intent.png" id="2_hpwnt"]
 [ext_resource type="Script" path="res://resources/custom_resources/intent.gd" id="3_xrx77"]
-[ext_resource type="AudioStream" uid="uid://df64e7qat73gs" path="res://assets/block.ogg" id="4_08dqy"]
 
 [sub_resource type="Resource" id="Resource_73m1x"]
 script = ExtResource("3_xrx77")
@@ -13,4 +12,3 @@ icon = ExtResource("2_hpwnt")
 [node name="Block&Power" type="Node"]
 script = ExtResource("1_s84nx")
 intent = SubResource("Resource_73m1x")
-sound = ExtResource("4_08dqy")

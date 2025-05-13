@@ -8,7 +8,7 @@
 [resource]
 script = ExtResource("2_arrtr")
 optional_sound = ExtResource("2_btq5v")
-Vulnerable = ExtResource("3_4u71i")
+vulnerable = ExtResource("3_4u71i")
 id = "bash"
 type = 0
 target = 0

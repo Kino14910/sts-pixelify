@@ -54,10 +54,7 @@ func take_damage(damage: int, modifier_type: Modifier.Type, damagetype: DamageAc
 	tween.tween_callback(stats.take_damage.bind(modified_damage, damagetype))
 	tween.tween_interval(0.17)
 
-	tween.finished.connect(
-		func():
-		#sprite_2d.material = null
-				
+	tween.finished.connect(func():
 		if stats.health <= 0:
 			Events.player_died.emit()
 			queue_free()

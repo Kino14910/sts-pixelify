@@ -121,12 +121,13 @@ func get_default_description() -> String:
 		.replace('!M!', str(magicNumber))
 	
 	return Utils.get_keywords_color(desc)
-	
+
+
 func get_updated_description(_player_modifiers: ModifierHandler) -> String:
 	var desc = description.replace('!D!', _get_colored_value(_player_modifiers, 'damage'))\
 		.replace('!B!', _get_colored_value(_player_modifiers, 'block'))\
 		.replace('!M!', _get_colored_value(_player_modifiers, 'magicNumber'))
-
+	
 	return Utils.get_keywords_color(desc)
 
 

@@ -23,4 +23,4 @@ func update(run_stats: RunStats) -> void:
 
 
 func _on_delete_button_pressed() -> void:
-	pass # Replace with function body.
+	pass

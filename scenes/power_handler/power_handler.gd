@@ -1,7 +1,7 @@
 class_name PowerHandler
 extends GridContainer
 
-signal powers_applied(type: Power.Type)
+signal powers_applied(lifetime: Power.Lifetime)
 
 const POWER_APPLY_INTERVAL = 0.25
 const POWER_UI = preload('res://scenes/power_handler/power_ui.tscn')
@@ -9,16 +9,16 @@ const POWER_UI = preload('res://scenes/power_handler/power_ui.tscn')
 @export var power_owner: Node2D
 
 
-func apply_powers_by_type(type: Power.Type) -> void:
-	if type == Power.Type.EVENT_BASED:
+func apply_powers_by_type(lifetime: Power.Lifetime) -> void:
+	if lifetime == Power.Lifetime.EVENT_BASED:
 		return
 		
 	var power_queue: Array[Power] = _get_all_powers().filter(
 		func(power: Power):
-			return power.type == type
+			return power.lifetime == lifetime
 	)
 	if power_queue.is_empty():
-		powers_applied.emit(type)
+		powers_applied.emit(lifetime)
 		return
 	
 	var tween = create_tween()
@@ -26,7 +26,7 @@ func apply_powers_by_type(type: Power.Type) -> void:
 		tween.tween_callback(power.apply_power.bind(power_owner))
 		tween.tween_interval(POWER_APPLY_INTERVAL)
 	
-	tween.finished.connect(func(): powers_applied.emit(type))
+	tween.finished.connect(func(): powers_applied.emit(lifetime))
 
 
 func add_power(power: Power) -> void:

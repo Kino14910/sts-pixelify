@@ -13,10 +13,10 @@ func initialize_relic(_owner: RelicUI) -> void:
 func activate_relic(_owner: RelicUI) -> void:
 	pass
 
-
+# this gets called when a RelicUI is exiting the SceneTree i.e. getting deleted
+# Event-based Relics should disconnect from the EventBus here.
 func deactivate_relic(_owner: RelicUI) -> void:
-	print("this gets called when a RelicUI is exiting the SceneTree i.e. getting deleted")
-	print("Event-based Relics should disconnect from the EventBus here.")
+	pass
 
 
 # we can provide unique descriptions per relic if we want to

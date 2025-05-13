@@ -12,9 +12,4 @@ extends HBoxContainer
 
 
 @onready var icon: TextureRect = $Icon
-#@onready var label: Label = $Label
 @onready var rich_text_label: RichTextLabel = $RichTextLabel
-
-
-#func _init(power: Power) -> void:
-	#self.power = power

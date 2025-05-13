@@ -5,11 +5,10 @@ const card_scene = preload('res://scenes/card_ui/card_ui.tscn')
 
 
 @export var char_stats: CharacterStats
-#@onready var hand: Node2D = $Hand
 @export var spread_curve: Curve
 @export var rotation_curve: Curve
 @export var height_curve: Curve
-# Called when the node enters the scene tree for the first time.
+
 func _ready() -> void:
 	displayCards()
 
@@ -32,8 +31,6 @@ func displayCards():
 	for card in get_children():
 		card.target_position = -card.size / 2
 		var hand_ratio = 0.5
-		
-		# var destination = global_transform
 
 		if current_card_count > 1:
 			hand_ratio = float(card.get_index()) / float((get_child_count() - 1))
@@ -45,14 +42,19 @@ func displayCards():
 
 func discard_card(card: CardUI) -> void:
 	card.get_parent().remove_child(card)
+	char_stats.discard.add_card(card.card)
+	card.queue_free()
+
+
+func exhaust_card(card: CardUI) -> void:
+	card.get_parent().remove_child(card)
+	char_stats.exhaust_pile.add_card(card.card)
 	card.queue_free()
 
 
 func enable_hand() -> void:
 	for card: CardUI in get_children():
 		card.disabled = false
-		#if card.is_hovered():
-			#card.card_state_machine.on_mouse_entered()
 
 
 func disable_hand() -> void:

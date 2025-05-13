@@ -37,12 +37,10 @@ func clear_values() -> void:
 func get_modified_value(base: int) -> int:
 	var flat_result: int = base
 	var percent_result: float = 1.0
-	# Apply flat modifiers first
 	for value: ModifierValue in get_children():
 		if value.type == ModifierValue.Type.FLAT:
 			flat_result += value.flat_value
 	
-	# Apply % modifiers next
 	for value: ModifierValue in get_children():
 		if value.type == ModifierValue.Type.PERCENT_BASED:
 			percent_result += value.percent_value

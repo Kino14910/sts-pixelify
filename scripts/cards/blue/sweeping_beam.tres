@@ -1,0 +1,22 @@
+[gd_resource type="Resource" load_steps=2 format=3 uid="uid://17re8gdvxd4x"]
+
+[ext_resource type="Script" path="res://scripts/cards/blue/sweeping_beam.gd" id="1_8v0hx"]
+
+[resource]
+script = ExtResource("1_8v0hx")
+id = "Sweeping Beam"
+type = 0
+target = 1
+cost = 1
+card_name = "扫荡射线"
+damage = 5
+block = 0
+magicNumber = 1
+rarity = 0
+exhaust = false
+ethereal = false
+innate = false
+tags = Array[String]([])
+color = 2
+description = "对所有敌人造成 !D! 点伤害。 
+抽 !M! 张牌。"

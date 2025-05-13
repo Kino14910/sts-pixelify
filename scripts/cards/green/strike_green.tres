@@ -1,0 +1,21 @@
+[gd_resource type="Resource" load_steps=2 format=3 uid="uid://ckopq4cawj50i"]
+
+[ext_resource type="Script" path="res://scripts/cards/green/strike_green.gd" id="1_j1ikm"]
+
+[resource]
+script = ExtResource("1_j1ikm")
+id = "strike_G"
+type = 0
+target = 0
+cost = 1
+card_name = "打击"
+damage = 90
+block = 0
+magicNumber = 0
+rarity = 0
+exhaust = false
+ethereal = false
+innate = false
+tags = Array[String](["strike"])
+color = 1
+description = "造成!D!点伤害。"

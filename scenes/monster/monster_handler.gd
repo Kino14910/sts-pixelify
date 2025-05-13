@@ -39,7 +39,7 @@ func start_turn() -> void:
 	acting_monsters.clear()
 	for monster: Monster in get_children():
 		acting_monsters.append(monster)
-
+		GameManager.monsters = acting_monsters
 	_start_next_monster_turn()
 
 
@@ -48,15 +48,14 @@ func _start_next_monster_turn() -> void:
 		Events.monster_turn_ended.emit()
 		return
 	
-	acting_monsters[0].power_handler.apply_powers_by_type(Power.Type.START_OF_TURN)
+	acting_monsters[0].power_handler.apply_powers_by_type(Power.Lifetime.START_OF_TURN)
 
 
-# 写出来自己都绷不住的逆天生命周期
-func _on_monster_powers_applied(type: Power.Type, monster: Monster) -> void:
+func _on_monster_powers_applied(type: Power.Lifetime, monster: Monster) -> void:
 	match type:
-		Power.Type.START_OF_TURN:
+		Power.Lifetime.START_OF_TURN:
 			monster.do_turn()
-		Power.Type.END_OF_TURN:
+		Power.Lifetime.END_OF_TURN:
 			acting_monsters.erase(monster)
 			_start_next_monster_turn()
 
@@ -70,7 +69,7 @@ func _on_monster_died(monster: Monster) -> void:
 
 
 func _on_monster_action_completed(monster: Monster) -> void:
-	monster.power_handler.apply_powers_by_type(Power.Type.END_OF_TURN)
+	monster.power_handler.apply_powers_by_type(Power.Lifetime.END_OF_TURN)
 
 
 func _on_player_hand_drawn() -> void:

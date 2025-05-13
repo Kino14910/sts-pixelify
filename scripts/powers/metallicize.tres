@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="Metallicize" load_steps=3 format=3 uid="uid://cf5rcsc7hg82m"]
+[gd_resource type="Resource" script_class="Metallicize" load_steps=3 format=3 uid="uid://bcg633ur8406d"]
 
 [ext_resource type="Texture2D" uid="uid://dytq0eumwvky6" path="res://assets/tile_0074.png" id="1_u2qwu"]
 [ext_resource type="Script" path="res://scripts/powers/metallicize.gd" id="2_3ls3o"]
@@ -7,6 +7,7 @@
 script = ExtResource("2_3ls3o")
 id = "Metallicize"
 type = 1
+lifetime = 1
 stack_type = 1
 can_expire = false
 duration = 0

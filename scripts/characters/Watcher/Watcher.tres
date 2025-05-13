@@ -1,18 +1,23 @@
-[gd_resource type="Resource" script_class="CharacterStats" load_steps=6 format=3 uid="uid://dw2mgycqan4wv"]
+[gd_resource type="Resource" script_class="CharacterStats" load_steps=8 format=3 uid="uid://dw2mgycqan4wv"]
 
 [ext_resource type="Texture2D" uid="uid://chespk0wc8s3y" path="res://assets/characters/Watcher_portrait.png" id="1_1ofrw"]
 [ext_resource type="SpriteFrames" uid="uid://w521litngtcg" path="res://resources/character/Watcher.tres" id="2_3p02w"]
+[ext_resource type="Resource" uid="uid://c4o08c3bh3skl" path="res://scripts/characters/Watcher/Watcher_cardpool.tres" id="2_tlu4e"]
 [ext_resource type="Texture2D" uid="uid://djd3akgucc67t" path="res://assets/characters/Watcher_name.png" id="3_jrauv"]
 [ext_resource type="Script" path="res://resources/custom_resources/character_stats.gd" id="4_qy206"]
 [ext_resource type="Texture2D" uid="uid://c8wenlaynshx7" path="res://assets/characters/Watcher.tres" id="4_tu7dk"]
+[ext_resource type="Resource" uid="uid://bjfbkbnbpbm7s" path="res://scripts/characters/Watcher/Watcher_starting_deck.tres" id="7_5xvk4"]
 
 [resource]
 script = ExtResource("4_qy206")
 character_name = "Watcher"
-description = "Watcher"
+description = "一名目盲的修行者，前来“评估”高塔。 
+掌握运用神圣“姿态”来战斗的方法。"
 character_name_picture = ExtResource("3_jrauv")
 portrait = ExtResource("4_tu7dk")
 char_sprite = ExtResource("2_3p02w")
+cardpool = ExtResource("2_tlu4e")
+starting_deck = ExtResource("7_5xvk4")
 cards_per_turn = 5
 max_energy = 3
 char_max_hp = 60

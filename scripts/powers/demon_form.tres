@@ -7,6 +7,7 @@
 script = ExtResource("2_w4xqk")
 id = "Demon Form"
 type = 0
+lifetime = 0
 stack_type = 1
 can_expire = false
 duration = 0

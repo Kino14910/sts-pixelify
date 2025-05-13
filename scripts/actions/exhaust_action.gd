@@ -2,7 +2,6 @@ class_name ExhaustAction
 extends Action
 
 
-var player_handler: PlayerHandler
 var random: bool
 
 
@@ -21,8 +20,6 @@ func execute(targets: Array[Node], amount: int) -> void:
 	if player_handler.hand.is_empty():
 		return
 		
-	self.player_handler = player_handler
-		
 	var cards_to_exhaust
 	if random:
 		var candidates = player_handler.hand.get_children().duplicate()
@@ -37,6 +34,5 @@ func execute(targets: Array[Node], amount: int) -> void:
 		cards_to_exhaust = player_handler.hand.get_children().slice(0, amount)
 	
 	for card in cards_to_exhaust:
-		player_handler.hand.discard_card(card)
-		char_stats.exhaust_pile.add_card(card.card)
-		Events.card_exhausted.emit()
+		player_handler.hand.exhaust_card(card)
+		Events.card_discarded.emit()

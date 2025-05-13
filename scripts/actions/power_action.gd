@@ -12,11 +12,9 @@ func execute(targets: Array[Node], amount: int) -> void:
 		if not target:
 			continue
 		if target is Monster or target is Player:
-			if power.stack_type == power.StackType.DURATION:
-				power.duration = amount
-			elif power.stack_type == power.StackType.INTENSITY:
-				power.stacks = amount
-			else:
-				continue
+			match power.stack_type:
+				power.StackType.DURATION: power.duration = amount
+				power.StackType.INTENSITY: power.stacks = amount
+				_: continue
 			
 			target.power_handler.add_power(power)

@@ -3,9 +3,9 @@ extends Control
 
 const CARD_REWARDS = preload('res://scenes/ui/card_rewards.tscn')
 const REWARD_BUTTON = preload('res://scenes/ui/reward_button.tscn')
-const GOLD_ICON = preload('res://assets/gold.png')
+@export var GOLD_ICON: CompressedTexture2D
 const GOLD_TEXT = '%s gold'
-const CARD_ICON = preload('res://assets/rarity.png')
+@export var CARD_ICON: CompressedTexture2D
 const CARD_TEXT = 'Add New Card'
 
 @export var run_stats: RunStats

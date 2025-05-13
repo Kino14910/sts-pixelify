@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://b0rejt17100p4" path="res://assets/UI/shop_card_remove_btn.png" id="2_tqycn"]
 [ext_resource type="Script" path="res://scenes/shop/delete_button.gd" id="3_mpblk"]
 [ext_resource type="Texture2D" uid="uid://cpvc1gy2nmfhp" path="res://assets/UI/card_delete_icon.png" id="3_wlua7"]
-[ext_resource type="Texture2D" uid="uid://dhmtctwb5ymhc" path="res://assets/gold.png" id="4_yag3q"]
+[ext_resource type="Texture2D" uid="uid://dhmtctwb5ymhc" path="res://assets/UI/gold.png" id="4_yag3q"]
 
 [node name="DeleteCard" type="VBoxContainer"]
 custom_minimum_size = Vector2(40, 52)

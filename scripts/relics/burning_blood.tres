@@ -6,10 +6,10 @@
 [resource]
 script = ExtResource("2_ebvif")
 heal_amount = 6
-relic_name = "燃烧之血"
 id = "Burning Blood"
+relic_name = "燃烧之血"
 type = 3
-character_type = 2
+character_type = 1
 starter_relic = true
 icon = ExtResource("1_ik8bq")
 tooltip = "在战斗结束时，回复6点生命。"

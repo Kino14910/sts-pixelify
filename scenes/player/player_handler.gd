@@ -75,7 +75,6 @@ func discard_cards() -> void:
 
 	var tween = create_tween()
 	for card_ui: CardUI in hand.get_children():
-		tween.tween_callback(char_stats.discard.add_card.bind(card_ui.card))
 		tween.tween_callback(hand.discard_card.bind(card_ui))
 		tween.tween_interval(HAND_DISCARD_INTERVAL)
 	
@@ -105,18 +104,17 @@ func _on_card_played(card: Card) -> void:
 	char_stats.discard.add_card(card)
 
 
-# 写出来自己都绷不住的逆天生命周期
-func _on_powers_applied(type: Power.Type) -> void:
+func _on_powers_applied(type: Power.Lifetime) -> void:
 	match type:
-		Power.Type.START_OF_TURN:
+		Power.Lifetime.START_OF_TURN:
 			draw_cards(char_stats.cards_per_turn, true)
-		Power.Type.END_OF_TURN:
+		Power.Lifetime.END_OF_TURN:
 			discard_cards()
 
 
 func _on_relics_activated(type: Relic.Type) -> void:
 	match type:
 		Relic.Type.START_OF_TURN:
-			GameManager.player.power_handler.apply_powers_by_type(Power.Type.START_OF_TURN)
+			GameManager.player.power_handler.apply_powers_by_type(Power.Lifetime.START_OF_TURN)
 		Relic.Type.END_OF_TURN:
-			GameManager.player.power_handler.apply_powers_by_type(Power.Type.END_OF_TURN)
+			GameManager.player.power_handler.apply_powers_by_type(Power.Lifetime.END_OF_TURN)

@@ -24,6 +24,4 @@ func perform_action() -> void:
 	usages += 1
 	PowerAction.new([monster], STRENGTH.new(), stacks_per_action)
 	
-	SFXPlayer.play(sound)
-
 	Events.monster_action_completed.emit(monster)

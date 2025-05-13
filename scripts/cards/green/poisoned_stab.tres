@@ -1,0 +1,22 @@
+[gd_resource type="Resource" load_steps=2 format=3 uid="uid://dq1qphfqqxunj"]
+
+[ext_resource type="Script" path="res://scripts/cards/green/poisoned_stab.gd" id="1_x7qbf"]
+
+[resource]
+script = ExtResource("1_x7qbf")
+id = "Poisoned Stab"
+type = 0
+target = 0
+cost = 1
+card_name = "带毒刺击"
+damage = 6
+block = 0
+magicNumber = 3
+rarity = 0
+exhaust = false
+ethereal = false
+innate = false
+tags = Array[String]([])
+color = 1
+description = "造成 !D! 点伤害。 
+给予 !M! 层 中毒 。"

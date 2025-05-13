@@ -1,11 +1,11 @@
 extends Card
 
-@export var Vulnerable: Power
-@export var Weakened: Power
+@export var vulnerable: Power
+@export var weakened: Power
 
 func apply_actions(targets: Array[Node]) -> void:
 	DamageAction.new(targets, damage)
 	
-	PowerAction.new(targets, Vulnerable.new(), magicNumber)
-	PowerAction.new(targets, Weakened.new(), magicNumber)
+	PowerAction.new(targets, vulnerable.new(), magicNumber)
+	PowerAction.new(targets, weakened.new(), magicNumber)
 	

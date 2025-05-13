@@ -8,7 +8,6 @@ func enter() -> void:
 	
 	if card_ui.tween and card_ui.tween.is_running():
 		card_ui.tween.kill()
-	# card_ui.reparent_requested.emit(card_ui)
 	card_ui.card_visuals.panel.set("theme_override_styles/panel", card_ui.BASE_STYLE)
 	card_ui.card_visuals.pos.y = 0
 	card_ui.card_visuals.rot = card_ui.rotation

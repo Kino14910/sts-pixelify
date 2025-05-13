@@ -7,8 +7,8 @@
 
 [resource]
 script = ExtResource("1_vin4e")
-Vulnerable = ExtResource("1_y6da0")
-Weakened = ExtResource("2_6c86g")
+vulnerable = ExtResource("1_y6da0")
+weakened = ExtResource("2_6c86g")
 id = "uppercut"
 type = 0
 target = 0

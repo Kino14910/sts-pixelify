@@ -142,4 +142,4 @@ func _on_shop_relic_bought(relic: Relic, gold_cost: int) -> void:
 
 
 func _on_delete_card_btn_pressed() -> void:
-	pass # Replace with function body.
+	pass

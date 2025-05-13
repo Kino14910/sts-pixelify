@@ -1,10 +1,11 @@
-[gd_scene load_steps=8 format=3 uid="uid://b8hnd6jb5jw38"]
+[gd_scene load_steps=9 format=3 uid="uid://b8hnd6jb5jw38"]
 
 [ext_resource type="Script" path="res://scenes/battle_reward/battle_reward.gd" id="1_q1rg4"]
 [ext_resource type="Texture2D" uid="uid://cp4iq5fd6j8be" path="res://assets/background.png" id="2_ymhpx"]
 [ext_resource type="PackedScene" uid="uid://vgvhq1ds6hlf" path="res://scenes/ui/reward_button.tscn" id="3_1u6of"]
-[ext_resource type="Texture2D" uid="uid://dhmtctwb5ymhc" path="res://assets/gold.png" id="4_pr1pa"]
-[ext_resource type="Texture2D" uid="uid://du7r7v1iaahuo" path="res://assets/rarity.png" id="5_lc0i4"]
+[ext_resource type="Texture2D" uid="uid://bqfasn6c608jt" path="res://assets/UI/new_cards.png" id="3_qkwgm"]
+[ext_resource type="Texture2D" uid="uid://dhmtctwb5ymhc" path="res://assets/UI/gold.png" id="4_pr1pa"]
+[ext_resource type="Texture2D" uid="uid://du7r7v1iaahuo" path="res://assets/UI/rarity.png" id="5_lc0i4"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_oksol"]
 font_size = 12
@@ -21,6 +22,8 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 script = ExtResource("1_q1rg4")
+GOLD_ICON = ExtResource("4_pr1pa")
+CARD_ICON = ExtResource("3_qkwgm")
 
 [node name="Background" type="TextureRect" parent="."]
 visible = false

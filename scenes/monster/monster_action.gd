@@ -4,7 +4,6 @@ extends Node
 enum Type {CHANCE_BASED, CONDITIONAL}
 
 @export var intent: Intent
-@export var sound: AudioStream
 @export var type: Type
 @export_range(0.0, 10.0) var chance_weight = 1.0
 

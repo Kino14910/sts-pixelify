@@ -1,0 +1,26 @@
+[gd_resource type="Resource" load_steps=4 format=3 uid="uid://bick03hs3e1ck"]
+
+[ext_resource type="Resource" uid="uid://cp7aqh1ake85l" path="res://scripts/powers/corpse_explosion.tres" id="1_ca53k"]
+[ext_resource type="Script" path="res://scripts/cards/green/corpse_explosion.gd" id="1_qik26"]
+[ext_resource type="Resource" uid="uid://bcn765c15f41c" path="res://scripts/powers/poison.tres" id="2_h51la"]
+
+[resource]
+script = ExtResource("1_qik26")
+posion = ExtResource("2_h51la")
+corpse_explosion = ExtResource("1_ca53k")
+id = "Corpse Explosion"
+type = 1
+target = 0
+cost = 2
+card_name = "尸爆术"
+damage = 0
+block = 0
+magicNumber = 6
+rarity = 4
+exhaust = false
+ethereal = false
+innate = false
+tags = Array[String]([])
+color = 0
+description = "给予 !M! 层 中毒 。 
+当这名敌人死亡时，对所有敌人造成等于其最大生命值的伤害。"

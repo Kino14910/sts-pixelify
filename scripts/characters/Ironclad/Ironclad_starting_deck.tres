@@ -1,15 +1,14 @@
-[gd_resource type="Resource" script_class="CardPile" load_steps=9 format=3 uid="uid://boeh0bq8w7kbr"]
+[gd_resource type="Resource" script_class="CardPile" load_steps=8 format=3 uid="uid://boeh0bq8w7kbr"]
 
 [ext_resource type="Script" path="res://resources/custom_resources/card.gd" id="1_t3wnt"]
 [ext_resource type="Script" path="res://resources/custom_resources/card_pile.gd" id="2_8g476"]
 [ext_resource type="Resource" uid="uid://5nh4yv103t33" path="res://scripts/cards/red/strike_red.tres" id="2_pw7b2"]
 [ext_resource type="Resource" uid="uid://deycgwfy0gttk" path="res://scripts/cards/red/anger.tres" id="3_24lb0"]
 [ext_resource type="Resource" uid="uid://sqhn7c8gt344" path="res://scripts/cards/red/bash.tres" id="3_sj28w"]
-[ext_resource type="Resource" uid="uid://cko5akr3enmln" path="res://scripts/cards/red/blood_letting.tres" id="4_0t0g5"]
+[ext_resource type="Resource" uid="uid://d1hk4ddswukej" path="res://scripts/cards/red/blood_letting.tres" id="4_0t0g5"]
 [ext_resource type="Resource" uid="uid://dpc62gytd8x6y" path="res://scripts/cards/red/carnage.tres" id="5_eiwrc"]
-[ext_resource type="Resource" uid="uid://coejni7b7okbo" path="res://scripts/cards/red/iron_wave.tres" id="7_vhhxe"]
 
 [resource]
 script = ExtResource("2_8g476")
-cards = Array[ExtResource("1_t3wnt")]([ExtResource("2_pw7b2"), ExtResource("3_24lb0"), ExtResource("4_0t0g5"), ExtResource("5_eiwrc"), ExtResource("3_sj28w"), ExtResource("7_vhhxe")])
+cards = Array[ExtResource("1_t3wnt")]([ExtResource("2_pw7b2"), ExtResource("3_24lb0"), ExtResource("4_0t0g5"), ExtResource("5_eiwrc"), ExtResource("3_sj28w")])
 card_type = ""

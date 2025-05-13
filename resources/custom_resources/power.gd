@@ -4,12 +4,14 @@ extends Resource
 signal power_applied(power: Power)
 signal power_changed
 
-enum Type {START_OF_TURN, END_OF_TURN, EVENT_BASED}
+enum Lifetime {START_OF_TURN, END_OF_TURN, EVENT_BASED}
+enum Type {BUFF, DEBUFF}
 enum StackType {NONE, INTENSITY, DURATION}
 
 @export_group("Power Data")
 @export var id: String
 @export var type: Type
+@export var lifetime: Lifetime
 @export var stack_type: StackType
 @export var can_expire: bool
 @export var duration: int:

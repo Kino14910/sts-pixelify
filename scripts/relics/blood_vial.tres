@@ -10,8 +10,8 @@ region = Rect2(108, 0, 8, 8)
 [resource]
 script = ExtResource("2_vdhar")
 heal_amount = 2
-relic_name = "小血瓶"
 id = "Blood Vial"
+relic_name = "小血瓶"
 type = 1
 character_type = 2
 starter_relic = true

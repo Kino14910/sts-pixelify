@@ -23,7 +23,7 @@ extends Control
 
 @export var pos: Vector2 = Vector2.ZERO
 @export var rot: float
-@export var anim_speed: float = 100.
+@export var anim_speed: float = 100.0
 
 func _process(delta: float) -> void:
 	position = lerp(position, pos, anim_speed * delta)

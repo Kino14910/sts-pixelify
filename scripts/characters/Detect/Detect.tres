@@ -1,20 +1,25 @@
-[gd_resource type="Resource" script_class="CharacterStats" load_steps=6 format=3 uid="uid://b5xnoxnpuj1ma"]
+[gd_resource type="Resource" script_class="CharacterStats" load_steps=8 format=3 uid="uid://b5xnoxnpuj1ma"]
 
 [ext_resource type="Texture2D" uid="uid://p21wrqkbl2b" path="res://assets/characters/Detect_Portrait.png" id="1_3ja0w"]
+[ext_resource type="Resource" uid="uid://blfp3xdqcg1pi" path="res://scripts/characters/Detect/Detect_cardpool.tres" id="2_cahxm"]
 [ext_resource type="SpriteFrames" uid="uid://buckvsikak5dl" path="res://resources/character/Detect.tres" id="2_coj3g"]
 [ext_resource type="Texture2D" uid="uid://d125m0n2r8xyl" path="res://assets/characters/Detect_name.png" id="3_a3jvf"]
 [ext_resource type="Texture2D" uid="uid://0rxpdi2mehsu" path="res://assets/characters/Detect.tres" id="4_qjjoe"]
 [ext_resource type="Script" path="res://resources/custom_resources/character_stats.gd" id="4_yao0d"]
+[ext_resource type="Resource" uid="uid://ckjk0p4kl3pvu" path="res://scripts/characters/Detect/Detect_starting_deck.tres" id="7_pgwx2"]
 
 [resource]
 script = ExtResource("4_yao0d")
 character_name = "Detect"
-description = "Detect"
+description = "一具产生了自我意识的战斗型机器人。 
+它装载的远古科技让它可以操控充能球。"
 character_name_picture = ExtResource("3_a3jvf")
 portrait = ExtResource("4_qjjoe")
 char_sprite = ExtResource("2_coj3g")
+cardpool = ExtResource("2_cahxm")
+starting_deck = ExtResource("7_pgwx2")
 cards_per_turn = 5
 max_energy = 3
 char_max_hp = 70
 art = ExtResource("1_3ja0w")
-max_health = 1
+max_health = 65

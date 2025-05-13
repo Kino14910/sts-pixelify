@@ -14,7 +14,6 @@ func perform_action() -> void:
 	if not monster or not player:
 		return
 	
-	#damage_action.sound = sound
 	DamageAction.new([player], damage)
 	GainBlockAction.new([monster], block)
 

@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="CharacterStats" load_steps=9 format=3 uid="uid://4qo5n75hbldo"]
 
-[ext_resource type="Texture2D" uid="uid://b685x37oj0smj" path="res://assets/characters/ironclad.png" id="1_wie4u"]
+[ext_resource type="Texture2D" uid="uid://hwkgoriaq512" path="res://assets/characters/Ironclad_portrait.png" id="1_kc2xr"]
 [ext_resource type="Resource" uid="uid://bps0lp0brkvou" path="res://scripts/characters/Ironclad/Ironclad_cardpool.tres" id="2_7eamv"]
 [ext_resource type="SpriteFrames" uid="uid://dmxq48sy1vquo" path="res://resources/character/Ironclad.tres" id="3_namc3"]
 [ext_resource type="Script" path="res://resources/custom_resources/character_stats.gd" id="3_x0sf1"]
@@ -12,7 +12,8 @@
 [resource]
 script = ExtResource("3_x0sf1")
 character_name = "Iron Clad"
-description = "Iron Clad"
+description = "铁甲军团残留下的士兵。 
+他出卖自己的灵魂，获得了恶魔的力量。"
 character_name_picture = ExtResource("4_8jvup")
 portrait = ExtResource("5_dk314")
 char_sprite = ExtResource("3_namc3")
@@ -22,5 +23,5 @@ cards_per_turn = 5
 max_energy = 3
 char_max_hp = 80
 starting_relic = ExtResource("5_vln5c")
-art = ExtResource("1_wie4u")
-max_health = 1
+art = ExtResource("1_kc2xr")
+max_health = 80

@@ -7,7 +7,7 @@ var member_var = 0
 
 
 func initialize_power(target: Node) -> void:
-	print("Initialize my power for target %s" % target)
+	pass
 
 
 func apply_power(target: Node) -> void:

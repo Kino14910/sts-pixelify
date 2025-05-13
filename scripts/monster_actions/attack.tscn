@@ -1,9 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://cxx5ieg2ljtuu"]
+[gd_scene load_steps=5 format=3 uid="uid://cxx5ieg2ljtuu"]
 
 [ext_resource type="Script" path="res://scripts/monster_actions/attack.gd" id="1_a5md0"]
 [ext_resource type="Texture2D" uid="uid://d2u747hso4crg" path="res://assets/intents/attack.png" id="2_h0r35"]
 [ext_resource type="Script" path="res://resources/custom_resources/intent.gd" id="2_yi58d"]
-[ext_resource type="AudioStream" uid="uid://de2ryat1pxq6" path="res://assets/enemy_attack.ogg" id="4_xwtnd"]
 
 [sub_resource type="Resource" id="Resource_lm7j2"]
 script = ExtResource("2_yi58d")
@@ -13,4 +12,3 @@ icon = ExtResource("2_h0r35")
 [node name="Attack" type="Node"]
 script = ExtResource("1_a5md0")
 intent = SubResource("Resource_lm7j2")
-sound = ExtResource("4_xwtnd")

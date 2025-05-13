@@ -8,10 +8,10 @@ const ICONS = {
 	Room.Type.NOT_ASSIGNED: [null, Vector2.ONE],
 	Room.Type.MONSTER: [preload("res://assets/tile_0103.png"), Vector2.ONE],
 	Room.Type.TREASURE: [preload("res://assets/tile_0089.png"), Vector2.ONE],
-	Room.Type.CAMPFIRE: [preload("res://assets/player_heart.png"), Vector2(0.6, 0.6)],
-	Room.Type.SHOP: [preload("res://assets/gold.png"), Vector2(0.6, 0.6)],
+	Room.Type.CAMPFIRE: [preload("res://assets/UI/player_heart.png"), Vector2(0.6, 0.6)],
+	Room.Type.SHOP: [preload("res://assets/UI/gold.png"), Vector2(0.6, 0.6)],
 	Room.Type.BOSS: [preload("res://assets/tile_0105.png"), Vector2(1.25, 1.25)],
-	Room.Type.EVENT: [preload("res://assets/rarity.png"), Vector2(0.9, 0.9)],
+	Room.Type.EVENT: [preload("res://assets/UI/rarity.png"), Vector2(0.9, 0.9)],
 }
 
 @onready var sprite_2d: Sprite2D = $Visuals/Sprite2D

@@ -10,8 +10,8 @@ region = Rect2(98, 72, 5, 8)
 [resource]
 script = ExtResource("2_6fiy6")
 damage = 2
-relic_name = "水银沙漏"
 id = "Mercury Hourglass"
+relic_name = "水银沙漏"
 type = 0
 character_type = 0
 starter_relic = false

@@ -13,8 +13,8 @@ atlas = SubResource("AtlasTexture_njjrr")
 [resource]
 script = ExtResource("2_7l5r2")
 block_bonus = null
-relic_name = "奥利哈钢"
 id = "Orichalcum"
+relic_name = "奥利哈钢"
 type = 2
 character_type = 2
 starter_relic = null

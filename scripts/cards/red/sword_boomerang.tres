@@ -1,0 +1,21 @@
+[gd_resource type="Resource" load_steps=2 format=3 uid="uid://bg0rpf8a1pi3r"]
+
+[ext_resource type="Script" path="res://scripts/cards/red/sword_boomerang.gd" id="1_tc0rh"]
+
+[resource]
+script = ExtResource("1_tc0rh")
+id = "Sword Boomerang"
+type = 0
+target = 1
+cost = 1
+card_name = "飞剑回旋镖"
+damage = 3
+block = 0
+magicNumber = 3
+rarity = 2
+exhaust = false
+ethereal = false
+innate = false
+tags = Array[String]([])
+color = 0
+description = "随机对敌人造成 !D! 点伤害 !M! 次。"
