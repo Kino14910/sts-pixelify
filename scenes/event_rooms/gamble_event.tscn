@@ -38,8 +38,7 @@ theme_override_constants/separation = 5
 
 [node name="Label" type="Label" parent="VBoxContainer"]
 layout_mode = 2
-text = "Bet your 
-money"
+text = "赌注"
 horizontal_alignment = 1
 vertical_alignment = 1
 
@@ -47,18 +46,16 @@ vertical_alignment = 1
 unique_name_in_owner = true
 custom_minimum_size = Vector2(110, 20)
 layout_mode = 2
-text = "bet 50g: 50% chance
-to win 100g"
+text = "下注50金币: 50% 概率获得100金币"
 
 [node name="ThirtyButton" parent="VBoxContainer" instance=ExtResource("2_xqbom")]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(0, 20)
 layout_mode = 2
-text = "bet 50g: 30% chance
-to win 200g"
+text = "下注50金币: 30% 概率获得 200g"
 
 [node name="SkipButton" parent="VBoxContainer" instance=ExtResource("2_xqbom")]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(0, 15)
 layout_mode = 2
-text = "Skip the bet"
+text = "跳过"

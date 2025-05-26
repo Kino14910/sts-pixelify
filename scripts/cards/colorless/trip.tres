@@ -20,4 +20,4 @@ ethereal = false
 innate = false
 tags = Array[String]([])
 color = 4
-description = "给予%s层[color=gold]易伤[/color] 。"
+description = "给予!M!层 易伤 。"

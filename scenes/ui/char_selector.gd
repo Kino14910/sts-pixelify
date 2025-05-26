@@ -7,6 +7,8 @@ const RUN_SCENE = preload("res://scenes/run/run.tscn")
 @export var DETECT: CharacterStats
 @export var WATCHER: CharacterStats
 
+const IRONCLAD_ANIM = preload('res://resources/character/Ironclad.tres')
+
 @export var IRONCLAD_PORTRAIT: CompressedTexture2D
 @export var SLIENT_PORTRAIT: CompressedTexture2D
 @export var DETECT_PORTRAIT: CompressedTexture2D

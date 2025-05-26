@@ -208,8 +208,9 @@ func _on_battle_room_entered(room: Room) -> void:
 	battle_scene.start_battle()
 	player.stats = char_stats
 	player.visible = true
+	player.animated_sprite_2d.play('default')
 	
-	GameManager.room = room
+	GameManager.room = room 
 	if !once && open_tutorial:
 		once = true
 		battle_tutorial.visible = true

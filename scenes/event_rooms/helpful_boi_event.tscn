@@ -45,14 +45,13 @@ horizontal_alignment = 1
 unique_name_in_owner = true
 custom_minimum_size = Vector2(100, 20)
 layout_mode = 2
-text = "duplicate last card
-in your deck"
+text = "复制卡组中最后一张牌"
 
 [node name="PlusMaxHPButton" parent="VBoxContainer" instance=ExtResource("1_850a0")]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(0, 15)
 layout_mode = 2
-text = "+5 max HP"
+text = "+5 最大生命值"
 
 [node name="TextureRect" type="TextureRect" parent="."]
 layout_mode = 1

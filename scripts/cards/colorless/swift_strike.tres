@@ -18,4 +18,4 @@ ethereal = false
 innate = false
 tags = Array[String](["strike"])
 color = 4
-description = "造成%s点伤害。"
+description = "造成!D!点伤害。"

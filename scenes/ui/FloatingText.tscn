@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://d04xo7cuocch1"]
+
+[ext_resource type="Script" path="res://scenes/ui/floating_text.gd" id="1_kb8u2"]
+
+[node name="FloatingText" type="Node2D"]
+script = ExtResource("1_kb8u2")
+
+[node name="Label" type="Label" parent="."]
+offset_right = 40.0
+offset_bottom = 8.0

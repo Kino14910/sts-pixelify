@@ -1,4 +1,4 @@
-[gd_resource type="Resource" load_steps=3 format=3 uid="uid://bspxwd7tohxe1"]
+[gd_resource type="Resource" load_steps=3 format=3 uid="uid://by5ck2ykc17ca"]
 
 [ext_resource type="Resource" uid="uid://dfmuquglr01qk" path="res://scripts/powers/strength.tres" id="1_hp42i"]
 [ext_resource type="Script" path="res://scripts/cards/red/disarm.gd" id="2_ars8q"]
